@@ -39,7 +39,7 @@ export default defineConfig(({ command, mode }) => {
     test: {
       globals: true,
       environment: 'jsdom',
-      setupFiles: './setup.js',
+      setupFiles: './vite.setup.js',
       testTimeout: 10000,
       include: ['./src/**/*.spec.js'],
       resolveSnapshotPath: (testPath, snapExtension) => testPath.replace(/\.spec\.([tj]s?)/, `${snapExtension}.$1`)
