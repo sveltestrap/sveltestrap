@@ -1,0 +1,34 @@
+.*
+
+# except
+!.babelrc.js
+!.editorconfig
+!.eslintignore
+!.eslintrc.json
+!.gitattributes
+!.github
+!.gitignore
+!.gitkeep
+!.husky
+!.lintstagedrc
+!.node-version
+!.npmignore
+!.npmrc
+!.nvmrc
+!.prettierignore
+!.prettierrc.json
+!.storybook
+!.vercelignore
+*.mock.json
+
+# generated
+/node_modules
+/dist
+/docs
+
+# logs
+*.log
+npm-debug.log*
+
+# testing
+/coverage

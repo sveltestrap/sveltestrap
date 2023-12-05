@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+# git hook to run a command after `git pull` if a specified file was changed
+# Run `chmod +x .husky/post-merge` to make it executable then put it into `.git/hooks/`.
+
+changes="$(git diff-tree -r --name-only --no-commit-id ORIG_HEAD HEAD)"
+
+check() {
+  echo "$changes" | grep --quiet "$1" && eval "$2"
+}
+
+check package.json "npm install"
