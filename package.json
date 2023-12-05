@@ -6,6 +6,7 @@
   "jsnext:main": "dist/sveltestrap.es.js",
   "svelte": "src/index.js",
   "types": "src/index.d.ts",
+  "type": "module",
   "keywords": [
     "svelte",
     "components",
@@ -56,7 +57,7 @@
     "start": "storybook dev -p 6006",
     "check": "svelte-check --tsconfig ./tsconfig.json",
     "dist": "vite build",
-    "docs": "storybook build -o docs && cp CNAME ./docs",
+    "docs": "storybook build -o docs && cp static/* ./docs",
     "lint": "eslint -c ./.eslintrc.json --fix \"src/**/*.{.js,svelte}\"",
     "format": "prettier --write \"src/**/*.{js,json,svelte}\"",
     "test": "vitest --run",
