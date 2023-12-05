@@ -1,17 +1,24 @@
-import TestDropdown from '../Dropdown/Dropdown.spec.svelte';
 import { render, cleanup } from '@testing-library/svelte';
+import TestDropdown from '../Dropdown/Dropdown.spec.svelte';
 
 beforeEach(cleanup);
 
+const TestHarness = (props) => render(TestDropdown, props);
+
 describe('DropdownMenu', () => {
   test('should render correctly', () => {
-    const { container } = render(TestDropdown);
-    const dropdownmenu = container.querySelector('.dropdown-menu');
-    expect(dropdownmenu.className).toContain('dropdown-menu');
+    const { container } = TestHarness();
+    const menu = container.querySelector('.dropdown-menu');
+
+    expect(menu.className).toContain('dropdown-menu');
+    expect(container).toMatchSnapshot();
   });
+
   test('should render custom class', () => {
-    const { container } = render(TestDropdown);
-    const dropdownmenu = container.querySelector('.dropdown-menu');
-    expect(dropdownmenu.className).toContain('cocoa');
+    const { container } = TestHarness();
+    const menu = container.querySelector('.dropdown-menu');
+
+    expect(menu.className).toContain('cocoa');
+    expect(container).toMatchSnapshot();
   });
 });

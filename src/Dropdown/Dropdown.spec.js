@@ -1,17 +1,24 @@
-import Dropdown from './Dropdown.svelte';
 import { render, cleanup } from '@testing-library/svelte';
+import { Dropdown } from './';
 
 beforeEach(cleanup);
 
+const TestHarness = (props) => render(Dropdown, props);
+
 describe('Dropdown', () => {
   test('should render correctly', () => {
-    const { container } = render(Dropdown);
+    const { container } = TestHarness();
     const dropdown = container.querySelector('.dropdown');
+
     expect(dropdown.className).toContain('dropdown');
+    expect(container).toMatchSnapshot();
   });
+
   test('should render custom class', () => {
-    const { container } = render(Dropdown, { class: 'cannonball' });
+    const { container } = TestHarness({ class: 'cannonball' });
     const dropdown = container.querySelector('.dropdown');
+
     expect(dropdown.className).toContain('cannonball');
+    expect(container).toMatchSnapshot();
   });
 });

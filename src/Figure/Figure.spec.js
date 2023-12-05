@@ -1,29 +1,35 @@
-import Figure from './Figure.svelte';
 import { render, cleanup } from '@testing-library/svelte';
+import { Figure } from './';
 
 beforeEach(cleanup);
 
+const TestHarness = (props) => render(Figure, props);
+
 describe('Figure', () => {
   test('should render correctly', () => {
-    const { container } = render(Figure);
-    const component = container.querySelector('figure');
-    expect(component.className).toBe('figure');
+    const { container } = TestHarness();
+    const figure = container.querySelector('figure');
+
+    expect(figure.className).toBe('figure');
+    expect(container).toMatchSnapshot();
   });
 
   test('should render custom class', () => {
-    const { container } = render(Figure, { class: 'boogie' });
+    const { container } = TestHarness({ class: 'boogie' });
+    const figure = container.querySelector('figure');
 
-    const component = container.querySelector('figure');
-    expect(component.className).toBe('figure boogie');
+    expect(figure.className).toBe('figure boogie');
+    expect(container).toMatchSnapshot();
   });
 
   test('should render caption', () => {
-    const { container } = render(Figure, {
+    const { container } = TestHarness({
       caption: 'I want to put on my my my my my boogie shoes'
     });
+    const figure = container.querySelector('figure > figcaption');
 
-    const component = container.querySelector('figure > figcaption');
-    expect(component.className).toBe('figure-caption');
-    expect(component.textContent).toBe('I want to put on my my my my my boogie shoes');
+    expect(figure.className).toBe('figure-caption');
+    expect(figure.textContent).toBe('I want to put on my my my my my boogie shoes');
+    expect(container).toMatchSnapshot();
   });
 });

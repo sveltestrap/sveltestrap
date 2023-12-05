@@ -1,24 +1,32 @@
-import Container from './Container.svelte';
 import { render, cleanup } from '@testing-library/svelte';
+import { Container } from './';
 
 beforeEach(cleanup);
 
+const TestHarness = (props) => render(Container, props);
+
 describe('Container', () => {
   test('should render correctly', () => {
-    const { container } = render(Container);
+    const { container } = TestHarness();
     const component = container.querySelector('.container');
+
     expect(component.className).toBe('container');
+    expect(container).toMatchSnapshot();
   });
 
   test('should render fluid', () => {
-    const { container } = render(Container, { fluid: true });
+    const { container } = TestHarness({ fluid: true });
     const component = container.querySelector('.container-fluid');
+
     expect(component.className).toBe('container-fluid');
+    expect(container).toMatchSnapshot();
   });
 
   test('should render custom class', () => {
-    const { container } = render(Container, { class: 'boogie' });
+    const { container } = TestHarness({ class: 'boogie' });
     const component = container.querySelector('.container');
+
     expect(component.className).toBe('boogie container');
+    expect(container).toMatchSnapshot();
   });
 });

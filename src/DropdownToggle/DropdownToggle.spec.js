@@ -1,19 +1,25 @@
-import TestDropdown from '../Dropdown/Dropdown.spec.svelte';
 import { render, cleanup } from '@testing-library/svelte';
+import TestDropdown from '../Dropdown/Dropdown.spec.svelte';
 
 beforeEach(cleanup);
 
+const TestHarness = (props) => render(TestDropdown, props);
+
 describe('DropdownToggle', () => {
   test('should render correctly', () => {
-    const { container } = render(TestDropdown);
-    const dropdowntoggle = container.querySelector('.dropdown-toggle');
-    expect(dropdowntoggle.className).toContain('dropdown-toggle');
-    expect(dropdowntoggle.className).toContain('btn');
+    const { container } = TestHarness();
+    const toggle = container.querySelector('.dropdown-toggle');
+
+    expect(toggle.className).toContain('dropdown-toggle');
+    expect(toggle.className).toContain('btn');
+    expect(container).toMatchSnapshot();
   });
 
   test('should render custom class', () => {
-    const { container } = render(TestDropdown);
-    const dropdowntoggle = container.querySelector('.dropdown-toggle');
-    expect(dropdowntoggle.className).toContain('coconut');
+    const { container } = TestHarness();
+    const toggle = container.querySelector('.dropdown-toggle');
+
+    expect(toggle.className).toContain('coconut');
+    expect(container).toMatchSnapshot();
   });
 });
