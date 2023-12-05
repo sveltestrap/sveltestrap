@@ -1,4 +1,4 @@
-![sveltestrap](./logo.svg)
+![sveltestrap](./.storybook/docs/logo.svg)
 
 ## Bootstrap 5 components for Svelte v4
 
