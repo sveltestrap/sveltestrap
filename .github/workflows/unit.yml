@@ -1,0 +1,32 @@
+name: Unit Tests (Vitest)
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    if: |
+      (
+        !contains(github.event.head_commit.message, '[skip ci]') &&
+        !contains(github.event.head_commit.message, 'version bump')
+      )
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '18'
+          registry-url: 'https://registry.npmjs.org'
+      - run: npm i
+      - run: npm test
+
+      - uses: actions/upload-artifact@v2
+        if: failure()
+        with:
+          name: unit-tests
+          path: ${{ github.workspace }}/coverage/
+          retention-days: 5
