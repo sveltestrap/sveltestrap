@@ -55,10 +55,10 @@
   },
   "scripts": {
     "start": "storybook dev -p 6006",
-    "check": "svelte-check --tsconfig ./tsconfig.json",
     "dist": "vite build",
     "docs:build": "storybook build -o docs && cp ./.storybook/docs/* ./docs",
     "docs:deploy": "pnpm run docs:build && npx gh-pages -d docs",
+    "check": "svelte-check --tsconfig ./tsconfig.json",
     "lint": "eslint -c ./.eslintrc.json --fix \"src/**/*.{.js,svelte}\"",
     "format": "prettier --write \"src/**/*.{js,json,svelte}\"",
     "test": "vitest --run --coverage",
