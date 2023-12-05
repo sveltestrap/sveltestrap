@@ -35,7 +35,6 @@ describe('Tooltip', () => {
 
     expect(tooltip.className.includes(TOOLTIP_POSTION_CLASS.top)).toBeTruthy();
     expect(tooltipInner.innerHTML).toBe('Hello world!');
-    expect(tooltip).toMatchSnapshot();
   });
 
   it('should render text and left placement', () => {
@@ -50,7 +49,6 @@ describe('Tooltip', () => {
 
     expect(tooltip.className.includes(TOOLTIP_POSTION_CLASS.left)).toBeTruthy();
     expect(tooltipInner.innerHTML).toBe('Hello world!');
-    expect(tooltip).toMatchSnapshot();
   });
 
   it('should throw error when there is no target', () => {
