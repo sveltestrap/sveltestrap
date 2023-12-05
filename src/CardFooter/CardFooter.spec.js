@@ -1,19 +1,24 @@
-import CardFooter from './CardFooter.svelte';
 import { render, cleanup } from '@testing-library/svelte';
+import { CardFooter } from './';
 
 beforeEach(cleanup);
 
+const TestHarness = (props) => render(CardFooter, props);
+
 describe('CardFooter', () => {
   test('should render correctly', () => {
-    const { container } = render(CardFooter);
-    const component = container.querySelector('.card-footer');
-    expect(component.className).toBe('card-footer');
+    const { container } = TestHarness();
+    const footer = container.querySelector('.card-footer');
+
+    expect(footer.className).toBe('card-footer');
+    expect(container).toMatchSnapshot();
   });
 
   test('should render custom class', () => {
-    const { container } = render(CardFooter, { class: 'boogie' });
+    const { container } = TestHarness({ class: 'boogie' });
+    const footer = container.querySelector('.card-footer');
 
-    const component = container.querySelector('.card-footer');
-    expect(component.className).toBe('boogie card-footer');
+    expect(footer.className).toBe('boogie card-footer');
+    expect(container).toMatchSnapshot();
   });
 });

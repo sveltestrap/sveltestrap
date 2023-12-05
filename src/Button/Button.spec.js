@@ -1,85 +1,106 @@
-import Button from './Button.svelte';
 import { render, cleanup } from '@testing-library/svelte';
-
-const renderButton = (props) => {
-  const { container } = render(Button, { props });
-  return container;
-};
+import { Button } from './';
 
 beforeEach(cleanup);
 
+const TestHarness = (props) => render(Button, props);
+
 describe('Button', () => {
   test('should render text and default color', () => {
-    const container = renderButton({ children: 'Hello world!' });
+    const { container } = TestHarness({ children: 'Hello world!' });
     const button = container.querySelector('.btn');
+
     expect(button.innerHTML).toBe('Hello world!');
     expect(button.className).toBe('btn btn-secondary');
+    expect(container).toMatchSnapshot();
   });
 
   test('should render specified color', () => {
-    const container = renderButton({ color: 'primary' });
+    const { container } = TestHarness({ color: 'primary' });
     const button = container.querySelector('.btn');
+
     expect(button.className).toBe('btn btn-primary');
+    expect(container).toMatchSnapshot();
   });
 
   test('should render outline', () => {
-    const container = renderButton({ color: 'warning', outline: true });
+    const { container } = TestHarness({ color: 'warning', outline: true });
     const button = container.querySelector('.btn');
+
     expect(button.className).toBe('btn btn-outline-warning');
+    expect(container).toMatchSnapshot();
   });
 
   test('should render sm size', () => {
-    const container = renderButton({ size: 'sm' });
+    const { container } = TestHarness({ size: 'sm' });
     const button = container.querySelector('.btn');
+
     expect(button.className).toBe('btn btn-secondary btn-sm');
+    expect(container).toMatchSnapshot();
   });
 
   test('should render lg size', () => {
-    const container = renderButton({ size: 'lg' });
+    const { container } = TestHarness({ size: 'lg' });
     const button = container.querySelector('.btn');
+
     expect(button.className).toBe('btn btn-secondary btn-lg');
+    expect(container).toMatchSnapshot();
   });
 
   test('should render block', () => {
-    const container = renderButton({ block: true });
+    const { container } = TestHarness({ block: true });
     const button = container.querySelector('.btn');
+
     expect(button.className).toBe('btn btn-secondary d-block w-100');
+    expect(container).toMatchSnapshot();
   });
 
   test('should render disabled', () => {
-    const container = renderButton({ disabled: true });
+    const { container } = TestHarness({ disabled: true });
     const button = container.querySelector('.btn');
+
     expect(button.disabled).toBe(true);
+    expect(container).toMatchSnapshot();
   });
 
   test('should render active', () => {
-    const container = renderButton({ active: true });
+    const { container } = TestHarness({ active: true });
     const button = container.querySelector('.btn');
+
     expect(button.className).toBe('btn btn-secondary active');
+    expect(container).toMatchSnapshot();
   });
 
   test('should render as close', () => {
-    const container = renderButton({ close: true });
+    const { container } = TestHarness({ close: true });
     const button = container.querySelector('.btn-close');
+
     expect(button.className).toBe('btn-close');
+    expect(container).toMatchSnapshot();
   });
 
   test('should render as link if href specified', () => {
-    const container = renderButton({ href: 'http://example.com/' });
+    const { container } = TestHarness({ href: 'http://example.com/' });
     const link = container.querySelector('a');
+
     expect(link.className).toBe('btn btn-secondary');
     expect(link.href).toBe('http://example.com/');
+    expect(container).toMatchSnapshot();
   });
 
   test('should render value', () => {
-    const container = renderButton({ value: '$1000000' });
+    const { container } = TestHarness({ value: '$1000000' });
     const button = container.querySelector('.btn');
+
     expect(button.value).toBe('$1000000');
+    expect(container).toMatchSnapshot();
   });
 
   test('should render custom class', () => {
-    const container = renderButton({ color: 'danger', class: 'boogie' });
+    const { container } = TestHarness({ color: 'danger', class: 'boogie' });
     const button = container.querySelector('.btn');
+
     expect(button.className).toBe('boogie btn btn-danger');
+    expect(container).toMatchSnapshot();
   });
 });

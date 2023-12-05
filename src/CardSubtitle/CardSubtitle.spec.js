@@ -1,19 +1,24 @@
-import CardSubtitle from './CardSubtitle.svelte';
 import { render, cleanup } from '@testing-library/svelte';
+import { CardSubtitle } from './';
 
 beforeEach(cleanup);
 
+const TestHarness = (props) => render(CardSubtitle, props);
+
 describe('CardSubtitle', () => {
   test('should render correctly', () => {
-    const { container } = render(CardSubtitle);
-    const component = container.querySelector('.card-subtitle');
-    expect(component.className).toBe('card-subtitle');
+    const { container } = TestHarness();
+    const subtitle = container.querySelector('.card-subtitle');
+
+    expect(subtitle.className).toBe('card-subtitle');
+    expect(container).toMatchSnapshot();
   });
 
   test('should render custom class', () => {
-    const { container } = render(CardSubtitle, { class: 'boogie' });
+    const { container } = TestHarness({ class: 'boogie' });
+    const subtitle = container.querySelector('.card-subtitle');
 
-    const component = container.querySelector('.card-subtitle');
-    expect(component.className).toBe('boogie card-subtitle');
+    expect(subtitle.className).toBe('boogie card-subtitle');
+    expect(container).toMatchSnapshot();
   });
 });

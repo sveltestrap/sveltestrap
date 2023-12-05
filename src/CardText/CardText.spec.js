@@ -1,19 +1,24 @@
-import CardText from './CardText.svelte';
 import { render, cleanup } from '@testing-library/svelte';
+import { CardText } from './';
 
 beforeEach(cleanup);
 
+const TestHarness = (props) => render(CardText, props);
+
 describe('CardText', () => {
   test('should render correctly', () => {
-    const { container } = render(CardText);
-    const component = container.querySelector('.card-text');
-    expect(component.className).toBe('card-text');
+    const { container } = TestHarness();
+    const text = container.querySelector('.card-text');
+
+    expect(text.className).toBe('card-text');
+    expect(container).toMatchSnapshot();
   });
 
   test('should render custom class', () => {
-    const { container } = render(CardText, { class: 'boogie' });
+    const { container } = TestHarness({ class: 'boogie' });
+    const text = container.querySelector('.card-text');
 
-    const component = container.querySelector('.card-text');
-    expect(component.className).toBe('boogie card-text');
+    expect(text.className).toBe('boogie card-text');
+    expect(container).toMatchSnapshot();
   });
 });

@@ -1,13 +1,17 @@
-import Accordion from '../Accordion/Accordion.spec.svelte';
 import { render, cleanup } from '@testing-library/svelte';
+import Accordion from '../Accordion/Accordion.spec.svelte';
 
 beforeEach(cleanup);
 
+const TestHarness = (props) => render(Accordion, props);
+
 describe('AccordionHeader', () => {
   test('should render correctly', () => {
-    const { container } = render(Accordion);
-    const accordionheader = container.querySelector('.accordion-header');
-    expect(accordionheader.className).toContain('accordion-header');
-    expect(accordionheader.textContent).toContain('Header!');
+    const { container } = TestHarness();
+    const header = container.querySelector('.accordion-header');
+
+    expect(header.className).toContain('accordion-header');
+    expect(header.textContent).toContain('Header!');
+    expect(container).toMatchSnapshot();
   });
 });

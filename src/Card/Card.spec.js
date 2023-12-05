@@ -1,31 +1,38 @@
-import Card from './Card.svelte';
 import { render, cleanup } from '@testing-library/svelte';
+import { Card } from './';
 
 beforeEach(cleanup);
 
+const TestHarness = (props) => render(Card, props);
+
 describe('Card', () => {
   test('should render correctly', () => {
-    const { container } = render(Card);
-    const component = container.querySelector('.card');
-    expect(component.className).toBe('card');
+    const { container } = TestHarness();
+    const card = container.querySelector('.card');
+
+    expect(card.className).toBe('card');
+    expect(container).toMatchSnapshot();
   });
 
   test('should render props', () => {
-    const { container } = render(Card, {
+    const { container } = TestHarness({
       inverse: true,
       body: true,
       color: 'primary'
     });
-    const component = container.querySelector('.card');
-    expect(component.className).toContain('text-white');
-    expect(component.className).toContain('card-body');
-    expect(component.className).toContain('bg-primary');
+    const card = container.querySelector('.card');
+
+    expect(card.className).toContain('text-white');
+    expect(card.className).toContain('card-body');
+    expect(card.className).toContain('bg-primary');
+    expect(container).toMatchSnapshot();
   });
 
   test('should render custom class', () => {
-    const { container } = render(Card, { class: 'boogie' });
+    const { container } = TestHarness({ class: 'boogie' });
+    const card = container.querySelector('.card');
 
-    const component = container.querySelector('.card');
-    expect(component.className).toBe('boogie card');
+    expect(card.className).toBe('boogie card');
+    expect(container).toMatchSnapshot();
   });
 });

@@ -1,17 +1,24 @@
-import Carousel from './Carousel.svelte';
 import { render, cleanup } from '@testing-library/svelte';
+import { Carousel } from './';
 
 beforeEach(cleanup);
 
+const TestHarness = (props) => render(Carousel, props);
+
 describe('Carousel', () => {
   test('should render correctly', () => {
-    const { container } = render(Carousel);
+    const { container } = TestHarness();
     const carousel = container.querySelector('.carousel');
+
     expect(carousel.className).toContain('carousel');
+    expect(container).toMatchSnapshot();
   });
+
   test('should render custom class', () => {
-    const { container } = render(Carousel, { class: 'squeeze' });
+    const { container } = TestHarness({ class: 'squeeze' });
     const carousel = container.querySelector('.carousel');
+
     expect(carousel.className).toContain('squeeze');
+    expect(container).toMatchSnapshot();
   });
 });

@@ -1,24 +1,32 @@
-import CardLink from './CardLink.svelte';
 import { render, cleanup } from '@testing-library/svelte';
+import { CardLink } from './';
 
 beforeEach(cleanup);
 
+const TestHarness = (props) => render(CardLink, props);
+
 describe('CardLink', () => {
   test('should render correctly', () => {
-    const { container } = render(CardLink);
+    const { container } = TestHarness();
     const component = container.querySelector('.card-link');
+
     expect(component.className).toBe('card-link');
+    expect(container).toMatchSnapshot();
   });
 
   test('should render custom class', () => {
-    const { container } = render(CardLink, { class: 'boogie' });
+    const { container } = TestHarness({ class: 'boogie' });
     const component = container.querySelector('.card-link');
+
     expect(component.className).toBe('boogie card-link');
+    expect(container).toMatchSnapshot();
   });
 
   test('should render link with href', () => {
-    const { container } = render(CardLink, { href: 'http://example.com/' });
+    const { container } = TestHarness({ href: 'http://example.com/' });
     const link = container.querySelector('a');
+
     expect(link.href).toBe('http://example.com/');
+    expect(container).toMatchSnapshot();
   });
 });

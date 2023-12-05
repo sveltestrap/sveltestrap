@@ -1,19 +1,24 @@
-import CardBody from './CardBody.svelte';
 import { render, cleanup } from '@testing-library/svelte';
+import { CardBody } from './';
 
 beforeEach(cleanup);
 
+const TestHarness = (props) => render(CardBody, props);
+
 describe('CardBody', () => {
   test('should render correctly', () => {
-    const { container } = render(CardBody);
-    const component = container.querySelector('.card-body');
-    expect(component.className).toBe('card-body');
+    const { container } = TestHarness();
+    const body = container.querySelector('.card-body');
+
+    expect(body.className).toBe('card-body');
+    expect(container).toMatchSnapshot();
   });
 
   test('should render custom class', () => {
-    const { container } = render(CardBody, { class: 'boogie' });
+    const { container } = TestHarness({ class: 'boogie' });
+    const body = container.querySelector('.card-body');
 
-    const component = container.querySelector('.card-body');
-    expect(component.className).toBe('boogie card-body');
+    expect(body.className).toBe('boogie card-body');
+    expect(container).toMatchSnapshot();
   });
 });

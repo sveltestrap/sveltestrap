@@ -1,18 +1,24 @@
-import ButtonToolbar from './ButtonToolbar.svelte';
 import { render, cleanup } from '@testing-library/svelte';
+import { ButtonToolbar } from './';
 
 beforeEach(cleanup);
 
+const TestHarness = (props) => render(ButtonToolbar, props);
+
 describe('ButtonToolbar', () => {
   test('should render correctly', () => {
-    const { container } = render(ButtonToolbar);
-    const group = container.querySelector('.btn-toolbar');
-    expect(group.className).toBe('btn-toolbar');
+    const { container } = TestHarness();
+    const toolbar = container.querySelector('.btn-toolbar');
+
+    expect(toolbar.className).toBe('btn-toolbar');
+    expect(container).toMatchSnapshot();
   });
 
   test('should render custom class', () => {
-    const { container } = render(ButtonToolbar, { class: 'boogie' });
-    const group = container.querySelector('.btn-toolbar');
-    expect(group.className).toBe('boogie btn-toolbar');
+    const { container } = TestHarness({ class: 'boogie' });
+    const toolbar = container.querySelector('.btn-toolbar');
+
+    expect(toolbar.className).toBe('boogie btn-toolbar');
+    expect(container).toMatchSnapshot();
   });
 });

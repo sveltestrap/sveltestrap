@@ -1,39 +1,54 @@
-import CardImg from './CardImg.svelte';
 import { render, cleanup } from '@testing-library/svelte';
+import { CardImg } from './';
 
 beforeEach(cleanup);
 
+const TestHarness = (props) => render(CardImg, {
+  src: 'http://example.com/example.png',
+  ...props
+});
+
 describe('CardImg', () => {
   test('should render correctly', () => {
-    const { container } = render(CardImg);
-    const component = container.querySelector('.card-img');
-    expect(component.className).toBe('card-img');
+    const { container } = TestHarness();
+    const image = container.querySelector('.card-img');
+
+    expect(image.className).toBe('card-img');
+    expect(container).toMatchSnapshot();
   });
 
   test('should render custom class', () => {
-    const { container } = render(CardImg, { class: 'boogie' });
-    const component = container.querySelector('.card-img');
-    expect(component.className).toBe('boogie card-img');
+    const { container } = TestHarness({ class: 'boogie' });
+    const image = container.querySelector('.card-img');
+
+    expect(image.className).toBe('boogie card-img');
+    expect(container).toMatchSnapshot();
   });
 
   test('should render prop top', () => {
-    const { container } = render(CardImg, { top: true });
-    const component = container.querySelector('.card-img-top');
-    expect(component.className).toContain('card-img-top');
+    const { container } = TestHarness({ top: true });
+    const image = container.querySelector('.card-img-top');
+
+    expect(image.className).toContain('card-img-top');
+    expect(container).toMatchSnapshot();
   });
 
   test('should render prop bottom', () => {
-    const { container } = render(CardImg, { bottom: true });
-    const component = container.querySelector('.card-img-bottom');
-    expect(component.className).toContain('card-img-bottom');
+    const { container } = TestHarness({ bottom: true });
+    const image = container.querySelector('.card-img-bottom');
+
+    expect(image.className).toContain('card-img-bottom');
+    expect(container).toMatchSnapshot();
   });
 
   test('should render src', () => {
-    const { getByAltText } = render(CardImg, {
+    const { container, getByAltText } = TestHarness({
       src: 'http://example.com/example.png',
       alt: 'perfect picture'
     });
     const image = getByAltText('perfect picture');
+
     expect(image.src).toBe('http://example.com/example.png');
+    expect(container).toMatchSnapshot();
   });
 });

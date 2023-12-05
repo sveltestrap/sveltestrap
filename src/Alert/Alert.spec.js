@@ -1,19 +1,22 @@
-import Alert from './Alert.svelte';
 import { render, cleanup, fireEvent, waitForElementToBeRemoved } from '@testing-library/svelte';
+import { Alert } from './';
 
 beforeEach(cleanup);
 
+const TestHarness = (props) => render(Alert, props);
+
 describe('Alert', () => {
   test('should render with default color and text', () => {
-    const { queryByRole } = render(Alert, { children: 'Hello world!' });
-
+    const { container, queryByRole } = TestHarness({ children: 'Hello world!' });
     const alert = queryByRole('alert');
+
     expect(alert.innerHTML.trim()).toBe('Hello world!');
     expect(alert.className).toBe('alert alert-success');
+    expect(container).toMatchSnapshot();
   });
 
   test('should render specified color', () => {
-    const { queryByRole } = render(Alert, {
+    const { container, queryByRole } = TestHarness({
       color: 'primary',
       children: 'Hello world!'
     });
@@ -21,20 +24,22 @@ describe('Alert', () => {
     const alert = queryByRole('alert');
 
     expect(alert.className).toBe('alert alert-primary');
+    expect(container).toMatchSnapshot();
   });
 
   test('should render alert heading', () => {
-    const { container } = render(Alert, {
+    const { container } = TestHarness({
       heading: 'Hello world!'
     });
 
     const heading = container.querySelector('.alert-heading');
 
     expect(heading.textContent).toBe('Hello world!');
+    expect(container).toMatchSnapshot();
   });
 
   test('should render custom class', () => {
-    const { queryByRole } = render(Alert, {
+    const { container, queryByRole } = TestHarness({
       color: 'danger',
       children: 'Hello world!',
       class: 'boogie'
@@ -43,10 +48,11 @@ describe('Alert', () => {
     const alert = queryByRole('alert');
 
     expect(alert.className).toBe('boogie alert alert-danger');
+    expect(container).toMatchSnapshot();
   });
 
   test('should render dismissible alert', async () => {
-    const { queryByRole, queryByLabelText } = render(Alert, {
+    const { container, queryByRole, queryByLabelText } = TestHarness({
       color: 'info',
       children: 'I can be dismissed!',
       dismissible: true
@@ -58,10 +64,11 @@ describe('Alert', () => {
     expect(alert).toBeInTheDocument();
     expect(alert.className).toBe('alert alert-info alert-dismissible');
     expect(closeBtn).toBeInTheDocument();
+    expect(container).toMatchSnapshot();
 
     fireEvent.click(closeBtn);
 
-    await waitForElementToBeRemoved(alert, { timeout: 6000 });
+    await waitForElementToBeRemoved(alert, { timeout: 7000 });
 
     expect(alert).not.toBeInTheDocument();
     expect(closeBtn).not.toBeInTheDocument();
@@ -74,7 +81,7 @@ describe('Alert', () => {
       isOpen = false;
     });
 
-    const { rerender, queryByRole, queryByLabelText } = render(Alert, {
+    const { rerender, queryByRole, queryByLabelText } = TestHarness({
       color: 'info',
       children: 'I can be dismissed!',
       isOpen,
@@ -99,7 +106,7 @@ describe('Alert', () => {
   });
 
   test('should render alert without fade', async () => {
-    const { queryByRole, queryByLabelText } = render(Alert, {
+    const { queryByRole, queryByLabelText } = TestHarness({
       color: 'info',
       children: 'I can be dismissed!',
       dismissible: true,

@@ -1,19 +1,24 @@
-import CardColumns from './CardColumns.svelte';
 import { render, cleanup } from '@testing-library/svelte';
+import { CardColumns } from './';
 
 beforeEach(cleanup);
 
+const TestHarness = (props) => render(CardColumns, props);
+
 describe('CardColumns', () => {
   test('should render correctly', () => {
-    const { container } = render(CardColumns);
-    const component = container.querySelector('.card-columns');
-    expect(component.className).toBe('card-columns');
+    const { container } = TestHarness();
+    const columns = container.querySelector('.card-columns');
+
+    expect(columns.className).toBe('card-columns');
+    expect(container).toMatchSnapshot();
   });
 
   test('should render custom class', () => {
-    const { container } = render(CardColumns, { class: 'boogie' });
+    const { container } = TestHarness({ class: 'boogie' });
+    const columns = container.querySelector('.card-columns');
 
-    const component = container.querySelector('.card-columns');
-    expect(component.className).toBe('boogie card-columns');
+    expect(columns.className).toBe('boogie card-columns');
+    expect(container).toMatchSnapshot();
   });
 });

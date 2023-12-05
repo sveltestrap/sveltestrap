@@ -1,19 +1,23 @@
-import CardHeader from './CardHeader.svelte';
 import { render, cleanup } from '@testing-library/svelte';
+import { CardHeader } from './';
 
 beforeEach(cleanup);
 
+const TestHarness = (props) => render(CardHeader, props);
+
 describe('CardHeader', () => {
   test('should render correctly', () => {
-    const { container } = render(CardHeader);
-    const component = container.querySelector('.card-header');
-    expect(component.className).toBe('card-header');
+    const { container } = TestHarness();
+    const header = container.querySelector('.card-header');
+
+    expect(header.className).toBe('card-header');
+    expect(container).toMatchSnapshot();
   });
 
   test('should render custom class', () => {
-    const { container } = render(CardHeader, { class: 'boogie' });
+    const { container } = TestHarness({ class: 'boogie' });
+    const header = container.querySelector('.card-header');
 
-    const component = container.querySelector('.card-header');
-    expect(component.className).toBe('boogie card-header');
+    expect(header.className).toBe('boogie card-header');
   });
 });

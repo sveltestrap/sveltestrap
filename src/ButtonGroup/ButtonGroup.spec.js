@@ -1,30 +1,40 @@
-import ButtonGroup from './ButtonGroup.svelte';
 import { render, cleanup } from '@testing-library/svelte';
+import { ButtonGroup } from './';
 
 beforeEach(cleanup);
 
+const TestHarness = (props) => render(ButtonGroup, props);
+
 describe('ButtonGroup', () => {
   test('should render correctly', () => {
-    const { container } = render(ButtonGroup);
+    const { container } = TestHarness();
     const group = container.querySelector('.btn-group');
+
     expect(group.className).toBe('btn-group');
+    expect(container).toMatchSnapshot();
   });
 
   test('should render specified size', () => {
-    const { container } = render(ButtonGroup, { size: 'sm' });
+    const { container } = TestHarness({ size: 'sm' });
     const group = container.querySelector('.btn-group');
+
     expect(group.className).toBe('btn-group-sm btn-group');
+    expect(container).toMatchSnapshot();
   });
 
   test('should render vertical', () => {
-    const { container } = render(ButtonGroup, { vertical: true });
+    const { container } = TestHarness({ vertical: true });
     const group = container.querySelector('.btn-group-vertical');
+
     expect(group.className).toBe('btn-group-vertical');
+    expect(container).toMatchSnapshot();
   });
 
   test('should render custom class', () => {
-    const { container } = render(ButtonGroup, { class: 'boogie' });
+    const { container } = TestHarness({ class: 'boogie' });
     const group = container.querySelector('.btn-group');
+
     expect(group.className).toBe('boogie btn-group');
+    expect(container).toMatchSnapshot();
   });
 });

@@ -1,17 +1,24 @@
-import CarouselCaption from './CarouselCaption.svelte';
 import { render, cleanup } from '@testing-library/svelte';
+import { CarouselCaption } from './';
 
 beforeEach(cleanup);
 
+const TestHarness = (props) => render(CarouselCaption, props);
+
 describe('CarouselCaption', () => {
   test('should render correctly', () => {
-    const { container } = render(CarouselCaption);
-    const carouselcaption = container.querySelector('.carousel-caption');
-    expect(carouselcaption.className).toContain('carousel-caption');
+    const { container } = TestHarness();
+    const caption = container.querySelector('.carousel-caption');
+
+    expect(caption.className).toContain('carousel-caption');
+    expect(container).toMatchSnapshot();
   });
+
   test('should render custom class', () => {
-    const { container } = render(CarouselCaption, { class: 'horse' });
-    const carouselcaption = container.querySelector('.carousel-caption');
-    expect(carouselcaption.className).toContain('horse');
+    const { container } = TestHarness({ class: 'horse' });
+    const caption = container.querySelector('.carousel-caption');
+
+    expect(caption.className).toContain('horse');
+    expect(container).toMatchSnapshot();
   });
 });

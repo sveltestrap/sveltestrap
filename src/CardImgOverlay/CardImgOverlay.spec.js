@@ -1,18 +1,24 @@
-import CardImgOverlay from './CardImgOverlay.svelte';
 import { render, cleanup } from '@testing-library/svelte';
+import { CardImgOverlay } from './';
 
 beforeEach(cleanup);
 
+const TestHarness = (props) => render(CardImgOverlay, props);
+
 describe('CardImgOverlay', () => {
   test('should render correctly', () => {
-    const { container } = render(CardImgOverlay);
+    const { container } = TestHarness();
     const component = container.querySelector('.card-img-overlay');
+
     expect(component.className).toBe('card-img-overlay');
+    expect(container).toMatchSnapshot();
   });
 
   test('should render custom class', () => {
-    const { container } = render(CardImgOverlay, { class: 'boogie' });
+    const { container } = TestHarness({ class: 'boogie' });
     const component = container.querySelector('.card-img-overlay');
+
     expect(component.className).toBe('boogie card-img-overlay');
+    expect(container).toMatchSnapshot();
   });
 });

@@ -57,10 +57,10 @@
     "start": "storybook dev -p 6006",
     "check": "svelte-check --tsconfig ./tsconfig.json",
     "dist": "vite build",
-    "docs": "storybook build -o docs && cp static/* ./docs",
+    "docs": "storybook build -o docs && cp ./storybook/docs/* ./docs",
     "lint": "eslint -c ./.eslintrc.json --fix \"src/**/*.{.js,svelte}\"",
     "format": "prettier --write \"src/**/*.{js,json,svelte}\"",
-    "test": "vitest --run",
+    "test": "vitest --run --coverage",
     "test:watch": "vitest",
     "test:coverage": "vitest --run --coverage && open ./coverage/index.html"
   },
