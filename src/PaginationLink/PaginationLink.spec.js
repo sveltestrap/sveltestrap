@@ -1,17 +1,22 @@
-import PaginationLink from './PaginationLink.svelte';
-import { render, cleanup } from '@testing-library/svelte';
+import { render } from '@testing-library/svelte';
+import { PaginationLink } from './';
 
-beforeEach(cleanup);
+const TestHarness = (props) => render(PaginationLink, props);
 
 describe('PaginationLink', () => {
   test('should render correctly', () => {
-    const { container } = render(PaginationLink);
-    const paginationlink = container.querySelector('.page-link');
-    expect(paginationlink.className).toContain('page-link');
+    const { container } = TestHarness();
+    const page = container.querySelector('.page-link');
+
+    expect(page.className).toContain('page-link');
+    expect(container).toMatchSnapshot();
   });
+
   test('should render custom class', () => {
-    const { container } = render(PaginationLink, { class: 'push' });
-    const paginationlink = container.querySelector('.page-link');
-    expect(paginationlink.className).toContain('push');
+    const { container } = TestHarness({ class: 'push' });
+    const page = container.querySelector('.page-link');
+
+    expect(page.className).toContain('push');
+    expect(container).toMatchSnapshot();
   });
 });

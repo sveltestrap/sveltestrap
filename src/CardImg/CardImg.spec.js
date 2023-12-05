@@ -1,7 +1,5 @@
-import { render, cleanup } from '@testing-library/svelte';
+import { render } from '@testing-library/svelte';
 import { CardImg } from './';
-
-beforeEach(cleanup);
 
 const TestHarness = (props) => render(CardImg, {
   src: 'http://example.com/example.png',

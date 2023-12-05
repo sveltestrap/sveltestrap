@@ -1,17 +1,22 @@
-import FormCheck from './FormCheck.svelte';
-import { render, cleanup } from '@testing-library/svelte';
+import { render } from '@testing-library/svelte';
+import { FormCheck } from './';
 
-beforeEach(cleanup);
+const TestHarness = (props) => render(FormCheck, props);
 
 describe('FormCheck', () => {
   test('should render correctly', () => {
-    const { container } = render(FormCheck);
-    const formcheck = container.querySelector('.form-check');
-    expect(formcheck.className).toContain('form-check');
+    const { container } = TestHarness();
+    const check = container.querySelector('.form-check');
+
+    expect(check.className).toContain('form-check');
+    expect(container).toMatchSnapshot();
   });
+
   test('should render custom class', () => {
-    const { container } = render(FormCheck, { class: 'good' });
-    const formcheck = container.querySelector('.form-check');
-    expect(formcheck.className).toContain('good');
+    const { container } = TestHarness({ class: 'good' });
+    const check = container.querySelector('.form-check');
+
+    expect(check.className).toContain('good');
+    expect(container).toMatchSnapshot();
   });
 });

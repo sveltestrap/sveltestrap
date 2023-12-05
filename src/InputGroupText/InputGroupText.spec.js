@@ -1,17 +1,22 @@
-import InputGroupText from './InputGroupText.svelte';
-import { render, cleanup } from '@testing-library/svelte';
+import { render } from '@testing-library/svelte';
+import { InputGroupText } from './';
 
-beforeEach(cleanup);
+const TestHarness = (props) => render(InputGroupText, props);
 
 describe('InputGroupText', () => {
   test('should render correctly', () => {
-    const { container } = render(InputGroupText);
-    const inputgrouptext = container.querySelector('.input-group-text');
-    expect(inputgrouptext.className).toContain('input-group-text');
+    const { container } = TestHarness();
+    const text = container.querySelector('.input-group-text');
+
+    expect(text.className).toContain('input-group-text');
+    expect(container).toMatchSnapshot();
   });
+
   test('should render custom class', () => {
-    const { container } = render(InputGroupText, { class: 'mucho' });
-    const inputgrouptext = container.querySelector('.input-group-text');
-    expect(inputgrouptext.className).toContain('mucho');
+    const { container } = TestHarness({ class: 'mucho' });
+    const text = container.querySelector('.input-group-text');
+
+    expect(text.className).toContain('mucho');
+    expect(container).toMatchSnapshot();
   });
 });

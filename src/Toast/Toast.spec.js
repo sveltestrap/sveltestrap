@@ -1,17 +1,22 @@
-import Toast from './Toast.svelte';
-import { render, cleanup } from '@testing-library/svelte';
+import { render } from '@testing-library/svelte';
+import { Toast } from './';
 
-beforeEach(cleanup);
+const TestHarness = (props) => render(Toast, props);
 
 describe('Toast', () => {
   test('should render correctly', () => {
-    const { container } = render(Toast);
+    const { container } = TestHarness();
     const toast = container.querySelector('.toast');
+
     expect(toast.className).toContain('toast');
+    expect(container).toMatchSnapshot();
   });
+
   test('should render custom class', () => {
-    const { container } = render(Toast, { class: 'butter' });
+    const { container } = TestHarness({ class: 'butter' });
     const toast = container.querySelector('.toast');
+
     expect(toast.className).toContain('butter');
+    expect(container).toMatchSnapshot();
   });
 });

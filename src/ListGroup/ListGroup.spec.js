@@ -1,36 +1,46 @@
-import ListGroup from './ListGroup.svelte';
-import { render, cleanup } from '@testing-library/svelte';
+import { render } from '@testing-library/svelte';
+import { ListGroup } from './';
 
-beforeEach(cleanup);
+const TestHarness = (props) => render(ListGroup, props);
 
 describe('ListGroup', () => {
   test('should render correctly', () => {
-    const { container } = render(ListGroup);
-    const component = container.querySelector('ul.list-group');
-    expect(component.className).toBe('list-group');
+    const { container } = TestHarness();
+    const group = container.querySelector('ul.list-group');
+
+    expect(group.className).toBe('list-group');
+    expect(container).toMatchSnapshot();
   });
 
   test('should render flush', () => {
-    const { container } = render(ListGroup, { flush: true });
-    const component = container.querySelector('.list-group');
-    expect(component.className).toBe('list-group list-group-flush');
+    const { container } = TestHarness({ flush: true });
+    const group = container.querySelector('.list-group');
+
+    expect(group.className).toBe('list-group list-group-flush');
+    expect(container).toMatchSnapshot();
   });
 
   test('should render horizontal', () => {
-    const { container } = render(ListGroup, { horizontal: true });
-    const component = container.querySelector('.list-group');
-    expect(component.className).toBe('list-group list-group-horizontal');
+    const { container } = TestHarness({ horizontal: true });
+    const group = container.querySelector('.list-group');
+
+    expect(group.className).toBe('list-group list-group-horizontal');
+    expect(container).toMatchSnapshot();
   });
 
   test('should render numbered', () => {
-    const { container } = render(ListGroup, { numbered: true });
-    const component = container.querySelector('ol.list-group');
-    expect(component.className).toBe('list-group list-group-numbered');
+    const { container } = TestHarness({ numbered: true });
+    const group = container.querySelector('ol.list-group');
+
+    expect(group.className).toBe('list-group list-group-numbered');
+    expect(container).toMatchSnapshot();
   });
 
   test('should render custom class', () => {
-    const { container } = render(ListGroup, { class: 'boogie' });
-    const component = container.querySelector('.list-group');
-    expect(component.className).toBe('boogie list-group');
+    const { container } = TestHarness({ class: 'boogie' });
+    const group = container.querySelector('.list-group');
+
+    expect(group.className).toBe('boogie list-group');
+    expect(container).toMatchSnapshot();
   });
 });

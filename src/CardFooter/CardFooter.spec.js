@@ -1,7 +1,5 @@
-import { render, cleanup } from '@testing-library/svelte';
+import { render } from '@testing-library/svelte';
 import { CardFooter } from './';
-
-beforeEach(cleanup);
 
 const TestHarness = (props) => render(CardFooter, props);
 

@@ -1,17 +1,22 @@
-import FormGroup from './FormGroup.svelte';
-import { render, cleanup } from '@testing-library/svelte';
+import { render } from '@testing-library/svelte';
+import { FormGroup } from './';
 
-beforeEach(cleanup);
+const TestHarness = (props) => render(FormGroup, props);
 
 describe('FormGroup', () => {
   test('should render correctly', () => {
-    const { container } = render(FormGroup);
-    const formgroup = container.querySelector('.mb-3');
-    expect(formgroup.className).toContain('mb-3');
+    const { container } = TestHarness();
+    const group = container.querySelector('.mb-3');
+
+    expect(group.className).toContain('mb-3');
+    expect(container).toMatchSnapshot();
   });
+
   test('should render custom class', () => {
-    const { container } = render(FormGroup, { class: 'paint' });
-    const formgroup = container.querySelector('.mb-3');
-    expect(formgroup.className).toContain('paint');
+    const { container } = TestHarness({ class: 'paint' });
+    const group = container.querySelector('.mb-3');
+
+    expect(group.className).toContain('paint');
+    expect(container).toMatchSnapshot();
   });
 });

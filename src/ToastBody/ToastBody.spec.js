@@ -1,19 +1,22 @@
-import ToastBody from './ToastBody.svelte';
-import { render, cleanup } from '@testing-library/svelte';
+import { render } from '@testing-library/svelte';
+import { ToastBody } from './';
 
-beforeEach(cleanup);
+const TestHarness = (props) => render(ToastBody, props);
 
 describe('ToastBody', () => {
   test('should render correctly', () => {
-    const { container } = render(ToastBody);
-    const component = container.querySelector('.toast-body');
-    expect(component.className).toBe('toast-body');
+    const { container } = TestHarness();
+    const body = container.querySelector('.toast-body');
+
+    expect(body.className).toBe('toast-body');
+    expect(container).toMatchSnapshot();
   });
 
   test('should render custom class', () => {
-    const { container } = render(ToastBody, { class: 'boogie' });
+    const { container } = TestHarness({ class: 'boogie' });
+    const body = container.querySelector('.toast-body');
 
-    const component = container.querySelector('.toast-body');
-    expect(component.className).toBe('boogie toast-body');
+    expect(body.className).toBe('boogie toast-body');
+    expect(container).toMatchSnapshot();
   });
 });

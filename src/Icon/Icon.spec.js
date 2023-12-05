@@ -1,22 +1,25 @@
-import Icon from './Icon.svelte';
-import { render, cleanup } from '@testing-library/svelte';
+import { render } from '@testing-library/svelte';
+import { Icon } from './';
 
-beforeEach(cleanup);
+const TestHarness = (props) => render(Icon, props);
 
 describe('Icon', () => {
   test('should render correctly', () => {
-    const { container } = render(Icon, { name: 'globe' });
+    const { container } = TestHarness({ name: 'globe' });
     const component = container.querySelector('.bi-globe');
+
     expect(component.className).toBe('bi-globe');
+    expect(container).toMatchSnapshot();
   });
 
   test('should render custom class', () => {
-    const { container } = render(Icon, {
+    const { container } = TestHarness({
       class: 'text-dark',
       name: 'book'
     });
-
     const component = container.querySelector('.bi-book');
+
     expect(component.className).toBe('text-dark bi-book');
+    expect(container).toMatchSnapshot();
   });
 });

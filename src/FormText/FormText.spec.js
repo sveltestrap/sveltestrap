@@ -1,25 +1,31 @@
-import FormText from './FormText.svelte';
-import { render, cleanup } from '@testing-library/svelte';
+import { render } from '@testing-library/svelte';
+import { FormText } from './';
 
-beforeEach(cleanup);
+const TestHarness = (props) => render(FormText, props);
 
 describe('FormText', () => {
   test('should render correctly', () => {
-    const { container } = render(FormText);
+    const { container } = TestHarness();
     const formtext = container.querySelector('.form-text');
+
     expect(formtext.className).toContain('form-text');
+    expect(container).toMatchSnapshot();
   });
 
   test('should render custom color', () => {
-    const { container } = render(FormText, { color: 'indigo' });
+    const { container } = TestHarness({ color: 'indigo' });
     const formtext = container.querySelector('.form-text');
+
     expect(formtext.className).toContain('form-text');
     expect(formtext.className).toContain('text-indigo');
+    expect(container).toMatchSnapshot();
   });
 
   test('should render custom class', () => {
-    const { container } = render(FormText, { class: 'coffee' });
+    const { container } = TestHarness({ class: 'coffee' });
     const formtext = container.querySelector('.form-text');
+
     expect(formtext.className).toContain('coffee');
+    expect(container).toMatchSnapshot();
   });
 });

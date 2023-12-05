@@ -1,6 +1,6 @@
-import Popover from './Popover.svelte';
+import { render } from '@testing-library/svelte';
 import { Button } from '../Button';
-import { render, cleanup } from '@testing-library/svelte';
+import { Popover } from './';
 
 const renderButton = (props) => {
   const { container } = render(Button, { props });
@@ -21,7 +21,6 @@ const POPOVER_POSITION_CLASS = {
 };
 
 beforeEach(() => {
-  cleanup();
   renderButton({ children: 'Hello BTN' });
 });
 
@@ -38,6 +37,7 @@ describe('Popover test', () => {
     );
     expect(popover.className.includes(POPOVER_POSITION_CLASS.top)).toBeTruthy();
     expect(popoverContent.innerHTML).toBe('Hello');
+    expect(popover).toMatchSnapshot();
   });
 
   it('should render text and left placement', () => {
@@ -55,6 +55,7 @@ describe('Popover test', () => {
       popover.className.includes(POPOVER_POSITION_CLASS.left)
     ).toBeTruthy();
     expect(popoverContent.innerHTML).toBe('Hello');
+    expect(popover).toMatchSnapshot();
   });
 
   it('should throw error when there is no target', () => {

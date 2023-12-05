@@ -1,17 +1,22 @@
-import NavItem from './NavItem.svelte';
-import { render, cleanup } from '@testing-library/svelte';
+import { render } from '@testing-library/svelte';
+import { NavItem } from './';
 
-beforeEach(cleanup);
+const TestHarness = (props) => render(NavItem, props);
 
 describe('NavItem', () => {
   test('should render correctly', () => {
-    const { container } = render(NavItem);
-    const navitem = container.querySelector('.nav-item');
-    expect(navitem.className).toContain('nav-item');
+    const { container } = TestHarness();
+    const item = container.querySelector('.nav-item');
+
+    expect(item.className).toContain('nav-item');
+    expect(container).toMatchSnapshot();
   });
+
   test('should render custom class', () => {
-    const { container } = render(NavItem, { class: 'putty' });
-    const navitem = container.querySelector('.nav-item');
-    expect(navitem.className).toContain('putty');
+    const { container } = TestHarness({ class: 'putty' });
+    const item = container.querySelector('.nav-item');
+
+    expect(item.className).toContain('putty');
+    expect(container).toMatchSnapshot();
   });
 });

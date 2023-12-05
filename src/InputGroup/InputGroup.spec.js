@@ -1,17 +1,22 @@
-import InputGroup from './InputGroup.svelte';
-import { render, cleanup } from '@testing-library/svelte';
+import { render } from '@testing-library/svelte';
+import { InputGroup } from './';
 
-beforeEach(cleanup);
+const TestHarness = (props) => render(InputGroup, props);
 
 describe('InputGroup', () => {
   test('should render correctly', () => {
-    const { container } = render(InputGroup);
+    const { container } = TestHarness();
     const inputgroup = container.querySelector('.input-group');
+
     expect(inputgroup.className).toContain('input-group');
+    expect(container).toMatchSnapshot();
   });
+
   test('should render custom class', () => {
-    const { container } = render(InputGroup, { class: 'many' });
+    const { container } = TestHarness({ class: 'many' });
     const inputgroup = container.querySelector('.input-group');
+
     expect(inputgroup.className).toContain('many');
+    expect(container).toMatchSnapshot();
   });
 });

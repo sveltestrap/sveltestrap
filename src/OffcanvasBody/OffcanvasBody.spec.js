@@ -1,19 +1,22 @@
-import OffcanvasBody from './OffcanvasBody.svelte';
-import { render, cleanup } from '@testing-library/svelte';
+import { render } from '@testing-library/svelte';
+import { OffcanvasBody } from './';
 
-beforeEach(cleanup);
+const TestHarness = (props) => render(OffcanvasBody, props);
 
 describe('OffcanvasBody', () => {
   test('should render correctly', () => {
-    const { container } = render(OffcanvasBody);
+    const { container } = TestHarness();
     const component = container.querySelector('.offcanvas-body');
+
     expect(component.className).toBe('offcanvas-body');
+    expect(container).toMatchSnapshot();
   });
 
   test('should render custom class', () => {
-    const { container } = render(OffcanvasBody, { class: 'boogie' });
-
+    const { container } = TestHarness({ class: 'boogie' });
     const component = container.querySelector('.offcanvas-body');
+
     expect(component.className).toBe('boogie offcanvas-body');
+    expect(container).toMatchSnapshot();
   });
 });

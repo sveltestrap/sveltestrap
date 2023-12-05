@@ -1,32 +1,41 @@
-import ModalHeader from './ModalHeader.svelte';
-import { fireEvent, render, cleanup } from '@testing-library/svelte';
+import { fireEvent, render } from '@testing-library/svelte';
+import { ModalHeader } from './';
 
-beforeEach(cleanup);
+const TestHarness = (props) => render(ModalHeader, props);
 
 describe('ModalHeader', () => {
   test('should render correctly', () => {
-    const { container } = render(ModalHeader, { children: 'Zap' });
+    const { container } = TestHarness({ children: 'Zap' });
     const component = container.querySelector('.modal-header');
+
     expect(component.className).toBe('modal-header');
+
     const title = container.querySelector('.modal-title');
+
     expect(title.innerHTML).toBe('Zap');
     expect(container.querySelector('button')).toBeNull();
+    expect(container).toMatchSnapshot();
   });
 
   test('should render close if toggle specified', () => {
     const toggle = vi.fn();
-    const { container } = render(ModalHeader, { toggle });
+    const { container } = TestHarness({ toggle });
     const component = container.querySelector('.modal-header');
+
     expect(component.className).toBe('modal-header');
+
     const button = container.querySelector('button');
     fireEvent.click(button);
+
     expect(toggle.mock.calls.length).toBe(1);
+    expect(container).toMatchSnapshot();
   });
 
   test('should render custom class', () => {
-    const { container } = render(ModalHeader, { class: 'boogie' });
-
+    const { container } = TestHarness({ class: 'boogie' });
     const component = container.querySelector('.modal-header');
+
     expect(component.className).toBe('boogie modal-header');
+    expect(container).toMatchSnapshot();
   });
 });

@@ -1,17 +1,22 @@
-import PaginationItem from './PaginationItem.svelte';
-import { render, cleanup } from '@testing-library/svelte';
+import { render } from '@testing-library/svelte';
+import { PaginationItem } from './';
 
-beforeEach(cleanup);
+const TestHarness = (props) => render(PaginationItem, props);
 
 describe('PaginationItem', () => {
   test('should render correctly', () => {
-    const { container } = render(PaginationItem);
-    const paginationitem = container.querySelector('.page-item');
-    expect(paginationitem.className).toContain('page-item');
+    const { container } = TestHarness();
+    const item = container.querySelector('.page-item');
+
+    expect(item.className).toContain('page-item');
+    expect(container).toMatchSnapshot();
   });
+
   test('should render custom class', () => {
-    const { container } = render(PaginationItem, { class: 'long' });
-    const paginationitem = container.querySelector('.page-item');
-    expect(paginationitem.className).toContain('long');
+    const { container } = TestHarness({ class: 'long' });
+    const item = container.querySelector('.page-item');
+
+    expect(item.className).toContain('long');
+    expect(container).toMatchSnapshot();
   });
 });

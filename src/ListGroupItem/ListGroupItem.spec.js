@@ -1,42 +1,54 @@
-import ListGroupItem from './ListGroupItem.svelte';
-import { render, cleanup } from '@testing-library/svelte';
+import { render } from '@testing-library/svelte';
+import { ListGroupItem } from './';
 
-beforeEach(cleanup);
+const TestHarness = (props) => render(ListGroupItem, props);
 
 describe('ListGroupItem', () => {
   test('should render correctly', () => {
-    const { container } = render(ListGroupItem);
-    const component = container.querySelector('li.list-group-item');
-    expect(component.className).toBe('list-group-item');
+    const { container } = TestHarness();
+    const item = container.querySelector('li.list-group-item');
+
+    expect(item.className).toBe('list-group-item');
+    expect(container).toMatchSnapshot();
   });
 
   test('should render action', () => {
-    const { container } = render(ListGroupItem, { action: true });
-    const component = container.querySelector('.list-group-item');
-    expect(component.className).toBe('list-group-item list-group-item-action');
+    const { container } = TestHarness({ action: true });
+    const item = container.querySelector('.list-group-item');
+
+    expect(item.className).toBe('list-group-item list-group-item-action');
+    expect(container).toMatchSnapshot();
   });
 
   test('should render action if button', () => {
-    const { container } = render(ListGroupItem, { tag: 'button' });
-    const component = container.querySelector('button.list-group-item');
-    expect(component.className).toBe('list-group-item list-group-item-action');
+    const { container } = TestHarness({ tag: 'button' });
+    const item = container.querySelector('button.list-group-item');
+
+    expect(item.className).toBe('list-group-item list-group-item-action');
+    expect(container).toMatchSnapshot();
   });
 
   test('should render a if href', () => {
-    const { container } = render(ListGroupItem, { href: 'http://www.example.com' });
-    const component = container.querySelector('a.list-group-item');
-    expect(component.className).toBe('list-group-item');
+    const { container } = TestHarness({ href: 'http://www.example.com' });
+    const item = container.querySelector('a.list-group-item');
+
+    expect(item.className).toBe('list-group-item');
+    expect(container).toMatchSnapshot();
   });
 
   test('should render color', () => {
-    const { container } = render(ListGroupItem, { color: 'primary' });
-    const component = container.querySelector('.list-group-item');
-    expect(component.className).toBe('list-group-item list-group-item-primary');
+    const { container } = TestHarness({ color: 'primary' });
+    const item = container.querySelector('.list-group-item');
+
+    expect(item.className).toBe('list-group-item list-group-item-primary');
+    expect(container).toMatchSnapshot();
   });
 
   test('should render custom class', () => {
-    const { container } = render(ListGroupItem, { class: 'boogie' });
-    const component = container.querySelector('.list-group-item');
-    expect(component.className).toBe('boogie list-group-item');
+    const { container } = TestHarness({ class: 'boogie' });
+    const item = container.querySelector('.list-group-item');
+
+    expect(item.className).toBe('boogie list-group-item');
+    expect(container).toMatchSnapshot();
   });
 });

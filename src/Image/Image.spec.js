@@ -1,41 +1,47 @@
-import Image from './Image.svelte';
-import { render, cleanup } from '@testing-library/svelte';
+import { render } from '@testing-library/svelte';
+import { Image } from './';
 
-beforeEach(cleanup);
+const TestHarness = (props) => render(Image, props);
 
 describe('Image', () => {
   test('should render correctly', () => {
-    const { container } = render(Image);
-    const component = container.querySelector('img');
-    expect(component).toBeDefined();
+    const { container } = TestHarness();
+    const image = container.querySelector('img');
+
+    expect(image).toBeDefined();
+    expect(container).toMatchSnapshot();
   });
 
   test('should be figure', () => {
-    const { container } = render(Image, { figure: true });
+    const { container } = TestHarness({ figure: true });
+    const image = container.querySelector('img');
 
-    const component = container.querySelector('img');
-    expect(component.className).toBe('figure-img');
+    expect(image.className).toBe('figure-img');
+    expect(container).toMatchSnapshot();
   });
 
   test('should be fluid', () => {
-    const { container } = render(Image, { fluid: true });
+    const { container } = TestHarness({ fluid: true });
+    const image = container.querySelector('img');
 
-    const component = container.querySelector('img');
-    expect(component.className).toBe('img-fluid');
+    expect(image.className).toBe('img-fluid');
+    expect(container).toMatchSnapshot();
   });
 
   test('should be thumbnail', () => {
-    const { container } = render(Image, { thumbnail: true });
+    const { container } = TestHarness({ thumbnail: true });
+    const image = container.querySelector('img');
 
-    const component = container.querySelector('img');
-    expect(component.className).toBe('img-thumbnail');
+    expect(image.className).toBe('img-thumbnail');
+    expect(container).toMatchSnapshot();
   });
 
   test('should render custom class', () => {
-    const { container } = render(Image, { class: 'boogie' });
+    const { container } = TestHarness({ class: 'boogie' });
+    const image = container.querySelector('img');
 
-    const component = container.querySelector('img');
-    expect(component.className).toBe('boogie');
+    expect(image.className).toBe('boogie');
+    expect(container).toMatchSnapshot();
   });
 
   test.todo('should render correctly inside Figure'); // TODO when slots/context easier to test

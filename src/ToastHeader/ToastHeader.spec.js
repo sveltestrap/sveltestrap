@@ -1,17 +1,22 @@
-import ToastHeader from './ToastHeader.svelte';
-import { render, cleanup } from '@testing-library/svelte';
+import { render } from '@testing-library/svelte';
+import { ToastHeader } from './';
 
-beforeEach(cleanup);
+const TestHarness = (props) => render(ToastHeader, props);
 
 describe('ToastHeader', () => {
   test('should render correctly', () => {
-    const { container } = render(ToastHeader);
-    const toastheader = container.querySelector('.toast-header');
-    expect(toastheader.className).toContain('toast-header');
+    const { container } = TestHarness();
+    const header = container.querySelector('.toast-header');
+
+    expect(header.className).toContain('toast-header');
+    expect(container).toMatchSnapshot();
   });
+
   test('should render custom class', () => {
-    const { container } = render(ToastHeader, { class: 'butter' });
-    const toastheader = container.querySelector('.toast-header');
-    expect(toastheader.className).toContain('butter');
+    const { container } = TestHarness({ class: 'butter' });
+    const header = container.querySelector('.toast-header');
+
+    expect(header.className).toContain('butter');
+    expect(container).toMatchSnapshot();
   });
 });

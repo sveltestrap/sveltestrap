@@ -1,17 +1,22 @@
-import NavbarToggler from './NavbarToggler.svelte';
-import { render, cleanup } from '@testing-library/svelte';
+import { render } from '@testing-library/svelte';
+import { NavbarToggler } from './';
 
-beforeEach(cleanup);
+const TestHarness = (props) => render(NavbarToggler, props);
 
 describe('NavbarToggler', () => {
   test('should render correctly', () => {
-    const { container } = render(NavbarToggler);
-    const navbartoggler = container.querySelector('.navbar-toggler');
-    expect(navbartoggler.className).toContain('navbar-toggler');
+    const { container } = TestHarness();
+    const toggle = container.querySelector('.navbar-toggler');
+
+    expect(toggle.className).toContain('navbar-toggler');
+    expect(container).toMatchSnapshot();
   });
+
   test('should render custom class', () => {
-    const { container } = render(NavbarToggler, { class: 'push' });
-    const navbartoggler = container.querySelector('.navbar-toggler');
-    expect(navbartoggler.className).toContain('push');
+    const { container } = TestHarness({ class: 'push' });
+    const toggle = container.querySelector('.navbar-toggler');
+
+    expect(toggle.className).toContain('push');
+    expect(container).toMatchSnapshot();
   });
 });

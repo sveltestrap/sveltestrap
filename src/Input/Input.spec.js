@@ -1,12 +1,7 @@
-import Input from './Input.svelte';
-import { render, cleanup } from '@testing-library/svelte';
+import { render } from '@testing-library/svelte';
+import { Input } from './';
 
-const renderInput = (props) => {
-  const { container } = render(Input, { props });
-  return container;
-};
-
-beforeEach(cleanup);
+const TestHarness = (props) => render(Input, props);
 
 describe('Input', () => {
   test('should render specified type', () => {
@@ -36,8 +31,9 @@ describe('Input', () => {
       'week'
     ];
     types.forEach((type) => {
-      const { container, unmount } = render(Input, { type });
+      const { container, unmount } = TestHarness({ type });
       const input = container.querySelector('input');
+
       switch (type) {
         case 'checkbox':
         case 'radio':
@@ -63,61 +59,78 @@ describe('Input', () => {
   });
 
   test('should render sm size', () => {
-    const container = renderInput({ bsSize: 'sm' });
+    const { container } = TestHarness({ bsSize: 'sm' });
     const input = container.querySelector('input');
+
     expect(input.className).toContain('form-control form-control-sm');
+    expect(container).toMatchSnapshot();
   });
 
   test('should render lg size', () => {
-    const container = renderInput({ bsSize: 'lg' });
+    const { container } = TestHarness({ bsSize: 'lg' });
     const input = container.querySelector('input');
+
     expect(input.className).toContain('form-control-lg');
+    expect(container).toMatchSnapshot();
   });
 
   test('should render disabled', () => {
-    const container = renderInput({ disabled: true });
+    const { container } = TestHarness({ disabled: true });
     const input = container.querySelector('input');
+
     expect(input.disabled).toBe(true);
+    expect(container).toMatchSnapshot();
   });
 
   test('should render readonly', () => {
-    const container = renderInput({ readonly: true });
+    const { container } = TestHarness({ readonly: true });
     const input = container.querySelector('input');
+
     expect(input.readOnly).toBe(true);
+    expect(container).toMatchSnapshot();
   });
 
   test('should render value', () => {
-    const container = renderInput({ value: '$1000000' });
+    const { container } = TestHarness({ value: '$1000000' });
     const input = container.querySelector('input');
+
     expect(input.value).toBe('$1000000');
+    expect(container).toMatchSnapshot();
+    expect(container).toMatchSnapshot();
   });
 
   test('should render custom class', () => {
-    const container = renderInput({ class: 'boogie' });
+    const { container } = TestHarness({ class: 'boogie' });
     const input = container.querySelector('input');
+
     expect(input.className).toContain('boogie');
+    expect(container).toMatchSnapshot();
   });
 
   test('should render invalid feedback', () => {
-    const container = renderInput({
+    const { container } = TestHarness({
       invalid: true,
       feedback: 'Bad to the bone'
     });
     const feedback = container.querySelector('.invalid-feedback');
+
     expect(feedback.innerHTML).toBe('Bad to the bone');
+    expect(container).toMatchSnapshot();
   });
 
   test('should render valid feedback', () => {
-    const container = renderInput({
+    const { container } = TestHarness({
       valid: true,
       feedback: 'Goody goody two shoes'
     });
     const feedback = container.querySelector('.valid-feedback');
+
     expect(feedback.innerHTML).toBe('Goody goody two shoes');
+    expect(container).toMatchSnapshot();
   });
 
   test('should render an array of feedback', () => {
-    const container = renderInput({
+    const { container } = TestHarness({
       invalid: true,
       feedback: [
         'Aint it true',
@@ -127,11 +140,13 @@ describe('Input', () => {
       ]
     });
     const feedback = container.querySelectorAll('.invalid-feedback');
+
     expect(feedback).toHaveLength(4);
   });
 
   test('should not render feedback if none', () => {
-    const container = renderInput();
+    const { container } = TestHarness();
+
     expect(container.querySelector('.invalid-feedback')).toBeNull();
     expect(container.querySelector('.valid-feedback')).toBeNull();
   });

@@ -1,7 +1,5 @@
-import { render, cleanup } from '@testing-library/svelte';
+import { render } from '@testing-library/svelte';
 import TestDropdown from '../Dropdown/Dropdown.spec.svelte';
-
-beforeEach(cleanup);
 
 const TestHarness = (props) => render(TestDropdown, props);
 

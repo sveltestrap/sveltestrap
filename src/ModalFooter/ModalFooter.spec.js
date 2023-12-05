@@ -1,19 +1,22 @@
-import ModalFooter from './ModalFooter.svelte';
-import { render, cleanup } from '@testing-library/svelte';
+import { render } from '@testing-library/svelte';
+import { ModalFooter } from './';
 
-beforeEach(cleanup);
+const TestHarness = (props) => render(ModalFooter, props);
 
 describe('ModalFooter', () => {
   test('should render correctly', () => {
-    const { container } = render(ModalFooter);
+    const { container } = TestHarness();
     const component = container.querySelector('.modal-footer');
+
     expect(component.className).toBe('modal-footer');
+    expect(container).toMatchSnapshot();
   });
 
   test('should render custom class', () => {
-    const { container } = render(ModalFooter, { class: 'boogie' });
-
+    const { container } = TestHarness({ class: 'boogie' });
     const component = container.querySelector('.modal-footer');
+
     expect(component.className).toBe('boogie modal-footer');
+    expect(container).toMatchSnapshot();
   });
 });

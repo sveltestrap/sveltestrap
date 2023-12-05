@@ -1,6 +1,6 @@
-import Tooltip from './Tooltip.svelte';
+import { render } from '@testing-library/svelte';
 import { Button } from '../Button';
-import { render, cleanup } from '@testing-library/svelte';
+import { Tooltip } from './';
 
 const renderTooltip = (props) => {
   const { container } = render(Tooltip, { props });
@@ -13,7 +13,6 @@ const renderButton = (props) => {
 };
 
 beforeEach(() => {
-  cleanup();
   renderButton({ children: 'Hello' });
 });
 
@@ -33,8 +32,10 @@ describe('Tooltip', () => {
     });
     const tooltip = containerTooltip.querySelector('.tooltip');
     const tooltipInner = containerTooltip.querySelector('.tooltip-inner');
+
     expect(tooltip.className.includes(TOOLTIP_POSTION_CLASS.top)).toBeTruthy();
     expect(tooltipInner.innerHTML).toBe('Hello world!');
+    expect(tooltip).toMatchSnapshot();
   });
 
   it('should render text and left placement', () => {
@@ -46,8 +47,10 @@ describe('Tooltip', () => {
     });
     const tooltip = containerTooltip.querySelector('.tooltip');
     const tooltipInner = containerTooltip.querySelector('.tooltip-inner');
+
     expect(tooltip.className.includes(TOOLTIP_POSTION_CLASS.left)).toBeTruthy();
     expect(tooltipInner.innerHTML).toBe('Hello world!');
+    expect(tooltip).toMatchSnapshot();
   });
 
   it('should throw error when there is no target', () => {

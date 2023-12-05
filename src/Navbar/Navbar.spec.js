@@ -1,17 +1,22 @@
-import Navbar from './Navbar.svelte';
-import { render, cleanup } from '@testing-library/svelte';
+import { render } from '@testing-library/svelte';
+import { Navbar } from './';
 
-beforeEach(cleanup);
+const TestHarness = (props) => render(Navbar, props);
 
 describe('Navbar', () => {
   test('should render correctly', () => {
-    const { container } = render(Navbar);
+    const { container } = TestHarness();
     const navbar = container.querySelector('.navbar');
+
     expect(navbar.className).toContain('navbar');
+    expect(container).toMatchSnapshot();
   });
+
   test('should render custom class', () => {
-    const { container } = render(Navbar, { class: 'gone' });
+    const { container } = TestHarness({ class: 'gone' });
     const navbar = container.querySelector('.navbar');
+
     expect(navbar.className).toContain('gone');
+    expect(container).toMatchSnapshot();
   });
 });

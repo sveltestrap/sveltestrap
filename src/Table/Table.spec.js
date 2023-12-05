@@ -1,17 +1,22 @@
-import Table from './Table.svelte';
-import { render, cleanup } from '@testing-library/svelte';
+import { render } from '@testing-library/svelte';
+import { Table } from './';
 
-beforeEach(cleanup);
+const TestHarness = (props) => render(Table, props);
 
 describe('Table', () => {
   test('should render correctly', () => {
-    const { container } = render(Table);
+    const { container } = TestHarness();
     const table = container.querySelector('.table');
+
     expect(table.className).toContain('table');
+    expect(container).toMatchSnapshot();
   });
+
   test('should render custom class', () => {
-    const { container } = render(Table, { class: 'legged' });
+    const { container } = TestHarness({ class: 'legged' });
     const table = container.querySelector('.table');
+
     expect(table.className).toContain('legged');
+    expect(container).toMatchSnapshot();
   });
 });

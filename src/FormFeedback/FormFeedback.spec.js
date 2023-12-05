@@ -1,31 +1,41 @@
-import FormFeedback from './FormFeedback.svelte';
-import { render, cleanup } from '@testing-library/svelte';
+import { render } from '@testing-library/svelte';
+import { FormFeedback } from './';
 
-beforeEach(cleanup);
+const TestHarness = (props) => render(FormFeedback, props);
 
 describe('FormFeedback', () => {
   test('should render correctly', () => {
-    const { container } = render(FormFeedback);
-    const formfeedback = container.querySelector('.invalid-feedback');
-    expect(formfeedback.className).toContain('invalid-feedback');
+    const { container } = TestHarness();
+    const feedback = container.querySelector('.invalid-feedback');
+
+    expect(feedback.className).toContain('invalid-feedback');
+    expect(container).toMatchSnapshot();
   });
 
   test('should render valid feedback', () => {
-    const { container } = render(FormFeedback, { valid: true });
-    const formfeedback = container.querySelector('.valid-feedback');
-    expect(formfeedback.className).toContain('valid-feedback');
+    const { container } = TestHarness({ valid: true });
+    const feedback = container.querySelector('.valid-feedback');
+
+    expect(feedback.className).toContain('valid-feedback');
+    expect(container).toMatchSnapshot();
   });
+
   test('should render invalid tooltip', () => {
-    const { container } = render(FormFeedback, { tooltip: true });
-    const formfeedback = container.querySelector('.invalid-tooltip');
-    expect(formfeedback.className).toContain('invalid-tooltip');
+    const { container } = TestHarness({ tooltip: true });
+    const tooltip = container.querySelector('.invalid-tooltip');
+
+    expect(tooltip.className).toContain('invalid-tooltip');
+    expect(container).toMatchSnapshot();
   });
+
   test('should render valid tooltip', () => {
-    const { container } = render(FormFeedback, {
+    const { container } = TestHarness({
       tooltip: true,
       valid: true
     });
-    const formfeedback = container.querySelector('.valid-tooltip');
-    expect(formfeedback.className).toContain('valid-tooltip');
+    const tooltip = container.querySelector('.valid-tooltip');
+
+    expect(tooltip.className).toContain('valid-tooltip');
+    expect(container).toMatchSnapshot();
   });
 });

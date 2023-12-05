@@ -1,48 +1,60 @@
-import Spinner from './Spinner.svelte';
-import { render, cleanup } from '@testing-library/svelte';
+import { render } from '@testing-library/svelte';
+import { Spinner } from './';
 
-beforeEach(cleanup);
+const TestHarness = (props) => render(Spinner, props);
 
 describe('Spinner', () => {
   test('should render default color and type', () => {
-    const { container } = render(Spinner);
+    const { container } = TestHarness();
     const spinner = container.querySelector('.spinner-border');
+
     expect(spinner.className).toBe('spinner-border');
+    expect(container).toMatchSnapshot();
   });
 
   test('should render specified color', () => {
-    const { container } = render(Spinner, { color: 'primary' });
+    const { container } = TestHarness({ color: 'primary' });
     const spinner = container.querySelector('.spinner-border');
+
     expect(spinner.className).toBe('spinner-border text-primary');
+    expect(container).toMatchSnapshot();
   });
 
   test('should render specified type', () => {
-    const { container } = render(Spinner, {
+    const { container } = TestHarness({
       color: 'warning',
       type: 'grow'
     });
     const spinner = container.querySelector('.spinner-grow');
+
     expect(spinner.className).toBe('spinner-grow text-warning');
+    expect(container).toMatchSnapshot();
   });
 
   test('should render large size', () => {
-    const { container } = render(Spinner, { size: 'lg' });
+    const { container } = TestHarness({ size: 'lg' });
     const spinner = container.querySelector('.spinner-border');
+
     expect(spinner.className).toBe('spinner-border-lg spinner-border');
+    expect(container).toMatchSnapshot();
   });
 
   test('should render small size', () => {
-    const { container } = render(Spinner, { size: 'sm' });
+    const { container } = TestHarness({ size: 'sm' });
     const spinner = container.querySelector('.spinner-border');
+
     expect(spinner.className).toBe('spinner-border-sm spinner-border');
+    expect(container).toMatchSnapshot();
   });
 
   test('should render custom class', () => {
-    const { container } = render(Spinner, {
+    const { container } = TestHarness({
       color: 'danger',
       class: 'boogie'
     });
     const spinner = container.querySelector('.spinner-border');
+
     expect(spinner.className).toBe('boogie spinner-border text-danger');
+    expect(container).toMatchSnapshot();
   });
 });

@@ -1,7 +1,5 @@
-import { render, cleanup } from '@testing-library/svelte';
+import { render } from '@testing-library/svelte';
 import { CarouselIndicators } from './';
-
-beforeEach(cleanup);
 
 const TestHarness = (props) => render(CarouselIndicators, props);
 

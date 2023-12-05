@@ -1,17 +1,22 @@
-import NavLink from './NavLink.svelte';
-import { render, cleanup } from '@testing-library/svelte';
+import { render } from '@testing-library/svelte';
+import { NavLink } from './';
 
-beforeEach(cleanup);
+const TestHarness = (props) => render(NavLink, props);
 
 describe('NavLink', () => {
   test('should render correctly', () => {
-    const { container } = render(NavLink);
-    const navlink = container.querySelector('.nav-link');
-    expect(navlink.className).toContain('nav-link');
+    const { container } = TestHarness();
+    const link = container.querySelector('.nav-link');
+
+    expect(link.className).toContain('nav-link');
+    expect(container).toMatchSnapshot();
   });
+
   test('should render custom class', () => {
-    const { container } = render(NavLink, { class: 'star' });
-    const navlink = container.querySelector('.nav-link');
-    expect(navlink.className).toContain('star');
+    const { container } = TestHarness({ class: 'star' });
+    const link = container.querySelector('.nav-link');
+
+    expect(link.className).toContain('star');
+    expect(container).toMatchSnapshot();
   });
 });

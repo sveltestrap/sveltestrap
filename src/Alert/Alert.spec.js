@@ -1,7 +1,5 @@
-import { render, cleanup, fireEvent, waitForElementToBeRemoved } from '@testing-library/svelte';
+import { render, fireEvent, waitForElementToBeRemoved } from '@testing-library/svelte';
 import { Alert } from './';
-
-beforeEach(cleanup);
 
 const TestHarness = (props) => render(Alert, props);
 
