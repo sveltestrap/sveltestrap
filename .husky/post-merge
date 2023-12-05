@@ -6,7 +6,7 @@
 changes="$(git diff-tree -r --name-only --no-commit-id ORIG_HEAD HEAD)"
 
 check() {
-  echo "$changes" | grep --quiet "$1" && eval "$2"
+	echo "$changes" | grep --quiet "$1" && eval "$2"
 }
 
-check package.json "npm install"
+check package.json "pnpm install"

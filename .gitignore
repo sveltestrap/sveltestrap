@@ -25,6 +25,7 @@
 /node_modules
 /dist
 /docs
+package-lock.json
 
 # logs
 *.log

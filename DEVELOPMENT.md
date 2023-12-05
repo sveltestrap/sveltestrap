@@ -1,27 +1,27 @@
 ## TLDR;
-
 ```vim
-> npm i
+> npm install -g pnpm
 
-> npx husky install
+> pnpm i
+
+> pnpm dlx husky install
 
 > chmod +x .husky/post-merge && chmod +x .husky/pre-commit && cp .husky/post-merge .git/hooks
 
-> npm start
+> pnpm start
 ```
 
-## Setting up development environment
+## Getting Started
 
-1. Install dependencies
-
+1. Install PNPM
    ```vim
-   > npm i
+   > npm install -g pnpm
    ```
 
 2. Install `husky` hooks
 
    ```vim
-   > npx husky install
+   > pnpm dlx husky install
    ```
 
 3. Make sure husky scripts are executable and copied to .git/hooks
@@ -30,10 +30,16 @@
    > chmod +x .husky/post-merge && chmod +x .husky/pre-commit && cp .husky/post-merge .git/hooks
    ```
 
-4. Start the component dev server and the document server
+4. Install dependencies
+
+   ```vim
+   > pnpm i
+   ```
+
+5. Start the local development server to launch the docs
 
     ```vim
-    > npm start
+    > pnpm start
     ```
 
 5. Happy coding! You're changes will be automatically rebuilt and reflected immediately on the docs.
@@ -42,25 +48,25 @@
 
 Running either of these commands will execute all unit tests.
 
-| Command                          | Notes                                                |
-| -------------------------------- | ---------------------------------------------------- |
-| `npm test`                       | Single run with no coverage report                   |
-| `npm test:watch`                 | Watches for changes                                  |
-| `npm test:coverage`              | Executes tests and launches a coverage report        |
+| Command                           | Notes                                                |
+| --------------------------------- | ---------------------------------------------------- |
+| `pnpm test`                       | Single run with no coverage report                   |
+| `pnpm test:watch`                 | Watches for changes                                  |
+| `pnpm test:coverage`              | Executes tests and launches a coverage report        |
 
 Run all tests
 ```vim
-> npm test
+> pnpm test
 ```
 
 Run a specific test
 ```vim
-> npm test [path-to-test-file]
+> pnpm test [path-to-test-file]
 ```
 
 Run all tests and generate a code coverage report
 ```vim
-> npm test:coverage
+> pnpm test:coverage
 ```
 
 ## Deploying Documentation
@@ -68,7 +74,7 @@ Run all tests and generate a code coverage report
 Run the deploy command to automaically build the docs source and push it to `gh-pages`.
 
 ```vim
-> npm run deploy
+> pnpm run deploy
 ```
 
 ## License
