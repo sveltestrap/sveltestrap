@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+
+<head>
+  <style>
+    [role='main']:nth-child(5) div:has(+ [offset]) {
+      display: none;
+    }
+
+    [role='main']:nth-child(5) [offset] {
+      top: 0;
+      height: 100%;
+    }
+
+    #stories,
+    #stories-buttons,
+    .sidebar-item[data-nodetype="story"] {
+      display: none !important;
+    }
+  </style>
+</head>
