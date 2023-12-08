@@ -1,5 +1,5 @@
 <script>
-  import classnames from '../utils';
+  import { classnames } from '../utils';
   import { getNewCarouselActiveIndex } from '../utils';
 
   let classes = '';

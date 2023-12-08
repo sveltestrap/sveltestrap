@@ -1,6 +1,6 @@
 <script>
   // TODO only allow single backdrop open at once.
-  import classnames from '../utils';
+  import { classnames } from '../utils';
   import { backdropIn, backdropOut } from '../transitions.js';
   let className = '';
   export { className as class };

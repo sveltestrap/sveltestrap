@@ -1,5 +1,5 @@
 <script>
-  import classnames from '../utils';
+  import { classnames } from '../utils';
   import { Colgroup } from '../Colgroup';
   import { ResponsiveContainer } from '../ResponsiveContainer';
   import { TableFooter } from '../TableFooter';

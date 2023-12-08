@@ -1,6 +1,6 @@
 <script>
   import { getContext } from 'svelte';
-  import classnames from '../utils';
+  import { classnames } from '../utils';
 
   const context = getContext('dropdownContext');
 

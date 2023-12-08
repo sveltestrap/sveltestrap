@@ -91,9 +91,7 @@ function toClassName(value) {
   return result;
 }
 
-export default function classnames(...args) {
-  return args.map(toClassName).filter(Boolean).join(' ');
-}
+export const classnames = (...args) => args.map(toClassName).filter(Boolean).join(' ');
 
 export function getTransitionDuration(element) {
   if (!element) return 0;

@@ -2,7 +2,7 @@
   import { getContext, onMount } from 'svelte';
   import { NavItem } from '../NavItem';
   import { NavLink } from '../NavLink';
-  import classnames from '../utils';
+  import { classnames } from '../utils';
 
   let className = '';
   export { className as class };

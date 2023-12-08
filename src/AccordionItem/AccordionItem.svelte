@@ -2,7 +2,7 @@
   import { createEventDispatcher, getContext, onMount } from 'svelte';
   import { Collapse } from '../Collapse';
   import { AccordionHeader } from '../AccordionHeader';
-  import classnames from '../utils';
+  import { classnames } from '../utils';
 
   let className = '';
   export { className as class };

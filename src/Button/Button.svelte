@@ -1,5 +1,5 @@
 <script>
-  import classnames from '../utils';
+  import { classnames } from '../utils';
 
   // Additional CSS class name for the component
   let className = '';

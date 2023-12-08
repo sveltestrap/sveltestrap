@@ -2,7 +2,7 @@
   import { FormCheck } from '../FormCheck';
   import { FormFeedback } from '../FormFeedback';
 
-  import classnames from '../utils';
+  import { classnames } from '../utils';
 
   let className = '';
   export { className as class };

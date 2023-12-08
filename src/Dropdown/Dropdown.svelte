@@ -1,7 +1,7 @@
 <script>
   import { getContext, setContext, onDestroy } from 'svelte';
   import { createPopperActions } from '../popper';
-  import classnames from '../utils';
+  import { classnames } from '../utils';
 
   import { createContext } from './DropdownContext';
 

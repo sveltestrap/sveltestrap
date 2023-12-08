@@ -6,7 +6,7 @@
   import { OffcanvasHeader } from '../OffcanvasHeader';
   import { Portal } from '../Portal';
 
-  import classnames, { browserEvent, getTransitionDuration } from '../utils';
+  import { classnames, browserEvent, getTransitionDuration } from '../utils';
 
   const dispatch = createEventDispatcher();
 
