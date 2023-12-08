@@ -8,12 +8,22 @@
     "ecmaVersion": 2020,
     "sourceType": "module"
   },
-  "plugins": ["vitest"],
-  "extends": ["eslint:recommended", "plugin:vitest/recommended"],
-  "ignorePatterns": ["**/*.snap.js"],
+  "plugins": [
+    "vitest"
+  ],
+  "extends": [
+    "eslint:recommended",
+    "plugin:vitest/recommended",
+    "plugin:storybook/recommended"
+  ],
+  "ignorePatterns": [
+    "**/*.snap.js"
+  ],
   "overrides": [
     {
-      "files": ["*.svelte"],
+      "files": [
+        "*.svelte"
+      ],
       "parser": "svelte-eslint-parser"
     }
   ],

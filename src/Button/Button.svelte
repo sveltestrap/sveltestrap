@@ -1,18 +1,78 @@
 <script>
   import classnames from '../utils';
 
+  // Additional CSS class name for the component
   let className = '';
+  /**
+   * Additional CSS class name for the component
+   * @type {string}
+   */
   export { className as class };
+
+  /**
+   * Indicates if the component is active.
+   * @type {boolean}
+   */
   export let active = false;
+
+  /**
+   * Indicates if the component should be displayed as a block.
+   * @type {boolean}
+   */
   export let block = false;
+
+  /**
+   * Children elements to be rendered inside the component.
+   * @type {any}
+   */
   export let children = undefined;
+
+  /**
+   * Indicates if the component is a close button.
+   * @type {boolean}
+   */
   export let close = false;
+
+  /**
+   * Color theme for the component.
+   * @type {'primary'|'secondary'|string}
+   */
   export let color = 'secondary';
+
+  /**
+   * Indicates if the component is disabled.
+   * @type {boolean}
+   */
   export let disabled = false;
-  export let href = '';
+
+  /**
+   * Hyperlink reference for the component.
+   * @type {string}
+   */
+  export let href = undefined;
+
+  /**
+   * Reference to the inner element of the component.
+   * @type {any}
+   */
   export let inner = undefined;
+
+  /**
+   * Indicates if the component should have an outline.
+   * @type {boolean}
+   */
   export let outline = false;
+
+  /**
+   * Size of the component.
+   * @type {'small'|'large'|string|null}
+   */
   export let size = null;
+
+  /**
+   * Value attribute for the button element.
+   * @type {string}
+   */
   export let value = '';
 
   $: ariaLabel = $$props['aria-label'];
