@@ -1,5 +1,5 @@
 {
-  "name": "@sveltestrap/sveltestrap",
+  "name": "sveltestrap",
   "version": "1.0.0",
   "main": "dist/sveltestrap.js",
   "module": "dist/sveltestrap.es.js",
@@ -86,7 +86,7 @@
     "@sveltejs/vite-plugin-svelte": "^3.0.1",
     "@testing-library/jest-dom": "^6.1.4",
     "@testing-library/svelte": "^4.0.5",
-    "@tsconfig/svelte": "^2.0.1",
+    "@tsconfig/svelte": "^5.0.2",
     "@vitest/coverage-v8": "^0.34.6",
     "autoprefixer": "^9.8.6",
     "eslint": "^8.54.0",

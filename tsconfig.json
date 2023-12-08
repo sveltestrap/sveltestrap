@@ -1,11 +1,23 @@
 {
   "extends": "@tsconfig/svelte/tsconfig.json",
-  "include": ["src/**/*"],
+  "include": ["src/Modal/*.ts"],
   "exclude": ["node_modules/*"],
   "compilerOptions": {
     "baseUrl": ".",
+    "moduleResolution": "node",
+    "target": "es2022",
+    "allowJs": true,
+    "checkJs": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "sourceMap": true,
     "paths": {
       "sveltestrap": ["src/index"]
-    }
+    },
+    "types": [
+      "vitest/globals"
+    ]
   }
 }

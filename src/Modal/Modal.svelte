@@ -4,21 +4,23 @@
 </script>
 
 <script>
-  import classnames from '../utils';
-  import { browserEvent } from '../utils';
   import {
     createEventDispatcher,
     onDestroy,
     onMount,
     afterUpdate
   } from 'svelte';
+
   import { modalIn, modalOut } from '../transitions';
   import { InlineContainer } from '../InlineContainer';
   import { ModalBackdrop } from '../ModalBackdrop';
   import { ModalBody } from '../ModalBody';
   import { ModalHeader } from '../ModalHeader';
   import { Portal } from '../Portal';
+
   import {
+    browserEvent,
+    classnames,
     conditionallyUpdateScrollbar,
     getOriginalBodyPadding,
     setScrollbarWidth,
@@ -29,8 +31,10 @@
 
   let className = '';
   let staticModal = false;
+
   export { className as class };
   export { staticModal as static };
+
   export let isOpen = false;
   export let autoFocus = true;
   export let body = false;
@@ -38,6 +42,7 @@
   export let container = undefined;
   export let fullscreen = false;
   export let header = undefined;
+  export let keyboard = true;
   export let scrollable = false;
   export let size = '';
   export let toggle = undefined;
@@ -174,7 +179,7 @@
   function onModalOpened() {
     dispatch('open');
     _removeEscListener = browserEvent(document, 'keydown', (event) => {
-      if (event.key && event.key === 'Escape') {
+      if (event.key && event.key === 'Escape' && keyboard) {
         if (toggle && backdrop === true) {
           if (_removeEscListener) _removeEscListener();
           toggle(event);
@@ -227,8 +232,8 @@
       {#if isOpen}
         <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
         <div
-          in:modalIn
-          out:modalOut
+          in:modalIn|global
+          out:modalOut|global
           aria-labelledby={labelledBy}
           class={classnames('modal', modalClassName, {
             fade,
@@ -264,6 +269,7 @@
     </div>
   </svelte:component>
 {/if}
+
 {#if backdrop && !staticModal}
   <svelte:component this={outer}>
     <ModalBackdrop {fade} {isOpen} />
