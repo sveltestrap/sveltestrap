@@ -92,11 +92,11 @@
     'dark'
   ];
 
-  const sizes = [
-    'sm',
-    'md',
-    'lg'
-  ];
+  const sizesMap = {
+    sm: 'Small',
+    md: 'Medium',
+    lg: 'Large'
+  }
 </script>
 
 <Template let:args>
@@ -106,23 +106,23 @@
 <Story name="Colors" args={{ color: 'primary' }}>
   <div class="horizontal capitalize">
     {#each colors as color}
-      <Button {color}>{color}</Button>
+      <Button class="capitalize" {color}>{color}</Button>
     {/each}
   </div>
 </Story>
 
 <Story name="Outlines" args={{ color: 'primary' }}>
-  <div class="horizontal capitalize">
+  <div class="horizontal">
     {#each colors as color}
-      <Button outline {color}>{color}</Button>
+      <Button class="capitalize" outline {color}>{color}</Button>
     {/each}
   </div>
 </Story>
 
 <Story name="Sizes" args={{ size: 'md' }}>
   <div class="horizontal">
-    {#each sizes as size}
-      <Button {size} color="primary">Button {size}</Button>
+    {#each Object.keys(sizesMap) as size}
+      <Button {size} color="primary">{sizesMap[size]}</Button>
     {/each}
   </div>
 </Story>
