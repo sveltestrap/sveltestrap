@@ -1,9 +1,16 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`Offcanvas > should be open 1`] = `
-<body>
+<body
+  class="overflow-noscroll"
+>
   <div>
      
+    <!--&lt;Portal&gt;-->
+    
+    <!--&lt;Offcanvas&gt;-->
+  </div>
+  <div>
     <div>
       <div
         aria-modal="true"
@@ -27,17 +34,21 @@ exports[`Offcanvas > should be open 1`] = `
       <!--&lt;OffcanvasBackdrop&gt;-->
       
     </div>
-    <!--&lt;Portal&gt;-->
-    
-    <!--&lt;Offcanvas&gt;-->
   </div>
 </body>
 `;
 
 exports[`Offcanvas > should render correctly 1`] = `
-<body>
+<body
+  class="overflow-noscroll"
+>
   <div>
      
+    <!--&lt;Portal&gt;-->
+    
+    <!--&lt;Offcanvas&gt;-->
+  </div>
+  <div>
     <div>
       <div
         aria-hidden="true"
@@ -56,17 +67,21 @@ exports[`Offcanvas > should render correctly 1`] = `
       <!--&lt;OffcanvasBackdrop&gt;-->
       
     </div>
-    <!--&lt;Portal&gt;-->
-    
-    <!--&lt;Offcanvas&gt;-->
   </div>
 </body>
 `;
 
 exports[`Offcanvas > should render custom class 1`] = `
-<body>
+<body
+  class="overflow-noscroll"
+>
   <div>
      
+    <!--&lt;Portal&gt;-->
+    
+    <!--&lt;Offcanvas&gt;-->
+  </div>
+  <div>
     <div>
       <div
         aria-hidden="true"
@@ -85,17 +100,21 @@ exports[`Offcanvas > should render custom class 1`] = `
       <!--&lt;OffcanvasBackdrop&gt;-->
       
     </div>
-    <!--&lt;Portal&gt;-->
-    
-    <!--&lt;Offcanvas&gt;-->
   </div>
 </body>
 `;
 
 exports[`Offcanvas > should render placement correctly 1`] = `
-<body>
+<body
+  class="overflow-noscroll"
+>
   <div>
      
+    <!--&lt;Portal&gt;-->
+    
+    <!--&lt;Offcanvas&gt;-->
+  </div>
+  <div>
     <div>
       <div
         aria-hidden="true"
@@ -114,17 +133,21 @@ exports[`Offcanvas > should render placement correctly 1`] = `
       <!--&lt;OffcanvasBackdrop&gt;-->
       
     </div>
-    <!--&lt;Portal&gt;-->
-    
-    <!--&lt;Offcanvas&gt;-->
   </div>
 </body>
 `;
 
 exports[`Offcanvas > should render responsive variations 1`] = `
-<body>
+<body
+  class="overflow-noscroll"
+>
   <div>
      
+    <!--&lt;Portal&gt;-->
+    
+    <!--&lt;Offcanvas&gt;-->
+  </div>
+  <div>
     <div>
       <div
         aria-hidden="true"
@@ -143,9 +166,6 @@ exports[`Offcanvas > should render responsive variations 1`] = `
       <!--&lt;OffcanvasBackdrop&gt;-->
       
     </div>
-    <!--&lt;Portal&gt;-->
-    
-    <!--&lt;Offcanvas&gt;-->
   </div>
 </body>
 `;

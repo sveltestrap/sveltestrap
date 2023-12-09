@@ -4,7 +4,7 @@ import { Modal } from './';
 const TestHarness = (props) => render(Modal, props);
 
 describe('Modal', () => {
-  test.skip('should close when escape is pressed', async () => {
+  test('should close when escape is pressed', async () => {
     const toggle = vi.fn();
     const { component } = TestHarness({ toggle, isOpen: true });
     await new Promise((resolve) => component.$on('open', resolve));
@@ -12,7 +12,7 @@ describe('Modal', () => {
     expect(toggle).toHaveBeenCalled();
   });
 
-  test.skip('should not reopen when escape is pressed twice', async () => {
+  test('should not reopen when escape is pressed twice', async () => {
     const toggle = vi.fn();
     const { component } = TestHarness({ toggle, isOpen: true });
     await new Promise((resolve) => component.$on('open', resolve));

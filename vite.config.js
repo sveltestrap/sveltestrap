@@ -41,9 +41,13 @@ export default defineConfig(({ command, mode }) => {
       environment: 'jsdom',
       setupFiles: './vite.setup.js',
       testTimeout: 10000,
-      exclude: [
-        '**/node_modules/**'
+      alias: [
+        {
+          find: /^svelte$/,
+          replacement: "svelte/internal"
+        }
       ],
+      exclude: ['**/node_modules/**'],
       include: ['./src/**/*.spec.js'],
       resolveSnapshotPath: (testPath, snapExtension) => testPath.replace(/\.spec\.([tj]s?)/, `${snapExtension}.$1`)
     }

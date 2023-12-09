@@ -13,7 +13,7 @@ exports[`AccordionHeader > should render correctly 1`] = `
           class="accordion-header"
         >
           <button
-            class="collapsed accordion-button"
+            class="accordion-button"
             type="button"
           >
              
@@ -23,8 +23,8 @@ exports[`AccordionHeader > should render correctly 1`] = `
         <!--&lt;AccordionHeader&gt;-->
          
         <div
-          class="accordion-collapse collapsing"
-          style="overflow: hidden; height: 0px;"
+          class="accordion-collapse"
+          style="overflow: hidden;"
         >
           <div
             class="accordion-body"
