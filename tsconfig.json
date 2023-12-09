@@ -1,6 +1,12 @@
 {
   "extends": "@tsconfig/svelte/tsconfig.json",
-  "include": ["src/Modal/*.ts"],
+  "include": [
+    "src/Accordion/*.ts",
+    "src/AccordionHeader/*.ts",
+    "src/AccordionItem/*.ts",
+    "src/Button/*.ts",
+    "src/Modal/*.ts"
+  ],
   "exclude": ["node_modules/*"],
   "compilerOptions": {
     "baseUrl": ".",

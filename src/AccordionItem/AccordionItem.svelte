@@ -1,30 +1,56 @@
 <script>
   import { createEventDispatcher, getContext, onMount } from 'svelte';
-  import { Collapse } from '../Collapse';
+
   import { AccordionHeader } from '../AccordionHeader';
+  import { Collapse } from '../Collapse';
+
   import { classnames } from '../utils';
 
+  // Additional CSS class names to use
   let className = '';
+
+  /**
+   * Additional CSS class names to use
+   * @type {string}
+   */
   export { className as class };
+
+  /**
+   * The header text or content for the accordion item.
+   * @type {string}
+   */
   export let header = '';
+
+  /**
+   * Indicates whether the accordion item is initially active (open).
+   * @type {boolean}
+   */
   export let active = false;
-  let accordionId;
 
   const dispatch = createEventDispatcher();
 
   const { stayOpen, toggle, open } = getContext('accordion');
-  $: classes = classnames(className, 'accordion-item');
-  $: accordionOpen = stayOpen ? active : $open === accordionId;
+
+  let accordionId;
 
   onMount(() => {
-    if (active) toggle(accordionId);
+    if (active) {
+      toggle(accordionId);
+    }
   });
 
   const onToggle = () => {
-    if (stayOpen) active = !active;
+    if (stayOpen) {
+      active = !active;
+    }
+
     toggle(accordionId);
+
     dispatch('toggle', !accordionOpen);
   };
+
+  $: classes = classnames(className, 'accordion-item');
+  $: accordionOpen = stayOpen ? active : $open === accordionId;
 </script>
 
 <div class={classes} bind:this={accordionId}>
