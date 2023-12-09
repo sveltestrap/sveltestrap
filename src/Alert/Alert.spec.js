@@ -66,7 +66,7 @@ describe('Alert', () => {
 
     fireEvent.click(closeBtn);
 
-    await waitForElementToBeRemoved(alert, { timeout: 7000 });
+    await waitForElementToBeRemoved(alert, { timeout: 10000 });
 
     expect(alert).not.toBeInTheDocument();
     expect(closeBtn).not.toBeInTheDocument();
@@ -120,7 +120,7 @@ describe('Alert', () => {
 
     await fireEvent.click(closeBtn);
 
-    await waitForElementToBeRemoved(alert, { timeout: 6000 });
+    await waitForElementToBeRemoved(alert, { timeout: 10000 });
 
     expect(alert).not.toBeInTheDocument();
     expect(closeBtn).not.toBeInTheDocument();

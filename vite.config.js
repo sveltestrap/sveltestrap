@@ -47,7 +47,6 @@ export default defineConfig(({ command, mode }) => {
           replacement: "svelte/internal"
         }
       ],
-      exclude: ['**/node_modules/**'],
       include: ['./src/**/*.spec.js'],
       resolveSnapshotPath: (testPath, snapExtension) => testPath.replace(/\.spec\.([tj]s?)/, `${snapExtension}.$1`)
     }
