@@ -13,36 +13,44 @@
 
 ## Getting Started
 
-1. Install PNPM
+1. Clone your personal fork and define remote source
+
+   ```vim
+   > git clone git@github.com:<username>/sveltestrap.git
+   > cd sveltestrap
+   > git remote add upstream git@github.com:sveltestrap/sveltestrap.git
+   ```
+
+2. Install PNPM
    ```vim
    > npm install -g pnpm
    ```
 
-2. Install `husky` hooks
+3. Install `husky` hooks
 
    ```vim
    > pnpm dlx husky install
    ```
 
-3. Make sure husky scripts are executable and copied to .git/hooks
+4. Make sure husky scripts are executable and copied to .git/hooks
 
    ```vim
    > chmod +x .husky/post-merge && chmod +x .husky/pre-commit && cp .husky/post-merge .git/hooks
    ```
 
-4. Install dependencies
+5. Install dependencies
 
    ```vim
    > pnpm i
    ```
 
-5. Start the local development server to launch the docs
+6. Start the local development server to launch the docs
 
     ```vim
     > pnpm start
     ```
 
-5. Happy coding! You're changes will be automatically rebuilt and reflected immediately on the docs.
+7. Happy coding! You're changes will be automatically rebuilt and reflected immediately on the docs.
 
 ## Testing
 
@@ -71,10 +79,10 @@ Run all tests and generate a code coverage report
 
 ## Deploying Documentation
 
-Run the deploy command to automaically build the docs source and push it to `gh-pages`.
+Run the deploy command to automaically build the docs source and push it to the `storybook` branch.
 
 ```vim
-> pnpm run deploy
+> pnpm run docs:deploy
 ```
 
 ## License
