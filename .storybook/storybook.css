@@ -207,6 +207,7 @@ body .sidebar-container {
 }
 
 .sbdocs.sbdocs-wrapper h2 {
+  border-bottom: 0;
   padding-bottom: var(--padding-base);
 }
 
@@ -449,3 +450,22 @@ pre.prismjs {
 /*-----------------
   Hide stories from sidebar
  -----------------*/
+
+
+.horizontal,
+.vertical {
+  display: inline-flex;
+  gap: 8px;
+}
+
+.horizontal {
+  align-items: center;
+}
+
+.vertical {
+  flex-direction: column;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}

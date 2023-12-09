@@ -1,33 +1,31 @@
-import { SvelteComponent } from 'svelte';
+declare module 'sveltestrap' {
+  import { SvelteComponent } from 'svelte';
 
-declare type ButtonColor =
-  | 'primary'
-  | 'secondary'
-  | 'success'
-  | 'danger'
-  | 'warning'
-  | 'info'
-  | 'light'
-  | 'dark'
-  | 'link';
+  type ButtonColor =
+    | 'primary'
+    | 'secondary'
+    | 'success'
+    | 'danger'
+    | 'warning'
+    | 'info'
+    | 'light'
+    | 'dark'
+    | 'link';
 
-declare type ButtonSize = 'lg' | 'sm';
+  type ButtonSize = 'lg' | 'sm';
 
-export interface ButtonProps
-  extends svelte.JSX.HTMLAttributes<HTMLElementTagNameMap['button']> {
-  active?: boolean;
-  block?: boolean;
-  close?: boolean;
-  color?: ButtonColor;
-  disabled?: boolean;
-  href?: string;
-  inner?: HTMLElement;
-  outline?: boolean;
-  size?: ButtonSize;
+  export interface ButtonProps extends svelte.JSX.HTMLAttributes<HTMLElementTagNameMap['button']> {
+    active?: boolean;
+    block?: boolean;
+    class?: string;
+    close?: boolean;
+    color?: ButtonColor;
+    disabled?: boolean;
+    href?: string;
+    inner?: HTMLElement;
+    outline?: boolean;
+    size?: ButtonSize;
+  }
+
+  export class Button extends SvelteComponent<ButtonProps, { click: WindowEventMap['click'] }, any> {}
 }
-
-export default class Button extends SvelteComponent<
-  ButtonProps,
-  { click: WindowEventMap['click'] },
-  { default: {} }
-> {}

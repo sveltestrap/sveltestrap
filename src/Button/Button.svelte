@@ -49,7 +49,7 @@
    * Hyperlink reference for the component.
    * @type {string}
    */
-  export let href = undefined;
+  export let href = '';
 
   /**
    * Reference to the inner element of the component.
@@ -65,9 +65,9 @@
 
   /**
    * Size of the component.
-   * @type {'small'|'large'|string|null}
+   * @type {string}
    */
-  export let size = null;
+  export let size = 'md';
 
   /**
    * Value attribute for the button element.
@@ -95,7 +95,7 @@
   <a
     {...$$restProps}
     class={classes}
-    {disabled}
+    class:disabled
     bind:this={inner}
     on:click
     {href}

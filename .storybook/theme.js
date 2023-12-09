@@ -6,9 +6,9 @@ export default create({
   brandUrl: 'https://github.com/sveltestrap/sveltestrap',
   brandTitle: `<span class="d-flex align-items-center justify-content-center" style="display: flex; align-items: center; color: #ae81ff; font-weight: 400; letter-spacing: 0.1rem;">
       <img src="https://avatars.githubusercontent.com/u/152808666?s=200&v=4" height="32" />
-      <div>
-        SVELTESTRAP<br />
-        <small>${version}</small>
+      <div style="position: relative;">
+        SVELTESTRAP
+        <small style="position: absolute; right: -38px; top: 0;">${version}</small>
       </div>
     </span>`,
   fontBase: 'Rubik, -apple-system, "Helvetica Neue", Helvetica, Arial, sans-serif',

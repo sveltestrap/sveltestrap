@@ -104,15 +104,27 @@
 </Template>
 
 <Story name="Colors" args={{ color: 'primary' }}>
-  {#each colors as color}
-    <Button {color}>{color}</Button>
-  {/each}
+  <div class="horizontal capitalize">
+    {#each colors as color}
+      <Button {color}>{color}</Button>
+    {/each}
+  </div>
+</Story>
+
+<Story name="Outlines" args={{ color: 'primary' }}>
+  <div class="horizontal capitalize">
+    {#each colors as color}
+      <Button outline {color}>{color}</Button>
+    {/each}
+  </div>
 </Story>
 
 <Story name="Sizes" args={{ size: 'md' }}>
-  {#each sizes as size}
-    <Button {size} color="primary">Button {size}</Button>
-  {/each}
+  <div class="horizontal">
+    {#each sizes as size}
+      <Button {size} color="primary">Button {size}</Button>
+    {/each}
+  </div>
 </Story>
 
 <Story name="Basic" args={{ size: 'md', color: 'primary', children: 'Button' }} />

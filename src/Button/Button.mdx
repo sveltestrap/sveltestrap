@@ -7,7 +7,7 @@ import * as ButtonStories from './Button.stories';
 
 The `<Button>` component is a user-friendly element in the interface that you can click on. It's designed for various tasks like triggering functions, sending form data, or navigating within an application. It also provides visual and interactive feedback to keep users informed about their actions.
 
-<Canvas withSource="none">
+<Canvas>
   <Story of={ButtonStories.Basic} />
 </Canvas>
 
@@ -21,23 +21,22 @@ The `<Button>` component is a user-friendly element in the interface that you ca
 <Source dark language="html" code={`
 <script lang="ts">
   import { Button } from 'sveltestrap';
-  const colors: any = [
-    'primary',
-    'secondary',
-    'success',
-    'danger',
-    'warning',
-    'info',
-    'light',
-    'dark'
-  ];
 </script>
 
-{#each colors as color}
-  <div>
-    <Button {color}>{color}</Button>
-  </div>
-{/each}
+<Button color="primary">Primary</Button>
+`} />
+
+## Outlines
+<Canvas withSource="none">
+  <Story of={ButtonStories.Outlines} />
+</Canvas>
+
+<Source dark language="html" code={`
+<script lang="ts">
+  import { Button } from 'sveltestrap';
+</script>
+
+<Button outline color="primary">Primary</Button>
 `} />
 
 ## Sizes
@@ -49,16 +48,7 @@ The `<Button>` component is a user-friendly element in the interface that you ca
 <Source dark language="html" code={`
 <script lang="ts">
   import { Button } from 'sveltestrap';
-  const sizes: any = [
-    'sm',
-    'md',
-    'lg'
-  ];
 </script>
 
-{#each sizes as size}
-  <div>
-    <Button {size}>Button {size}</Button>
-  </div>
-{/each}
+<Button size="md">Button md</Button>
 `} />
