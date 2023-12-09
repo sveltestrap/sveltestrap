@@ -52,3 +52,39 @@ The `<Button>` component is a user-friendly element in the interface that you ca
 
 <Button size="md">Medium</Button>
 `} />
+
+## Groups
+
+<Canvas withSource="none">
+  <Story of={ButtonStories.Groups} />
+</Canvas>
+
+<Source dark language="html" code={`
+<script lang="ts">
+  import { Button, ButtonGroup } from 'sveltestrap';
+</script>
+
+<ButtonGroup>
+  <Button color="primary" active>Alpha</Button>
+  <Button color="primary">Bravo</Button>
+  <Button color="primary">Charlie</Button>
+</ButtonGroup>
+`} />
+
+## Toolbar
+
+<Canvas withSource="none">
+  <Story of={ButtonStories.Toolbar} />
+</Canvas>
+
+<Source dark language="html" code={`
+<script lang="ts">
+  import { Button, ButtonToolbar } from 'sveltestrap';
+</script>
+
+<ButtonToolbar>
+  <Button color="primary">File</Button>
+  <Button color="primary">Edit</Button>
+  <Button color="primary">View</Button>
+</ButtonToolbar>
+`} />

@@ -80,6 +80,7 @@
 
 <script>
   import { Story, Template } from '@storybook/addon-svelte-csf';
+  import { ButtonGroup, ButtonToolbar } from 'sveltestrap';
 
   const colors = [
     'primary',
@@ -102,6 +103,8 @@
 <Template let:args>
   <Button {...args} on:click></Button>
 </Template>
+
+<Story name="Basic" args={{ size: 'md', color: 'primary', children: 'Button' }} />
 
 <Story name="Colors" args={{ color: 'primary' }}>
   <div class="horizontal capitalize">
@@ -127,4 +130,18 @@
   </div>
 </Story>
 
-<Story name="Basic" args={{ size: 'md', color: 'primary', children: 'Button' }} />
+<Story name="Groups">
+  <ButtonGroup>
+    <Button color="primary" active>Alpha</Button>
+    <Button color="primary">Bravo</Button>
+    <Button color="primary">Charlie</Button>
+  </ButtonGroup>
+</Story>
+
+<Story name="Toolbar">
+  <ButtonToolbar>
+    <Button color="primary">File</Button>
+    <Button color="primary">Edit</Button>
+    <Button color="primary">View</Button>
+  </ButtonToolbar>
+</Story>
