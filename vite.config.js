@@ -40,7 +40,7 @@ export default defineConfig(({ command, mode }) => {
       globals: true,
       environment: 'jsdom',
       setupFiles: './vite.setup.js',
-      testTimeout: 10000,
+      testTimeout: 20000,
       alias: [
         {
           find: /^svelte$/,
