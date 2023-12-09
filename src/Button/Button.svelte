@@ -67,7 +67,7 @@
    * Size of the component.
    * @type {string}
    */
-  export let size = 'md';
+  export let size = '';
 
   /**
    * Value attribute for the button element.

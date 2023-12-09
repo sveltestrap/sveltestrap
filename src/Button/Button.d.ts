@@ -1,7 +1,8 @@
 declare module 'sveltestrap' {
   import { SvelteComponent } from 'svelte';
+  import { HTMLButtonAttributes } from 'svelte/elements';
 
-  type ButtonColor =
+    type ButtonColor =
     | 'primary'
     | 'secondary'
     | 'success'
@@ -14,7 +15,7 @@ declare module 'sveltestrap' {
 
   type ButtonSize = 'lg' | 'sm';
 
-  export interface ButtonProps extends svelte.JSX.HTMLAttributes<HTMLElementTagNameMap['button']> {
+  export interface ButtonProps extends HTMLButtonAttributes {
     active?: boolean;
     block?: boolean;
     class?: string;

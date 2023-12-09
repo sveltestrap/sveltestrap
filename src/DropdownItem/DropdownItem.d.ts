@@ -1,7 +1,7 @@
 import { SvelteComponent } from 'svelte';
+import { HTMLButtonAttributes } from 'svelte/elements';
 
-export interface DropdownItemProps
-  extends svelte.JSX.HTMLAttributes<HTMLElementTagNameMap['button']> {
+export interface DropdownItemProps extends HTMLButtonAttributes {
   active?: boolean;
   disabled?: boolean;
   divider?: boolean;

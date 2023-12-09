@@ -36,7 +36,6 @@ exports[`Button > should render as link if href specified 1`] = `
   <div>
     <a
       class="btn btn-secondary"
-      disabled="false"
       href="http://example.com/"
     />
     
