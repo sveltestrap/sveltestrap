@@ -2,6 +2,7 @@ declare module 'sveltestrap' {
   import { SvelteComponent } from 'svelte';
 
   export interface AccordionProps extends svelteHTML.HTMLAttributes<HTMLElementTagNameMap['div']> {
+    class?: string;
     flush?: boolean;
     stayOpen?: boolean;
   }

@@ -3,6 +3,7 @@ declare module 'sveltestrap' {
 
   export interface AccordionItemProps extends svelteHTML.HTMLAttributes<HTMLElementTagNameMap['div']> {
     active?: boolean;
+    class?: string;
     header?: string;
   }
 
