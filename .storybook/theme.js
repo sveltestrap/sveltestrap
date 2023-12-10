@@ -1,5 +1,5 @@
 import { create } from '@storybook/theming';
-import { version } from '../package.json';
+import packageJSON from '../package.json';
 
 export default create({
   base: 'dark',
@@ -8,7 +8,7 @@ export default create({
       <img src="https://avatars.githubusercontent.com/u/152808666?s=200&v=4" height="32" />
       <div style="position: relative;">
         SVELTESTRAP
-        <small style="position: absolute; right: -38px; top: 0;">${version}</small>
+        <small style="position: absolute; right: -38px; top: 0;">${packageJSON.version}</small>
       </div>
     </span>`,
   fontBase: 'Rubik, -apple-system, "Helvetica Neue", Helvetica, Arial, sans-serif',

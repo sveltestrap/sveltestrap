@@ -1,7 +1,6 @@
 <script lang="ts">
   import classnames from '../src/utils';
   import { afterUpdate } from 'svelte';
-  import Prism from 'prismjs';
 
   let className = '';
   let isAsync = false;
@@ -10,10 +9,6 @@
 
   let classes = classnames('language-html', className);
   let _domNode: any;
-
-  afterUpdate(() => {
-    Prism.highlightElement(_domNode, isAsync);
-  });
 </script>
 
 <link
