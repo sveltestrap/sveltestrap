@@ -7,7 +7,10 @@
     parameters: {},
     argTypes: {
       class: {
-        className: ''
+        control: false,
+        table: {
+          disable: true
+        }
       },
       backdrop: {
         control: 'boolean'

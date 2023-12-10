@@ -7,7 +7,10 @@
     parameters: {},
     argTypes: {
       class: {
-        className: 'string'
+        control: false,
+        table: {
+          disable: true
+        }
       },
       flush: {
         control: 'boolean'
