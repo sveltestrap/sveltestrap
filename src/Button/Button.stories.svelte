@@ -28,10 +28,10 @@
         control: 'boolean'
       },
       href: {
-        control: 'string'
+        control: ''
       },
       value: {
-        control: 'string'
+        control: ''
       },
       inner: {
         control: false,

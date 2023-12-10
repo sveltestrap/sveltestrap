@@ -44,9 +44,9 @@
 
   /**
    * The header content of the offcanvas.
-   * @type {undefined|string}
+   * @type {string}
    */
-  export let header = undefined;
+  export let header = '';
 
   /**
    * Indicates whether the offcanvas is currently open.
