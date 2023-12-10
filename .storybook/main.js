@@ -1,3 +1,4 @@
+import { mergeConfig } from 'vite';
 import path from 'path';
 import preprocess from 'svelte-preprocess';
 
@@ -9,38 +10,41 @@ const config = {
   addons: [
     '@storybook/addon-essentials',
     '@storybook/addon-links',
-    '@storybook/addon-svelte-csf'
+    '@storybook/addon-svelte-csf',
+    '@storybook/addon-mdx-gfm'
   ],
+  core: {
+    builder: {
+      name: '@storybook/builder-vite'
+    }
+  },
   framework: {
-    name: '@storybook/svelte-webpack5',
+    name: '@storybook/svelte-vite',
     options: {
-      preprocess: preprocess()
+      preprocess: preprocess({
+        typescript: {
+          tsconfigFile: './tsconfig.json',
+          transpileOnly: true
+        }
+      })
     }
   },
   docs: {
     autodocs: 'tag'
   },
-  webpackFinal: async (config) => {
-    const svelteLoader = config.module.rules.find(({ loader }) => loader && loader.includes('svelte-loader'));
-    svelteLoader.options.preprocess = preprocess({
-      typescript: {
-        tsconfigFile: './tsconfig.json',
-        transpileOnly: true
+  viteFinal: async (config, { configType }) => {
+    return mergeConfig(config, {
+      define: {
+        'process.env.NODE_ENV': JSON.stringify(
+          configType === 'DEVELOPMENT' ? 'development' : 'production'
+        )
+      },
+      resolve: {
+        alias: {
+          sveltestrap: path.resolve(__dirname, '../src/')
+        }
       }
     });
-
-    config.optimization = {
-      minimize: true
-    };
-
-    config.resolve = {
-      alias: {
-        sveltestrap: path.resolve(__dirname, '../src/')
-      },
-      extensions: [...config.resolve.extensions, '.svelte', '.ts']
-    };
-
-    return config;
   }
 };
 
