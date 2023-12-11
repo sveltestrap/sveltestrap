@@ -413,6 +413,29 @@ pre.prismjs {
   border: 1px solid var(--color-dark-0) !important;
   font-size: 13px;
 }
+]
+.horizontal,
+.vertical {
+  display: inline-flex;
+  gap: 8px;
+}
+
+.horizontal {
+  align-items: center;
+}
+
+.vertical {
+  flex-direction: column;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+figure {
+  background-color: var(--color-white);
+}
+
 
 /*-----------------
   Custom Document Formatting
@@ -448,30 +471,4 @@ pre.prismjs {
       margin: 0;
     }
   }
-}
-
-/*-----------------
-  Hide stories from sidebar
- -----------------*/
-
-.horizontal,
-.vertical {
-  display: inline-flex;
-  gap: 8px;
-}
-
-.horizontal {
-  align-items: center;
-}
-
-.vertical {
-  flex-direction: column;
-}
-
-.capitalize {
-  text-transform: capitalize;
-}
-
-figure {
-  background-color: var(--color-white);
 }
