@@ -92,25 +92,179 @@
   import { Story, Template } from '@storybook/addon-svelte-csf';
   import { Button } from 'sveltestrap';
 
-  let open = false;
+  let isOpen = false;
+  let status = 'Closed';
+  let endOpen = false;
+  let bottomOpen = false;
+  let topOpen = false;
+  const toggleEnd = () => (endOpen = !endOpen);
+  const toggleBottom = () => (bottomOpen = !bottomOpen);
+  const toggleTop = () => (topOpen = !topOpen);
 
   const toggle = () => {
-    open = !open
+    isOpen = !isOpen
   };
 
-  const basicSource = `<Button color="danger" on:click={toggle}>Start</Button>
+  const basicSource = `<Button color="primary" on:click={toggle}>Open Start</Button>
 
-<Offcanvas isOpen={open} toggle={toggle} header="Start">
+<Offcanvas {isOpen} {toggle} header="Start">
   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
   tempor incididunt ut labore et dolore magna aliqua.
 </Offcanvas>`
 </script>
 
 <Story name="Basic" let:args source={basicSource}>
-  <Button color="danger capitalize" on:click={toggle}>{args.placement}</Button>
+  <Button color="primary capitalize" on:click={toggle}>Open {args.placement}</Button>
 
-  <Offcanvas {...args} isOpen={open} {toggle}>
+  <Offcanvas {...args} {isOpen} {toggle}>
     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
     tempor incididunt ut labore et dolore magna aliqua.
+  </Offcanvas>
+</Story>
+
+<Story name="Backdrop">
+  <Button color="primary" on:click={toggle}>Open</Button>
+
+  <Offcanvas header="No Backdrop" backdrop={false} {isOpen} {toggle}>
+    Look ma, no backdrop.
+  </Offcanvas>
+</Story>
+
+<Story name="Events">
+  <Button color="primary" on:click={toggle}>Open</Button>
+  <code>&nbsp; Current state: {status}</code>
+
+  <Offcanvas
+    {isOpen}
+    {toggle}
+    placement="end"
+    on:opening={() => (status = 'Opening...')}
+    on:open={() => (status = 'Opened')}
+    on:closing={() => (status = 'Closing...')}
+    on:close={() => (status = 'Closed')}
+  >
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua.
+  </Offcanvas>
+</Story>
+
+<Story name="Placement">
+  <Button color="danger" on:click={toggle}>Start</Button>
+  <Button color="warning" on:click={() => (endOpen = !endOpen)}>End</Button>
+  <Button color="success" on:click={() => (topOpen = !topOpen)}>Top</Button>
+  <Button color="info" on:click={() => (bottomOpen = !bottomOpen)}>
+    Bottom
+  </Button>
+
+  <Offcanvas {isOpen} {toggle} header="Start" placement="start">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua.
+  </Offcanvas>
+
+  <Offcanvas isOpen={endOpen} toggle={toggleEnd} placement="end" header="Right">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua.
+  </Offcanvas>
+
+  <Offcanvas isOpen={topOpen} toggle={toggleTop} placement="top" header="Top">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua.
+  </Offcanvas>
+
+  <Offcanvas
+    isOpen={bottomOpen}
+    toggle={toggleBottom}
+    placement="bottom"
+    header="Bottom"
+  >
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua.
+  </Offcanvas>
+</Story>
+
+<Story name="Slots">
+  <Button color="primary" on:click={toggle}>Open</Button>
+
+  <Offcanvas scroll isOpen={isOpen} {toggle}>
+    <h1 slot="header">
+      <i>Hello <b>World!</b></i>
+    </h1>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+    incididunt ut labore et dolore magna aliqua.
+  </Offcanvas>
+</Story>
+
+<Story name="Manual">
+  <Button color="primary" on:click={() => (isOpen = true)}>Open</Button>
+
+  <Offcanvas header="No toggle or esc" scroll {isOpen}>
+    <Button color="danger" on:click={() => (isOpen = false)}>Close Me</Button>
+  </Offcanvas>
+</Story>
+
+<Story name="Scrolling">
+  <Button color="primary" on:click={toggle}>Open</Button>
+
+  <Offcanvas
+    header="You can scroll the body"
+    scroll
+    {isOpen}
+    {toggle}
+    backdrop={false}
+  >
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua.</p>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua.</p>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua.</p>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua.</p>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua.</p>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua.</p>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua.</p>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua.</p>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua.</p>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua.</p>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua.</p>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua.</p>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua.</p>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua.</p>
+  </Offcanvas>
+</Story>
+
+<Story name="Custom">
+  <Button color="primary" on:click={() => (isOpen = true)}>Open</Button>
+
+  <Offcanvas isOpen={isOpen} body={false} style="width: 150px" class="bg-danger">
+    <img
+      alt="Meaningless content"
+      role="button"
+      src="https://picsum.photos/150/1200"
+      on:click={() => (isOpen = false)}
+    />
   </Offcanvas>
 </Story>
