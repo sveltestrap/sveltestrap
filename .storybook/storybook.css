@@ -189,8 +189,8 @@ body .sidebar-container {
   Controls
  -----------------*/
 
-.sbdocs input:checked~span:last-of-type,
-.sbdocs input:not(:checked)~span:first-of-type {
+.sbdocs input:checked ~ span:last-of-type,
+.sbdocs input:not(:checked) ~ span:first-of-type {
   background: var(--color-blue-400) !important;
 }
 
@@ -237,13 +237,13 @@ li.sbdocs.sbdocs-li {
   text-transform: uppercase;
 }
 
-.table-of-contents+ul {
+.table-of-contents + ul {
   margin: 0 24px;
   padding: 16px 0;
   position: relative;
 }
 
-.table-of-contents+ul li.sbdocs.sbdocs-li {
+.table-of-contents + ul li.sbdocs.sbdocs-li {
   font-size: var(--font-size-large);
   list-style: none;
   margin: 0;
@@ -251,7 +251,7 @@ li.sbdocs.sbdocs-li {
   position: relative;
 }
 
-.table-of-contents+ul li.sbdocs.sbdocs-li:before {
+.table-of-contents + ul li.sbdocs.sbdocs-li:before {
   background-color: var(--color-gray-500);
   content: '';
   height: 1px;
@@ -340,8 +340,8 @@ li.sbdocs.sbdocs-li {
 }
 
 .docblock-argstable-head tr th,
-.docblock-argstable-body > tr[title*="Hide"] > td,
-.docblock-argstable-body > tr[title*="Show"] > td {
+.docblock-argstable-body > tr[title*='Hide'] > td,
+.docblock-argstable-body > tr[title*='Show'] > td {
   background-color: var(--color-dark-100) !important;
   font-weight: var(--font-weight-medium);
 }
@@ -369,7 +369,7 @@ li.sbdocs.sbdocs-li {
   -webkit-filter: none !important;
 }
 
-.docblock-argstable .docblock-argstable-body>tr>* {
+.docblock-argstable .docblock-argstable-body > tr > * {
   border-top: 0;
 }
 
@@ -378,8 +378,8 @@ li.sbdocs.sbdocs-li {
   border-bottom: 1px solid var(--color-dark-0);
 }
 
-.docblock-argstable .docblock-argstable-body>tr>*:first-of-type,
-.docblock-argstable .docblock-argstable-body>tr>*:last-of-type {
+.docblock-argstable .docblock-argstable-body > tr > *:first-of-type,
+.docblock-argstable .docblock-argstable-body > tr > *:last-of-type {
   border-inline-start: 0 !important;
   border-inline-end: 0 !important;
 }
@@ -407,7 +407,6 @@ li.sbdocs.sbdocs-li {
 .sbdocs.sbdocs-preview {
   box-shadow: none;
 }
-
 
 pre.prismjs {
   background-color: var(--color-dark-100) !important;
@@ -441,11 +440,11 @@ pre.prismjs {
     flex-direction: column;
     gap: 8px;
 
-    >label {
+    > label {
       font-weight: var(--font-weight-medium);
     }
 
-    >div>div>div {
+    > div > div > div {
       margin: 0;
     }
   }
@@ -454,7 +453,6 @@ pre.prismjs {
 /*-----------------
   Hide stories from sidebar
  -----------------*/
-
 
 .horizontal,
 .vertical {
@@ -472,4 +470,8 @@ pre.prismjs {
 
 .capitalize {
   text-transform: capitalize;
+}
+
+figure {
+  background-color: var(--color-white);
 }
