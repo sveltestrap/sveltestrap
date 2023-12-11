@@ -414,46 +414,6 @@ pre.prismjs {
   font-size: 13px;
 }
 
-/*-----------------
-  Custom Document Formatting
- -----------------*/
-
-.columns {
-  display: flex;
-  gap: 24px;
-  margin: 24px;
-
-  &.vertical {
-    flex-direction: column;
-  }
-
-  &.center {
-    align-items: center;
-
-    &.vertical {
-      justify-content: center;
-    }
-  }
-
-  .column {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-
-    > label {
-      font-weight: var(--font-weight-medium);
-    }
-
-    > div > div > div {
-      margin: 0;
-    }
-  }
-}
-
-/*-----------------
-  Hide stories from sidebar
- -----------------*/
-
 .horizontal,
 .vertical {
   display: inline-flex;
