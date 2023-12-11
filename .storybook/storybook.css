@@ -471,3 +471,7 @@ pre.prismjs {
 figure {
   background-color: var(--color-white);
 }
+
+h4 {
+  color: var(--color-gray-400);
+}
