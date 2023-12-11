@@ -7,11 +7,10 @@
     parameters: {},
     argTypes: {
       class: {
-        className: 'string',
-        control: {
-          type: 'select'
-        },
-        options: ['fluid', 'thumbnail', 'figure']
+        control: false,
+        table: {
+          disable: true
+        }
       },
       alt: {
         control: 'text'
@@ -24,10 +23,15 @@
       },
       thumbnail: {
         control: 'boolean'
+      },
+      src: {
+        control: false,
+        table: {
+          disable: true
+        }
       }
     },
     args: {
-      class: '',
       alt: '',
       fluid: false,
       thumbnail: false
@@ -47,16 +51,30 @@
 </script>
 
 <Template let:args>
-  <Image {...args} />
+  {#if args.figure}
+    <Figure caption="This is a figure caption">
+      <Image {...args} />
+    </Figure>
+  {:else}
+    <Image {...args} />
+  {/if}
 </Template>
 
-<Story name="Basic" args={{ alt: '', fluid: false, thumbnail: false, figure: false, class: '' }}>
-  <Image src="https://picsum.photos/id/426/400/600.jpg" />
-</Story>
+<Story
+  name="Basic"
+  args={{
+    alt: '',
+    fluid: false,
+    thumbnail: false,
+    figure: false,
+    src: 'https://picsum.photos/id/123/2000/400.jpg'
+  }}
+/>
 
-<Story name="Fluid">
-  <Image fluid alt="This is a fluid Image" src="https://picsum.photos/id/123/2000/400.jpg" />
-</Story>
+<Story
+  name="Fluid"
+  args={{ fluid: true, alt: 'This is a fluid Image', src: 'https://picsum.photos/id/123/2000/400.jpg' }}
+/>
 
 <Story name="Thumbnail">
   <div class="horizontal">
