@@ -125,105 +125,49 @@
   <Table {...args}>
     <thead>
       <tr>
+        <th>#</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Username</th>
         {#if args.responsive}
-          <th>#</th>
-          <th>First Name</th>
-          <th>Last Name</th>
-          <th>Username</th>
-          <th>Extra</th>
-          <th>Extra</th>
-          <th>Extra</th>
-          <th>Extra</th>
-          <th>Extra</th>
-          <th>Extra</th>
-          <th>Extra</th>
-          <th>Extra</th>
-          <th>Extra</th>
-          <th>Extra</th>
-          <th>Extra</th>
-          <th>Extra</th>
-        {:else}
-          <th>#</th>
-          <th>First Name</th>
-          <th>Last Name</th>
-          <th>Username</th>
+          {#each Array(10) as _, count}
+            <th>Header {count + 4}</th>
+          {/each}
         {/if}
       </tr>
     </thead>
     <tbody>
       <tr>
+        <th scope="row">1</th>
+        <td>Mark</td>
+        <td>Otto</td>
+        <td>@mdo</td>
         {#if args.responsive}
-          <th scope="row">1</th>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
-          <td>Cell</td>
-          <td>Cell</td>
-          <td>Cell</td>
-          <td>Cell</td>
-          <td>Cell</td>
-          <td>Cell</td>
-          <td>Cell</td>
-          <td>Cell</td>
-          <td>Cell</td>
-          <td>Cell</td>
-          <td>Cell</td>
-          <td>Cell</td>
-        {:else}
-          <th scope="row">1</th>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
+          {#each Array(10) as _, count}
+            <td>Cell {count + 4}</td>
+          {/each}
         {/if}
       </tr>
       <tr>
+        <th scope="row">2</th>
+        <td>Jacob</td>
+        <td>Thornton</td>
+        <td>@fat</td>
         {#if args.responsive}
-          <th scope="row">2</th>
-          <td>Jacob</td>
-          <td>Thornton</td>
-          <td>@fat</td>
-          <td>Cell</td>
-          <td>Cell</td>
-          <td>Cell</td>
-          <td>Cell</td>
-          <td>Cell</td>
-          <td>Cell</td>
-          <td>Cell</td>
-          <td>Cell</td>
-          <td>Cell</td>
-          <td>Cell</td>
-          <td>Cell</td>
-          <td>Cell</td>
-        {:else}
-          <th scope="row">2</th>
-          <td>Jacob</td>
-          <td>Thornton</td>
-          <td>@fat</td>
+          {#each Array(10) as _, count}
+            <td>Cell {count + 4}</td>
+          {/each}
         {/if}
       </tr>
       <tr>
+        <th scope="row">3</th>
+        <td>Larry</td>
+        <td>the Bird</td>
+        <td>@twitter</td>
         {#if args.responsive}
-          <th scope="row">3</th>
-          <td>Larry</td>
-          <td>the Bird</td>
-          <td>@twitter</td>
-          <td>Cell</td>
-          <td>Cell</td>
-          <td>Cell</td>
-          <td>Cell</td>
-          <td>Cell</td>
-          <td>Cell</td>
-          <td>Cell</td>
-          <td>Cell</td>
-          <td>Cell</td>
-          <td>Cell</td>
-          <td>Cell</td>
-          <td>Cell</td>
-        {:else}
-          <th scope="row">3</th>
-          <td>Larry</td>
-          <td>the Bird</td>
-          <td>@twitter</td>
+          {#each Array(10) as _, count}
+            <td>Cell {count + 4}</td>
+          {/each}
         {/if}
       </tr>
     </tbody>
@@ -247,69 +191,29 @@
     <thead>
       <tr>
         <th>#</th>
-        <th>Table heading</th>
-        <th>Table heading</th>
-        <th>Table heading</th>
-        <th>Table heading</th>
-        <th>Table heading</th>
-        <th>Table heading</th>
-        <th>Table heading</th>
-        <th>Table heading</th>
-        <th>Table heading</th>
-        <th>Table heading</th>
-        <th>Table heading</th>
-        <th>Table heading</th>
-        <th>Table heading</th>
+        {#each Array(15) as _, count}
+          <th>Header {count + 1}</th>
+        {/each}
       </tr>
     </thead>
     <tbody>
       <tr>
         <th scope="row">1</th>
-        <td>Table cell</td>
-        <td>Table cell</td>
-        <td>Table cell</td>
-        <td>Table cell</td>
-        <td>Table cell</td>
-        <td>Table cell</td>
-        <td>Table cell</td>
-        <td>Table cell</td>
-        <td>Table cell</td>
-        <td>Table cell</td>
-        <td>Table cell</td>
-        <td>Table cell</td>
-        <td>Table cell</td>
+        {#each Array(15) as _, count}
+          <td>Cell {count + 1}</td>
+        {/each}
       </tr>
       <tr>
         <th scope="row">2</th>
-        <td>Table cell</td>
-        <td>Table cell</td>
-        <td>Table cell</td>
-        <td>Table cell</td>
-        <td>Table cell</td>
-        <td>Table cell</td>
-        <td>Table cell</td>
-        <td>Table cell</td>
-        <td>Table cell</td>
-        <td>Table cell</td>
-        <td>Table cell</td>
-        <td>Table cell</td>
-        <td>Table cell</td>
+        {#each Array(15) as _, count}
+          <td>Cell {count + 1}</td>
+        {/each}
       </tr>
       <tr>
         <th scope="row">3</th>
-        <td>Table cell</td>
-        <td>Table cell</td>
-        <td>Table cell</td>
-        <td>Table cell</td>
-        <td>Table cell</td>
-        <td>Table cell</td>
-        <td>Table cell</td>
-        <td>Table cell</td>
-        <td>Table cell</td>
-        <td>Table cell</td>
-        <td>Table cell</td>
-        <td>Table cell</td>
-        <td>Table cell</td>
+        {#each Array(15) as _, count}
+          <td>Cell {count + 1}</td>
+        {/each}
       </tr>
     </tbody>
   </Table>
