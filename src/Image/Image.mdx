@@ -1,0 +1,58 @@
+import { Meta, Canvas, Controls, Story, Source } from '@storybook/blocks';
+import * as ImageStories from './Image.stories';
+
+<Meta title="Components/Image" />
+
+# Images
+
+The `<Image>` component serves as a versatile element for displaying images within a user interface. It is designed to be flexible and adaptive, supporting fluid layouts and providing options for thumbnail displays.
+
+<Canvas>
+  <Story of={ImageStories.Basic} />
+</Canvas>
+
+<Controls of={ImageStories.Basic} />
+
+## Fluid
+
+<Canvas withSource="none">
+  <Story of={ImageStories.Fluid} />
+</Canvas>
+
+<Source dark language="html" code={`
+<script lang="ts">
+  import { Image } from 'sveltestrap';
+</script>
+
+<Image fluid alt="This is a fluid Image" src="https://picsum.photos/id/123/2000/400.jpg" />
+`} />
+
+## Thumbnail
+
+<Canvas withSource="none">
+  <Story of={ImageStories.Thumbnail} />
+</Canvas>
+
+<Source dark language="html" code={`
+<script lang="ts">
+  import { Image } from 'sveltestrap';
+</script>
+
+<Image thumbnail alt="This is a thumbnail Image" src="https://picsum.photos/100/100?random=1" />
+`} />
+
+## Figure
+
+<Canvas withSource="none">
+  <Story of={ImageStories.Figures} />
+</Canvas>
+
+<Source dark language="html" code={`
+<script lang="ts">
+  import { Figure, Image } from 'sveltestrap';
+</script>
+
+<Figure caption="I believe this is a cow needing a haircut">
+  <Image fluid alt="Landscape" src="https://picsum.photos/id/200/800/600" />
+</Figure>
+`} />
