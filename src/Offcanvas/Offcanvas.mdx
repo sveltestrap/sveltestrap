@@ -12,3 +12,243 @@ The `<Offcanvas>` component is used to manage and present content in a compact a
 </Canvas>
 
 <Controls of={OffcanvasStories.Basic} />
+
+
+## Backdrop
+<Canvas withSource="none">
+  <Story of={OffcanvasStories.Backdrop} />
+</Canvas>
+
+<p>You can disable the <code>Offcanvas</code> backdrop by setting the <code>backdrop</code> prop to <code>false</code>.</p>
+
+<Source dark language="jsx" code={`
+<script lang="ts">
+  import { Button, Offcanvas } from 'sveltestrap';
+
+  let isOpen = false;
+
+  const toggle = () => {
+    isOpen = !isOpen;
+  };
+</script>
+
+<Button color="primary" on:click={toggle}>Open</Button>
+
+<Offcanvas header="No Backdrop" {isOpen} {toggle} backdrop={false}>
+  Look ma, no backdrop.
+</Offcanvas>
+`} />
+
+
+## Events
+<Canvas withSource="none">
+  <Story of={OffcanvasStories.Events} />
+</Canvas>
+
+<code>Offcanvas</code> provides four events for managing state: <code>opening</code>, <code>open</code>, <code>closing</code>, and <code>close</code>.
+
+<Source dark language="jsx" code={`
+
+<script lang="ts">
+  import { Button, Offcanvas } from 'sveltestrap';
+
+  let isOpen = false;
+
+  const toggle = () => {
+    isOpen = !isOpen;
+  };
+</script>
+
+<Button color="primary" on:click={toggle}>Open</Button>
+
+<code>Current state: {status}</code>
+
+<Offcanvas
+  {isOpen}
+  {toggle}
+  placement="end"
+  on:opening={() => (status = 'Opening...')}
+  on:open={() => (status = 'Opened')}
+  on:closing={() => (status = 'Closing...')}
+  on:close={() => (status = 'Closed')}
+>
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+  tempor incididunt ut labore et dolore magna aliqua.
+</Offcanvas>
+`} />
+
+## Placement
+<Canvas withSource="none">
+  <Story of={OffcanvasStories.Placement} />
+</Canvas>
+
+<Source dark language="jsx" code={`
+
+<script lang="ts">
+  import { Button, Offcanvas } from 'sveltestrap';
+
+  let isOpen = false;
+  let status = 'Closed';
+  let endOpen = false;
+  let bottomOpen = false;
+  let topOpen = false;
+  const toggleEnd = () => (endOpen = !endOpen);
+  const toggleBottom = () => (bottomOpen = !bottomOpen);
+  const toggleTop = () => (topOpen = !topOpen);
+
+  const toggle = () => {
+    isOpen = !isOpen
+  };
+</script>
+
+<Button color="danger" on:click={toggle}>Start</Button>
+<Button color="warning" on:click={() => (endOpen = !endOpen)}>End</Button>
+<Button color="success" on:click={() => (topOpen = !topOpen)}>Top</Button>
+<Button color="info" on:click={() => (bottomOpen = !bottomOpen)}>
+  Bottom
+</Button>
+
+<Offcanvas {isOpen} {toggle} header="Start" placement="start">
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+  tempor incididunt ut labore et dolore magna aliqua.
+</Offcanvas>
+
+<Offcanvas isOpen={endOpen} toggle={toggleEnd} placement="end" header="Right">
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+  tempor incididunt ut labore et dolore magna aliqua.
+</Offcanvas>
+
+<Offcanvas isOpen={topOpen} toggle={toggleTop} placement="top" header="Top">
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+  tempor incididunt ut labore et dolore magna aliqua.
+</Offcanvas>
+
+<Offcanvas
+  isOpen={bottomOpen}
+  toggle={toggleBottom}
+  placement="bottom"
+  header="Bottom"
+>
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+  tempor incididunt ut labore et dolore magna aliqua.
+</Offcanvas>
+`} />
+
+## Slots
+<Canvas withSource="none">
+  <Story of={OffcanvasStories.Slots} />
+</Canvas>
+
+**Available**
+- <code>default</code> This slot is used to render the content for <code>Offcanvas</code> body.
+- <code>header</code> Use this slot to create a custom formatted header for the <code>Offcanvas</code>.
+
+<Source dark language="jsx" code={`
+
+<script lang="ts">
+  import { Button, Offcanvas } from 'sveltestrap';
+
+  let isOpen = false;
+
+  const toggle = () => {
+    isOpen = !isOpen;
+  };
+</script>
+
+<Button color="primary" on:click={toggle}>Open</Button>
+
+<Offcanvas scroll isOpen={isOpen} {toggle}>
+  <h1 slot="header">
+    <i>Hello <b>World!</b></i>
+  </h1>
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+  incididunt ut labore et dolore magna aliqua.
+</Offcanvas>
+`} />
+
+
+## Manual
+<Canvas withSource="none">
+  <Story of={OffcanvasStories.Manual} />
+</Canvas>
+
+<Source dark language="jsx" code={`
+
+<script lang="ts">
+  import { Button, Offcanvas } from 'sveltestrap';
+
+  let isOpen = false;
+
+  const toggle = () => {
+    isOpen = !isOpen;
+  };
+</script>
+
+<Button color="primary" on:click={() => (isOpen = true)}>Open</Button>
+
+<Offcanvas header="No toggle or esc" scroll {isOpen}>
+  <Button color="danger" on:click={() => (isOpen = false)}>Close Me</Button>
+</Offcanvas>
+`} />
+
+## Scrolling
+<Canvas withSource="none">
+  <Story of={OffcanvasStories.Scrolling} />
+</Canvas>
+
+<Source dark language="jsx" code={`
+
+<script lang="ts">
+  import { Button, Offcanvas } from 'sveltestrap';
+
+  let isOpen = false;
+
+  const toggle = () => {
+    isOpen = !isOpen;
+  };
+</script>
+
+<Button color="primary" on:click={toggle}>Open Offcanvas</Button>
+
+<Offcanvas
+  header="You can scroll the body"
+  scroll
+  {isOpen}
+  {toggle}
+  backdrop={false}
+>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+  tempor incididunt ut labore et dolore magna aliqua.</p>
+
+  // ... a bunch more content
+</Offcanvas>
+`} />
+
+## Custom Width & Content
+<Canvas withSource="none">
+  <Story of={OffcanvasStories.Custom} />
+</Canvas>
+
+<Source dark language="jsx" code={`
+
+<script lang="ts">
+  import { Button, Offcanvas } from 'sveltestrap';
+
+  let isOpen = false;
+
+  const toggle = () => {
+    isOpen = !isOpen;
+  };
+</script>
+
+<Button color="primary" on:click={() => (isOpen = true)}>Open</Button>
+
+<Offcanvas isOpen={isOpen} body={false} style="width: 150px" class="bg-danger">
+  <img
+    alt="Meaningless content"
+    role="button"
+    src="https://picsum.photos/150/1200"
+    on:click={() => (isOpen = false)}
+  />
+</Offcanvas>
+`} />
