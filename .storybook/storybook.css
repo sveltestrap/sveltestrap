@@ -413,7 +413,7 @@ pre.prismjs {
   border: 1px solid var(--color-dark-0) !important;
   font-size: 13px;
 }
-]
+
 .horizontal,
 .vertical {
   display: inline-flex;
@@ -436,39 +436,6 @@ figure {
   background-color: var(--color-white);
 }
 
-
-/*-----------------
-  Custom Document Formatting
- -----------------*/
-
-.columns {
-  display: flex;
-  gap: 24px;
-  margin: 24px;
-
-  &.vertical {
-    flex-direction: column;
-  }
-
-  &.center {
-    align-items: center;
-
-    &.vertical {
-      justify-content: center;
-    }
-  }
-
-  .column {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-
-    > label {
-      font-weight: var(--font-weight-medium);
-    }
-
-    > div > div > div {
-      margin: 0;
-    }
-  }
+h4 {
+  color: var(--color-gray-400);
 }
