@@ -2,11 +2,36 @@
   import { getContext } from 'svelte';
   import { classnames } from '../utils';
 
+  // Additional CSS class name for the component
   let className = '';
+  /**
+   * Additional CSS class name for the component
+   * @type {string}
+   */
   export { className as class };
+
+  /**
+   * Alternative text for the image
+   * @type {string}
+   */
   export let alt = undefined;
+
+  /**
+   * Contextual information related to the figure component
+   * @type {HTMLElement}
+   */
   export let figure = getContext('figure');
+
+  /**
+   * Fluid image indicator flag
+   * @type {boolean}
+   */
   export let fluid = false;
+
+  /**
+   * Thumbnail image indicator flag
+   * @type {boolean}
+   */
   export let thumbnail = false;
 
   $: classes = classnames(className, {
