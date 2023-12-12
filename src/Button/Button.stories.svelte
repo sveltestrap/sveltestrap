@@ -80,7 +80,7 @@
 
 <script>
   import { Story, Template } from '@storybook/addon-svelte-csf';
-  import { ButtonGroup, ButtonToolbar } from 'sveltestrap';
+  import { ButtonGroup, ButtonToolbar } from '@sveltestrap/sveltestrap';
 
   const colors = [
     'primary',

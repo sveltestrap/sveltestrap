@@ -53,7 +53,7 @@
 
 <script>
   import { Story, Template } from '@storybook/addon-svelte-csf';
-  import { Column } from 'sveltestrap';
+  import { Column } from '@sveltestrap/sveltestrap';
 
   const ROWS = [
     {

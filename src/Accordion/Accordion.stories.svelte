@@ -29,7 +29,7 @@
 
 <script>
   import { Story, Template } from '@storybook/addon-svelte-csf';
-  import { AccordionItem } from 'sveltestrap';
+  import { AccordionItem } from '@sveltestrap/sveltestrap';
 
   let id = 1;
   let open = true;
