@@ -422,13 +422,13 @@ li.sbdocs.sbdocs-li {
 
 .sbdocs.sbdocs-preview {
   box-shadow: inset 0 0 0 1px var(--color-dark-0) !important;
-  border: 1px solid rgba(255, 255, 255, .1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 pre.prismjs {
   background-color: var(--color-dark-200) !important;
-  border: 1px solid rgba(255, 255, 255, .1);
-  box-shadow: inset 0 0 0 1px  var(--color-dark-0) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 0 0 1px var(--color-dark-0) !important;
   border-radius: 3px;
   font-size: 13px;
 }
@@ -438,7 +438,7 @@ pre.prismjs {
   border-radius: 0 0 var(--border-radius-base) var(--border-radius-base);
 }
 
-.docblock-source.sb-unstyled>div:last-child {
+.docblock-source.sb-unstyled > div:last-child {
   bottom: 1px;
   right: 1px;
 }
@@ -521,16 +521,25 @@ pre.prismjs {
 }
 
 /*-----------------
-  Image Figure Story
- -----------------*/
+Image Figure Story
+-----------------*/
 
 .figure figcaption {
   color: var(--color-white);
 }
 
 /*-----------------
- Breadcrumb Story
+Progress Example Story
+-----------------*/
+
+.progress-example .text-content {
+  color: var(--color-gray-300);
+}
+
+/*-----------------
+  Breadcrumb Stories
  -----------------*/
+
 .breadcrumbs-example .breadcrumb-item + .breadcrumb-item::before {
   --bs-breadcrumb-divider-color: var(--color-gray-800);
 }

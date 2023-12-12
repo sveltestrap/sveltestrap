@@ -1,15 +1,19 @@
-import { SvelteComponent } from 'svelte';
-import { TextColor } from '../shared';
+declare module 'sveltestrap' {
+  import { SvelteComponent } from 'svelte';
+  import { TextColor } from '../shared';
+  import { HTMLAttributes } from 'svelte/elements';
 
-export interface SpinnerProps
-  extends svelte.JSX.HTMLAttributes<HTMLElementTagNameMap['div']> {
-  color?: TextColor;
-  size?: any;
-  type?: string;
+  export interface SpinnerProps extends HTMLAttributes<HTMLDivElement> {
+    color?: TextColor;
+    size?: any;
+    type?: string;
+  }
+
+  export interface SpinnerEvents {}
+
+  export interface SpinnerSlots {
+    default: {};
+  }
+
+  export default class Spinner extends SvelteComponent<SpinnerProps, SpinnerEvents, SpinnerSlots> {}
 }
-
-export default class Spinner extends SvelteComponent<
-  SpinnerProps,
-  {},
-  { default: {} }
-> {}

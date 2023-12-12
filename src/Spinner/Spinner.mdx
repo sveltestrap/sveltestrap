@@ -1,0 +1,58 @@
+import { Meta, Canvas, Controls, Story, Source } from '@storybook/blocks';
+import * as SpinnerStories from './Spinner.stories';
+
+<Meta title="Components/Spinner" />
+
+# Spinner <small class="bootstrap-docs">[Bootstrap Spinner](https://getbootstrap.com/docs/5.3/components/spinners/)</small>
+
+The `<Spinner>` component is a user interface element that signifies ongoing activity.
+
+<Canvas>
+  <Story of={SpinnerStories.Basic} />
+</Canvas>
+
+<Controls of={SpinnerStories.Basic} />
+
+## Types
+
+You can the change `Spinner` type by setting the `type` prop to `border` or `grow`.
+
+<Canvas withSource="none">
+  <Story of={SpinnerStories.Types} />
+</Canvas>
+
+<Source
+  dark
+  language="jsx"
+  code={` 
+<script lang="ts">
+  import {Spinner} from 'sveltestrap'; 
+  const colors = [ 'primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark' ];
+</script>
+
+<Spinner type="border" color="primary" />
+
+<Spinner type="grow" color="primary" />
+`} />
+
+## Sizes
+
+You can manipulate the `Spinner` size by setting the `size` prop to `sm`.
+
+<Canvas withSource="none">
+  <Story of={SpinnerStories.Sizes} />
+</Canvas>
+
+<Source
+  dark
+  language="jsx"
+  code={` 
+<script lang="ts">
+  import {Spinner} from 'sveltestrap'; 
+  const colors = [ 'primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark' ];
+</script>
+
+<Spinner size="sm" color="primary" />
+
+<Spinner size="sm" type="grow" color="primary" />
+`} />
