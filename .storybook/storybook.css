@@ -449,10 +449,6 @@ figure {
   background-color: var(--color-white);
 }
 
-h4 {
-  color: var(--color-gray-400);
-}
-
 .docblock-source.sb-unstyled > div:last-child {
   bottom: 1px;
   right: 1px;
