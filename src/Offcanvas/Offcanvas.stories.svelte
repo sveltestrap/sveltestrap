@@ -260,11 +260,8 @@
   <Button color="primary" on:click={() => (isOpen = true)}>Open</Button>
 
   <Offcanvas isOpen={isOpen} body={false} style="width: 150px" class="bg-danger">
-    <img
-      alt="Meaningless content"
-      role="button"
-      src="https://picsum.photos/150/1200"
-      on:click={() => (isOpen = false)}
-    />
+    <div on:click={() => (isOpen = false)}>
+      <img src="https://picsum.photos/150/1200" alt="Meaningless content" />
+    </div>
   </Offcanvas>
 </Story>
