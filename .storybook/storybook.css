@@ -50,7 +50,8 @@
   --color-red-500: #d52b1e;
 
   --color-dark-0: #101317;
-  --color-dark-100: #1c2128;
+  --color-dark-100: #13171c;
+  --color-dark-200: #1c2128;
 
   --link-color: #0848a7;
   --link-color-active: #043f96;
@@ -191,6 +192,7 @@ body .sidebar-container {
 
 .sbdocs input:checked ~ span:last-of-type,
 .sbdocs input:not(:checked) ~ span:first-of-type {
+  color: var(--color-white) !important;
   background: var(--color-blue-400) !important;
 }
 
@@ -199,11 +201,12 @@ body .sidebar-container {
  -----------------*/
 
 .sbdocs.sbdocs-wrapper {
-  padding: 40px;
+  justify-content: flex-start;
+  padding: 40px 80px;
 }
 
-.sbdocs a {
-  color: var(--color-navy);
+.sbdocs.sbdocs-content {
+  max-width: 1080px;
 }
 
 .sbdocs.sbdocs-wrapper h2 {
@@ -315,7 +318,7 @@ li.sbdocs.sbdocs-li {
 
 .sbdocs-table tbody tr td code {
   background: var(--color-gray-100);
-  border-radius: var(--border-radius-large);
+  border-radius: var(--border-radius-base);
   color: var(--color-gray-900);
   font-size: var(--font-size-medium);
   padding: var(--padding-small);
@@ -342,7 +345,7 @@ li.sbdocs.sbdocs-li {
 .docblock-argstable-head tr th,
 .docblock-argstable-body > tr[title*='Hide'] > td,
 .docblock-argstable-body > tr[title*='Show'] > td {
-  background-color: var(--color-dark-100) !important;
+  background-color: var(--color-dark-200) !important;
   font-weight: var(--font-weight-medium);
 }
 
@@ -405,15 +408,23 @@ li.sbdocs.sbdocs-li {
 }
 
 .sbdocs.sbdocs-preview {
-  box-shadow: none;
+  box-shadow: inset 0 0 0 1px var(--color-dark-0) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 pre.prismjs {
-  background-color: var(--color-dark-100) !important;
-  border: 1px solid var(--color-dark-0) !important;
+  background-color: var(--color-dark-200) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 0 0 1px var(--color-dark-0) !important;
+  border-radius: 3px;
   font-size: 13px;
 }
-]
+
+.docs-story + div > div pre.prismjs {
+  border: 0;
+  border-radius: 0 0 var(--border-radius-base) var(--border-radius-base);
+}
+
 .horizontal,
 .vertical {
   display: inline-flex;
@@ -434,6 +445,22 @@ pre.prismjs {
 
 figure {
   background-color: var(--color-white);
+}
+
+.docblock-source.sb-unstyled > div:last-child {
+  bottom: 1px;
+  right: 1px;
+}
+
+.bootstrap-docs {
+  border: 1px solid var(--color-blue-400);
+  border-radius: var(--border-radius-base);
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 12px;
+  padding: var(--padding-small) var(--padding-large);
+  position: absolute;
+  right: 0;
 }
 
 .container-wrapper {
@@ -468,40 +495,4 @@ figure {
   border: 2px solid var(--color-gray-700);
   border-radius: var(--border-radius-base);
   margin-bottom: var(--margin-base);
-}
-
-/*-----------------
-  Custom Document Formatting
- -----------------*/
-
-.columns {
-  display: flex;
-  gap: 24px;
-  margin: 24px;
-
-  &.vertical {
-    flex-direction: column;
-  }
-
-  &.center {
-    align-items: center;
-
-    &.vertical {
-      justify-content: center;
-    }
-  }
-
-  .column {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-
-    > label {
-      font-weight: var(--font-weight-medium);
-    }
-
-    > div > div > div {
-      margin: 0;
-    }
-  }
 }
