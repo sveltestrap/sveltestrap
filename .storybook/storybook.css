@@ -425,8 +425,8 @@ pre.prismjs {
 }
 
 .docs-story + div > div pre.prismjs {
-  border-radius: 0 0 var(--border-radius-base) var(--border-radius-base);
   border: 0;
+  border-radius: 0 0 var(--border-radius-base) var(--border-radius-base);
 }
 
 .horizontal,
