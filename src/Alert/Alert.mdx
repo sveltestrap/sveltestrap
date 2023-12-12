@@ -1,0 +1,128 @@
+import { Meta, Canvas, Controls, Story, Source } from '@storybook/blocks';
+import * as AlertStories from './Alert.stories';
+
+<Meta title="Components/Alerts" />
+
+# Alerts <small class="bootstrap-docs">[Bootstrap Alerts](https://getbootstrap.com/docs/5.3/components/alerts/)</small>
+
+The `<Alert>` component provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages. You can read more about
+
+<Canvas>
+  <Story of={AlertStories.Basic} />
+</Canvas>
+
+<Controls of={AlertStories.Basic} />
+
+## Colors
+<Canvas withSource="none">
+  <Story of={AlertStories.Colors} />
+</Canvas>
+
+<Source dark language="jsx" code={`
+<script lang="ts">
+  import { Alert } from '@sveltestrap/sveltestrap';
+
+  const colors = [
+    'primary',
+    'secondary',
+    'success',
+    'danger',
+    'warning',
+    'info',
+    'light',
+    'dark'
+  ];
+</script>
+
+{#each colors as color}
+  <Alert {color}>
+    <h4 class="alert-heading text-capitalize">{color}</h4>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    <a href="#todo" class="alert-link">
+      Also, alert-links are colored to match
+    </a>
+    .
+  </Alert>
+{/each}
+`} />
+
+## Fade
+<Canvas withSource="none">
+  <Story of={AlertStories.Fade} />
+</Canvas>
+
+<p>You can disable the <code>Alert</code> fade transition by setting the <code>fade</code> prop to <code>false</code>.</p>
+
+<Source dark language="jsx" code={`
+<script lang="ts">
+  import { Alert } from '@sveltestrap/sveltestrap';
+
+  let isOpen = true;
+
+  const toggle = () => {
+    visible = !visible;
+  };
+</script>
+
+<Alert
+  color="primary"
+  {isOpen}
+  {toggle}
+  fade={false}
+>
+  I am a primary alert and I can be dismissed without animating!
+</Alert>
+`} />
+
+## Header
+<Canvas withSource="none">
+  <Story of={AlertStories.Header} />
+</Canvas>
+
+<Source dark language="jsx" code={`
+<script lang="ts">
+  import { Alert } from '@sveltestrap/sveltestrap';
+</script>
+
+<Alert color="primary" heading="Hey here's header text">
+  Lorem ipsum lorem dolor sit amet.
+</Alert>
+`} />
+
+## Controlled
+<Canvas withSource="none">
+  <Story of={AlertStories.Controlled} />
+</Canvas>
+
+<Source dark language="jsx" code={`
+<script lang="ts">
+  import { Alert, Button } from '@sveltestrap/sveltestrap';
+
+  let isOpen = true;
+
+  const toggle = () => {
+    visible = !visible;
+  };
+</script>
+
+<Alert color="primary" isOpen={isOpen} toggle={() => (isOpen = false)}>
+  I can be controlled via <code>isOpen</code> and <code>toggle</code>.
+</Alert>
+
+<Button on:click={toggle}>You can toggle me here.</Button>
+`} />
+
+## Dismissible
+<Canvas withSource="none">
+  <Story of={AlertStories.Dismissible} />
+</Canvas>
+
+<Source dark language="jsx" code={`
+<script lang="ts">
+  import { Alert } from '@sveltestrap/sveltestrap';
+</script>
+
+<Story name="Dismissible">
+  <Alert color="info" dismissible>I am an alert and I can be dismissed!</Alert>
+</Story>
+`} />

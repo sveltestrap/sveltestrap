@@ -41,7 +41,7 @@
 
 <script>
   import { Story, Template } from '@storybook/addon-svelte-csf';
-  import { Image, Figure } from 'sveltestrap';
+  import { Image, Figure } from '@sveltestrap/sveltestrap';
 
   const thumbnails = [
     'https://picsum.photos/100/100?random=1',

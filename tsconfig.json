@@ -4,7 +4,10 @@
     "src/Accordion/*.ts",
     "src/AccordionHeader/*.ts",
     "src/AccordionItem/*.ts",
+    "src/Alert/*.ts",
     "src/Button/*.ts",
+    "src/Image/*.ts",
+    "src/Table/*.ts",
     "src/Modal/*.ts"
   ],
   "exclude": ["node_modules/*"],

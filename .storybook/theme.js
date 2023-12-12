@@ -17,5 +17,6 @@ export default create({
   appBg: '#1c2128',
   appContentBg: '#202833',
   appPreviewBg: '#202833',
-  appBorderColor: '#0c2128'
+  appBorderColor: '#0c2128',
+  textColor: '#d0d0d0'
 });

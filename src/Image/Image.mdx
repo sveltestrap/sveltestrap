@@ -1,11 +1,11 @@
 import { Meta, Canvas, Controls, Story, Source } from '@storybook/blocks';
 import * as ImageStories from './Image.stories';
 
-<Meta title="Content/Image" />
+<Meta title="Content/Images" />
 
-# Images
+# Images <small class="bootstrap-docs">[Bootstrap Images](https://getbootstrap.com/docs/5.3/content/images/)</small>
 
-The `<Image>` component serves as a versatile element for displaying images within a user interface. It is designed to be flexible and adaptive, supporting fluid layouts and providing options for thumbnail displays.
+The `<Image>` component is designed to be flexible and adaptive, supporting fluid layouts and providing options for thumbnail displays.
 
 <Canvas>
   <Story of={ImageStories.Basic} />
@@ -21,7 +21,7 @@ The `<Image>` component serves as a versatile element for displaying images with
 
 <Source dark language="jsx" code={`
 <script lang="ts">
-  import { Image } from 'sveltestrap';
+  import { Image } from '@sveltestrap/sveltestrap';
 </script>
 
 <Image fluid alt="This is a fluid Image" src="https://picsum.photos/id/123/2000/400.jpg" />
@@ -35,7 +35,7 @@ The `<Image>` component serves as a versatile element for displaying images with
 
 <Source dark language="jsx" code={`
 <script lang="ts">
-  import { Image } from 'sveltestrap';
+  import { Image } from '@sveltestrap/sveltestrap';
 </script>
 
 <Image thumbnail alt="This is a thumbnail Image" src="https://picsum.photos/100/100?random=1" />
@@ -49,7 +49,7 @@ The `<Image>` component serves as a versatile element for displaying images with
 
 <Source dark language="jsx" code={`
 <script lang="ts">
-  import { Figure, Image } from 'sveltestrap';
+  import { Figure, Image } from '@sveltestrap/sveltestrap';
 </script>
 
 <Figure caption="I believe this is a cow needing a haircut">
