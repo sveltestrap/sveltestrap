@@ -209,10 +209,6 @@ body .sidebar-container {
   max-width: 1080px;
 }
 
-.sbdocs a {
-  color: var(--color-navy);
-}
-
 .sbdocs.sbdocs-wrapper h2 {
   border-bottom: 0;
   padding-bottom: var(--padding-base);
@@ -454,4 +450,15 @@ figure {
 .docblock-source.sb-unstyled > div:last-child {
   bottom: 1px;
   right: 1px;
+}
+
+.bootstrap-docs {
+  border: 1px solid var(--color-blue-400);
+  border-radius: var(--border-radius-base);
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 12px;
+  padding: var(--padding-small) var(--padding-large);
+  position: absolute;
+  right: 0;
 }

@@ -2,17 +2,71 @@
   import { fade as fadeTransition } from 'svelte/transition';
   import { classnames } from '../utils';
 
+  /**
+   * Additional CSS class names.
+   * @type {string}
+   */
   let className = '';
   export { className as class };
+
+  /**
+   * The content to be displayed in the alert.
+   * @type {any}
+   */
   export let children = undefined;
+
+  /**
+   * The color theme for the alert.
+   * @type {string}
+   */
   export let color = 'success';
+
+  /**
+   * Additional CSS class names for the close button.
+   * @type {string}
+   */
   export let closeClassName = '';
+
+  /**
+   * ARIA label for the close button.
+   * @type {string}
+   */
   export let closeAriaLabel = 'Close';
+
+  /**
+   * Flag to indicate if the alert is dismissible.
+   * @type {boolean}
+   */
   export let dismissible = false;
-  export let heading = undefined;
+
+  /**
+   * Heading text for the alert.
+   * @type {string}
+   */
+  export let heading = '';
+
+  /**
+   * Controls the visibility of the alert.
+   * @type {boolean}
+   */
   export let isOpen = true;
+
+  /**
+   * Function to toggle the visibility of the alert.
+   * @type {Function | undefined}
+   */
   export let toggle = undefined;
+
+  /**
+   * Flag to enable fade transition.
+   * @type {boolean}
+   */
   export let fade = true;
+
+  /**
+   * Transition configuration.
+   * @type {object}
+   */
   export let transition = { duration: fade ? 400 : 0 };
 
   $: showClose = dismissible || toggle;
