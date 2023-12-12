@@ -1,0 +1,49 @@
+import { Meta, Canvas, ArgsTable, Controls, Story, Source } from '@storybook/blocks';
+import Container from './Container.svelte';
+import * as ContainerStories from './Container.stories';
+
+<Meta title="Layout/Container" />
+
+# Container <small class="bootstrap-docs">[Bootstrap Container](https://getbootstrap.com/docs/5.3/layout/containers/)</small>
+
+The `<Container>` component is a dynamic user-interface element that controls the width of the content within it.
+
+<Canvas withSource="none">
+  <Story of={ContainerStories.Basic} />
+</Canvas>
+
+<Controls of={ContainerStories.Basic} />
+
+## Responsive Containers
+
+`Container` provides six classes for controlling content width: `fluid`, `sm`, `md`, `lg`, `xl`, and `xxl`. Classes are 100% wide until the specified breakpoint is reached.
+
+<Source dark language="jsx" code={`
+<script lang="ts">
+  import { Container } from 'sveltestrap';
+</script>
+
+<Container fluid>
+  <h3 class="container">fluid</h3>
+</Container>
+
+<Container sm>
+  <h3 class="container">sm</h3>
+</Container>
+
+<Container md>
+  <h3 class="container">md</h3>
+</Container>
+
+<Container lg>
+  <h3 class="container">lg</h3>
+</Container>
+
+<Container xl>
+  <h3 class="container">xl</h3>
+</Container>
+
+<Container xxl>
+  <h3 class="container">xxl</h3>
+</Container>
+`} />
