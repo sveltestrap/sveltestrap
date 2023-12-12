@@ -1,7 +1,8 @@
 declare module 'sveltestrap' {
   import { SvelteComponent } from 'svelte';
+  import { HTMLAttributes } from 'svelte/elements';
 
-  export interface AccordionProps extends svelteHTML.HTMLAttributes<HTMLElementTagNameMap['div']> {
+  export interface AccordionProps extends HTMLAttributes<HTMLDivElement> {
     class?: string;
     flush?: boolean;
     stayOpen?: boolean;

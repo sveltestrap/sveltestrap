@@ -5,6 +5,8 @@
     "src/AccordionHeader/*.ts",
     "src/AccordionItem/*.ts",
     "src/Button/*.ts",
+    "src/Image/*.ts",
+    "src/Table/*.ts",
     "src/Modal/*.ts"
   ],
   "exclude": ["node_modules/*"],
