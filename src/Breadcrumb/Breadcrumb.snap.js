@@ -5,6 +5,7 @@ exports[`Breadcrumb > should render correctly 1`] = `
   <div>
     <nav
       class=""
+      style=""
     >
       <ol
         class="breadcrumb"
@@ -20,6 +21,7 @@ exports[`Breadcrumb > should render custom class 1`] = `
   <div>
     <nav
       class="boogie"
+      style=""
     >
       <ol
         class="breadcrumb shoes"
