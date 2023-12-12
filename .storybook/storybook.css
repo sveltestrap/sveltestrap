@@ -418,13 +418,13 @@ li.sbdocs.sbdocs-li {
 
 .sbdocs.sbdocs-preview {
   box-shadow: inset 0 0 0 1px var(--color-dark-0) !important;
-  border: 1px solid rgba(255, 255, 255, .1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 pre.prismjs {
   background-color: var(--color-dark-200) !important;
-  border: 1px solid rgba(255, 255, 255, .1);
-  box-shadow: inset 0 0 0 1px  var(--color-dark-0) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 0 0 1px var(--color-dark-0) !important;
   border-radius: 3px;
   font-size: 13px;
 }
@@ -434,7 +434,7 @@ pre.prismjs {
   border-radius: 0 0 var(--border-radius-base) var(--border-radius-base);
 }
 
-.docblock-source.sb-unstyled>div:last-child {
+.docblock-source.sb-unstyled > div:last-child {
   bottom: 1px;
   right: 1px;
 }
@@ -514,6 +514,10 @@ pre.prismjs {
   border: 1px dashed var(--color-gray-700);
   border-radius: var(--border-radius-base);
   margin-bottom: var(--margin-base);
+}
+
+.progress-text-content {
+  color: var(--color-gray-300);
 }
 
 /*-----------------
