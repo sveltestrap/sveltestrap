@@ -39,7 +39,7 @@
 
 <script>
   import { Story, Template } from '@storybook/addon-svelte-csf';
-  import { Col, Container, Row } from 'sveltestrap';
+  import { Col, Container, Row } from '@sveltestrap/sveltestrap';
 
   const cell = 'grid-cell';
   const row = 'grid-row';
