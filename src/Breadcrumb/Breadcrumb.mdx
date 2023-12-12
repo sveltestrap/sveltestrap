@@ -1,0 +1,45 @@
+import { Meta, Canvas, Controls, Story, Source } from '@storybook/blocks';
+import * as BreadcrumbStories from './Breadcrumb.stories';
+
+<Meta title="Components/Breadcrumbs" />
+
+# Breadcrumbs <small class="bootstrap-docs">[Bootstrap Badges](https://getbootstrap.com/docs/5.3/components/breadcrumb/)</small>
+
+The `<Breadcrumb>` component is used to provide visual cues or supplementary information for things like badging, counts, and more.
+
+<Canvas>
+  <Story of={BreadcrumbStories.Basic} />
+</Canvas>
+
+<Controls of={BreadcrumbStories.Basic} />
+
+## Divider
+<Canvas withSource="none">
+  <Story of={BreadcrumbStories.Divider} />
+</Canvas>
+
+<Source dark language="html" code={`
+<script lang="ts">
+  import { Breadcrumb, BreadcrumbItem } from '@sveltestrap/sveltestrap';
+</script>
+
+<Breadcrumb divider="・">
+  <BreadcrumbItem>
+    <a href="#home">Home</a>
+  </BreadcrumbItem>
+  <BreadcrumbItem>
+    <a href="#library">Library</a>
+  </BreadcrumbItem>
+  <BreadcrumbItem active>Data</BreadcrumbItem>
+</Breadcrumb>
+
+<Breadcrumb divider="⟫">
+  <BreadcrumbItem>
+    <a href="#home">Home</a>
+  </BreadcrumbItem>
+  <BreadcrumbItem>
+    <a href="#library">Library</a>
+  </BreadcrumbItem>
+  <BreadcrumbItem active>Data</BreadcrumbItem>
+</Breadcrumb>
+`} />

@@ -213,6 +213,10 @@ body .sidebar-container {
   max-width: 1080px;
 }
 
+.sbdocs.sbdocs-content h1 {
+  font-weight: var(--font-weight-medium);
+}
+
 .sbdocs.sbdocs-wrapper h2 {
   border-bottom: 0;
 }
@@ -530,4 +534,16 @@ Progress Example Story
 
 .progress-example .text-content {
   color: var(--color-gray-300);
+}
+
+/*-----------------
+  Breadcrumb Stories
+ -----------------*/
+
+.breadcrumbs-example .breadcrumb-item + .breadcrumb-item::before {
+  --bs-breadcrumb-divider-color: var(--color-gray-800);
+}
+
+.breadcrumb-item.active {
+  --bs-breadcrumb-item-active-color: var(--color-gray-500);
 }
