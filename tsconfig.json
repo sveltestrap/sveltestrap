@@ -6,6 +6,7 @@
     "src/AccordionItem/*.ts",
     "src/Alert/*.ts",
     "src/Badge/*.ts",
+    "src/Breadcrumb/*.ts",
     "src/Button/*.ts",
     "src/Image/*.ts",
     "src/Modal/*.ts",
