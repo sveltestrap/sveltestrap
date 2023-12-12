@@ -18,7 +18,7 @@ The `<Alert>` component provide contextual feedback messages for typical user ac
   <Story of={AlertStories.Colors} />
 </Canvas>
 
-<Source dark language="jsx" code={`
+<Source dark language="html" code={`
 <script lang="ts">
   import { Alert } from '@sveltestrap/sveltestrap';
 
@@ -47,13 +47,14 @@ The `<Alert>` component provide contextual feedback messages for typical user ac
 `} />
 
 ## Fade
+
+<p>You can disable the <code>Alert</code> fade transition by setting the <code>fade</code> prop to <code>false</code>.</p>
+
 <Canvas withSource="none">
   <Story of={AlertStories.Fade} />
 </Canvas>
 
-<p>You can disable the <code>Alert</code> fade transition by setting the <code>fade</code> prop to <code>false</code>.</p>
-
-<Source dark language="jsx" code={`
+<Source dark language="html" code={`
 <script lang="ts">
   import { Alert } from '@sveltestrap/sveltestrap';
 
@@ -79,7 +80,7 @@ The `<Alert>` component provide contextual feedback messages for typical user ac
   <Story of={AlertStories.Header} />
 </Canvas>
 
-<Source dark language="jsx" code={`
+<Source dark language="html" code={`
 <script lang="ts">
   import { Alert } from '@sveltestrap/sveltestrap';
 </script>
@@ -94,7 +95,7 @@ The `<Alert>` component provide contextual feedback messages for typical user ac
   <Story of={AlertStories.Controlled} />
 </Canvas>
 
-<Source dark language="jsx" code={`
+<Source dark language="html" code={`
 <script lang="ts">
   import { Alert, Button } from '@sveltestrap/sveltestrap';
 
@@ -117,7 +118,7 @@ The `<Alert>` component provide contextual feedback messages for typical user ac
   <Story of={AlertStories.Dismissible} />
 </Canvas>
 
-<Source dark language="jsx" code={`
+<Source dark language="html" code={`
 <script lang="ts">
   import { Alert } from '@sveltestrap/sveltestrap';
 </script>

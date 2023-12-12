@@ -5,10 +5,11 @@
     "src/AccordionHeader/*.ts",
     "src/AccordionItem/*.ts",
     "src/Alert/*.ts",
+    "src/Badge/*.ts",
     "src/Button/*.ts",
     "src/Image/*.ts",
-    "src/Table/*.ts",
-    "src/Modal/*.ts"
+    "src/Modal/*.ts",
+    "src/Table/*.ts"
   ],
   "exclude": ["node_modules/*"],
   "compilerOptions": {

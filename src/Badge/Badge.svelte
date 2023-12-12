@@ -1,11 +1,35 @@
 <script>
   import { classnames } from '../utils';
 
+  /**
+   * Additional CSS class names.
+   * @type {string}
+   */
   let className = '';
   export { className as class };
-  export let children = undefined;
+
+  /**
+   * The content to be displayed within the badge.
+   * @type {string}
+   */
+  export let children = '';
+
+  /**
+   * The color theme for the badge.
+   * @type {string}
+   */
   export let color = 'secondary';
-  export let href = undefined;
+
+  /**
+   * The href attribute for the badge, which turns it into a link if provided.
+   * @type {string}
+   */
+  export let href = '';
+
+  /**
+   * Flag to indicate if the badge should have a pill shape.
+   * @type {boolean}
+   */
   export let pill = false;
 
   $: classes = classnames(

@@ -1,10 +1,11 @@
 declare module 'sveltestrap' {
   import { SvelteComponent } from 'svelte';
+  import { HTMLAttributes } from 'svelte/elements';
   import { ContainerType } from '../shared';
 
   type Placement = 'start' | 'end' | 'top' | 'bottom';
 
-  export interface OffcanvasProps extends svelteHTML.HTMLAttributes<HTMLElementTagNameMap['div']> {
+  export interface OffcanvasProps extends HTMLAttributes<HTMLDivElement> {
     class?: string;
     backdrop?: boolean;
     body?: boolean;

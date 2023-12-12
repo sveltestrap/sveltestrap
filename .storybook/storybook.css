@@ -165,6 +165,10 @@ strong {
   font-weight: var(--font-weight-medium) !important;
 }
 
+a {
+  text-decoration: none;
+}
+
 /*-----------------
   Viewport toolbar
  -----------------*/
@@ -200,6 +204,10 @@ body .sidebar-container {
   Docs
  -----------------*/
 
+ h1, h2, h3, h4, h5, h6 {
+  color: #d0d0d0;
+}
+
 .sbdocs.sbdocs-wrapper {
   justify-content: flex-start;
   padding: 40px 80px;
@@ -211,12 +219,6 @@ body .sidebar-container {
 
 .sbdocs.sbdocs-wrapper h2 {
   border-bottom: 0;
-  padding-bottom: var(--padding-base);
-}
-
-.sbdocs.sbdocs-wrapper h3 {
-  color: var(--color-gray-800);
-  font-weight: var(--font-weight-medium);
 }
 
 h1.sbdocs-h1 {

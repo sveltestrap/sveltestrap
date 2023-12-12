@@ -15,13 +15,14 @@ The `<Offcanvas>` component is used to manage and present content in a compact a
 
 
 ## Backdrop
+
+<p>You can disable the <code>Offcanvas</code> backdrop by setting the <code>backdrop</code> prop to <code>false</code>.</p>
+
 <Canvas withSource="none">
   <Story of={OffcanvasStories.Backdrop} />
 </Canvas>
 
-<p>You can disable the <code>Offcanvas</code> backdrop by setting the <code>backdrop</code> prop to <code>false</code>.</p>
-
-<Source dark language="jsx" code={`
+<Source dark language="html" code={`
 <script lang="ts">
   import { Button, Offcanvas } from '@sveltestrap/sveltestrap';
 
@@ -41,13 +42,14 @@ The `<Offcanvas>` component is used to manage and present content in a compact a
 
 
 ## Events
+
+<code>Offcanvas</code> provides four events for managing state: <code>opening</code>, <code>open</code>, <code>closing</code>, and <code>close</code>.
+
 <Canvas withSource="none">
   <Story of={OffcanvasStories.Events} />
 </Canvas>
 
-<code>Offcanvas</code> provides four events for managing state: <code>opening</code>, <code>open</code>, <code>closing</code>, and <code>close</code>.
-
-<Source dark language="jsx" code={`
+<Source dark language="html" code={`
 
 <script lang="ts">
   import { Button, Offcanvas } from '@sveltestrap/sveltestrap';
@@ -82,7 +84,7 @@ The `<Offcanvas>` component is used to manage and present content in a compact a
   <Story of={OffcanvasStories.Placement} />
 </Canvas>
 
-<Source dark language="jsx" code={`
+<Source dark language="html" code={`
 
 <script lang="ts">
   import { Button, Offcanvas } from '@sveltestrap/sveltestrap';
@@ -135,15 +137,14 @@ The `<Offcanvas>` component is used to manage and present content in a compact a
 `} />
 
 ## Slots
+- <code>default</code> This slot is used to render the content for <code>Offcanvas</code> body.
+- <code>header</code> Use this slot to create a custom formatted header for the <code>Offcanvas</code>.
+
 <Canvas withSource="none">
   <Story of={OffcanvasStories.Slots} />
 </Canvas>
 
-**Available**
-- <code>default</code> This slot is used to render the content for <code>Offcanvas</code> body.
-- <code>header</code> Use this slot to create a custom formatted header for the <code>Offcanvas</code>.
-
-<Source dark language="jsx" code={`
+<Source dark language="html" code={`
 
 <script lang="ts">
   import { Button, Offcanvas } from '@sveltestrap/sveltestrap';
@@ -172,7 +173,7 @@ The `<Offcanvas>` component is used to manage and present content in a compact a
   <Story of={OffcanvasStories.Manual} />
 </Canvas>
 
-<Source dark language="jsx" code={`
+<Source dark language="html" code={`
 
 <script lang="ts">
   import { Button, Offcanvas } from '@sveltestrap/sveltestrap';
@@ -196,7 +197,7 @@ The `<Offcanvas>` component is used to manage and present content in a compact a
   <Story of={OffcanvasStories.Scrolling} />
 </Canvas>
 
-<Source dark language="jsx" code={`
+<Source dark language="html" code={`
 
 <script lang="ts">
   import { Button, Offcanvas } from '@sveltestrap/sveltestrap';
@@ -229,7 +230,7 @@ The `<Offcanvas>` component is used to manage and present content in a compact a
   <Story of={OffcanvasStories.Custom} />
 </Canvas>
 
-<Source dark language="jsx" code={`
+<Source dark language="html" code={`
 
 <script lang="ts">
   import { Button, Offcanvas } from '@sveltestrap/sveltestrap';

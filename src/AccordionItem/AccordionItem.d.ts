@@ -1,14 +1,15 @@
 declare module 'sveltestrap' {
   import { SvelteComponent } from 'svelte';
+  import { HTMLAttributes } from 'svelte/elements';
 
-  export interface AccordionItemProps extends svelteHTML.HTMLAttributes<HTMLElementTagNameMap['div']> {
+  export interface AccordionItemProps extends HTMLAttributes<HTMLDivElement> {
     active?: boolean;
     class?: string;
     header?: string;
   }
 
   export interface AccordionItemEvents {
-    toggle: CustomEvent<boolean>;
+    toggle: CustomEvent<void>;
   }
 
   export interface AccordionItemSlots {

@@ -1,0 +1,120 @@
+import { Meta, Canvas, Controls, Story, Source } from '@storybook/blocks';
+import * as BadgeStories from './Badge.stories';
+
+<Meta title="Components/Badges" />
+
+# Badges <small class="bootstrap-docs">[Bootstrap Badges](https://getbootstrap.com/docs/5.3/components/badge/)</small>
+
+The `<Badge>` component is used to provide visual cues or supplementary information for things like badging, counts, and more.
+
+<Canvas>
+  <Story of={BadgeStories.Basic} />
+</Canvas>
+
+<Controls of={BadgeStories.Basic} />
+
+## Colors
+<Canvas withSource="none">
+  <Story of={BadgeStories.Colors} />
+</Canvas>
+
+<Source dark language="html" code={`
+<script lang="ts">
+  import { Badge } from '@sveltestrap/sveltestrap';
+
+  const colors = [
+    'primary',
+    'secondary',
+    'success',
+    'danger',
+    'warning',
+    'info',
+    'light',
+    'dark'
+  ];
+</script>
+
+{#each colors as color}
+  <Badge {color}>{color}</Badge>
+{/each}
+`} />
+
+## Pills
+<p>You can change the visual style of any <code>Badge</code> by adding the <code>pill</code> prop to the component.</p>
+
+<Canvas withSource="none">
+  <Story of={BadgeStories.Pills} />
+</Canvas>
+
+<Source dark language="html" code={`
+<script lang="ts">
+  import { Badge } from '@sveltestrap/sveltestrap';
+
+  const colors = [
+    'primary',
+    'secondary',
+    'success',
+    'danger',
+    'warning',
+    'info',
+    'light',
+    'dark'
+  ];
+</script>
+
+{#each colors as color}
+  <Badge pill {color}>{color}</Badge>
+{/each}
+`} />
+
+## Buttons
+<Canvas withSource="none">
+  <Story of={BadgeStories.Buttons} />
+</Canvas>
+
+<Source dark language="html" code={`
+<script lang="ts">
+  import { Badge, Button } from '@sveltestrap/sveltestrap';
+</script>
+
+<Button color="primary">
+  Notifications
+  <Badge color="dark">4</Badge>
+</Button>
+
+<Button color="primary" outline>
+  Notifications
+  <Badge color="primary">7</Badge>
+</Button>
+`} />
+
+## Headings
+<Canvas withSource="none">
+  <Story of={BadgeStories.Headings} />
+</Canvas>
+
+<Source dark language="html" code={`
+<script lang="ts">
+  import { Badge } from '@sveltestrap/sveltestrap';
+</script>
+
+<h1>Example heading <Badge color="secondary">New</Badge></h1>
+<h2>Example heading <Badge color="secondary">New</Badge></h2>
+<h3>Example heading <Badge color="secondary">New</Badge></h3>
+<h4>Example heading <Badge color="secondary">New</Badge></h4>
+<h5>Example heading <Badge color="secondary">New</Badge></h5>
+<h6>Example heading <Badge color="secondary">New</Badge></h6>
+`} />
+
+## Links
+<Canvas withSource="none">
+  <Story of={BadgeStories.Links} />
+</Canvas>
+
+<Source dark language="html" code={`
+<script lang="ts">
+  import { Badge } from '@sveltestrap/sveltestrap';
+</script>
+
+<Badge href="https://svelte.dev" color="primary">Link Badge</Badge>
+`} />
