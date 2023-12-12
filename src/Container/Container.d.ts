@@ -1,8 +1,8 @@
 declare module 'sveltestrap' {
   import { SvelteComponent } from 'svelte';
-  import { HTMLDivAttributes } from 'svelte/elements';
+  import { HTMLAttributes } from 'svelte/elements';
 
-  export interface ContainerProps extends HTMLDivAttributes {
+  export interface ContainerProps extends HTMLAttributes<HTMLDivElement> {
     id?: string;
     sm?: boolean;
     md?: boolean;
