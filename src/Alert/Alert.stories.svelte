@@ -83,6 +83,7 @@
 
 <script>
   import { Story, Template } from '@storybook/addon-svelte-csf';
+  import { Button } from 'sveltestrap';
 
   const colors = [
     'primary',
@@ -94,6 +95,9 @@
     'light',
     'dark'
   ];
+
+  let isOpen = true;
+  let toggle = () => (isOpen = !isOpen);
 </script>
 
 <Template let:args>
@@ -113,4 +117,33 @@
       .
     </Alert>
   {/each}
+</Story>
+
+<Story name="Fade">
+  <Alert
+    color="primary"
+    isOpen={isOpen}
+    toggle={() => (isOpen = false)}
+    fade={false}
+  >
+    I am a primary alert and I can be dismissed without animating!
+  </Alert>
+</Story>
+
+<Story name="Header">
+  <Alert color="primary" heading="Hey here's header text">
+    Lorem ipsum lorem dolor sit amet.
+  </Alert>
+</Story>
+
+<Story name="Dismissible">
+  <Alert color="info" dismissible>I am an alert and I can be dismissed!</Alert>
+</Story>
+
+<Story name="Controlled">
+  <Alert color="primary" isOpen={isOpen} toggle={() => (isOpen = false)}>
+    I can be controlled via <code>isOpen</code> and <code>toggle</code>.
+  </Alert>
+
+  <Button on:click={toggle}>You can toggle me here.</Button>
 </Story>

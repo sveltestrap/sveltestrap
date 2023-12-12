@@ -45,3 +45,84 @@ The `<Alert>` component provide contextual feedback messages for typical user ac
   </Alert>
 {/each}
 `} />
+
+## Fade
+<Canvas withSource="none">
+  <Story of={AlertStories.Fade} />
+</Canvas>
+
+<p>You can disable the <code>Alert</code> fade transition by setting the <code>fade</code> prop to <code>false</code>.</p>
+
+<Source dark language="jsx" code={`
+<script lang="ts">
+  import { Alert } from 'sveltestrap';
+
+  let isOpen = true;
+
+  const toggle = () => {
+    visible = !visible;
+  };
+</script>
+
+<Alert
+  color="primary"
+  {isOpen}
+  {toggle}
+  fade={false}
+>
+  I am a primary alert and I can be dismissed without animating!
+</Alert>
+`} />
+
+## Header
+<Canvas withSource="none">
+  <Story of={AlertStories.Header} />
+</Canvas>
+
+<Source dark language="jsx" code={`
+<script lang="ts">
+  import { Alert } from 'sveltestrap';
+</script>
+
+<Alert color="primary" heading="Hey here's header text">
+  Lorem ipsum lorem dolor sit amet.
+</Alert>
+`} />
+
+## Controlled
+<Canvas withSource="none">
+  <Story of={AlertStories.Controlled} />
+</Canvas>
+
+<Source dark language="jsx" code={`
+<script lang="ts">
+  import { Alert, Button } from 'sveltestrap';
+
+  let isOpen = true;
+
+  const toggle = () => {
+    visible = !visible;
+  };
+</script>
+
+<Alert color="primary" isOpen={isOpen} toggle={() => (isOpen = false)}>
+  I can be controlled via <code>isOpen</code> and <code>toggle</code>.
+</Alert>
+
+<Button on:click={toggle}>You can toggle me here.</Button>
+`} />
+
+## Dismissible
+<Canvas withSource="none">
+  <Story of={AlertStories.Dismissible} />
+</Canvas>
+
+<Source dark language="jsx" code={`
+<script lang="ts">
+  import { Alert } from 'sveltestrap';
+</script>
+
+<Story name="Dismissible">
+  <Alert color="info" dismissible>I am an alert and I can be dismissed!</Alert>
+</Story>
+`} />
