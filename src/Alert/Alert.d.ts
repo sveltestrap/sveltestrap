@@ -19,7 +19,7 @@ declare module 'sveltestrap' {
     toggle: CustomEvent<{ [id: string]: boolean }>;
   }
 
-  export interface AlertSlots<T> {
+  export interface AlertSlots {
     default: {};
     heading: {};
   }

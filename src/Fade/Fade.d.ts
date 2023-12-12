@@ -1,22 +1,26 @@
-import { SvelteComponent } from 'svelte';
+declare module 'sveltestrap' {
+  import { SvelteComponent } from 'svelte';
+  import { HTMLAttributes } from 'svelte/elements';
 
-export interface FadeProps
-  extends svelte.JSX.HTMLAttributes<HTMLElementTagNameMap['div']> {
-  isOpen?: boolean;
-  onEntering?: () => void;
-  onEntered?: () => void;
-  onExiting?: () => void;
-  onExited?: () => void;
-  toggler?: string;
-}
+  export interface FadeProps extends HTMLAttributes<HTMLDivElement> {
+    isOpen?: boolean;
+    onEntering?: () => void;
+    onEntered?: () => void;
+    onExiting?: () => void;
+    onExited?: () => void;
+    toggler?: string;
+  }
 
-export default class Fade extends SvelteComponent<
-  FadeProps,
-  {
+  export interface FadeEvents {
     open: CustomEvent<void>;
     opening: CustomEvent<void>;
     closing: CustomEvent<void>;
     close: CustomEvent<void>;
-  },
-  { default: {} }
-> {}
+  }
+
+  export interface FadeSlots {
+    default: {};
+  }
+
+  export default class Fade extends SvelteComponent<FadeProps, FadeEvents, FadeSlots> {}
+}

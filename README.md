@@ -14,7 +14,7 @@ To make using Bootstrap themes easier, this library does _not_ embed Bootstrap s
 
 ## Install
 
-`npm install svelte sveltestrap`
+`npm install svelte @sveltestrap/sveltestrap`
 
 ## Usage
 
@@ -51,7 +51,7 @@ or alternately, use the [Styles](https://sveltestrap.js.org/?path=/story/compone
 
 ```html
 <script>
-  import { Styles } from 'sveltestrap';
+  import { Styles } from '@sveltestrap/sveltestrap';
 </script>
 
 <Styles />
@@ -61,7 +61,7 @@ Then use sveltestrap components in your svelte component:
 
 ```html
 <script>
-  import { Button, Col, Row } from 'sveltestrap';
+  import { Button, Col, Row } from '@sveltestrap/sveltestrap';
 </script>
 
 <Row>
@@ -95,7 +95,7 @@ or the [Styles](https://sveltestrap.js.org/?path=/story/components--styles) comp
 
 ```html
 <script>
-  import { Styles } from 'sveltestrap';
+  import { Styles } from '@sveltestrap/sveltestrap';
 </script>
 <Styles />
 ```
@@ -107,7 +107,7 @@ Note that this issue does not affect SvelteKit. For example:
 
 ```html
 <script>
-  import { Button, Col, Row } from 'sveltestrap/src';
+  import { Button, Col, Row } from '@sveltestrap/sveltestrap/src';
 </script>
 
 <Row>
@@ -121,7 +121,7 @@ if you prefer the 'sveltestrap' import, you can move the package to `devDependen
 
 ```json
 "devDependencies": {
-    "sveltestrap": "*.*.*",
+    "@sveltestrap/sveltestrap": "*.*.*",
     ...
   },
 ```
