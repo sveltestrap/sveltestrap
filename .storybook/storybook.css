@@ -516,14 +516,18 @@ pre.prismjs {
   margin-bottom: var(--margin-base);
 }
 
-.progress-text-content {
-  color: var(--color-gray-300);
-}
-
 /*-----------------
-  Image Figure Story
- -----------------*/
+Image Figure Story
+-----------------*/
 
 .figure figcaption {
   color: var(--color-white);
+}
+
+/*-----------------
+Progress Example Story
+-----------------*/
+
+.progress-example .text-content {
+  color: var(--color-gray-300);
 }
