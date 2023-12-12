@@ -51,30 +51,32 @@
 </Template>
 
 <Story name="Basic">
-  <div class="container-wrapper">
-    <Container fluid>
-      <h3 class="container">fluid</h3>
-    </Container>
-    <div class="contained">
-      <Container sm>
-        <h3 class="container">sm</h3>
+  <div class="grid-example">
+    <div class="container-wrapper">
+      <Container fluid>
+        <h3 class="container">fluid</h3>
       </Container>
+      <div class="contained">
+        <Container sm>
+          <h3 class="container">sm</h3>
+        </Container>
 
-      <Container sm>
-        <h3 class="container">md</h3>
-      </Container>
+        <Container sm>
+          <h3 class="container">md</h3>
+        </Container>
 
-      <Container lg>
-        <h3 class="container">lg</h3>
-      </Container>
+        <Container lg>
+          <h3 class="container">lg</h3>
+        </Container>
 
-      <Container xl>
-        <h3 class="container">xl</h3>
-      </Container>
+        <Container xl>
+          <h3 class="container">xl</h3>
+        </Container>
 
-      <Container xxl>
-        <h3 class="container">xxl</h3>
-      </Container>
+        <Container xxl>
+          <h3 class="container">xxl</h3>
+        </Container>
+      </div>
     </div>
   </div>
 </Story>

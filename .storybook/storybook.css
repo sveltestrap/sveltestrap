@@ -204,10 +204,6 @@ body .sidebar-container {
   Docs
  -----------------*/
 
- h1, h2, h3, h4, h5, h6 {
-  color: #d0d0d0;
-}
-
 .sbdocs.sbdocs-wrapper {
   justify-content: flex-start;
   padding: 40px 80px;
@@ -326,6 +322,17 @@ li.sbdocs.sbdocs-li {
   padding: var(--padding-small);
 }
 
+.bootstrap-docs {
+  border: 1px solid var(--color-blue-400);
+  border-radius: var(--border-radius-base);
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 12px;
+  padding: var(--padding-small) var(--padding-large);
+  position: absolute;
+  right: 0;
+}
+
 /*-----------------
   Source Block
  -----------------*/
@@ -427,6 +434,15 @@ pre.prismjs {
   border-radius: 0 0 var(--border-radius-base) var(--border-radius-base);
 }
 
+.docblock-source.sb-unstyled>div:last-child {
+  bottom: 1px;
+  right: 1px;
+}
+
+/*-----------------
+  Layouts
+ -----------------*/
+
 .horizontal,
 .vertical {
   display: inline-flex;
@@ -441,60 +457,69 @@ pre.prismjs {
   flex-direction: column;
 }
 
+/*-----------------
+  Formatting
+ -----------------*/
+
 .capitalize {
   text-transform: capitalize;
 }
 
-figure {
-  background-color: var(--color-white);
+/*-----------------
+  Badge Headings Story
+ -----------------*/
+
+.headings-example h1,
+.headings-example h2,
+.headings-example h3,
+.headings-example h4,
+.headings-example h5,
+.headings-example h6 {
+  color: #d0d0d0;
 }
 
-.docblock-source.sb-unstyled > div:last-child {
-  bottom: 1px;
-  right: 1px;
-}
+/*-----------------
+  Grid Example Story
+ -----------------*/
 
-.bootstrap-docs {
-  border: 1px solid var(--color-blue-400);
-  border-radius: var(--border-radius-base);
-  cursor: pointer;
-  font-weight: 500;
-  font-size: 12px;
-  padding: var(--padding-small) var(--padding-large);
-  position: absolute;
-  right: 0;
-}
-
-.container-wrapper {
+.grid-example .container-wrapper {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.contained {
+.grid-example .contained {
   width: 85%;
 }
 
-.container {
-  color: var(--color-gray-300) !important;
-  border: 2px solid var(--color-gray-300);
+.grid-example .container {
+  border: 1px solid var(--color-gray-300);
   border-radius: var(--border-radius-base);
+  color: var(--color-gray-300) !important;
   display: flex;
   justify-content: center;
 }
 
-.grid-cell {
-  color: var(--color-gray-300);
-  border: 2px solid var(--color-gray-300);
+.grid-example .grid-cell {
   background-color: var(--color-gray-700);
+  border: 1px solid var(--color-gray-300);
   border-radius: var(--border-radius-base);
+  color: var(--color-gray-300);
   padding: var(--padding-base);
   margin: var(--margin-base);
 }
 
-.grid-row {
-  border: 2px solid var(--color-gray-700);
+.grid-example .grid-row {
+  border: 1px dashed var(--color-gray-700);
   border-radius: var(--border-radius-base);
   margin-bottom: var(--margin-base);
+}
+
+/*-----------------
+  Image Figure Story
+ -----------------*/
+
+.figure figcaption {
+  color: var(--color-white);
 }
