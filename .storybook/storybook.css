@@ -349,18 +349,18 @@ li.sbdocs.sbdocs-li {
   font-weight: var(--font-weight-medium);
 }
 
-.docblock-argstable-body>tr[title*="Hide events items"] > td,
-.docblock-argstable-body>tr[title*="Show events items"] > td,
-.docblock-argstable-body>tr[title*="Show events items"] + tr,
-.docblock-argstable-body>tr[title*="Hide events items"] + tr,
-.docblock-argstable-body>tr[title*="Show events items"] + tr + tr,
-.docblock-argstable-body>tr[title*="Hide events items"] + tr + tr,
-.docblock-argstable-body>tr[title*="Hide slots items"] > td,
-.docblock-argstable-body>tr[title*="Hide slots items"] + tr,
-.docblock-argstable-body>tr[title*="Show slots items"] + tr,
-.docblock-argstable-body>tr[title*="Hide slots items"] + tr + tr,
-.docblock-argstable-body>tr[title*="Show slots items"] + tr + tr,
-.docblock-argstable-body>tr[title*="Show slots items"] > td {
+.docblock-argstable-body > tr[title*='Hide events items'] > td,
+.docblock-argstable-body > tr[title*='Show events items'] > td,
+.docblock-argstable-body > tr[title*='Show events items'] + tr,
+.docblock-argstable-body > tr[title*='Hide events items'] + tr,
+.docblock-argstable-body > tr[title*='Show events items'] + tr + tr,
+.docblock-argstable-body > tr[title*='Hide events items'] + tr + tr,
+.docblock-argstable-body > tr[title*='Hide slots items'] > td,
+.docblock-argstable-body > tr[title*='Hide slots items'] + tr,
+.docblock-argstable-body > tr[title*='Show slots items'] + tr,
+.docblock-argstable-body > tr[title*='Hide slots items'] + tr + tr,
+.docblock-argstable-body > tr[title*='Show slots items'] + tr + tr,
+.docblock-argstable-body > tr[title*='Show slots items'] > td {
   display: none;
 }
 
@@ -461,4 +461,38 @@ figure {
   padding: var(--padding-small) var(--padding-large);
   position: absolute;
   right: 0;
+}
+
+.container-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.contained {
+  width: 85%;
+}
+
+.container {
+  color: var(--color-gray-300) !important;
+  border: 2px solid var(--color-gray-300);
+  border-radius: var(--border-radius-base);
+  display: flex;
+  justify-content: center;
+}
+
+.grid-cell {
+  color: var(--color-gray-300);
+  border: 2px solid var(--color-gray-300);
+  background-color: var(--color-gray-700);
+  border-radius: var(--border-radius-base);
+  padding: var(--padding-base);
+  margin: var(--margin-base);
+}
+
+.grid-row {
+  border: 2px solid var(--color-gray-700);
+  border-radius: var(--border-radius-base);
+  margin-bottom: var(--margin-base);
 }
