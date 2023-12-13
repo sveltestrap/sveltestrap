@@ -176,9 +176,11 @@ body {
   align-items: center;
   display: flex;
   gap: 8px;
-  margin-bottom: 16px;
 }
 
+.sbdocs .social {
+  margin: 24px 0;
+}
 /*-----------------
   Viewport toolbar
  -----------------*/
