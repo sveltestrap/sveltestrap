@@ -172,10 +172,10 @@ body {
   text-align: center;
 }
 
-.sbdocs .social {
+.sbdocs .social p {
   align-items: center;
   display: flex;
-  gap: 16px;
+  gap: 8px;
   margin-bottom: 16px;
 }
 
