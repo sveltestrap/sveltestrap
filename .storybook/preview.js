@@ -8,7 +8,8 @@ export default {
     },
     options: {
       storySort: {
-        method: 'alphabetical'
+        method: 'alphabetical',
+        order: ['Sveltestrap', ['Components', 'Content', 'Layout']],
       }
     },
     grid: false,

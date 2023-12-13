@@ -534,6 +534,7 @@ Progress Example Story
 
 .progress-example .text-content {
   color: var(--color-gray-300);
+  padding-bottom: var(--padding-base);
 }
 
 /*-----------------
