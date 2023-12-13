@@ -7,6 +7,9 @@ This open-source software is freely available under the permissive MIT license. 
 
 Please note that Sveltestrap <u>**does not directly embed Bootstrap style**</u>. To use Bootstrap themes effectively, you must include Bootstrap 5 CSS using one of the methods outlined below.
 
+**Note**
+If you looking for Svelte 3.x support, you can use the original [sveltestrap](https://github.com/bestguy/sveltestrap) package.
+
 ---
 
 ## Install
