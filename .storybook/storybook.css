@@ -160,15 +160,6 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-b,
-strong {
-  font-weight: var(--font-weight-medium) !important;
-}
-
-a {
-  text-decoration: none;
-}
-
 /*-----------------
   Viewport toolbar
  -----------------*/
@@ -213,7 +204,9 @@ body .sidebar-container {
   max-width: 1080px;
 }
 
-.sbdocs.sbdocs-content h1 {
+.sbdocs.sbdocs-content h1,
+.sbdocs.sbdocs-content h2,
+.sbdocs.sbdocs-wrapper h3 {
   font-weight: var(--font-weight-medium);
 }
 
@@ -225,8 +218,23 @@ h1.sbdocs-h1 {
   font-weight: var(--font-weight-bold);
 }
 
-hr.sbdocs.sbdocs-hr {
+.sbdocs.sbdocs-content p {
+  font-size: var(--font-size-medium) !important;
+}
+
+.sbdocs.sbdocs-content b,
+.sbdocs.sbdocs-content strong {
+  font-weight: var(--font-weight-medium) !important;
+}
+
+.sbdocs.sbdocs-content a {
+  text-decoration: none;
+}
+
+.sbdocs.sbdocs-content hr {
+  border-top: 1px solid rgba(0,0,0,.8);
   height: 1px;
+  margin: var(--margin-large) 0;
 }
 
 li.sbdocs.sbdocs-li {

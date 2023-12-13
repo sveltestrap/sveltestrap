@@ -145,5 +145,5 @@
     I can be controlled via <code>isOpen</code> and <code>toggle</code>.
   </Alert>
 
-  <Button on:click={toggle}>You can toggle me here.</Button>
+  <Button color="danger" on:click={toggle}>You can toggle me here.</Button>
 </Story>
