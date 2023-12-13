@@ -164,6 +164,25 @@ body {
   Viewport toolbar
  -----------------*/
 
+.sbdocs .hero {
+  background-color: rgba(0,0,0,.1);
+  border-radius: var(--border-radius-base);
+  margin: 20px 0;
+  padding: 40px;
+  text-align: center;
+}
+
+.sbdocs .social {
+  align-items: center;
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+/*-----------------
+  Viewport toolbar
+ -----------------*/
+
 .os-content a button {
   font-weight: var(--font-weight-medium);
 }
@@ -197,7 +216,7 @@ body .sidebar-container {
 
 .sbdocs.sbdocs-wrapper {
   justify-content: flex-start;
-  padding: 40px 80px;
+  padding: 40px 60px;
 }
 
 .sbdocs.sbdocs-content {
@@ -555,4 +574,15 @@ Progress Example Story
 
 .breadcrumb-item.active {
   --bs-breadcrumb-item-active-color: var(--color-gray-500);
+}
+
+
+@media screen and (max-width: 768px) {
+  .sbdocs.sbdocs-wrapper {
+    padding: 20px;
+  }
+
+  .css-w158n4 {
+    overflow-x: scroll;
+  }
 }

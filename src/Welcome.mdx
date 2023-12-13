@@ -2,8 +2,14 @@ import { Meta } from '@storybook/blocks';
 
 <Meta title="Sveltestrap/Overview" />
 
-<div style={{ backgroundColor: 'rgba(0,0,0,.1)', borderRadius: '4px', marginBottom: '40px', padding: '40px' }}>
+<div class="hero">
   <img src="https://github.com/sveltestrap/sveltestrap/assets/1918732/9e00bb52-01ac-44ba-a79e-46922fcdfea6" alt="Sveltestrap logo" />
+</div>
+
+<div class="social">
+  [![sveltestrap - sveltestrap](https://img.shields.io/static/v1?label=sveltestrap&message=sveltestrap&color=blue&logo=github)](https://github.com/sveltestrap/sveltestrap "Go to GitHub repo")
+  [![stars - sveltestrap](https://img.shields.io/github/stars/sveltestrap/sveltestrap?style=social)](https://github.com/sveltestrap/sveltestrap)
+  [![forks - sveltestrap](https://img.shields.io/github/forks/sveltestrap/sveltestrap?style=social)](https://github.com/sveltestrap/sveltestrap)
 </div>
 
 ## Bootstrap 5 Components for Svelte 4+
@@ -43,14 +49,14 @@ It's essential to note that Bootstrap 5 components do not come with Bootstrap st
 </head>
 ```
 
-2. Add to your app's `App.svelte` file
+2. Add to your main `App.svelte` file
 ```html
 <svelte:head>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 </svelte:head>
 ```
 
-3. Import the styles into your app's CSS bundle
+3. Import the styles directly in your CSS bundle
 
 ```html
 <style>
@@ -82,7 +88,7 @@ Then use Sveltestrap components in your svelte component:
 </Row>
 ```
 
-### Note on Icons
+## Bootstrap Icons
 
 If you want to use the [Icon component](https://sveltestrap.js.org/?path=/story/components--icon),
 you also must include a link to Bootstrap Icon CSS, for example:
@@ -113,7 +119,7 @@ or the [Styles](https://sveltestrap.js.org/?path=/story/components--styles) comp
 <Styles />
 ```
 
-### Note on usage with Sapper
+## Using Sapper
 
 If you are using Sveltestrap with Sapper, it's recommended you import the component source directly.
 Note that this issue does not affect SvelteKit.

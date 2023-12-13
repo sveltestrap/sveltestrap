@@ -8,7 +8,7 @@ export default create({
       <img src="https://avatars.githubusercontent.com/u/152808666?s=200&v=4" height="32" />
       <div style="position: relative;">
         SVELTESTRAP
-        <small style="position: absolute; right: -38px; top: 0;">${packageJSON.version}</small>
+        <small style="background-color: #202833; border-radius: 4px; color: #fff; font-size: 9px; letter-spacing: 0; padding: 4px; position: absolute; right: -42px; top: 0;">v${packageJSON.version}</small>
       </div>
     </span>`,
   fontBase: 'Rubik, -apple-system, "Helvetica Neue", Helvetica, Arial, sans-serif',
