@@ -14,7 +14,7 @@ jobs:
     if: |
       (
         !contains(github.event.head_commit.message, '[skip ci]') &&
-        !contains(github.event.head_commit.message, '[release]') &&
+        !contains(github.event.head_commit.message, '(release)') &&
         !contains(github.event.head_commit.message, 'version bump')
 
       )
