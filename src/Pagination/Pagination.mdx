@@ -5,7 +5,7 @@ import * as PaginationStories from './Pagination.stories';
 
 # Pagination <small class="bootstrap-docs">[Bootstrap Pagination](https://getbootstrap.com/docs/5.3/components/pagination/)</small>
 
-The `<Pagination>` component is a user interface element designed to enhance navigation within a set of content, breaking it into manageable segments. It enables users to easily traverse through multiple pages of information, promoting a streamlined and accessible browsing experience.
+The `<Pagination>` component is used to enhance navigation within a set of content, breaking it into manageable segments. It enables users to easily traverse through multiple pages of information, promoting a streamlined and accessible browsing experience.
 
 <Canvas>
   <Story of={PaginationStories.Basic} />
@@ -26,7 +26,7 @@ You can change the `Pagination` size by setting the `size` prop to `sm` or `lg`.
   language="html"
   code={`
 <script lang="ts">
-  import {(Pagination, PaginationItem, PaginationLink)} from 'sveltestrap';
+  import { Pagination, PaginationItem, PaginationLink } from '@sveltestrap/sveltestrap';
 </script>
 
 <Pagination size="lg" ariaLabel="Page navigation example">
