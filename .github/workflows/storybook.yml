@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - main
+    paths:
+      - src/**
 permissions:
   contents: write
 jobs:
@@ -12,7 +14,9 @@ jobs:
     if: |
       (
         !contains(github.event.head_commit.message, '[skip ci]') &&
+        !contains(github.event.head_commit.message, '[release]') &&
         !contains(github.event.head_commit.message, 'version bump')
+
       )
     steps:
       - name: Checkout repository
