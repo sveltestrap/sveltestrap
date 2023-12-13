@@ -1,0 +1,55 @@
+import { Meta, Canvas, Controls, Story, Source } from '@storybook/blocks';
+import * as PaginationStories from './Pagination.stories';
+
+<Meta title="Components/Pagination" />
+
+# Pagination <small class="bootstrap-docs">[Bootstrap Pagination](https://getbootstrap.com/docs/5.3/components/pagination/)</small>
+
+The `<Pagination>` component is used to enhance navigation within a set of content, breaking it into manageable segments. It enables users to easily traverse through multiple pages of information, promoting a streamlined and accessible browsing experience.
+
+<Canvas>
+  <Story of={PaginationStories.Basic} />
+</Canvas>
+
+<Controls of={PaginationStories.Basic} />
+
+## Sizes
+
+You can change the `Pagination` size by setting the `size` prop to `sm` or `lg`.
+
+<Canvas withSource="none">
+  <Story of={PaginationStories.Sizes} />
+</Canvas>
+
+<Source
+  dark
+  language="html"
+  code={`
+<script lang="ts">
+  import { Pagination, PaginationItem, PaginationLink } from '@sveltestrap/sveltestrap';
+</script>
+
+<Pagination size="lg" ariaLabel="Page navigation example">
+  <PaginationItem>
+    <PaginationLink first href="#" />
+  </PaginationItem>
+  <PaginationItem>
+    <PaginationLink previous href="#" />
+  </PaginationItem>
+  <PaginationItem>
+    <PaginationLink href="#">1</PaginationLink>
+  </PaginationItem>
+  <PaginationItem active>
+    <PaginationLink href="#">2</PaginationLink>
+  </PaginationItem>
+  <PaginationItem>
+    <PaginationLink href="#">3</PaginationLink>
+  </PaginationItem>
+  <PaginationItem>
+    <PaginationLink next href="#" />
+  </PaginationItem>
+  <PaginationItem>
+    <PaginationLink last href="#" />
+  </PaginationItem>
+</Pagination>
+`} />
