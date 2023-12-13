@@ -1,27 +1,32 @@
 ![sveltestrap](https://github.com/sveltestrap/sveltestrap/assets/1918732/9e00bb52-01ac-44ba-a79e-46922fcdfea6)
+## Bootstrap 5 Components for Svelte 4+
 
-## Bootstrap 5 components for Svelte v4
+Sveltestrap is a library designed to simplify the integration of [Bootstrap 5](https://getbootstrap.com) components into your [Svelte](https://svelte.dev) applications. It eliminates the need for Bootstrap component classes, the inclusion of Bootstrap's JavaScript, and reliance on jQuery.
 
-The goal of this library is to provide all Bootstrap 5 components for a [Svelte](https://svelte.dev) app. Sveltestrap makes it easy to use Bootstrap since there is no need to use Bootstrap component classes, to include Bootstrap's JavaScript, nor depend on jQuery. Sveltestrap is free, open-source software published under the permissive [MIT license.](https://github.com/bestguy/sveltestrap/blob/master/LICENSE) This library was inspired by the [reactstrap](https://reactstrap.github.io) library for React.
+This open-source software is freely available under the permissive MIT license. It draws inspiration from the [reactstrap](https://reactstrap.github.io/?path=/story/home-installation--page) library for [React](https://react.dev/).
 
-To make using Bootstrap themes easier, this library does _not_ embed Bootstrap styles directly and you will need to include Bootstrap 5 CSS in your page.
-
-**Note:** Bootstrap 4 CSS users must use Sveltestrap 4 - see docs here: <a href="/docs/v4">Sveltestrap version 4</a>
-
-[Demo page](https://sveltestrap.js.org/)
+Please note that Sveltestrap <u>**does not directly embed Bootstrap style**</u>. To use Bootstrap themes effectively, you must include Bootstrap 5 CSS using one of the methods outlined below.
 
 ---
 
 ## Install
 
-`npm install svelte @sveltestrap/sveltestrap`
+```bash
+# npm
+> npm install svelte @sveltestrap/sveltestrap
 
-## Usage
+# pnpm
+> pnpm install svelte @sveltestrap/sveltestrap
 
-_You need to include a link to Bootstrap 5 stylesheet in your page - these components do not include or embed any Bootstrap styles automatically._
+# yarn
+> yarn add svelte @sveltestrap/sveltestrap
+```
 
-Either in your HTML layout:
+## Bootstrap CSS
 
+It's essential to note that Bootstrap 5 components do not come with Bootstrap styles preloaded, so you'll need to add the stylesheet manually. Here's how you can add them:
+
+1. Add to your apps static `index.html` file
 ```html
 <head>
   <link
@@ -31,15 +36,14 @@ Either in your HTML layout:
 </head>
 ```
 
-Or from your Svelte app, either:
-
+2. Add to your main `App.svelte` file
 ```html
 <svelte:head>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 </svelte:head>
 ```
 
-or:
+3. Import the styles directly in your CSS bundle
 
 ```html
 <style>
@@ -47,7 +51,7 @@ or:
 </style>
 ```
 
-or alternately, use the [Styles](https://sveltestrap.js.org/?path=/story/components--styles) component:
+4. Use the provided [Styles](/?path=/docs/components-styles--docs) component
 
 ```html
 <script>
@@ -57,7 +61,7 @@ or alternately, use the [Styles](https://sveltestrap.js.org/?path=/story/compone
 <Styles />
 ```
 
-Then use sveltestrap components in your svelte component:
+Then use Sveltestrap components in your svelte component:
 
 ```html
 <script>
@@ -71,10 +75,12 @@ Then use sveltestrap components in your svelte component:
 </Row>
 ```
 
-### Note on Icons
+## Bootstrap Icons
 
-If you wish to use the [Icon component](https://sveltestrap.js.org/?path=/story/components--icon),
+If you want to use the [Icon component](https://sveltestrap.js.org/?path=/story/components--icon),
 you also must include a link to Bootstrap Icon CSS, for example:
+
+Include it in your app's `App.svelte`:
 
 ```html
 <svelte:head>
@@ -82,7 +88,7 @@ you also must include a link to Bootstrap Icon CSS, for example:
 </svelte:head>
 ```
 
-or:
+or you can include it in your app's `index.html`:
 
 ```html
 <link
@@ -97,13 +103,14 @@ or the [Styles](https://sveltestrap.js.org/?path=/story/components--styles) comp
 <script>
   import { Styles } from '@sveltestrap/sveltestrap';
 </script>
+
 <Styles />
 ```
 
-### Note on usage with Sapper
+## Using Sapper
 
 If you are using Sveltestrap with Sapper, it's recommended you import the component source directly.
-Note that this issue does not affect SvelteKit. For example:
+Note that this issue does not affect SvelteKit.
 
 ```html
 <script>
@@ -117,7 +124,7 @@ Note that this issue does not affect SvelteKit. For example:
 </Row>
 ```
 
-if you prefer the 'sveltestrap' import, you can move the package to `devDependencies` block in your `package.json` so that sapper will parse the es bundle
+If you prefer the '@sveltestrap/sveltestrap' import, you can move the package to `devDependencies` block in your `package.json` so that sapper will parse the es bundle
 
 ```json
 "devDependencies": {
