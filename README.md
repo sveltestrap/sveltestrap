@@ -10,6 +10,8 @@ Please note that Sveltestrap <u>**does not directly embed Bootstrap style**</u>.
 **Note**
 If you looking for Svelte 3.x support, you can use the original [sveltestrap](https://github.com/bestguy/sveltestrap) package.
 
+[![slack](https://img.shields.io/badge/Slack-4A154B?style=for-the-badge&logo=slack&logoColor=white)](https://join.slack.com/t/sveltestrap/shared_invite/zt-28y9c8a8k-6~9UI~26Cx7pF1JKeQZPyA)
+
 ---
 
 ## Install
