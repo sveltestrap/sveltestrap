@@ -1,0 +1,73 @@
+import { Meta, Canvas, Story, Source } from '@storybook/blocks';
+import * as StylesStories from './Styles.stories';
+
+<Meta title="Components/Styles" />
+
+# Styles
+
+The `<Styles>` component is not required, but is a convenient way to include the CDN Bootstrap 5 styles needed for Sveltestrap if you don't already include Bootstrap styles. If you don't want to include Bootstrap's icons styles needed for the  component, you can set <code>&lt;Styles icons=&lcub;false&rcub; /&gt;</code>
+
+<Canvas>
+  <Story of={StylesStories.Basic} />
+</Canvas>
+
+## Theme
+
+The optional theme attribute allows you set the color mode for the included styles. The `light` and `dark` values explicitly sets the theme, and `auto` matches the user's system preference. When not specified, the default theme is light. See [Bootstrap's Color Modes](https://getbootstrap.com/docs/5.3/customize/color-modes/) for more information.
+
+<Canvas withSource="none">
+  <Story of={StylesStories.Theme} />
+</Canvas>
+
+<Source dark language="html" code={`
+<script>
+  import {
+    Button,
+    Container,
+    Icon,
+    Dropdown,
+    DropdownItem,
+    DropdownMenu,
+    DropdownToggle,
+    Styles
+  } from '@sveltestrap/sveltestrap';
+
+  let theme = 'light';
+</script>
+
+<Styles {theme} />
+
+<Dropdown isOpen={true}>
+  <DropdownToggle caret>Menu</DropdownToggle>
+  <DropdownMenu>
+    <DropdownItem>Another Action</DropdownItem>
+    <DropdownItem>Another Action</DropdownItem>
+  </DropdownMenu>
+</Dropdown>
+
+<Button
+  color="primary"
+  outline
+  active={theme === 'light'}
+  on:click={() => (theme = 'light')}
+>
+  light <Icon name="sun-fill" />
+</Button>
+<Button
+  color="primary"
+  outline
+  active={theme === 'dark'}
+  on:click={() => (theme = 'dark')}
+>
+  dark <Icon name="moon-stars-fill" />
+</Button>
+<Button
+  color="primary"
+  outline
+  active={theme === 'auto'}
+  on:click={() => (theme = 'auto')}
+>
+  auto <Icon name="circle-half" />
+</Button>
+`} />
+
