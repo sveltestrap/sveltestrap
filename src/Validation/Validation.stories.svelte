@@ -15,25 +15,29 @@
 </script>
 
 <Template>
-  <FormGroup>
-    <Input value="Bad value" feedback="Invalid feedback" invalid />
-  </FormGroup>
+  <div class="form-width">
+    <FormGroup>
+      <Input value="Bad value" feedback="Invalid feedback" invalid />
+    </FormGroup>
 
-  <FormGroup>
-    <Input value="Correct value" feedback="Valid feedback" valid />
-  </FormGroup>
+    <FormGroup>
+      <Input value="Correct value" feedback="Valid feedback" valid />
+    </FormGroup>
+  </div>
 </Template>
 
 <Story name="Basic" />
 
 <Story name="Dynanic">
-  <Form {validated} on:submit={(e) => e.preventDefault()}>
-    <FormGroup>
-      <Input feedback="This requires a value" placeholder="This requires a value" required />
-    </FormGroup>
-    <FormGroup>
-      <Input feedback="This requires an email" placeholder="This requires an email" required type="email" />
-    </FormGroup>
-    <Button type="submit" on:click={() => (validated = true)}>Fake Submit</Button>
-  </Form>
+  <div class="form-width">
+    <Form {validated} on:submit={(e) => e.preventDefault()}>
+      <FormGroup>
+        <Input feedback="This requires a value" placeholder="This requires a value" required />
+      </FormGroup>
+      <FormGroup>
+        <Input feedback="This requires an email" placeholder="This requires an email" required type="email" />
+      </FormGroup>
+      <Button type="submit" on:click={() => (validated = true)}>Fake Submit</Button>
+    </Form>
+  </div>
 </Story>
