@@ -1,12 +1,9 @@
 declare module 'sveltestrap' {
   import { SvelteComponent } from 'svelte';
   import { HTMLAttributes } from 'svelte/elements';
-  import { ContainerType } from '../shared';
-
-  type Placement = 'start' | 'end' | 'top' | 'bottom';
+  import { ContainerType, Placement } from '../shared';
 
   export interface OffcanvasProps extends HTMLAttributes<HTMLDivElement> {
-    class?: string;
     backdrop?: boolean;
     body?: boolean;
     container?: ContainerType;
@@ -16,7 +13,6 @@ declare module 'sveltestrap' {
     keyboard: boolean;
     placement?: Placement;
     scroll?: boolean;
-    style?: string;
     sm?: boolean;
     md?: boolean;
     lg?: boolean;

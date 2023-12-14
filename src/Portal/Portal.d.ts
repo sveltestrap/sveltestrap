@@ -1,10 +1,14 @@
-import { SvelteComponent } from 'svelte';
+declare module 'sveltestrap' {
+  import { SvelteComponent } from 'svelte';
+  import { HTMLAttributes } from 'svelte/elements';
 
-export interface PortalProps
-  extends svelte.JSX.HTMLAttributes<HTMLElementTagNameMap['div']> {}
+  export interface PortalProps extends HTMLAttributes<HTMLDivElement> {}
 
-export default class Portal extends SvelteComponent<
-  PortalProps,
-  {},
-  { default: {} }
-> {}
+  export interface PortalEvents {}
+
+  export interface PortalSlots {
+    default: {};
+  }
+
+  export default class Portal extends SvelteComponent<PortalProps, PortalEvents, PortalSlots> {}
+}

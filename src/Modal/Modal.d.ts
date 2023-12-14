@@ -1,13 +1,13 @@
 declare module 'sveltestrap' {
   import { SvelteComponent } from 'svelte';
-  import type { FadeProps } from '../Fade.d.ts';
-  import type { Breakpoints, ContainerType } from '../shared.d.ts';
+  import { HTMLAttributes } from 'svelte/elements';
+  import type { FadeProps } from '../Fade';
+  import type { Breakpoints, ContainerType } from '../shared';
 
-  export interface ModalProps extends svelte.JSX.HTMLAttributes<HTMLElementTagNameMap['div']> {
+  export interface ModalProps extends HTMLAttributes<HTMLDivElement> {
     autoFocus?: boolean;
     backdrop?: boolean | 'static';
     body?: boolean;
-    class?: string;
     centered?: boolean;
     container?: ContainerType;
     contentClassName?: string;
@@ -27,17 +27,21 @@ declare module 'sveltestrap' {
     zIndex?: number | string;
   }
 
-  export class Modal extends SvelteComponent<
+  export interface ModalEvents {
+    open: CustomEvent<void>;
+    opening: CustomEvent<void>;
+    closing: CustomEvent<void>;
+    close: CustomEvent<void>;
+  }
+
+  export interface ModalSlots {
+    default: {};
+    external: {};
+  }
+
+  export default class Modal extends SvelteComponent<
     ModalProps,
-    {
-      open: CustomEvent<void>;
-      opening: CustomEvent<void>;
-      closing: CustomEvent<void>;
-      close: CustomEvent<void>;
-    },
-    {
-      default: {};
-      external: {};
-    }
+    ModalEvents,
+    ModalSlots
   > {}
 }

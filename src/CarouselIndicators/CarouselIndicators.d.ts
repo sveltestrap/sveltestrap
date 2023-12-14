@@ -1,13 +1,19 @@
-import { SvelteComponent } from 'svelte';
+declare module 'sveltestrap' {
+  import { SvelteComponent } from 'svelte';
+  import { HTMLOlAttributes } from 'svelte/elements';
 
-export interface CarouselIndicatorsProps
-  extends svelte.JSX.HTMLAttributes<HTMLElementTagNameMap['ol']> {
-  activeIndex: number;
-  items: any[];
+  export interface CarouselIndicatorsProps extends HTMLOlAttributes {
+    activeIndex: number;
+    items: any[];
+  }
+
+  export interface CarouselIndicatorsEvents {}
+
+  export interface CarouselIndicatorsSlots {}
+
+  export default class CarouselIndicators extends SvelteComponent<
+    CarouselIndicatorsProps,
+    CarouselIndicatorsEvents,
+    CarouselIndicatorsSlots
+  > {}
 }
-
-export default class CarouselIndicators extends SvelteComponent<
-  CarouselIndicatorsProps,
-  {},
-  {}
-> {}

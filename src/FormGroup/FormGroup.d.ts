@@ -6,7 +6,6 @@ declare module 'sveltestrap' {
     check?: boolean;
     disabled?: boolean;
     floating?: boolean;
-    id?: string;
     inline?: boolean;
     label?: string;
     row?: boolean;
@@ -20,6 +19,5 @@ declare module 'sveltestrap' {
     label: {};
   }
 
-  declare class FormGroup extends SvelteComponent<FormGroupProps, FormGroupEvents, FormGroupSlots> {}
-  export default FormGroup;
+  export default class FormGroup extends SvelteComponent<FormGroupProps, FormGroupEvents, FormGroupSlots> {}
 }

@@ -1,10 +1,14 @@
-import { SvelteComponent } from 'svelte';
+declare module 'sveltestrap' {
+  import { SvelteComponent } from 'svelte';
+  import { HTMLAttributes } from 'svelte/elements';
 
-export interface TableFooterProps
-  extends svelte.JSX.HTMLAttributes<HTMLElementTagNameMap['tfoot']> {}
+  export interface TableFooterProps extends HTMLAttributes<HTMLTableSectionElement> {}
 
-export default class TableFooter extends SvelteComponent<
-  TableFooterProps,
-  {},
-  { default: {} }
-> {}
+  export interface TableFooterEvents {}
+
+  export interface TableFooterSlots {
+    default: {};
+  }
+
+  export default class TableFooter extends SvelteComponent<TableFooterProps, TableFooterEvents, TableFooterSlots> {}
+}

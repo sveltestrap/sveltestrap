@@ -1,9 +1,14 @@
 declare module 'sveltestrap' {
   import { SvelteComponent } from 'svelte';
+  import { HTMLAttributes } from 'svelte/elements';
 
-  export interface ModalBodyProps extends svelte.JSX.HTMLAttributes<HTMLElementTagNameMap['div']> {
-    class?: string;
+  export interface ModalHeaderProps extends HTMLAttributes<HTMLDivElement> {}
+
+  export interface ModalHeaderEvents {}
+
+  export interface ModalHeaderSlots {
+    default: {};
   }
 
-  export class ModalBody extends SvelteComponent<ModalBodyProps, any, any> {}
+  export default class ModalHeader extends SvelteComponent<ModalHeaderProps, ModalHeaderEvents, ModalHeaderSlots> {}
 }

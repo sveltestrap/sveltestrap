@@ -1,22 +1,25 @@
-import { ColumnProps } from '../Col';
-import { SvelteComponent } from 'svelte';
+declare module 'sveltestrap' {
+  import { SvelteComponent } from 'svelte';
+  import { HTMLLabelAttributes } from 'svelte/elements';
+  import { ColumnProps } from '../Col';
 
-export interface LabelProps
-  extends svelte.JSX.HTMLAttributes<HTMLElementTagNameMap['label']> {
-  check?: boolean;
-  for?: string;
-  hidden?: boolean;
-  lg?: ColumnProps;
-  md?: ColumnProps;
-  size?: string;
-  sm?: ColumnProps;
-  xl?: ColumnProps;
-  xs?: ColumnProps;
-  xxl?: ColumnProps;
+  export interface LabelProps extends HTMLLabelAttributes {
+    check?: boolean;
+    hidden?: boolean;
+    lg?: ColumnProps;
+    md?: ColumnProps;
+    size?: string;
+    sm?: ColumnProps;
+    xl?: ColumnProps;
+    xs?: ColumnProps;
+    xxl?: ColumnProps;
+  }
+
+  export interface LabelEvents {}
+
+  export interface LabelSlots {
+    default: {};
+  }
+
+  export default class Label extends SvelteComponent<LabelProps, LabelEvents, LabelSlots> {}
 }
-
-export default class Label extends SvelteComponent<
-  LabelProps,
-  {},
-  { default: {} }
-> {}

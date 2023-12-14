@@ -1,12 +1,14 @@
-import { SvelteComponent } from 'svelte';
+declare module 'sveltestrap' {
+  import { SvelteComponent } from 'svelte';
+  import { HTMLAnchorAttributes } from 'svelte/elements';
 
-export interface NavbarBrandProps
-  extends svelte.JSX.HTMLAttributes<HTMLElementTagNameMap['a']> {
-  href?: string;
+  export interface NavbarBrandProps extends HTMLAnchorAttributes {}
+
+  export interface NavbarBrandEvents {}
+
+  export interface NavbarBrandSlots {
+    default: {};
+  }
+
+  export default class NavbarBrand extends SvelteComponent<NavbarBrandProps, NavbarBrandEvents, NavbarBrandSlots> {}
 }
-
-export default class NavbarBrand extends SvelteComponent<
-  NavbarBrandProps,
-  { click: WindowEventMap['click'] },
-  { default: {} }
-> {}

@@ -12,5 +12,9 @@ declare module 'sveltestrap' {
     default: {};
   }
 
-  export default class InputGroup extends SvelteComponent<InputGroupProps, InputGroupEvents, InputGroupSlots> {}
+  export default class InputGroup extends SvelteComponent<
+    InputGroupProps,
+    InputGroupEvents,
+    InputGroupSlots
+  > {}
 }

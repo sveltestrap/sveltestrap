@@ -13,7 +13,7 @@
    * The content to be displayed within the breadcrumb.
    * @type {string}
    */
-  export let children;
+  export let children = '';
 
   /**
    * Custom divider character or string for the breadcrumb items.

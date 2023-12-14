@@ -1,10 +1,24 @@
 <script>
   import { classnames } from '../utils';
 
+  /**
+   * Additional CSS class names for the <li> element.
+   * @type {string}
+   */
   let className = '';
   export { className as class };
+
+  /**
+   * Indicates whether the breadcrumb item is active (i.e., the current page).
+   * @type {boolean}
+   */
   export let active = false;
-  export let children = undefined;
+
+  /**
+   * The content to be displayed within the breadcrumb item.
+   * @type {string}
+   */
+  export let children = '';
 
   $: classes = classnames(
     className,

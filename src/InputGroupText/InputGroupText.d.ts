@@ -1,10 +1,14 @@
-import { SvelteComponent } from 'svelte';
+declare module 'sveltestrap' {
+  import { SvelteComponent } from 'svelte';
+  import { HTMLAttributes } from 'svelte/elements';
 
-export interface InputGroupTextProps
-  extends svelte.JSX.HTMLAttributes<HTMLElementTagNameMap['span']> {}
+  export interface InputGroupTextProps extends HTMLAttributes<HTMLSpanElement> {}
 
-export default class InputGroupText extends SvelteComponent<
-  InputGroupTextProps,
-  {},
-  { default: {} }
-> {}
+  export interface InputGroupTextEvents {}
+
+  export interface InputGroupTextSlots {
+    default: {};
+  }
+
+  export default class InputGroupText extends SvelteComponent<InputGroupTextProps, InputGroupTextEvents, InputGroupTextSlots> {}
+}

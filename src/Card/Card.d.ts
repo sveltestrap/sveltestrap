@@ -1,17 +1,20 @@
-import { SvelteComponent } from 'svelte';
-import { Color } from './shared';
+declare module 'sveltestrap' {
+  import { SvelteComponent } from 'svelte';
+  import { HTMLAttributes } from 'svelte/elements';
+  import { Color } from './shared';
 
-export interface CardProps
-  extends svelte.JSX.HTMLAttributes<HTMLElementTagNameMap['div']> {
-  id?: string;
-  inverse?: boolean;
-  color?: Color;
-  body?: boolean;
-  outline?: boolean;
+  export interface CardProps extends HTMLAttributes<HTMLDivElement> {
+    color?: Color;
+    body?: boolean;
+    inverse?: boolean;
+    outline?: boolean;
+  }
+
+  export interface CardEvents {}
+
+  export interface CardSlots {
+    default: {};
+  }
+
+  export default class Card extends SvelteComponent<CardProps, CardEvents, CardSlots> {}
 }
-
-export default class Card extends SvelteComponent<
-  CardProps,
-  { click: WindowEventMap['click'] },
-  { default: {} }
-> {}

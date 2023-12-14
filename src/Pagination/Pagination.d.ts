@@ -3,9 +3,9 @@ declare module 'sveltestrap' {
   import { HTMLAttributes } from 'svelte/elements';
 
   export interface PaginationProps extends HTMLAttributes<HTMLElement> {
+    arialabel?: string;
     listClassName?: string;
     size?: string;
-    arialabel?: string;
   }
 
   export interface PaginationEvents {}

@@ -1,31 +1,26 @@
 {
   "extends": "@tsconfig/svelte/tsconfig.json",
-  "include": [
-    "src/Accordion/*.ts",
-    "src/AccordionHeader/*.ts",
-    "src/AccordionItem/*.ts",
-    "src/Alert/*.ts",
-    "src/Badge/*.ts",
-    "src/Breadcrumb/*.ts",
-    "src/Button/*.ts",
-    "src/Image/*.ts",
-    "src/Modal/*.ts",
-    "src/Table/*.ts"
+  "include": ["src/**/*.d.ts"],
+  "exclude": [
+    "node_modules/*",
+    "src/**/*.spec.js",
+    "src/**/*.js",
+    "src/**/*.stories.svelte",
+    "src/**/*.svelte"
   ],
-  "exclude": ["node_modules/*"],
   "compilerOptions": {
     "baseUrl": ".",
     "moduleResolution": "node",
     "target": "es2022",
     "allowJs": true,
-    "checkJs": true,
+    "checkJs": false,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "sourceMap": true,
     "paths": {
-      "sveltestrap": ["src/index"]
+      "@sveltestrap/sveltestrap": ["src/index"]
     },
     "types": [
       "vitest/globals"

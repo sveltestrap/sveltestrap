@@ -1,13 +1,21 @@
-import { SvelteComponent } from 'svelte';
+declare module 'sveltestrap' {
+  import { SvelteComponent } from 'svelte';
+  import { HTMLLiAttributes } from 'svelte/elements';
 
-export interface PaginationItemProps
-  extends svelte.JSX.HTMLAttributes<HTMLElementTagNameMap['li']> {
-  active?: boolean;
-  disabled?: boolean;
+  export interface PaginationItemProps extends HTMLLiAttributes {
+    active?: boolean;
+    disabled?: boolean;
+  }
+
+  export interface PaginationItemEvents {}
+
+  export interface PaginationItemSlots {
+    default: {};
+  }
+
+  export default class PaginationItem extends SvelteComponent<
+    PaginationItemProps,
+    PaginationItemEvents,
+    PaginationItemSlots
+  > {}
 }
-
-export default class PaginationItem extends SvelteComponent<
-  PaginationItemProps,
-  {},
-  { default: {} }
-> {}

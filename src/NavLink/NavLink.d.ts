@@ -1,14 +1,23 @@
-import { SvelteComponent } from 'svelte';
+declare module 'sveltestrap' {
+  import { SvelteComponent } from 'svelte';
+  import { HTMLAnchorAttributes } from 'svelte/elements';
 
-export interface NavLinkProps
-  extends svelte.JSX.HTMLAttributes<HTMLElementTagNameMap['a']> {
-  disabled?: boolean;
-  active?: boolean;
-  href?: string;
+  export interface NavLinkProps extends HTMLAnchorAttributes {
+    active?: boolean;
+    disabled?: boolean;
+  }
+
+  export interface NavLinkEvents {
+    click: WindowEventMap['click'];
+  }
+
+  export interface NavLinkSlots {
+    default: {};
+  }
+
+  export default class NavLink extends SvelteComponent<
+    NavLinkProps,
+    NavLinkEvents,
+    NavLinkSlots
+  > {}
 }
-
-export default class NavLink extends SvelteComponent<
-  NavLinkProps,
-  { click: WindowEventMap['click'] },
-  { default: {} }
-> {}

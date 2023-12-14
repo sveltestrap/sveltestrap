@@ -2,9 +2,6 @@ export declare type Breakpoints = 'sm' | 'md' | 'lg' | 'xl';
 
 export declare type ContainerType = 'body' | 'inline';
 
-/**
- * Valid Bootstrap colors
- */
 export declare type Color =
   | 'primary'
   | 'secondary'
@@ -72,3 +69,20 @@ export declare type Direction =
   | 'right'
   | 'start'
   | 'end';
+
+export type Placement =
+  |'start'
+  | 'end'
+  | 'top'
+  | 'bottom';
+
+export type ColumnProps =
+  | string
+  | number
+  | {
+      xs?: number;
+      sm?: number;
+      md?: number;
+      lg?: number;
+      xl?: number;
+    };

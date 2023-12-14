@@ -1,14 +1,14 @@
-import { SvelteComponent } from 'svelte';
+declare module 'sveltestrap' {
+  import { SvelteComponent } from 'svelte';
+  import { HTMLColgroupAttributes } from 'svelte/elements';
 
-export interface ColgroupProps
-  extends svelte.JSX.HTMLAttributes<HTMLElementTagNameMap['colgroup']> {
-  footer?: undefined;
-  header?: undefined;
-  width?: undefined;
+  export interface ColgroupProps extends HTMLColgroupAttributes {}
+
+  export interface ColgroupEvents {}
+
+  export interface ColgroupSlots {
+    default: {};
+  }
+
+  export default class Colgroup extends SvelteComponent<ColgroupProps, ColgroupEvents, ColgroupSlots> {}
 }
-
-export default class Colgroup extends SvelteComponent<
-  ColgroupProps,
-  {},
-  { default: {} }
-> {}

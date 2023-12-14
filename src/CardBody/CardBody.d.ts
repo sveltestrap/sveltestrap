@@ -1,10 +1,14 @@
-import { SvelteComponent } from 'svelte';
+declare module 'sveltestrap' {
+  import { SvelteComponent } from 'svelte';
+  import { HTMLAttributes } from 'svelte/elements';
 
-export interface CardBodyProps
-  extends svelte.JSX.HTMLAttributes<HTMLElementTagNameMap['div']> {}
+  export interface CardBodyProps extends HTMLAttributes<HTMLDivElement> {}
 
-export default class CardBody extends SvelteComponent<
-  CardBodyProps,
-  {},
-  { default: {} }
-> {}
+  export interface CardBodyEvents {}
+
+  export interface CardBodySlots {
+    default: {};
+  }
+
+  export default class CardBody extends SvelteComponent<CardBodyProps, CardBodyEvents, CardBodySlots> {}
+}

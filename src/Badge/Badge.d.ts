@@ -1,9 +1,9 @@
 declare module 'sveltestrap' {
   import { SvelteComponent } from 'svelte';
-  import { HTMLAttributes } from 'svelte/elements';
+  import { HTMLAnchorAttributes } from 'svelte/elements';
   import { Color } from '../shared';
 
-  export interface BadgeProps extends HTMLAttributes<HTMLAnchorElement> {
+  export interface BadgeProps extends HTMLAnchorAttributes {
     color?: Color;
     href?: string;
     pill?: boolean;
