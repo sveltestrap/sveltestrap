@@ -4,28 +4,152 @@
 
   import { classnames } from '../utils';
 
+  // Additional CSS class name for the component
   let className = '';
+  /**
+   * Additional CSS class name for the component
+   * @type {string}
+   */
   export { className as class };
 
+  /**
+   * Bootstrap size of the Input.
+   * @type {string}
+   * @default undefined
+   */
   export let bsSize = undefined;
+
+  /**
+   * Indicates whether the Input is checked.
+   * @type {boolean}
+   * @default false
+   */
   export let checked = false;
+
+  /**
+   * Color variant for the Input.
+   * @type {string}
+   * @default undefined
+   */
   export let color = undefined;
+
+  /**
+   * Indicates whether the Input is disabled.
+   * @type {boolean}
+   * @default undefined
+   */
   export let disabled = undefined;
+
+  /**
+   * Feedback message for the Input.
+   * @type {string|Array}
+   * @default undefined
+   */
   export let feedback = undefined;
+
+  /**
+   * Array of files for file input.
+   * @type {Array}
+   * @default undefined
+   */
   export let files = undefined;
+
+  /**
+   * Group identifier for the Input.
+   * @type {string|undefined}
+   * @default undefined
+   */
   export let group = undefined;
+
+  /**
+   * Inner content for the Input.
+   * @type {string|undefined}
+   * @default undefined
+   */
   export let inner = undefined;
+
+  /**
+   * Indicates whether the Input is invalid.
+   * @type {boolean}
+   * @default false
+   */
   export let invalid = false;
+
+  /**
+   * Label for the Input.
+   * @type {string|undefined}
+   * @default undefined
+   */
   export let label = undefined;
+
+  /**
+   * Indicates whether the Input allows multiple selections.
+   * @type {boolean|undefined}
+   * @default undefined
+   */
   export let multiple = undefined;
+
+  /**
+   * Name attribute for the Input.
+   * @type {string}
+   * @default ''
+   */
   export let name = '';
+
+  /**
+   * Placeholder text for the Input.
+   * @type {string}
+   * @default ''
+   */
   export let placeholder = '';
+
+  /**
+   * Indicates whether the Input is in plaintext mode.
+   * @type {boolean}
+   * @default false
+   */
   export let plaintext = false;
+
+  /**
+   * Indicates whether the Input is read-only.
+   * @type {boolean|undefined}
+   * @default undefined
+   */
   export let readonly = undefined;
+
+  /**
+   * Indicates whether the Input is reversed.
+   * @type {boolean}
+   * @default false
+   */
   export let reverse = false;
+
+  /**
+   * Size of the Input.
+   * @type {string|undefined}
+   * @default undefined
+   */
   export let size = undefined;
+
+  /**
+   * Type of the Input.
+   * @type {string}
+   * @default 'text'
+   */
   export let type = 'text';
+
+  /**
+   * Indicates whether the Input is valid.
+   * @type {boolean}
+   * @default false
+   */
   export let valid = false;
+
+  /**
+   * Value of the Input.
+   * @type {string}
+   * @default ''
+   */
   export let value = '';
 
   let classes;
@@ -71,9 +195,7 @@
     }
 
     if (size && isNotaNumber.test(size)) {
-      console.warn(
-        'Please use the prop "bsSize" instead of the "size" to bootstrap\'s input sizing.'
-      );
+      console.warn('Please use the prop "bsSize" instead of the "size" to bootstrap\'s input sizing.');
       bsSize = size;
       size = undefined;
     }
