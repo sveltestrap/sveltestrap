@@ -1,12 +1,16 @@
-import { SvelteComponent } from 'svelte';
+declare module 'sveltestrap' {
+  import { SvelteComponent } from 'svelte';
+  import { HTMLAttributes } from 'svelte/elements';
 
-export interface InputGroupProps
-  extends svelte.JSX.HTMLAttributes<HTMLElementTagNameMap['div']> {
-  size?: 'sm' | 'lg';
+  export interface InputGroupProps extends HTMLAttributes<HTMLDivElement> {
+    size?: 'sm' | 'lg';
+  }
+
+  export interface InputGroupEvents {}
+
+  export interface InputGroupSlots {
+    default: {};
+  }
+
+  export default class InputGroup extends SvelteComponent<InputGroupProps, InputGroupEvents, InputGroupSlots> {}
 }
-
-export default class InputGroup extends SvelteComponent<
-  InputGroupProps,
-  {},
-  { default: {} }
-> {}
