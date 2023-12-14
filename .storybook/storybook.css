@@ -172,13 +172,15 @@ body {
   text-align: center;
 }
 
-.sbdocs .social {
+.sbdocs .social p {
   align-items: center;
   display: flex;
-  gap: 16px;
-  margin-bottom: 16px;
+  gap: 8px;
 }
 
+.sbdocs .social {
+  margin: 24px 0;
+}
 /*-----------------
   Viewport toolbar
  -----------------*/
