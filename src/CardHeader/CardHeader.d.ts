@@ -1,9 +1,14 @@
-import { SvelteComponent } from 'svelte';
+declare module 'sveltestrap' {
+  import { SvelteComponent } from 'svelte';
+  import { HTMLAttributes } from 'svelte/elements';
 
-export interface ICardHeaderProps {
-  id?: string;
-  tag?: 'div' | 'h3';
+  export interface CardHeaderProps extends HTMLAttributes<HTMLElement> {
+    tag?: 'div' | 'h3';
+  }
+
+  export interface CardHeaderEvents {}
+
+  export interface CardHeaderSlots {}
+
+  export default class CardHeader extends SvelteComponent<CardHeaderProps, CardHeaderEvents, CardHeaderSlots> {}
 }
-
-declare class CardHeader extends SvelteComponent<ICardHeaderProps> {}
-export default CardHeader;

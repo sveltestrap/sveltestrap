@@ -1,57 +1,27 @@
-import { SvelteComponent } from 'svelte';
-import { Color } from '../shared';
+declare module 'sveltestrap' {
+  import { SvelteComponent } from 'svelte';
+  import { HTMLInputAttributes } from 'svelte/elements';
+  import { Color } from '../shared';
 
-export type InputType =
-  | 'button'
-  | 'checkbox'
-  | 'color'
-  | 'date'
-  | 'datetime-local'
-  | 'email'
-  | 'file'
-  | 'month'
-  | 'number'
-  | 'password'
-  | 'radio'
-  | 'range'
-  | 'reset'
-  | 'search'
-  | 'select'
-  | 'submit'
-  | 'switch'
-  | 'tel'
-  | 'text'
-  | 'textarea'
-  | 'time'
-  | 'url'
-  | 'week';
+  export interface InputProps extends HTMLInputAttributes {
+    bsSize?: 'lg' | 'sm';
+    color?: Color;
+    feedback?: string | string[];
+    files?: FileList;
+    group?: any;
+    inner?: HTMLElement;
+    invalid?: boolean;
+    label?: string;
+    plaintext?: boolean;
+    reverse?: boolean;
+    valid?: boolean;
+  }
 
-export interface InputProps
-  extends svelte.JSX.HTMLAttributes<HTMLElementTagNameMap['input']> {
-  bsSize?: 'lg' | 'sm';
-  color?: Color;
-  feedback?: string | string[];
-  inner?: HTMLElement;
-  invalid?: boolean;
-  label?: string;
-  plaintext?: boolean;
-  reverse?: boolean;
-  type?: InputType;
-  valid?: boolean;
-  files?: FileList;
-  group?: any;
+  export interface InputEvents {}
+
+  export interface InputSlots {
+    default?: {};
+  }
+
+  export default class Input extends SvelteComponent<InputProps, InputEvents, InputSlots> {}
 }
-
-export default class Input extends SvelteComponent<
-  InputProps,
-  {
-    blur: WindowEventMap['blur'];
-    focus: WindowEventMap['focus'];
-    keydown: WindowEventMap['keydown'];
-    keypress: WindowEventMap['keypress'];
-    keyup: WindowEventMap['keyup'];
-    change: WindowEventMap['change'];
-    input: WindowEventMap['input'];
-  },
-  { default: {} }
-> {}

@@ -23,9 +23,9 @@
 
   /**
    * Children elements to be rendered inside the component.
-   * @type {any}
+   * @type {string}
    */
-  export let children = undefined;
+  export let children = '';
 
   /**
    * Indicates if the component is a close button.

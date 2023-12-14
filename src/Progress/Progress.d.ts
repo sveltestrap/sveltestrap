@@ -1,7 +1,7 @@
 declare module 'sveltestrap' {
   import { SvelteComponent } from 'svelte';
-  import { Color } from '../shared';
   import { HTMLAttributes } from 'svelte/elements';
+  import { Color } from '../shared';
 
   export interface ProgressProps extends HTMLAttributes<HTMLDivElement> {
     animated?: boolean;

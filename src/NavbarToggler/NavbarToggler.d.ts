@@ -1,10 +1,19 @@
-import { SvelteComponent } from 'svelte';
-import { ButtonProps } from '../Button';
+declare module 'sveltestrap' {
+  import { SvelteComponent } from 'svelte';
+  import { ButtonProps } from '../Button';
 
-export interface NavbarTogglerProps extends ButtonProps {}
+  export interface NavbarTogglerProps extends ButtonProps {
+    active?: boolean;
+    disabled?: boolean;
+  }
 
-export default class NavbarToggler extends SvelteComponent<
-  NavbarTogglerProps,
-  { click: WindowEventMap['click'] },
-  { default: {} }
-> {}
+  export interface NavbarTogglerEvents {
+    click: WindowEventMap['click'];
+  }
+
+  export interface NavbarTogglerSlots {
+    default: {};
+  }
+
+  export default class NavbarToggler extends SvelteComponent<NavbarTogglerProps, NavbarTogglerEvents, NavbarTogglerSlots> {}
+}

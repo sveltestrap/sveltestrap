@@ -1,19 +1,28 @@
-import { SvelteComponent } from 'svelte';
-import { ContainerType } from '../shared';
 
-declare type TooltipPlacement = 'left' | 'top' | 'bottom' | 'right';
+declare module 'sveltestrap' {
+  import { SvelteComponent } from 'svelte';
+  import { HTMLAttributes } from 'svelte/elements';
+  import { ContainerType, Placement } from '../shared';
 
-export interface TooltipProps
-  extends svelte.JSX.HTMLAttributes<HTMLElementTagNameMap['div']> {
-  animation?: boolean;
-  container?: ContainerType;
-  isOpen?: boolean;
-  placement?: TooltipPlacement;
-  target: string | HTMLElement;
+  type TooltipPlacement = 'left' | 'top' | 'bottom' | 'right';
+
+  export interface TooltipProps extends HTMLAttributes<HTMLDivElement> {
+    animation?: boolean;
+    container?: ContainerType;
+    isOpen?: boolean;
+    placement?: TooltipPlacement;
+    target: string | HTMLElement;
+  }
+
+  export interface TooltipEvents {}
+
+  export interface TooltipSlots {
+    default: {};
+  }
+
+  export default class Tooltip extends SvelteComponent<
+    TooltipProps,
+    TooltipEvents,
+    TooltipSlots
+  > {}
 }
-
-export default class Tooltip extends SvelteComponent<
-  TooltipProps,
-  {},
-  { default: {} }
-> {}

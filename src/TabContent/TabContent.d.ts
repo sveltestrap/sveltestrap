@@ -1,15 +1,16 @@
-import { SvelteComponent } from 'svelte';
+declare module 'sveltestrap' {
+  import { SvelteComponent } from 'svelte';
+  import { HTMLAttributes } from 'svelte/elements';
 
-export interface TabContentProps
-  extends svelte.JSX.HTMLAttributes<HTMLElementTagNameMap['div']> {
-  pills?: boolean;
-  vertical?: boolean;
-}
+  export interface TabContentProps extends HTMLAttributes<HTMLDivElement> {}
 
-export default class TabContent extends SvelteComponent<
-  TabContentProps,
-  {
+  export interface TabContentEvents {
     tab: CustomEvent<number | string>;
-  },
-  { default: {} }
-> {}
+  }
+
+  export interface TabContentSlots {
+    default: {};
+  }
+
+  export default class TabContent extends SvelteComponent<TabContentProps, TabContentEvents, TabContentSlots> {}
+}
