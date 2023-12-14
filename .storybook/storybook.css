@@ -603,3 +603,11 @@ Progress Example Story
     overflow-x: scroll;
   }
 }
+
+/*-----------------
+Form Stories Width
+-----------------*/
+
+.form-width {
+  width: 400px;
+}
