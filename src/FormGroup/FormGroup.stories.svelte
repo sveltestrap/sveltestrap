@@ -58,35 +58,39 @@
 </script>
 
 <Template let:args>
-  <Form {...args}>
-    <FormGroup {...args}>
-      <Input {...args} placeholder="Enter a value" />
-    </FormGroup>
-  </Form>
+  <div class="form-width">
+    <Form {...args}>
+      <FormGroup {...args}>
+        <Input {...args} placeholder="Enter a value" />
+      </FormGroup>
+    </Form>
+  </div>
 </Template>
 
 <Story name="Basic" />
 
 <Story name="Floating">
-  <Form>
-    <FormGroup floating label="Floating Label">
-      <Input placeholder="Enter a value" />
-    </FormGroup>
+  <div class="form-width">
+    <Form>
+      <FormGroup floating label="Floating Label">
+        <Input placeholder="Enter a value" />
+      </FormGroup>
 
-    <FormGroup floating label="Select labels always float">
-      <Input type="select" placeholder="Enter a value">
-        <option />
-        <option value="alpha">Alpha</option>
-        <option value="bravo">Bravo</option>
-        <option value="charlie">Charlie</option>
-      </Input>
-    </FormGroup>
+      <FormGroup floating label="Select labels always float">
+        <Input type="select" placeholder="Enter a value">
+          <option />
+          <option value="alpha">Alpha</option>
+          <option value="bravo">Bravo</option>
+          <option value="charlie">Charlie</option>
+        </Input>
+      </FormGroup>
 
-    <FormGroup floating>
-      <Input placeholder="Enter a value" />
-      <div slot="label">
-        Floating Label Slot <Badge>3</Badge>
-      </div>
-    </FormGroup>
-  </Form>
+      <FormGroup floating>
+        <Input placeholder="Enter a value" />
+        <div slot="label">
+          Floating Label Slot <Badge>3</Badge>
+        </div>
+      </FormGroup>
+    </Form>
+  </div>
 </Story>
