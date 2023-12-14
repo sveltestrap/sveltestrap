@@ -49,7 +49,7 @@
 
   /**
    * A custom tag for the FormGroup
-   * @type {?string}
+   * @type {string}
    */
   export let tag = null;
 
