@@ -1,24 +1,28 @@
-import { SvelteComponent } from 'svelte';
+declare module 'sveltestrap' {
+  import { SvelteComponent } from 'svelte';
+  import { HTMLAttributes } from 'svelte/elements';
 
-export interface ToastProps
-  extends svelte.JSX.HTMLAttributes<HTMLElementTagNameMap['div']> {
-  autohide?: boolean;
-  body?: boolean;
-  delay?: number;
-  duration?: number;
-  fade?: boolean;
-  header?: string;
-  isOpen?: boolean;
-  toggle?: () => void;
-}
+  export interface ToastProps extends HTMLAttributes<HTMLDivElement> {
+    autohide?: boolean;
+    body?: boolean;
+    delay?: number;
+    duration?: number;
+    fade?: boolean;
+    header?: string;
+    isOpen?: boolean;
+    toggle?: () => void;
+  }
 
-export default class Toast extends SvelteComponent<
-  ToastProps,
-  {
+  export interface ToastEvents {
     open: CustomEvent<void>;
     opening: CustomEvent<void>;
     closing: CustomEvent<void>;
     close: CustomEvent<void>;
-  },
-  { default: {} }
-> {}
+  }
+
+  export interface ToastSlots {
+    default: {};
+  }
+
+  export default class Toast extends SvelteComponent<ToastProps, ToastEvents, ToastSlots> {}
+}

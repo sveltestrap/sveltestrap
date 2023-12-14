@@ -31,6 +31,9 @@
 
   const { stayOpen, toggle, open } = getContext('accordion');
 
+  /**
+   * @type {HTMLDivElement}
+   */
   let accordionId;
 
   onMount(() => {

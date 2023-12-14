@@ -1,26 +1,20 @@
-import { SvelteComponent } from 'svelte';
+declare module 'sveltestrap' {
+  import { SvelteComponent } from 'svelte';
+  import { HTMLAttributes } from 'svelte/elements';
+  import { ColumnProps } from '../shared';
 
-export type ColumnProps =
-  | string
-  | number
-  | {
-      xs?: number;
-      sm?: number;
-      md?: number;
-      lg?: number;
-      xl?: number;
-    };
+  export interface RowProps extends HTMLAttributes<HTMLDivElement> {
+    cols?: ColumnProps;
+    noGutters?: boolean;
+    form?: boolean;
+    inner?: HTMLElement;
+  }
 
-export interface RowProps
-  extends svelte.JSX.HTMLAttributes<HTMLElementTagNameMap['div']> {
-  cols?: ColumnProps;
-  noGutters?: boolean;
-  form?: boolean;
-  inner?: HTMLElement;
+  export interface RowEvents {}
+
+  export interface RowSlots {
+    default: {};
+  }
+
+  export default class Row extends SvelteComponent<RowProps, RowEvents, RowSlots> {}
 }
-
-export default class Row extends SvelteComponent<
-  RowProps,
-  {},
-  { default: {} }
-> {}

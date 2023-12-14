@@ -1,23 +1,27 @@
-import { SvelteComponent } from 'svelte';
-import { Direction } from './shared';
+declare module 'sveltestrap' {
+  import { SvelteComponent } from 'svelte';
+  import { HTMLDivElement } from 'svelte/elements';
+  import { Direction } from '../shared';
 
-export interface DropdownProps
-  extends svelte.JSX.HTMLAttributes<HTMLElementTagNameMap['div']> {
-  direction?: Direction;
-  group?: boolean;
-  isOpen?: boolean;
-  autoClose?: boolean | string;
-  nav?: boolean;
-  active?: boolean;
-  size?: string;
-  toggle?: () => void;
-  inNavbar?: boolean;
-  setActiveFromChild?: boolean;
-  dropup?: boolean;
+  export interface DropdownItemProps extends HTMLAttributes<HTMLDivElement> {
+    active?: boolean;
+    autoClose?: boolean | string;
+    direction?: Direction;
+    dropup?: boolean;
+    group?: boolean;
+    inNavbar?: boolean;
+    isOpen?: boolean;
+    nav?: boolean;
+    setActiveFromChild?: boolean;
+    size?: string;
+    toggle?: () => void;
+  }
+
+  export interface DropdownItemEvents {}
+
+  export interface DropdownItemSlots {
+    default: {};
+  }
+
+  export default class DropdownItem extends SvelteComponent<DropdownItemProps, DropdownItemEvents, DropdownItemSlots> {}
 }
-
-export default class Dropdown extends SvelteComponent<
-  DropdownProps,
-  {},
-  { default: {} }
-> {}

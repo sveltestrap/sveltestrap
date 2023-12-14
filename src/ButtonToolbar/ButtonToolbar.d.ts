@@ -1,10 +1,14 @@
-import { SvelteComponent } from 'svelte';
+declare module 'sveltestrap' {
+  import { SvelteComponent } from 'svelte';
+  import { HTMLAttributes } from 'svelte/elements';
 
-export interface ButtonToolbarProps
-  extends svelte.JSX.HTMLAttributes<HTMLElementTagNameMap['div']> {}
+  export interface ButtonToolbarProps extends HTMLAttributes<HTMLDivElement> {}
 
-export default class ButtonToolbar extends SvelteComponent<
-  ButtonToolbarProps,
-  {},
-  { default: {} }
-> {}
+  export interface ButtonToolbarEvents {}
+
+  export interface ButtonToolbarSlots {
+    default: {};
+  }
+
+  export default class ButtonToolbar extends SvelteComponent<ButtonToolbarProps, ButtonToolbarEvents, ButtonToolbarSlots> {}
+}

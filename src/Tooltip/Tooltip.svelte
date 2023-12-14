@@ -5,25 +5,81 @@
   import { InlineContainer } from '../InlineContainer';
   import { Portal } from '../Portal';
 
+  /**
+   * Additional CSS class names for the tooltip.
+   * @type {string}
+   */
   let className = '';
   export { className as class };
+
+  /**
+   * Flag to enable animation for the tooltip.
+   * @type {boolean}
+   */
   export let animation = true;
-  export let children = undefined;
-  export let container = undefined;
+
+  /**
+   * The content to be displayed within the tooltip.
+   * @type {string}
+   */
+  export let children = '';
+
+  /**
+   * The container in which the tooltip should be rendered.
+   * @type {string}
+   */
+  export let container = '';
+
+  /**
+   * Unique identifier for the tooltip.
+   * @type {string}
+   */
   export let id = `tooltip_${uuid()}`;
+
+  /**
+   * Controls the visibility of the tooltip.
+   * @type {boolean}
+   */
   export let isOpen = false;
+
+  /**
+   * The preferred placement of the tooltip.
+   * @type {string}
+   */
   export let placement = 'top';
+
+  /**
+   * The target element to which the tooltip is attached.
+   * @type {string | HTMLElement}
+   */
   export let target = '';
+
+  /**
+   * @type {string}
+   */
   let bsPlacement;
+  /**
+   * @type {object}
+   */
   let popperInstance;
+    /**
+   * @type {string}
+   */
   let popperPlacement = placement;
+  /**
+   * @type {HTMLDivElement | null}
+   */
   let targetEl;
+    /**
+   * @type {HTMLDivElement | null}
+   */
   let tooltipEl;
 
   const checkPopperPlacement = {
     name: 'checkPopperPlacement',
     enabled: true,
     phase: 'main',
+    // @ts-ignore
     fn({ state }) {
       popperPlacement = state.placement;
     }
@@ -31,12 +87,15 @@
 
   $: {
     if (isOpen && tooltipEl) {
+      // @ts-ignore
       popperInstance = createPopper(targetEl, tooltipEl, {
         placement,
         modifiers: [checkPopperPlacement]
       });
     } else if (popperInstance) {
+      // @ts-ignore
       popperInstance.destroy();
+      // @ts-ignore
       popperInstance = undefined;
     }
   }
@@ -53,7 +112,7 @@
   }
 
   function registerEventListeners() {
-    if (target == null || target.length == 0) {
+    if (target == null || !target) {
       targetEl = null;
       return;
     }
@@ -61,6 +120,7 @@
     // Check if target is HTMLElement
     try {
       if (target instanceof HTMLElement) {
+        // @ts-ignore
         targetEl = target;
       }
     } catch (e) {
