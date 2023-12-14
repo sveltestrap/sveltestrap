@@ -171,43 +171,51 @@
 </script>
 
 <Template let:args>
-  <Input {...args} />
+  <div class="form-width">
+    <Input {...args} />
+  </div>
 </Template>
 
 <Story name="Basic" />
 
 <Story name="Text">
-  <div class="input-example">
-    <div class="text-content">
-      <Input id="plainExample" plaintext value="Some plain text/ static value" />
-      <br />
-      <Input placeholder="text placeholder" value="Some text value" />
-      <br />
-      <Input type="email" placeholder="email placeholder" />
-      <br />
-      <Input type="password" placeholder="password placeholder" />
-      <br />
-      <Input type="url" placeholder="url placeholder" />
-      <br />
-      <Input type="search" placeholder="search placeholder" />
-      <br />
-      <Input type="textarea" placeholder="textarea placeholder" />
+  <div class="form-width">
+    <div class="input-example">
+      <div class="text-content">
+        <Input id="plainExample" plaintext value="Some plain text/ static value" />
+        <br />
+        <Input placeholder="text placeholder" value="Some text value" />
+        <br />
+        <Input type="email" placeholder="email placeholder" />
+        <br />
+        <Input type="password" placeholder="password placeholder" />
+        <br />
+        <Input type="url" placeholder="url placeholder" />
+        <br />
+        <Input type="search" placeholder="search placeholder" />
+        <br />
+        <Input type="textarea" placeholder="textarea placeholder" />
+      </div>
     </div>
   </div>
 </Story>
 
 <Story name="Numbers">
-  <Input type="range" min={0} max={100} step={10} placeholder="range placeholder" />
-  <br /><br />
-  <Input type="number" placeholder="number placeholder" />
+  <div class="form-width">
+    <Input type="range" min={0} max={100} step={10} placeholder="range placeholder" />
+    <br /><br />
+    <Input type="number" placeholder="number placeholder" />
+  </div>
 </Story>
 
 <Story name="DateTime">
-  <Input type="datetime-local" placeholder="datetime placeholder" />
-  <br />
-  <Input type="date" placeholder="date placeholder" />
-  <br />
-  <Input type="time" placeholder="time placeholder" />
+  <div class="form-width">
+    <Input type="datetime-local" placeholder="datetime placeholder" />
+    <br />
+    <Input type="date" placeholder="date placeholder" />
+    <br />
+    <Input type="time" placeholder="time placeholder" />
+  </div>
 </Story>
 
 <Story name="Color">
@@ -215,101 +223,111 @@
 </Story>
 
 <Story name="SelectRadioCheckSwitch">
-  <div class="input-example">
-    <div class="text-content">
-      <Input type="select">
-        {#each [1, 2, 3, 4, 5] as option}
-          <option>{option}</option>
+  <div class="form-width">
+    <div class="input-example">
+      <div class="text-content">
+        <Input type="select">
+          {#each [1, 2, 3, 4, 5] as option}
+            <option>{option}</option>
+          {/each}
+        </Input>
+        <br />
+        {#each ['eenie', 'meanie', 'minie', 'moe'] as value}
+          <Input type="radio" bind:group={radioGroup} {value} label={value.charAt(0).toUpperCase() + value.slice(1)} />
         {/each}
-      </Input>
-      <br />
-      {#each ['eenie', 'meanie', 'minie', 'moe'] as value}
-        <Input type="radio" bind:group={radioGroup} {value} label={value.charAt(0).toUpperCase() + value.slice(1)} />
-      {/each}
-      <br />
-      <Input type="checkbox" label="Check me out" />
-      <br />
-      <Input type="checkbox" reverse label="Reverse Label" />
-      <br />
-      <Input type="switch" label="Switch me on" />
+        <br />
+        <Input type="checkbox" label="Check me out" />
+        <br />
+        <Input type="checkbox" reverse label="Reverse Label" />
+        <br />
+        <Input type="switch" label="Switch me on" />
+      </div>
     </div>
   </div>
 </Story>
 
 <Story name="Files">
-  <Input type="file" name="file" id="exampleFile" />
-  <FormText>
-    This is some placeholder block-level help text for the above input. It's a bit lighter and easily wraps to a new
-    line.
-  </FormText>
+  <div class="form-width">
+    <Input type="file" name="file" id="exampleFile" />
+    <FormText>
+      This is some placeholder block-level help text for the above input. It's a bit lighter and easily wraps to a new
+      line.
+    </FormText>
+  </div>
 </Story>
 
 <Story name="Validation">
-  <FormGroup>
-    <Input value="Invalid input" invalid feedback="I could be wrong" />
-  </FormGroup>
-
-  <FormGroup>
-    <Input value="Valid input" valid feedback="I could be right" />
-  </FormGroup>
-
-  <FormGroup>
-    <Input value="Multiple feedback" valid feedback={['I could be black', 'I could be white']} />
-  </FormGroup>
-</Story>
-
-<Story name="Binding">
-  <div class="input-example">
+  <div class="form-width">
     <FormGroup>
-      <Label>Type here</Label>
-      <Input type="text" bind:value={inputValue} />
+      <Input value="Invalid input" invalid feedback="I could be wrong" />
     </FormGroup>
-    {#if inputValue}
-      <p>You typed: {inputValue}</p>
-    {/if}
 
     <FormGroup>
-      <Label>This textarea resizes as you type</Label>
-      <Input rows={1} type="textarea" bind:inner on:input={resize} />
+      <Input value="Valid input" valid feedback="I could be right" />
+    </FormGroup>
+
+    <FormGroup>
+      <Input value="Multiple feedback" valid feedback={['I could be black', 'I could be white']} />
     </FormGroup>
   </div>
 </Story>
 
+<Story name="Binding">
+  <div class="form-width">
+    <div class="input-example">
+      <FormGroup>
+        <Label>Type here</Label>
+        <Input type="text" bind:value={inputValue} />
+      </FormGroup>
+      {#if inputValue}
+        <p>You typed: {inputValue}</p>
+      {/if}
+
+      <FormGroup>
+        <Label>This textarea resizes as you type</Label>
+        <Input rows={1} type="textarea" bind:inner on:input={resize} />
+      </FormGroup>
+    </div>
+  </div>
+</Story>
+
 <Story name="Events">
-  <div class="input-example">
-    <FormGroup>
-      <Label>Type here</Label>
-      <Input
-        type="text"
-        value={inputValue}
-        on:blur={() => (focused = false)}
-        on:focus={() => (focused = true)}
-        on:change={changeEvent}
-        on:input={inputEvent}
-      />
-    </FormGroup>
-    {#if changeValue}
-      <p>
-        <code>on:change</code>
-        says you typed: {changeValue}
-      </p>
-    {/if}
-    {#if inputValue}
-      <p>
-        <code>on:input</code>
-        says you are typing: {inputValue}
-      </p>
-    {/if}
-    {#if !focused}
-      <p>
-        <code>on:blur</code>
-        says you are not focused.
-      </p>
-    {:else}
-      <p>
-        <code>on:focus</code>
-        says you are focused.
-      </p>
-    {/if}
+  <div class="form-width">
+    <div class="input-example">
+      <FormGroup>
+        <Label>Type here</Label>
+        <Input
+          type="text"
+          value={inputValue}
+          on:blur={() => (focused = false)}
+          on:focus={() => (focused = true)}
+          on:change={changeEvent}
+          on:input={inputEvent}
+        />
+      </FormGroup>
+      {#if changeValue}
+        <p>
+          <code>on:change</code>
+          says you typed: {changeValue}
+        </p>
+      {/if}
+      {#if inputValue}
+        <p>
+          <code>on:input</code>
+          says you are typing: {inputValue}
+        </p>
+      {/if}
+      {#if !focused}
+        <p>
+          <code>on:blur</code>
+          says you are not focused.
+        </p>
+      {:else}
+        <p>
+          <code>on:focus</code>
+          says you are focused.
+        </p>
+      {/if}
+    </div>
   </div>
 </Story>
