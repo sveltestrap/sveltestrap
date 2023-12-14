@@ -165,7 +165,7 @@ body {
  -----------------*/
 
 .sbdocs .hero {
-  background-color: rgba(0,0,0,.1);
+  background-color: rgba(0, 0, 0, 0.1);
   border-radius: var(--border-radius-base);
   margin: 20px 0;
   padding: 40px;
@@ -253,7 +253,7 @@ h1.sbdocs-h1 {
 }
 
 .sbdocs.sbdocs-content hr {
-  border-top: 1px solid rgba(0,0,0,.8);
+  border-top: 1px solid rgba(0, 0, 0, 0.8);
   height: 1px;
   margin: var(--margin-large) 0;
 }
@@ -558,6 +558,22 @@ Image Figure Story
 }
 
 /*-----------------
+Input Example Story
+-----------------*/
+
+.input-example .text-content #plainExample {
+  color: var(--color-gray-300);
+}
+
+.input-example label {
+  color: var(--color-gray-300);
+}
+
+.input-example p {
+  color: var(--color-gray-300);
+}
+
+/*-----------------
 Progress Example Story
 -----------------*/
 
@@ -578,7 +594,6 @@ Progress Example Story
   --bs-breadcrumb-item-active-color: var(--color-gray-500);
 }
 
-
 @media screen and (max-width: 768px) {
   .sbdocs.sbdocs-wrapper {
     padding: 20px;
@@ -587,4 +602,12 @@ Progress Example Story
   .css-w158n4 {
     overflow-x: scroll;
   }
+}
+
+/*-----------------
+Form Stories Width
+-----------------*/
+
+.form-width {
+  width: 400px;
 }

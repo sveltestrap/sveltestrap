@@ -1,0 +1,91 @@
+import { Meta, Canvas, Controls, Story, Source } from '@storybook/blocks';
+import * as InputGroupStories from './InputGroup.stories';
+
+<Meta title="Form/InputGroup" />
+
+# InputGroup <small class="bootstrap-docs">[Bootstrap InputGroup](https://getbootstrap.com/docs/5.3/forms/input-group/)</small>
+
+The `<InputGroup>` component extends form controlls by adding text, buttons, or button groups to either side of textual inputs, custom selects, and custom file inputs.
+
+<Canvas>
+  <Story of={InputGroupStories.Basic} />
+</Canvas>
+
+<Controls of={InputGroupStories.Basic} />
+
+## Groups
+
+You can place one or more add-on elements within an `InputGroup`.
+
+<Canvas withSource="none">
+  <Story of={InputGroupStories.Groups} />
+</Canvas>
+
+<Source
+  dark
+  language="html"
+  code={` 
+<script>
+  import { InputGroup, InputGroupText, Input } from '@sveltestrap/sveltestrap';
+</script>
+
+<div>
+  <InputGroup>
+    <InputGroupText>
+      <Input addon type="checkbox" aria-label="Checkbox for following text input" />
+    </InputGroupText>
+    <Input placeholder="Check it out" />
+  </InputGroup>
+  
+  <InputGroup>
+    <Input placeholder="placeholder email" />
+    <InputGroupText>@example.com</InputGroupText>
+  </InputGroup>
+
+  <InputGroup>
+    <InputGroupText>$</InputGroupText>
+    <InputGroupText>$</InputGroupText>
+    <Input placeholder="Dolla dolla billz yo!" />
+    <InputGroupText>$</InputGroupText>
+    <InputGroupText>$</InputGroupText>
+  </InputGroup>
+  
+  <InputGroup>
+    <InputGroupText>$</InputGroupText>
+    <Input placeholder="Amount" min={0} max={100} type="number" step="1" />
+    <InputGroupText>.00</InputGroupText>
+  </InputGroup>
+</div>
+`} />
+
+## Size
+
+<Canvas withSource="none">
+  <Story of={InputGroupStories.Size} />
+</Canvas>
+
+<Source
+  dark
+  language="html"
+  code={` 
+<script>
+  import { InputGroup, InputGroupText, Input } from '@sveltestrap/sveltestrap';
+</script>
+
+<div>
+  <InputGroup size="lg">
+    <InputGroupText>@lg</InputGroupText>
+    <Input />
+  </InputGroup>
+  
+  <InputGroup>
+    <InputGroupText>@default</InputGroupText>
+    <Input />
+  </InputGroup>
+
+  <InputGroup size="sm">
+    <InputGroupText>@sm</InputGroupText>
+    <Input />
+  </InputGroup>
+</div>
+`} />

@@ -1,0 +1,266 @@
+import { Meta, Canvas, Controls, Story, Source } from '@storybook/blocks';
+import * as InputStories from './Input.stories';
+
+<Meta title="Form/Input" />
+
+# Input <small class="bootstrap-docs">[Bootstrap Input](https://getbootstrap.com/docs/5.3/forms/form-control/)</small>
+
+The `<Input>` component is a dynamic form control that allows users to enter or edit data through various input types like `text`, `password`, `email`, `url`, and many more.
+
+<Canvas>
+  <Story of={InputStories.Basic} />
+</Canvas>
+
+<Controls of={InputStories.Basic} />
+
+## Text
+
+You can set the `type` prop to `text`, `email`, `password`, `url`, `search`, or `textarea` to render various text inputs.
+
+<Canvas withSource="none">
+  <Story of={InputStories.Text} />
+</Canvas>
+
+<Source
+  dark
+  language="html"
+  code={` 
+<script>
+  import { Input } from '@sveltestrap/sveltestrap';
+</script>
+
+<Input id="plainExample" plaintext value="Some plain text/ static value" />
+
+<Input placeholder="text placeholder" value="Some text value" />
+
+<Input type="email" placeholder="email placeholder" />
+
+<Input type="password" placeholder="password placeholder" />
+
+<Input type="url" placeholder="url placeholder" />
+
+<Input type="search" placeholder="search placeholder" />
+
+<Input type="textarea" placeholder="textarea placeholder" />
+
+`} />
+
+## Numbers
+
+You can set the `type` prop to `range`, or `number` to render number inputs.
+
+<Canvas withSource="none">
+  <Story of={InputStories.Numbers} />
+</Canvas>
+
+<Source
+  dark
+  language="html"
+  code={` 
+<script>
+  import { Input } from '@sveltestrap/sveltestrap';
+</script>
+
+<Input type="range" min={0} max={100} step={10} placeholder="range placeholder" />
+
+<Input type="number" placeholder="number placeholder" />
+`} />
+
+## Dates and Time
+
+You can set the `type` prop to `datetime-local`, `date`, or `time` to render date and time inputs.
+
+<Canvas withSource="none">
+  <Story of={InputStories.DateTime} />
+</Canvas>
+
+<Source
+  dark
+  language="html"
+  code={` 
+<script>
+  import { Input } from '@sveltestrap/sveltestrap';
+</script>
+
+<Input type="datetime-local" placeholder="datetime placeholder" />
+
+<Input type="date" placeholder="date placeholder" />
+
+<Input type="time" placeholder="time placeholder" />
+`} />
+
+## Color
+
+You can set the `type` prop to `color` to render color inputs.
+
+<Canvas withSource="none">
+  <Story of={InputStories.Color} />
+</Canvas>
+
+<Source
+  dark
+  language="html"
+  code={` 
+<script>
+  import { Input } from '@sveltestrap/sveltestrap';
+
+</script>
+
+<Input type="color" placeholder="color placeholder" />
+`} />
+
+## Select, Radio, Checkbox, Switch
+
+<Canvas withSource="none">
+  <Story of={InputStories.SelectRadioCheckSwitch} />
+</Canvas>
+
+<Source
+  dark
+  language="html"
+  code={` 
+<script>
+  import { Input } from '@sveltestrap/sveltestrap';
+</script>
+
+<Input type="select">
+  {#each [1, 2, 3, 4, 5] as option}
+    <option>{option}</option>
+  {/each}
+</Input>
+{#each ['eenie', 'meanie', 'minie', 'moe'] as value}
+  <Input type="radio" bind:group={radioGroup} {value} label={value.charAt(0).toUpperCase() + value.slice(1)} />
+{/each}
+
+<Input type="checkbox" label="Check me out" />
+
+<Input type="checkbox" reverse label="Reverse Label" />
+
+<Input type="switch" label="Switch me on" />
+`} />
+
+## Files
+
+<Canvas withSource="none">
+  <Story of={InputStories.Files} />
+</Canvas>
+
+<Source
+  dark
+  language="html"
+  code={` 
+<script>
+  import { FormText, Input } from '@sveltestrap/sveltestrap';
+</script>
+
+<Input type="file" name="file" id="exampleFile" />
+<FormText>
+  This is some placeholder block-level help text for the above input. It's a bit lighter and easily wraps to a new line.
+</FormText>
+`} />
+
+## Validation Feedback
+
+<Canvas withSource="none">
+  <Story of={InputStories.Validation} />
+</Canvas>
+
+<Source
+  dark
+  language="html"
+  code={` 
+<script>
+  import { FormGroup, Input } from '@sveltestrap/sveltestrap';
+</script>
+
+<FormGroup>
+  <Input value="Invalid input" invalid feedback="I could be wrong" />
+</FormGroup>
+
+<FormGroup>
+  <Input value="Valid input" valid feedback="I could be right" />
+</FormGroup>
+
+<FormGroup>
+  <Input value="Multiple feedback" valid feedback={['I could be black', 'I could be white']} />
+</FormGroup>
+`} />
+
+## Binding
+
+<Canvas withSource="none">
+  <Story of={InputStories.Binding} />
+</Canvas>
+
+<Source
+  dark
+  language="html"
+  code={` 
+<script>
+  import { FormGroup, Input, Label } from '@sveltestrap/sveltestrap';
+</script>
+
+<FormGroup>
+  <Label>Type here</Label>
+  <Input type="text" bind:value={inputValue} />
+</FormGroup>
+{#if inputValue}
+  <p>You typed: {inputValue}</p>
+{/if}
+
+<FormGroup>
+  <Label>This textarea resizes as you type</Label>
+  <Input rows={1} type="textarea" bind:inner on:input={resize} />
+</FormGroup>
+`} />
+
+## Event Binding
+
+<Canvas withSource="none">
+  <Story of={InputStories.Events} />
+</Canvas>
+
+<Source
+  dark
+  language="html"
+  code={` 
+<script>
+  import { FormGroup, Input, Label } from '@sveltestrap/sveltestrap';
+</script>
+
+<FormGroup>
+  <Label>Type here</Label>
+  <Input
+    type="text"
+    value={inputValue}
+    on:blur={() => (focused = false)}
+    on:focus={() => (focused = true)}
+    on:change={changeEvent}
+    on:input={inputEvent}
+  />
+</FormGroup>
+{#if changeValue}
+  <p>
+    <code>on:change</code>
+    says you typed: {changeValue}
+  </p>
+{/if}
+{#if inputValue}
+  <p>
+    <code>on:input</code>
+    says you are typing: {inputValue}
+  </p>
+{/if}
+{#if !focused}
+  <p>
+    <code>on:blur</code>
+    says you are not focused.
+  </p>
+{:else}
+  <p>
+    <code>on:focus</code>
+    says you are focused.
+  </p>
+{/if}
+
+`} />
