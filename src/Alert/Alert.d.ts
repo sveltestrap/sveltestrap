@@ -12,16 +12,15 @@ declare module 'sveltestrap' {
     fade?: boolean;
     heading?: string;
     isOpen?: boolean;
+    toggle?: () => void;
     transition?: FadeProps;
   }
 
-  export interface AlertEvents {
-    toggle: CustomEvent<{ [id: string]: boolean }>;
-  }
+  export interface AlertEvents {}
 
   export interface AlertSlots {
     default: {};
-    heading: {};
+    heading?: {};
   }
 
   export default class Alert extends SvelteComponent<AlertProps, AlertEvents, AlertSlots> {}

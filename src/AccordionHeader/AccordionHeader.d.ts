@@ -2,9 +2,7 @@ declare module 'sveltestrap' {
   import { SvelteComponent } from 'svelte';
   import { HTMLAttributes } from 'svelte/elements';
 
-  export interface AccordionHeaderProps extends HTMLAttributes<HTMLHeadingElement> {
-    class?: string;
-  }
+  export interface AccordionHeaderProps extends HTMLAttributes<HTMLHeadingElement> {}
 
   export interface AccordionHeaderEvents {}
 
