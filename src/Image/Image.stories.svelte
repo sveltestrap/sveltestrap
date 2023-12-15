@@ -67,13 +67,13 @@
     fluid: false,
     thumbnail: false,
     figure: false,
-    src: 'https://picsum.photos/id/123/2000/400.jpg'
+    src: 'https://picsum.photos/id/155/1000/400.jpg'
   }}
 />
 
 <Story
   name="Fluid"
-  args={{ fluid: true, alt: 'This is a fluid Image', src: 'https://picsum.photos/id/123/2000/400.jpg' }}
+  args={{ fluid: true, alt: 'This is a fluid Image', src: 'https://picsum.photos/id/518/1500/667.jpg' }}
 />
 
 <Story name="Thumbnail">
