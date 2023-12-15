@@ -1,0 +1,147 @@
+import { Meta, Canvas, Controls, Story, Source } from '@storybook/blocks';
+import * as ToastStories from './Toast.stories';
+
+<Meta title="Components/Toast" />
+
+# Toast <small class="bootstrap-docs">[Bootstrap Toast](https://getbootstrap.com/docs/5.3/components/toasts/)</small>
+
+The `<Toast>` component is a user interface element designed to provide unobtrusive, temporary messages or notifications to users.
+
+<Canvas>
+  <Story of={ToastStories.Basic} />
+</Canvas>
+
+<Controls of={ToastStories.Basic} />
+
+## Icons
+
+<Canvas withSource="none">
+  <Story of={ToastStories.Icons} />
+</Canvas>
+
+<Source
+  dark
+  language="html"
+  code={` 
+<script lang="ts">
+  import { Icon, Toast, ToastBody, ToastHeader } from '@sveltestrap/sveltestrap';
+</script>
+
+<div>
+  {#each colors as color}
+    <div class="p-3 mb-3">
+      <Toast class="me-1">
+        <ToastHeader icon={color}>{color}</ToastHeader>
+        <ToastBody>
+          This is a toast with a {color} icon.
+        </ToastBody>
+      </Toast>
+    </div>
+  {/each}
+</div>
+
+<div class="p-3 mb-3">
+  <Toast class="me-1">
+    <ToastHeader>
+      <Icon slot="icon" name="emoji-sunglasses" class="me-2" />
+      Sveltestrap
+    </ToastHeader>
+    <ToastBody>This is a toast with a custom icon.</ToastBody>
+  </Toast>
+</div>
+`} />
+
+## Dismissible
+
+<Canvas withSource="none">
+  <Story of={ToastStories.Dismissible} />
+</Canvas>
+
+<Source
+  dark
+  language="html"
+  code={` 
+<script lang="ts">
+  import { Button, Toast, ToastBody, ToastHeader } from '@sveltestrap/sveltestrap';
+  let isOpen = 'true';
+  function toggle() {
+    isOpen = !isOpen;
+  }
+  function reopen() {
+    isOpen = true;
+  }
+</script>
+
+<Toast {isOpen}>
+  <ToastHeader {toggle}>Toast title</ToastHeader>
+  <ToastBody>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+    magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    consequat.
+  </ToastBody>
+</Toast>
+{#if !isOpen}
+  <Button on:click={reopen}>Show Toast</Button>
+{/if}
+`} />
+
+## Autohide
+
+<Canvas withSource="none">
+  <Story of={ToastStories.Autohide} />
+</Canvas>
+
+<Source
+  dark
+  language="html"
+  code={` 
+<script lang="ts">
+  import { Button, Toast } from '@sveltestrap/sveltestrap';
+  let isOpen = 'true';
+</script>
+
+<Button on:click={() => (isOpen = true)} disabled={isOpen}>
+  Show Toast that autohides
+</Button>
+
+<Toast autohide body header="Autohides after 5 sec" {isOpen} on:close={() => (isOpen = false)}>
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+  aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+</Toast>
+`} />
+
+## Events
+
+<Canvas withSource="none">
+  <Story of={ToastStories.Events} />
+</Canvas>
+
+<Source
+  dark
+  language="html"
+  code={` 
+<script lang="ts">
+  import { Button, Toast } from '@sveltestrap/sveltestrap';
+  let isOpen = 'true';
+  let status = 'Opened';
+  function toggle() {
+    isOpen = !isOpen;
+  }
+</script>
+
+<h5>Current state: {status}</h5>
+<Button color="danger" on:click={toggle}>Open Toast</Button>
+<Toast
+  body
+  header="It's Toasterific"
+  {isOpen}
+  on:open={() => (status = 'Opened')}
+  on:opening={() => (status = 'Opening...')}
+  on:closing={() => (status = 'Closing...')}
+  on:close={() => (status = 'Closed')}
+>
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+  magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+  consequat.
+</Toast>
+`} />
