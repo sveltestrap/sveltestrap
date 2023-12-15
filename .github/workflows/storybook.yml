@@ -1,5 +1,4 @@
-name: Storybook (UI Components)
-
+name: Storybook
 on:
   push:
     branches:
@@ -17,7 +16,6 @@ jobs:
         !contains(github.event.head_commit.message, '[skip ci]') &&
         !contains(github.event.head_commit.message, '(release)') &&
         !contains(github.event.head_commit.message, 'version bump')
-
       )
     steps:
       - name: Checkout repository

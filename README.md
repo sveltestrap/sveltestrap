@@ -1,3 +1,5 @@
+![Unit Tests](https://github.com/Sveltestrap/sveltestrap/actions/workflows/unit.yml/badge.svg)
+
 ![sveltestrap](https://github.com/sveltestrap/sveltestrap/assets/1918732/9e00bb52-01ac-44ba-a79e-46922fcdfea6)
 ## Bootstrap 5 Components for Svelte 4+
 
@@ -137,3 +139,57 @@ If you prefer the '@sveltestrap/sveltestrap' import, you can move the package to
     ...
   },
 ```
+
+## Maintainers
+[![avatar](https://images.weserv.nl/?url=avatars.githubusercontent.com/u/1918732?v=4&h=48&w=48&fit=cover&mask=circle&maxage=7d)](https://github.com/dysfunc)
+[![avatar](https://images.weserv.nl/?url=avatars.githubusercontent.com/u/405608?v=4&h=48&w=48&fit=cover&mask=circle&maxage=7d)](https://github.com/bestguy)
+
+## Contributors
+[![avatar](https://images.weserv.nl/?url=avatars.githubusercontent.com/u/145370889?v=4&h=48&w=48&fit=cover&mask=circle&maxage=7d)](https://github.com/marcomauricio1)
+[![avatar](https://images.weserv.nl/?url=avatars.githubusercontent.com/u/40482274?v=4&h=48&w=48&fit=cover&mask=circle&maxage=7d)](https://github.com/eddie0329)
+[![avatar](https://images.weserv.nl/?url=avatars.githubusercontent.com/u/15244006?v=4&h=48&w=48&fit=cover&mask=circle&maxage=7d)](https://github.com/BlackFenix2)
+[![avatar](https://images.weserv.nl/?url=avatars.githubusercontent.com/u/41120635?v=4&h=48&w=48&fit=cover&mask=circle&maxage=7d)](https://github.com/frederikhors)
+[![avatar](https://images.weserv.nl/?url=avatars.githubusercontent.com/u/55523823?v=4&h=48&w=48&fit=cover&mask=circle&maxage=7d)](https://github.com/thomatha)
+[![avatar](https://images.weserv.nl/?url=avatars.githubusercontent.com/u/13287984?v=4&h=48&w=48&fit=cover&mask=circle&maxage=7d)](https://github.com/mohe2015)
+[![avatar](https://images.weserv.nl/?url=avatars.githubusercontent.com/u/305993?v=4&h=48&w=48&fit=cover&mask=circle&maxage=7d)](https://github.com/daytonlowell)
+[![avatar](https://images.weserv.nl/?url=avatars.githubusercontent.com/in/29110?v=4&h=48&w=48&fit=cover&mask=circle&maxage=7d)](https://github.com/apps/dependabot)
+[![avatar](https://images.weserv.nl/?url=avatars.githubusercontent.com/u/322311?v=4&h=48&w=48&fit=cover&mask=circle&maxage=7d)](https://github.com/benmccann)
+[![avatar](https://images.weserv.nl/?url=avatars.githubusercontent.com/u/20725046?v=4&h=48&w=48&fit=cover&mask=circle&maxage=7d)](https://github.com/Renerick)
+[![avatar](https://images.weserv.nl/?url=avatars.githubusercontent.com/u/28020151?v=4&h=48&w=48&fit=cover&mask=circle&maxage=7d)](https://github.com/rornic)
+[![avatar](https://images.weserv.nl/?url=avatars.githubusercontent.com/u/26409015?v=4&h=48&w=48&fit=cover&mask=circle&maxage=7d)](https://github.com/DaniAcu)
+[![avatar](https://images.weserv.nl/?url=avatars.githubusercontent.com/u/8082642?v=4&h=48&w=48&fit=cover&mask=circle&maxage=7d)](https://github.com/ladeiko)
+[![avatar](https://images.weserv.nl/?url=avatars.githubusercontent.com/u/8957069?v=4&h=48&w=48&fit=cover&mask=circle&maxage=7d)](https://github.com/kaipaysen)
+[![avatar](https://images.weserv.nl/?url=avatars.githubusercontent.com/u/140316503?v=4&h=48&w=48&fit=cover&mask=circle&maxage=7d)](https://github.com/dym-sh)
+[![avatar](https://images.weserv.nl/?url=avatars.githubusercontent.com/u/1150472?v=4&h=48&w=48&fit=cover&mask=circle&maxage=7d)](https://github.com/GorbulasDev)
+[![avatar](https://images.weserv.nl/?url=avatars.githubusercontent.com/u/552629?v=4&h=48&w=48&fit=cover&mask=circle&maxage=7d)](https://github.com/lovasoa)
+[![avatar](https://images.weserv.nl/?url=avatars.githubusercontent.com/u/34311027?v=4&h=48&w=48&fit=cover&mask=circle&maxage=7d)](https://github.com/geoffreymugnier)
+[![avatar](https://images.weserv.nl/?url=avatars.githubusercontent.com/u/342922?v=4&h=48&w=48&fit=cover&mask=circle&maxage=7d)](https://github.com/coyotte508)
+[![avatar](https://images.weserv.nl/?url=avatars.githubusercontent.com/u/28934442?v=4&h=48&w=48&fit=cover&mask=circle&maxage=7d)](https://github.com/javajudt)
+[![avatar](https://images.weserv.nl/?url=avatars.githubusercontent.com/u/50879193?v=4&h=48&w=48&fit=cover&mask=circle&maxage=7d)](https://github.com/demetrius-mp)
+[![avatar](https://images.weserv.nl/?url=avatars.githubusercontent.com/u/47675451?v=4&h=48&w=48&fit=cover&mask=circle&maxage=7d)](https://github.com/deshartman)
+[![avatar](https://images.weserv.nl/?url=avatars.githubusercontent.com/u/3946014?v=4&h=48&w=48&fit=cover&mask=circle&maxage=7d)](https://github.com/OJFord)
+[![avatar](https://images.weserv.nl/?url=avatars.githubusercontent.com/u/26901342?v=4&h=48&w=48&fit=cover&mask=circle&maxage=7d)](https://github.com/mopeneko)
+[![avatar](https://images.weserv.nl/?url=avatars.githubusercontent.com/u/9532377?v=4&h=48&w=48&fit=cover&mask=circle&maxage=7d)](https://github.com/baileyherbert)
+[![avatar](https://images.weserv.nl/?url=avatars.githubusercontent.com/u/191226?v=4&h=48&w=48&fit=cover&mask=circle&maxage=7d)](https://github.com/ondrap)
+[![avatar](https://images.weserv.nl/?url=avatars.githubusercontent.com/u/6368283?v=4&h=48&w=48&fit=cover&mask=circle&maxage=7d)](https://github.com/brocococonut)
+[![avatar](https://images.weserv.nl/?url=avatars.githubusercontent.com/u/15998415?v=4&h=48&w=48&fit=cover&mask=circle&maxage=7d)](https://github.com/lgirma)
+[![avatar](https://images.weserv.nl/?url=avatars.githubusercontent.com/u/4997633?v=4&h=48&w=48&fit=cover&mask=circle&maxage=7d)](https://github.com/grantyap)
+[![avatar](https://images.weserv.nl/?url=avatars.githubusercontent.com/u/23123008?v=4&h=48&w=48&fit=cover&mask=circle&maxage=7d)](https://github.com/33KK)
+[![avatar](https://images.weserv.nl/?url=avatars.githubusercontent.com/u/28984165?v=4&h=48&w=48&fit=cover&mask=circle&maxage=7d)](https://github.com/frantp)
+[![avatar](https://images.weserv.nl/?url=avatars.githubusercontent.com/u/3984125?v=4&h=48&w=48&fit=cover&mask=circle&maxage=7d)](https://github.com/gryckelynck)
+[![avatar](https://images.weserv.nl/?url=avatars.githubusercontent.com/u/6155705?v=4&h=48&w=48&fit=cover&mask=circle&maxage=7d)](https://github.com/davidroeca)
+[![avatar](https://images.weserv.nl/?url=avatars.githubusercontent.com/u/562969?v=4&h=48&w=48&fit=cover&mask=circle&maxage=7d)](https://github.com/IAL32)
+[![avatar](https://images.weserv.nl/?url=avatars.githubusercontent.com/u/65456722?v=4&h=48&w=48&fit=cover&mask=circle&maxage=7d)](https://github.com/Florian-Schoenherr)
+[![avatar](https://images.weserv.nl/?url=avatars.githubusercontent.com/u/1134341?v=4&h=48&w=48&fit=cover&mask=circle&maxage=7d)](https://github.com/newbyca)
+[![avatar](https://images.weserv.nl/?url=avatars.githubusercontent.com/u/60277151?v=4&h=48&w=48&fit=cover&mask=circle&maxage=7d)](https://github.com/ubersan)
+[![avatar](https://images.weserv.nl/?url=avatars.githubusercontent.com/u/8332043?v=4&h=48&w=48&fit=cover&mask=circle&maxage=7d)](https://github.com/farskid)
+[![avatar](https://images.weserv.nl/?url=avatars.githubusercontent.com/u/5259918?v=4&h=48&w=48&fit=cover&mask=circle&maxage=7d)](https://github.com/masrlinu)
+[![avatar](https://images.weserv.nl/?url=avatars.githubusercontent.com/u/1515160?v=4&h=48&w=48&fit=cover&mask=circle&maxage=7d)](https://github.com/thecodejack)
+[![avatar](https://images.weserv.nl/?url=avatars.githubusercontent.com/u/918405?v=4&h=48&w=48&fit=cover&mask=circle&maxage=7d)](https://github.com/nextinterfaces)
+[![avatar](https://images.weserv.nl/?url=avatars.githubusercontent.com/u/38461562?v=4&h=48&w=48&fit=cover&mask=circle&maxage=7d)](https://github.com/jlith)
+[![avatar](https://images.weserv.nl/?url=avatars.githubusercontent.com/u/385770?v=4&h=48&w=48&fit=cover&mask=circle&maxage=7d)](https://github.com/larryosborn)
+[![avatar](https://images.weserv.nl/?url=avatars.githubusercontent.com/u/560312?v=4&h=48&w=48&fit=cover&mask=circle&maxage=7d)](https://github.com/TheBosZ)
+[![avatar](https://images.weserv.nl/?url=avatars.githubusercontent.com/u/8826710?v=4&h=48&w=48&fit=cover&mask=circle&maxage=7d)](https://github.com/infanf)
+[![avatar](https://images.weserv.nl/?url=avatars.githubusercontent.com/u/766828?v=4&h=48&w=48&fit=cover&mask=circle&maxage=7d)](https://github.com/RoryDuncan)
+[![avatar](https://images.weserv.nl/?url=avatars.githubusercontent.com/u/11891837?v=4&h=48&w=48&fit=cover&mask=circle&maxage=7d)](https://github.com/splimter)
+[![avatar](https://images.weserv.nl/?url=avatars.githubusercontent.com/u/2003039?v=4&h=48&w=48&fit=cover&mask=circle&maxage=7d)](https://github.com/glominashvili)

@@ -58,7 +58,7 @@
 </script>
 
 <Template let:args>
-  <div class="form-width">
+  <div class="form-width form-groups-example">
     <Form {...args}>
       <FormGroup {...args}>
         <Input {...args} placeholder="Enter a value" />
@@ -70,8 +70,8 @@
 <Story name="Basic" />
 
 <Story name="Floating">
-  <div class="form-width">
-    <Form>
+  <Form>
+    <div class="vertical form-width">
       <FormGroup floating label="Floating Label">
         <Input placeholder="Enter a value" />
       </FormGroup>
@@ -91,6 +91,6 @@
           Floating Label Slot <Badge>3</Badge>
         </div>
       </FormGroup>
-    </Form>
-  </div>
+    </div>
+  </Form>
 </Story>

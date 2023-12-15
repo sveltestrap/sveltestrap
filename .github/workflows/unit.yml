@@ -1,9 +1,11 @@
-name: Unit Tests (Vitest)
-
+name: Unit Tests
 on:
   push:
     branches:
       - main
+    paths:
+      - src/**
+      - .storybook/**
   pull_request:
     types: [opened, synchronize, reopened]
 jobs:
