@@ -20,17 +20,13 @@
   onMount(() => {
     setRideTimeout();
 
-    _removeVisibilityChangeListener = browserEvent(
-      document,
-      'visibilitychange',
-      () => {
-        if (document.visibilityState === 'hidden') {
-          clearRideTimeout();
-        } else {
-          setRideTimeout();
-        }
+    _removeVisibilityChangeListener = browserEvent(document, 'visibilitychange', () => {
+      if (document.visibilityState === 'hidden') {
+        clearRideTimeout();
+      } else {
+        setRideTimeout();
       }
-    );
+    });
   });
 
   onDestroy(() => {

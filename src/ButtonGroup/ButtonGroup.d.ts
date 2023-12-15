@@ -13,9 +13,5 @@ declare module 'sveltestrap' {
     default: {};
   }
 
-  export default class ButtonGroup extends SvelteComponent<
-    ButtonGroupProps,
-    ButtonGroupEvents,
-    ButtonGroupSlots
-  > {}
+  export default class ButtonGroup extends SvelteComponent<ButtonGroupProps, ButtonGroupEvents, ButtonGroupSlots> {}
 }

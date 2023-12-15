@@ -10,13 +10,5 @@
 </script>
 
 {#if isOpen}
-  <div
-    role="presentation"
-    {...$$restProps}
-    on:click
-    class={classes}
-    class:fade
-    in:backdropIn
-    out:backdropOut
-  />
+  <div role="presentation" {...$$restProps} on:click class={classes} class:fade in:backdropIn out:backdropOut />
 {/if}

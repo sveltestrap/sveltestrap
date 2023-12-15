@@ -28,18 +28,14 @@ export function isBodyOverflowing() {
 
 export function isObject(value) {
   const type = typeof value;
-  return value != null && (type == 'object' || type == 'function');
+  return value !== null && (type === 'object' || type === 'function');
 }
 
 export function conditionallyUpdateScrollbar() {
   const scrollbarWidth = getScrollbarWidth();
   // https://github.com/twbs/bootstrap/blob/v4.0.0-alpha.6/js/src/modal.js#L433
-  const fixedContent = document.querySelectorAll(
-    '.fixed-top, .fixed-bottom, .is-fixed, .sticky-top'
-  )[0];
-  const bodyPadding = fixedContent
-    ? parseInt(fixedContent.style.paddingRight || 0, 10)
-    : 0;
+  const fixedContent = document.querySelectorAll('.fixed-top, .fixed-bottom, .is-fixed, .sticky-top')[0];
+  const bodyPadding = fixedContent ? parseInt(fixedContent.style.paddingRight || 0, 10) : 0;
 
   if (isBodyOverflowing()) {
     setScrollbarWidth(bodyPadding + scrollbarWidth);
@@ -97,8 +93,7 @@ export function getTransitionDuration(element) {
   if (!element) return 0;
 
   // Get transition-duration of the element
-  let { transitionDuration, transitionDelay } =
-    window.getComputedStyle(element);
+  let { transitionDuration, transitionDelay } = window.getComputedStyle(element);
 
   const floatTransitionDuration = Number.parseFloat(transitionDuration);
   const floatTransitionDelay = Number.parseFloat(transitionDelay);
@@ -112,17 +107,13 @@ export function getTransitionDuration(element) {
   transitionDuration = transitionDuration.split(',')[0];
   transitionDelay = transitionDelay.split(',')[0];
 
-  return (
-    (Number.parseFloat(transitionDuration) +
-      Number.parseFloat(transitionDelay)) *
-    1000
-  );
+  return (Number.parseFloat(transitionDuration) + Number.parseFloat(transitionDelay)) * 1000;
 }
 
 export function uuid() {
   return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (c) => {
     const r = (Math.random() * 16) | 0;
-    const v = c == 'x' ? r : (r & 0x3) | 0x8;
+    const v = c === 'x' ? r : (r & 0x3) | 0x8;
     return v.toString(16);
   });
 }

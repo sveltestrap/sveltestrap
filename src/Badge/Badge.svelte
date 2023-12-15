@@ -32,12 +32,7 @@
    */
   export let pill = false;
 
-  $: classes = classnames(
-    className,
-    'badge',
-    `text-bg-${color}`,
-    pill ? 'rounded-pill' : false
-  );
+  $: classes = classnames(className, 'badge', `text-bg-${color}`, pill ? 'rounded-pill' : false);
 </script>
 
 {#if href}

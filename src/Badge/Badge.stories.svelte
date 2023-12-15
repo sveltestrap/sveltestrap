@@ -2,7 +2,7 @@
   import Badge from './Badge.svelte';
 
   export const meta = {
-    title: "Stories/Badges",
+    title: 'Stories/Badges',
     component: Badge,
     parameters: {},
     argTypes: {
@@ -19,16 +19,7 @@
         control: {
           type: 'select'
         },
-        options: [
-          'primary',
-          'secondary',
-          'success',
-          'danger',
-          'warning',
-          'info',
-          'light',
-          'dark'
-        ]
+        options: ['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark']
       },
       href: {
         control: ''
@@ -44,23 +35,14 @@
       href: '',
       pill: false
     }
-  }
+  };
 </script>
 
 <script>
   import { Story, Template } from '@storybook/addon-svelte-csf';
   import { Button } from '@sveltestrap/sveltestrap';
 
-  const colors = [
-    'primary',
-    'secondary',
-    'success',
-    'danger',
-    'warning',
-    'info',
-    'light',
-    'dark'
-  ];
+  const colors = ['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark'];
 
   let isOpen = true;
   let toggle = () => (isOpen = !isOpen);
@@ -70,7 +52,7 @@
   <Badge {...args} />
 </Template>
 
-<Story name="Basic" args={{ color: "primary", children: "Badge" }} />
+<Story name="Basic" args={{ color: 'primary', children: 'Badge' }} />
 
 <Story name="Colors">
   <div class="horizontal">

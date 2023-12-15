@@ -10,5 +10,9 @@ declare module 'sveltestrap' {
     default: {};
   }
 
-  export default class ButtonToolbar extends SvelteComponent<ButtonToolbarProps, ButtonToolbarEvents, ButtonToolbarSlots> {}
+  export default class ButtonToolbar extends SvelteComponent<
+    ButtonToolbarProps,
+    ButtonToolbarEvents,
+    ButtonToolbarSlots
+  > {}
 }

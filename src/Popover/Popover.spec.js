@@ -32,9 +32,7 @@ describe('Popover test', () => {
       isOpen: true
     });
     const popover = containerPopover.querySelector('.popover');
-    const popoverContent = containerPopover.querySelector(
-      '.popover .popover-body'
-    );
+    const popoverContent = containerPopover.querySelector('.popover .popover-body');
     expect(popover.className.includes(POPOVER_POSITION_CLASS.top)).toBeTruthy();
     expect(popoverContent.innerHTML).toBe('Hello');
     expect(popover).toMatchSnapshot();
@@ -48,12 +46,8 @@ describe('Popover test', () => {
       isOpen: true
     });
     const popover = containerPopover.querySelector('.popover');
-    const popoverContent = containerPopover.querySelector(
-      '.popover .popover-body'
-    );
-    expect(
-      popover.className.includes(POPOVER_POSITION_CLASS.left)
-    ).toBeTruthy();
+    const popoverContent = containerPopover.querySelector('.popover .popover-body');
+    expect(popover.className.includes(POPOVER_POSITION_CLASS.left)).toBeTruthy();
     expect(popoverContent.innerHTML).toBe('Hello');
     expect(popover).toMatchSnapshot();
   });

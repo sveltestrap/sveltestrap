@@ -132,12 +132,7 @@ describe('Input', () => {
   test('should render an array of feedback', () => {
     const { container } = TestHarness({
       invalid: true,
-      feedback: [
-        'Aint it true',
-        'the sun that shines',
-        'you got yours',
-        'and you got mine'
-      ]
+      feedback: ['Aint it true', 'the sun that shines', 'you got yours', 'and you got mine']
     });
     const feedback = container.querySelectorAll('.invalid-feedback');
 

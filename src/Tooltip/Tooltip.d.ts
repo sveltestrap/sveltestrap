@@ -1,4 +1,3 @@
-
 declare module 'sveltestrap' {
   import { SvelteComponent } from 'svelte';
   import { HTMLAttributes } from 'svelte/elements';
@@ -20,9 +19,5 @@ declare module 'sveltestrap' {
     default: {};
   }
 
-  export default class Tooltip extends SvelteComponent<
-    TooltipProps,
-    TooltipEvents,
-    TooltipSlots
-  > {}
+  export default class Tooltip extends SvelteComponent<TooltipProps, TooltipEvents, TooltipSlots> {}
 }

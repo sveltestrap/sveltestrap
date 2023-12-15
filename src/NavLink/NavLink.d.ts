@@ -15,9 +15,5 @@ declare module 'sveltestrap' {
     default: {};
   }
 
-  export default class NavLink extends SvelteComponent<
-    NavLinkProps,
-    NavLinkEvents,
-    NavLinkSlots
-  > {}
+  export default class NavLink extends SvelteComponent<NavLinkProps, NavLinkEvents, NavLinkSlots> {}
 }

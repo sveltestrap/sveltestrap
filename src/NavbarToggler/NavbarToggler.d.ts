@@ -15,5 +15,9 @@ declare module 'sveltestrap' {
     default: {};
   }
 
-  export default class NavbarToggler extends SvelteComponent<NavbarTogglerProps, NavbarTogglerEvents, NavbarTogglerSlots> {}
+  export default class NavbarToggler extends SvelteComponent<
+    NavbarTogglerProps,
+    NavbarTogglerEvents,
+    NavbarTogglerSlots
+  > {}
 }

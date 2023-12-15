@@ -26,8 +26,7 @@
 
   function clickHandler() {
     const endOrBeginning =
-      (direction === 'next' && activeIndex + 1 > items.length - 1) ||
-      (direction === 'previous' && activeIndex - 1 < 0);
+      (direction === 'next' && activeIndex + 1 > items.length - 1) || (direction === 'previous' && activeIndex - 1 < 0);
 
     if (!wrap && endOrBeginning) {
       return;
@@ -37,13 +36,7 @@
   }
 </script>
 
-<a
-  {...$$restProps}
-  class={classes}
-  role="button"
-  href="#{direction}"
-  on:click|preventDefault={clickHandler}
->
+<a {...$$restProps} class={classes} role="button" href="#{direction}" on:click|preventDefault={clickHandler}>
   <span class="carousel-control-{direction}-icon" aria-hidden="true" />
   <span class="visually-hidden">{srText}</span>
 </a>

@@ -42,31 +42,16 @@
       </DropdownMenu>
     </Dropdown>
 
-    <Button
-      color="primary"
-      outline
-      active={theme === 'light'}
-      on:click={() => (theme = 'light')}
-    >
+    <Button color="primary" outline active={theme === 'light'} on:click={() => (theme = 'light')}>
       light <Icon name="sun-fill" />
     </Button>
-    <Button
-      color="primary"
-      outline
-      active={theme === 'dark'}
-      on:click={() => (theme = 'dark')}
-    >
+    <Button color="primary" outline active={theme === 'dark'} on:click={() => (theme = 'dark')}>
       dark <Icon name="moon-stars-fill" />
     </Button>
-    <Button
-      color="primary"
-      outline
-      active={theme === 'auto'}
-      on:click={() => (theme = 'auto')}
-    >
+    <Button color="primary" outline active={theme === 'auto'} on:click={() => (theme = 'auto')}>
       auto <Icon name="circle-half" />
     </Button>
   </div>
 
-  <br><br><br><br>
+  <br /><br /><br /><br />
 </Story>

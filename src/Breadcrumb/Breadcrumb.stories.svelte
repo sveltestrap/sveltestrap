@@ -2,7 +2,7 @@
   import Breadcrumb from './Breadcrumb.svelte';
 
   export const meta = {
-    title: "Stories/Breadcrumbs",
+    title: 'Stories/Breadcrumbs',
     component: Breadcrumb,
     parameters: {},
     argTypes: {
@@ -29,7 +29,7 @@
       listClassName: '',
       style: ''
     }
-  }
+  };
 </script>
 
 <script>

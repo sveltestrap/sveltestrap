@@ -9,7 +9,7 @@ declare module 'sveltestrap' {
   export interface NavItemEvents {}
 
   export interface NavItemSlots {
-    default: {}
+    default: {};
   }
 
   export default class NavItem extends SvelteComponent<NavItemProps, NavItemEvents, NavItemSlots> {}

@@ -2,7 +2,7 @@
   import Button from './Button.svelte';
 
   export const meta = {
-    title: "Stories/Buttons",
+    title: 'Stories/Buttons',
     component: Button,
     parameters: {},
     argTypes: {
@@ -43,16 +43,7 @@
         control: {
           type: 'select'
         },
-        options: [
-          'primary',
-          'secondary',
-          'success',
-          'danger',
-          'warning',
-          'info',
-          'light',
-          'dark'
-        ]
+        options: ['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark']
       },
       size: {
         control: {
@@ -75,29 +66,20 @@
       size: null,
       value: ''
     }
-  }
+  };
 </script>
 
 <script>
   import { Story, Template } from '@storybook/addon-svelte-csf';
   import { ButtonGroup, ButtonToolbar } from '@sveltestrap/sveltestrap';
 
-  const colors = [
-    'primary',
-    'secondary',
-    'success',
-    'danger',
-    'warning',
-    'info',
-    'light',
-    'dark'
-  ];
+  const colors = ['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark'];
 
   const sizesMap = {
     sm: 'Small',
     md: 'Medium',
     lg: 'Large'
-  }
+  };
 </script>
 
 <Template let:args>

@@ -10,10 +10,7 @@
   $: {
     const validMode = tooltip ? 'tooltip' : 'feedback';
 
-    classes = classnames(
-      className,
-      valid ? `valid-${validMode}` : `invalid-${validMode}`
-    );
+    classes = classnames(className, valid ? `valid-${validMode}` : `invalid-${validMode}`);
   }
 </script>
 

@@ -39,9 +39,5 @@ declare module 'sveltestrap' {
     external: {};
   }
 
-  export default class Modal extends SvelteComponent<
-    ModalProps,
-    ModalEvents,
-    ModalSlots
-  > {}
+  export default class Modal extends SvelteComponent<ModalProps, ModalEvents, ModalSlots> {}
 }

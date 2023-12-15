@@ -2,7 +2,7 @@
   import Accordion from './Accordion.svelte';
 
   export const meta = {
-    title: "Stories/Accordion",
+    title: 'Stories/Accordion',
     component: Accordion,
     parameters: {},
     argTypes: {
@@ -24,7 +24,7 @@
       flush: false,
       stayOpen: false
     }
-  }
+  };
 </script>
 
 <script>
@@ -40,7 +40,7 @@
     <a href="#home">Buena Vista Elementary</a>
   </AccordionItem>
   <AccordionItem header="Library">UCSB Library</AccordionItem>
-</Accordion>`
+</Accordion>`;
 </script>
 
 <Story name="Basic" let:args source={basicSource}>

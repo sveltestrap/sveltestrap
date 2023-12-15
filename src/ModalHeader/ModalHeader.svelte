@@ -21,12 +21,7 @@
   </h5>
   <slot name="close">
     {#if typeof toggle === 'function'}
-      <button
-        type="button"
-        on:click={toggle}
-        class="btn-close"
-        aria-label={closeAriaLabel}
-      />
+      <button type="button" on:click={toggle} class="btn-close" aria-label={closeAriaLabel} />
     {/if}
   </slot>
 </div>

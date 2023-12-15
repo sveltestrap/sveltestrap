@@ -7,12 +7,7 @@
   export let captionHeader = '';
   export let captionText = '';
 
-  $: classes = classnames(
-    className,
-    'carousel-caption',
-    'd-none',
-    'd-md-block'
-  );
+  $: classes = classnames(className, 'carousel-caption', 'd-none', 'd-md-block');
 </script>
 
 <div {...$$restProps} class={classes}>
