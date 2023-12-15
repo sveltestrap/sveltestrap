@@ -192,3 +192,4 @@ If you prefer the '@sveltestrap/sveltestrap' import, you can move the package to
 [![avatar](https://images.weserv.nl/?url=avatars.githubusercontent.com/u/8826710?v=4&h=48&w=48&fit=cover&mask=circle&maxage=7d)](https://github.com/infanf)
 [![avatar](https://images.weserv.nl/?url=avatars.githubusercontent.com/u/766828?v=4&h=48&w=48&fit=cover&mask=circle&maxage=7d)](https://github.com/RoryDuncan)
 [![avatar](https://images.weserv.nl/?url=avatars.githubusercontent.com/u/11891837?v=4&h=48&w=48&fit=cover&mask=circle&maxage=7d)](https://github.com/splimter)
+[![avatar](https://images.weserv.nl/?url=avatars.githubusercontent.com/u/2003039?v=4&h=48&w=48&fit=cover&mask=circle&maxage=7d)](https://github.com/glominashvili)
