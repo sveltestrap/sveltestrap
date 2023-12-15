@@ -423,8 +423,8 @@ li.sbdocs.sbdocs-li {
   font-weight: var(--font-weight-medium);
 }
 
-.docblock-argstable input:checked~span:last-of-type,
-.docblock-argstable input:not(:checked)~span:first-of-type {
+.docblock-argstable input:checked ~ span:last-of-type,
+.docblock-argstable input:not(:checked) ~ span:first-of-type {
   color: var(--color-white) !important;
   background: var(--color-blue-400) !important;
 }
@@ -489,6 +489,15 @@ pre.prismjs {
 
 .vertical {
   flex-direction: column;
+}
+
+.columns {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.column {
+  flex: 1 0;
 }
 
 /*-----------------
@@ -611,4 +620,64 @@ Form Stories Width
 
 .form-width {
   width: 400px;
+}
+
+/*-----------------
+Icon Example Story
+-----------------*/
+
+.icon-example .text-content {
+  color: var(--color-gray-300);
+}
+
+.icon-example .icon-filter {
+  width: auto;
+  margin-bottom: 30px;
+}
+
+/*-----------------
+Toast Stories
+-----------------*/
+
+.toast-width {
+  width: 350px;
+  border-radius: var(--border-radius-base);
+}
+
+.toast-events h5 {
+  color: var(--color-gray-300);
+}
+
+/*-----------------
+Tabs Exmaple Stories
+-----------------*/
+
+.tab-example .text-content {
+  color: var(--color-gray-300);
+}
+
+.tab-example .disabled-tab {
+  background-color: var(--color-gray-300);
+  border-radius: var(--border-radius-large);
+  width: fit-content;
+}
+
+/*-----------------
+Card Exmaple Stories
+-----------------*/
+
+.card-example .card-width {
+  width: 500px;
+}
+
+/*-----------------
+Fade Exmaple Stories
+-----------------*/
+
+.fade-example .card-width {
+  width: 500px;
+}
+
+.fade-example .text-content {
+  color: var(--color-gray-300);
 }
