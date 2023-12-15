@@ -7,11 +7,15 @@ declare module 'sveltestrap' {
     toggle?: () => void;
   }
 
-  export interface  OffcanvasHeaderEvents {}
+  export interface OffcanvasHeaderEvents {}
 
-  export interface  OffcanvasHeaderSlots {
+  export interface OffcanvasHeaderSlots {
     default: {};
   }
 
-  export default class  OffcanvasHeader extends SvelteComponent< OffcanvasHeaderProps,  OffcanvasHeaderEvents,  OffcanvasHeaderSlots> {}
+  export default class OffcanvasHeader extends SvelteComponent<
+    OffcanvasHeaderProps,
+    OffcanvasHeaderEvents,
+    OffcanvasHeaderSlots
+  > {}
 }

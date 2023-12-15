@@ -30,12 +30,7 @@
     return [];
   }
 
-  $: classes = classnames(
-    className,
-    noGutters ? 'gx-0' : null,
-    form ? 'form-row' : 'row',
-    ...getCols(cols)
-  );
+  $: classes = classnames(className, noGutters ? 'gx-0' : null, form ? 'form-row' : 'row', ...getCols(cols));
 </script>
 
 <div {...$$restProps} class={classes} bind:this={inner}>

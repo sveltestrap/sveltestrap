@@ -17,4 +17,3 @@ declare module 'sveltestrap' {
 
   export default class Spinner extends SvelteComponent<SpinnerProps, SpinnerEvents, SpinnerSlots> {}
 }
-

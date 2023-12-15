@@ -78,24 +78,14 @@
 </script>
 
 {#if isOpen}
-  <div
-    {...$$restProps}
-    transition:fadeTransition={transition}
-    class={classes}
-    role="alert"
-  >
+  <div {...$$restProps} transition:fadeTransition={transition} class={classes} role="alert">
     {#if heading || $$slots.heading}
       <h4 class="alert-heading">
         {heading}<slot name="heading" />
       </h4>
     {/if}
     {#if showClose}
-      <button
-        type="button"
-        class={closeClassNames}
-        aria-label={closeAriaLabel}
-        on:click={handleToggle}
-      />
+      <button type="button" class={closeClassNames} aria-label={closeAriaLabel} on:click={handleToggle} />
     {/if}
     {#if children}
       {children}

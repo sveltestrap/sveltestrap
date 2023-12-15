@@ -16,9 +16,12 @@
   function getVerticalClass(vertical) {
     if (vertical === false) {
       return false;
-    } else if (vertical === true || vertical === 'xs') {
+    }
+
+    if (vertical === true || vertical === 'xs') {
       return 'flex-column';
     }
+
     return `flex-${vertical}-column`;
   }
 

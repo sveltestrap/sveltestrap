@@ -10,9 +10,5 @@ declare module 'sveltestrap' {
 
   export interface IconSlots {}
 
-  export default class Icon extends SvelteComponent<
-    IconProps,
-    IconEvents,
-    IconSlots
-  > {}
+  export default class Icon extends SvelteComponent<IconProps, IconEvents, IconSlots> {}
 }

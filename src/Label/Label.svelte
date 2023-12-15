@@ -45,10 +45,8 @@
       colClasses.push(
         classnames({
           [colClass]: columnProp.size || columnProp.size === '',
-          [`order${colSizeInterfix}${columnProp.order}`]:
-            columnProp.order || columnProp.order === 0,
-          [`offset${colSizeInterfix}${columnProp.offset}`]:
-            columnProp.offset || columnProp.offset === 0
+          [`order${colSizeInterfix}${columnProp.order}`]: columnProp.order || columnProp.order === 0,
+          [`offset${colSizeInterfix}${columnProp.offset}`]: columnProp.offset || columnProp.offset === 0
         })
       );
     } else {

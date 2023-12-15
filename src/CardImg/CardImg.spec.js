@@ -1,10 +1,11 @@
 import { render } from '@testing-library/svelte';
 import { CardImg } from './';
 
-const TestHarness = (props) => render(CardImg, {
-  src: 'http://example.com/example.png',
-  ...props
-});
+const TestHarness = (props) =>
+  render(CardImg, {
+    src: 'http://example.com/example.png',
+    ...props
+  });
 
 describe('CardImg', () => {
   test('should render correctly', () => {

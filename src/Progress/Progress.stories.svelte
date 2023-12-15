@@ -118,7 +118,7 @@
       <Progress bar color="warning" value={20} />
       <Progress bar color="danger" value={15} />
     </Progress>
-    <br>
+    <br />
     <div class="text-content">With Labels</div>
     <Progress multi>
       <Progress bar value={15}>Meh</Progress>
@@ -126,7 +126,7 @@
       <Progress bar color="warning" value={25}>25%</Progress>
       <Progress bar color="danger" value={25}>LOOK OUT!!</Progress>
     </Progress>
-    <br>
+    <br />
     <div class="text-content">Stripes and Animations</div>
     <Progress multi>
       <Progress bar striped value={15}>Stripes</Progress>
@@ -140,16 +140,16 @@
   <div class="progress-example">
     <div class="text-content">1 of 5</div>
     <Progress value={1} max={5} />
-    <br>
+    <br />
     <div class="text-content">50 of 135</div>
     <Progress value={50} max={135} />
-    <br>
+    <br />
     <div class="text-content">75 of 111</div>
     <Progress value={75} max={111} />
-    <br>
+    <br />
     <div class="text-content">463 of 500</div>
     <Progress value={463} max={500} />
-    <br>
+    <br />
     <div class="text-content">Various (40) of 55</div>
     <Progress multi>
       <Progress bar value={5} max={55}>5</Progress>

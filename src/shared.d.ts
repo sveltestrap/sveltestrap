@@ -2,15 +2,7 @@ export declare type Breakpoints = 'sm' | 'md' | 'lg' | 'xl';
 
 export declare type ContainerType = 'body' | 'inline';
 
-export declare type Color =
-  | 'primary'
-  | 'secondary'
-  | 'success'
-  | 'danger'
-  | 'warning'
-  | 'info'
-  | 'light'
-  | 'dark';
+export declare type Color = 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'light' | 'dark';
 
 export declare type BackgroundColor =
   | 'primary'
@@ -62,19 +54,9 @@ export declare type TextColor =
   | 'black-50'
   | 'white-50';
 
-export declare type Direction =
-  | 'up'
-  | 'down'
-  | 'left'
-  | 'right'
-  | 'start'
-  | 'end';
+export declare type Direction = 'up' | 'down' | 'left' | 'right' | 'start' | 'end';
 
-export type Placement =
-  |'start'
-  | 'end'
-  | 'top'
-  | 'bottom';
+export type Placement = 'start' | 'end' | 'top' | 'bottom';
 
 export type ColumnProps =
   | string

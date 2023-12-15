@@ -147,7 +147,7 @@
       <td>@twitter</td>
     </tr>
   </tbody>
-</Table>`
+</Table>`;
 </script>
 
 <Template let:args>

@@ -2,7 +2,7 @@ declare module 'sveltestrap' {
   import { SvelteComponent } from 'svelte';
   import { HTMLAttributes } from 'svelte/elements';
 
-  export interface CardImgOverlayProps HTMLAttributes<HTMLDivElement> {}
+  export interface CardImgOverlayProps extends HTMLAttributes<HTMLHeadingElement> {}
 
   export interface CardImgOverlayEvents {}
 
@@ -10,5 +10,9 @@ declare module 'sveltestrap' {
     default: {};
   }
 
-  export default class CardImgOverlay extends SvelteComponent<CardImgOverlayProps, CardImgOverlayEvents, CardImgOverlaySlots> {}
+  export default class CardImgOverlay extends SvelteComponent<
+    CardImgOverlayProps,
+    CardImgOverlayEvents,
+    CardImgOverlaySlots
+  > {}
 }

@@ -4,12 +4,7 @@
 </script>
 
 <script>
-  import {
-    createEventDispatcher,
-    onDestroy,
-    onMount,
-    afterUpdate
-  } from 'svelte';
+  import { createEventDispatcher, onDestroy, onMount, afterUpdate } from 'svelte';
 
   import { modalIn, modalOut } from '../transitions';
   import { InlineContainer } from '../InlineContainer';
@@ -98,11 +93,7 @@
   });
 
   function setFocus() {
-    if (
-      _dialog &&
-      _dialog.parentNode &&
-      typeof _dialog.parentNode.focus === 'function'
-    ) {
+    if (_dialog && _dialog.parentNode && typeof _dialog.parentNode.focus === 'function') {
       _dialog.parentNode.focus();
     }
   }
@@ -118,10 +109,7 @@
       _originalBodyPadding = getOriginalBodyPadding();
       conditionallyUpdateScrollbar();
       if (openCount === 0) {
-        document.body.className = classnames(
-          document.body.className,
-          'modal-open'
-        );
+        document.body.className = classnames(document.body.className, 'modal-open');
       }
 
       ++openCount;
@@ -131,10 +119,7 @@
 
   function manageFocusAfterClose() {
     if (_triggeringElement) {
-      if (
-        typeof _triggeringElement.focus === 'function' &&
-        returnFocusAfterClose
-      ) {
+      if (typeof _triggeringElement.focus === 'function' && returnFocusAfterClose) {
         _triggeringElement.focus();
       }
 
@@ -164,12 +149,7 @@
       }
 
       const backdropElem = _dialog ? _dialog.parentNode : null;
-      if (
-        backdrop === true &&
-        backdropElem &&
-        e.target === backdropElem &&
-        toggle
-      ) {
+      if (backdrop === true && backdropElem && e.target === backdropElem && toggle) {
         e.stopPropagation();
         toggle(e);
       }
@@ -216,8 +196,7 @@
   $: classes = classnames(dialogBaseClass, className, {
     [`modal-${size}`]: size,
     'modal-fullscreen': fullscreen === true,
-    [`modal-fullscreen-${fullscreen}-down`]:
-      fullscreen && typeof fullscreen === 'string',
+    [`modal-fullscreen-${fullscreen}-down`]: fullscreen && typeof fullscreen === 'string',
     [`${dialogBaseClass}-centered`]: centered,
     [`${dialogBaseClass}-scrollable`]: scrollable
   });

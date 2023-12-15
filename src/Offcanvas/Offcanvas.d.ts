@@ -30,7 +30,7 @@ declare module 'sveltestrap' {
 
   export interface OffcanvasSlots {
     default: {};
-    header: {}
+    header: {};
   }
 
   export default class Offcanvas extends SvelteComponent<OffcanvasProps, OffcanvasEvents, OffcanvasSlots> {}

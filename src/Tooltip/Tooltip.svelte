@@ -62,7 +62,7 @@
    * @type {object}
    */
   let popperInstance;
-    /**
+  /**
    * @type {string}
    */
   let popperPlacement = placement;
@@ -70,7 +70,7 @@
    * @type {HTMLDivElement | null}
    */
   let targetEl;
-    /**
+  /**
    * @type {HTMLDivElement | null}
    */
   let tooltipEl;
@@ -112,7 +112,7 @@
   }
 
   function registerEventListeners() {
-    if (target == null || !target) {
+    if (target === null || !target) {
       targetEl = null;
       return;
     }
@@ -128,7 +128,7 @@
     }
 
     // If targetEl has not been found yet
-    if (targetEl == null) {
+    if (targetEl === null) {
       // Check if target can be found via querySelector
       try {
         targetEl = document.querySelector(`#${target}`);
@@ -180,14 +180,7 @@
 
 {#if isOpen}
   <svelte:component this={outer}>
-    <div
-      bind:this={tooltipEl}
-      {...$$restProps}
-      class={classes}
-      {id}
-      role="tooltip"
-      x-placement={popperPlacement}
-    >
+    <div bind:this={tooltipEl} {...$$restProps} class={classes} {id} role="tooltip" x-placement={popperPlacement}>
       <div class="tooltip-arrow" data-popper-arrow />
       <div class="tooltip-inner">
         {#if children}

@@ -11,5 +11,9 @@ declare module 'sveltestrap' {
     default: {};
   }
 
-  export default class ResponsiveContainer extends SvelteComponent<ResponsiveContainerProps, ResponsiveContainerEvents, ResponsiveContainerSlots> {}
+  export default class ResponsiveContainer extends SvelteComponent<
+    ResponsiveContainerProps,
+    ResponsiveContainerEvents,
+    ResponsiveContainerSlots
+  > {}
 }

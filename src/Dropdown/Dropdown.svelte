@@ -98,11 +98,7 @@
   function handleDocumentClick(e) {
     if (e && (e.which === 3 || (e.type === 'keyup' && e.which !== 9))) return;
 
-    if (
-      component.contains(e.target) &&
-      component !== e.target &&
-      (e.type !== 'keyup' || e.which === 9)
-    ) {
+    if (component.contains(e.target) && component !== e.target && (e.type !== 'keyup' || e.which === 9)) {
       return;
     }
 

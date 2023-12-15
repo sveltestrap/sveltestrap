@@ -20,11 +20,7 @@
    */
   export let children = '';
 
-  $: classes = classnames(
-    className,
-    active ? 'active' : false,
-    'breadcrumb-item'
-  );
+  $: classes = classnames(className, active ? 'active' : false, 'breadcrumb-item');
 </script>
 
 <li {...$$restProps} class={classes} aria-current={active ? 'page' : undefined}>

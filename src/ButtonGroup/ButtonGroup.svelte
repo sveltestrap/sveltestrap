@@ -6,11 +6,7 @@
   export let size = '';
   export let vertical = false;
 
-  $: classes = classnames(
-    className,
-    size ? `btn-group-${size}` : false,
-    vertical ? 'btn-group-vertical' : 'btn-group'
-  );
+  $: classes = classnames(className, size ? `btn-group-${size}` : false, vertical ? 'btn-group-vertical' : 'btn-group');
 </script>
 
 <div {...$$restProps} class={classes}>

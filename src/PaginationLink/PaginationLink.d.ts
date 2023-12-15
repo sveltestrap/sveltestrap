@@ -18,5 +18,9 @@ declare module 'sveltestrap' {
     default: {};
   }
 
-  export default class PaginationLink extends SvelteComponent<PaginationLinkProps, PaginationLinkEvents, PaginationLinkSlots> {}
+  export default class PaginationLink extends SvelteComponent<
+    PaginationLinkProps,
+    PaginationLinkEvents,
+    PaginationLinkSlots
+  > {}
 }

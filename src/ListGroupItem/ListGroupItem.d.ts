@@ -23,5 +23,9 @@ declare module 'sveltestrap' {
     default: {};
   }
 
-  export default class ListGroupItem extends SvelteComponent<ListGroupItemProps, ListGroupItemEvents, ListGroupItemSlots> {}
+  export default class ListGroupItem extends SvelteComponent<
+    ListGroupItemProps,
+    ListGroupItemEvents,
+    ListGroupItemSlots
+  > {}
 }

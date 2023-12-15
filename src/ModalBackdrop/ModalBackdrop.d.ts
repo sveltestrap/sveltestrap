@@ -13,5 +13,9 @@ declare module 'sveltestrap' {
     default: {};
   }
 
-  export default class ModalBackdrop extends SvelteComponent<ModalBackdropProps, ModalBackdropEvents, ModalBackdropSlots> {}
+  export default class ModalBackdrop extends SvelteComponent<
+    ModalBackdropProps,
+    ModalBackdropEvents,
+    ModalBackdropSlots
+  > {}
 }

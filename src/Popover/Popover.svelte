@@ -114,13 +114,7 @@
 
 {#if isOpen}
   <svelte:component this={outer}>
-    <div
-      bind:this={popoverEl}
-      {...$$restProps}
-      class={classes}
-      role="tooltip"
-      x-placement={popperPlacement}
-    >
+    <div bind:this={popoverEl} {...$$restProps} class={classes} role="tooltip" x-placement={popperPlacement}>
       <div class="popover-arrow" data-popper-arrow />
       <h3 class="popover-header">
         <slot name="title">{title}</slot>

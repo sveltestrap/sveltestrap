@@ -17,9 +17,5 @@ declare module 'sveltestrap' {
     default: {};
   }
 
-  export default class Carousel extends SvelteComponent<
-    CarouselProps,
-    CarouselEvents,
-    CarouselSlots
-  > {}
+  export default class Carousel extends SvelteComponent<CarouselProps, CarouselEvents, CarouselSlots> {}
 }

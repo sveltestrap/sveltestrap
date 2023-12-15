@@ -57,21 +57,11 @@
 </script>
 
 <div class={classes} bind:this={accordionId}>
-  <AccordionHeader
-    on:click={() => onToggle()}
-    class={!accordionOpen && 'collapsed'}
-  >
+  <AccordionHeader on:click={() => onToggle()} class={!accordionOpen && 'collapsed'}>
     <slot name="header" />
     {header}
   </AccordionHeader>
-  <Collapse
-    isOpen={accordionOpen}
-    class="accordion-collapse"
-    on:introstart
-    on:introend
-    on:outrostart
-    on:outroend
-  >
+  <Collapse isOpen={accordionOpen} class="accordion-collapse" on:introstart on:introend on:outrostart on:outroend>
     <div class="accordion-body">
       <slot />
     </div>

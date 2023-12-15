@@ -26,12 +26,7 @@
 </script>
 
 <div {...$$restProps} class={classes}>
-  <TabHeader
-    class={classnames({ 'me-3': vertical })}
-    {pills}
-    tabs={!pills}
-    {vertical}
-  >
+  <TabHeader class={classnames({ 'me-3': vertical })} {pills} tabs={!pills} {vertical}>
     <slot />
   </TabHeader>
   <slot />
