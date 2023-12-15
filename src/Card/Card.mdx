@@ -1,0 +1,108 @@
+import { Meta, Canvas, Controls, Story, Source } from '@storybook/blocks';
+import * as CardStories from './Card.stories';
+
+<Meta title="Components/Card" />
+
+# Card <small class="bootstrap-docs">[Bootstrap Card](https://getbootstrap.com/docs/5.3/components/card/)</small>
+
+The `<Card>` component is a customizable container designed for visually presenting content within a user interface.
+
+<Canvas>
+  <Story of={CardStories.Basic} />
+</Canvas>
+
+<Controls of={CardStories.Basic} />
+
+## Body Shorthand
+
+<Canvas withSource="none">
+  <Story of={CardStories.Body} />
+</Canvas>
+
+<Source
+  dark
+  language="html"
+  code={` 
+<script lang="ts">
+  import { Card } from '@sveltestrap/sveltestrap';
+</script>
+
+<Card body>Goodbye Cruel World</Card>
+`} />
+
+## Headers and Footers
+
+<Canvas withSource="none">
+  <Story of={CardStories.HeaderFooter} />
+</Canvas>
+
+<Source
+  dark
+  language="html"
+  code={` 
+<script lang="ts">
+  import {
+    Button,
+    Card,
+    CardBody,
+    CardFooter,
+    CardHeader,
+    CardSubtitle,
+    CardText,
+    CardTitle
+  } from '@sveltestrap/sveltestrap';
+</script>
+
+<Card>
+  <CardHeader>
+    <CardTitle>Card title</CardTitle>
+  </CardHeader>
+  <CardBody>
+    <CardSubtitle>Card subtitle</CardSubtitle>
+    <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
+    <Button>Button</Button>
+  </CardBody>
+  <CardFooter>Footer</CardFooter>
+</Card>
+
+`} />
+
+## Colors and Inverse
+
+<Canvas withSource="none">
+  <Story of={CardStories.ColorInverse} />
+</Canvas>
+
+<Source
+  dark
+  language="html"
+  code={` 
+<script lang="ts">
+  import { Card } from '@sveltestrap/sveltestrap';
+</script>
+
+<Card body color="primary" inverse>
+  Primary
+</Card>
+<Card body color="secondary">
+  Secondary
+</Card>
+<Card body color="success">
+  Success
+</Card>
+<Card body color="danger">
+  Danger
+</Card>
+<Card body color="warning">
+  Warning
+</Card>
+<Card body color="info">
+  Info
+</Card>
+<Card body color="dark" inverse>
+  Dark
+</Card>
+<Card body color="light">
+  Light
+</Card>
+`} />
