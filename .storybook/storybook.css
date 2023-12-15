@@ -437,6 +437,11 @@ li.sbdocs.sbdocs-li {
   Canvas
  -----------------*/
 
+.docs-story {
+  background-color: var(--color-dark-200);
+  border: 1px solid var(--color-dark-100);
+}
+
 .docs-story iframe {
   bottom: 0;
   left: 0;
@@ -465,6 +470,7 @@ pre.prismjs {
 .docs-story + div > div pre.prismjs {
   border: 0;
   border-radius: 0 0 var(--border-radius-base) var(--border-radius-base);
+  margin-top: -1px;
 }
 
 .docblock-source.sb-unstyled > div:last-child {
