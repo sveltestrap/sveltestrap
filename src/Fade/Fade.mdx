@@ -1,0 +1,76 @@
+import { Meta, Canvas, Controls, Story, Source } from '@storybook/blocks';
+import * as FadeStories from './Fade.stories';
+
+<Meta title="Components/Fade" />
+
+# Fade
+
+Bootstrap does not have a `Fade` component, but `utility CSS` and `JS` is used in `Carousels`, `ListGroups`, `Modals`, and `Navs`.
+
+<Canvas>
+  <Story of={FadeStories.Basic} />
+</Canvas>
+
+<Controls of={FadeStories.Basic} />
+
+## Events
+
+You can use the `on:opening`, `on:open`, `on:closing` and `on:close` props as callbacks when the `Fade` has finished opening or closing.
+
+<Canvas withSource="none">
+  <Story of={FadeStories.Events} />
+</Canvas>
+
+<Source
+  dark
+  language="html"
+  code={` 
+<script lang="ts">
+  import { Button, Card, Fade } from '@sveltestrap/sveltestrap';
+</script>
+
+<Button color="primary" on:click={() => (isOpen = !isOpen)}>
+  Toggle
+</Button>
+<h5>Current state: {status}</h5>
+<Fade
+  {isOpen}
+  on:opening={() => (status = 'Opening...')}
+  on:open={() => (status = 'Opened')}
+  on:closing={() => (status = 'Closing...')}
+  on:close={() => (status = 'Closed')}
+>
+  <Card body>
+    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim
+    keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+  </Card>
+</Fade>
+
+`} />
+
+## Uncontrolled
+
+For the most basic use-case, an uncontrolled component can provide the functionality wanted without the need to manage/control the state of the component. `Fade` does not require an `isOpen` prop. Instead, passing a `toggler` prop will run `querySelectorAll` to find dom elements, triggering `toggle`.
+
+<Canvas withSource="none">
+  <Story of={FadeStories.Uncontrolled} />
+</Canvas>
+
+<Source
+  dark
+  language="html"
+  code={` 
+<script lang="ts">
+  import { Button, Card, Fade } from '@sveltestrap/sveltestrap';
+</script>
+
+<Button color="primary" id="toggler">
+  Toggle
+</Button>
+<Fade toggler="#toggler">
+  <Card body>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt magni, voluptas debitis similique porro a
+    molestias consequuntur earum odio officiis natus, amet hic, iste sed dignissimos esse fuga! Minus, alias.
+  </Card>
+</Fade>
+`} />
