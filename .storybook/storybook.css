@@ -203,16 +203,6 @@ body .sidebar-container {
 }
 
 /*-----------------
-  Controls
- -----------------*/
-
-.sbdocs input:checked ~ span:last-of-type,
-.sbdocs input:not(:checked) ~ span:first-of-type {
-  color: var(--color-white) !important;
-  background: var(--color-blue-400) !important;
-}
-
-/*-----------------
   Docs
  -----------------*/
 
@@ -433,6 +423,11 @@ li.sbdocs.sbdocs-li {
   font-weight: var(--font-weight-medium);
 }
 
+.docblock-argstable input:checked~span:last-of-type,
+.docblock-argstable input:not(:checked)~span:first-of-type {
+  color: var(--color-white) !important;
+  background: var(--color-blue-400) !important;
+}
 /*-----------------
   Canvas
  -----------------*/
