@@ -612,3 +612,7 @@ Form Stories Width
 .form-width {
   width: 400px;
 }
+
+.form-groups-example input.form-control:not([floating="true"])+label {
+  color: var(--color-gray-300);
+}
