@@ -72,7 +72,7 @@
 
   const colors = ['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark'];
 
-  let isOpen = true;
+  let isOpen = false;
   let status = 'Opened';
 
   function toggle() {
@@ -81,6 +81,27 @@
 
   function reopen() {
     isOpen = true;
+  }
+
+  let seconds = 5;
+  let countdownInterval = null;
+
+  function startCountdown() {
+    countdownInterval = setInterval(() => {
+      if (seconds <= 0) {
+        clearInterval(countdownInterval);
+      } else {
+        seconds--;
+      }
+    }, 1000);
+  }
+
+  function startCount() {
+    isOpen = true;
+    seconds = 5;
+    clearInterval(countdownInterval);
+    countdownInterval = null;
+    startCountdown();
   }
 </script>
 
@@ -144,8 +165,8 @@
 </Story>
 
 <Story name="Autohide">
-  <Button on:click={() => (isOpen = true)} disabled={isOpen}>Show Toast that autohides</Button>
-  <Toast autohide body header="Autohides after 5 sec" {isOpen} on:close={() => (isOpen = false)}>
+  <Button on:click={startCount} disabled={isOpen}>Show Toast that autohides</Button>
+  <Toast autohide body header="Autohides in {seconds} sec" {isOpen} on:close={() => (isOpen = false)}>
     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
     aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
   </Toast>
