@@ -206,13 +206,17 @@ body .sidebar-container {
   Docs
  -----------------*/
 
+.welcome-page {
+   max-width: 1080px !important;
+ }
+
 .sbdocs.sbdocs-wrapper {
   justify-content: flex-start;
   padding: 40px 60px;
 }
 
 .sbdocs.sbdocs-content {
-  max-width: 1280px;
+  max-width: 1180px;
 }
 
 .sbdocs.sbdocs-content h1,

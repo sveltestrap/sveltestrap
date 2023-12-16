@@ -15,7 +15,7 @@
 </script>
 
 <Template>
-  <div class="form-width">
+  <div class="vertical form-width">
     <FormGroup>
       <Input value="Bad value" feedback="Invalid feedback" invalid />
     </FormGroup>
@@ -29,8 +29,8 @@
 <Story name="Basic" />
 
 <Story name="Dynanic">
-  <div class="form-width">
-    <Form {validated} on:submit={(e) => e.preventDefault()}>
+  <Form {validated} on:submit={(e) => e.preventDefault()}>
+    <div class="form-width vertical">
       <FormGroup>
         <Input feedback="This requires a value" placeholder="This requires a value" required />
       </FormGroup>
@@ -38,6 +38,6 @@
         <Input feedback="This requires an email" placeholder="This requires an email" required type="email" />
       </FormGroup>
       <Button type="submit" on:click={() => (validated = true)}>Fake Submit</Button>
-    </Form>
-  </div>
+    </div>
+  </Form>
 </Story>

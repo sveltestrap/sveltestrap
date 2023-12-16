@@ -9,7 +9,7 @@ export default {
     options: {
       storySort: {
         method: 'alphabetical',
-        order: ['Sveltestrap', ['Components', 'Content', 'Layout']],
+        order: ['Sveltestrap', 'Layout', 'Content', 'Form', 'Components'],
       }
     },
     grid: false,

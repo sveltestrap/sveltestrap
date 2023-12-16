@@ -124,7 +124,7 @@
   <div class="columns">
     {#each colors as color}
       <div class="column">
-        <div class="p-3 mb-3">
+        <div class="p-2 mb-3">
           <Toast class="me-1">
             <ToastHeader icon={color}>{color}</ToastHeader>
             <ToastBody>
@@ -136,7 +136,7 @@
     {/each}
 
     <div class="column">
-      <div class="p-3 mb-3">
+      <div class="p-2 mb-3">
         <Toast class="me-1">
           <ToastHeader>
             <Icon slot="icon" name="emoji-sunglasses" class="me-2" />
