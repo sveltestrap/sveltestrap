@@ -16,19 +16,20 @@ exports[`DropdownMenu > should render correctly 1`] = `
       
       <!--&lt;DropdownToggle&gt;-->
        
-      <div
+      <ul
         class="cocoa dropdown-menu"
         style="position: absolute; left: 0px; top: 0px; margin: 0px;"
       >
-        <button
-          class="dropdown-item"
-          type="button"
-        >
-          Alpha
-        </button>
-        
+        <li>
+          <button
+            class="dropdown-item"
+            type="button"
+          >
+            Alpha
+          </button>
+        </li>
         <!--&lt;DropdownItem&gt;-->
-      </div>
+      </ul>
       <!--&lt;DropdownMenu&gt;-->
     </div>
     
@@ -54,19 +55,20 @@ exports[`DropdownMenu > should render custom class 1`] = `
       
       <!--&lt;DropdownToggle&gt;-->
        
-      <div
+      <ul
         class="cocoa dropdown-menu"
         style="position: absolute; left: 0px; top: 0px; margin: 0px;"
       >
-        <button
-          class="dropdown-item"
-          type="button"
-        >
-          Alpha
-        </button>
-        
+        <li>
+          <button
+            class="dropdown-item"
+            type="button"
+          >
+            Alpha
+          </button>
+        </li>
         <!--&lt;DropdownItem&gt;-->
-      </div>
+      </ul>
       <!--&lt;DropdownMenu&gt;-->
     </div>
     

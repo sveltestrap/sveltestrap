@@ -11,8 +11,14 @@
 
   const popperPlacement = (direction, end) => {
     let prefix = direction;
-    if (direction === 'up') prefix = 'top';
-    else if (direction === 'down') prefix = 'bottom';
+
+    if (direction === 'up') {
+      prefix = 'top';
+    }
+
+    if (direction === 'down') {
+      prefix = 'bottom';
+    }
 
     let suffix = end ? 'end' : 'start';
     return `${prefix}-${suffix}`;
@@ -37,11 +43,11 @@
   });
 </script>
 
-<div
+<ul
   {...$$restProps}
   class={classes}
   data-bs-popper={$context.inNavbar ? 'static' : undefined}
   use:$context.popperContent={popperOptions}
 >
   <slot />
-</div>
+</ul>

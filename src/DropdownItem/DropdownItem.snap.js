@@ -3,11 +3,12 @@
 exports[`DropdownItem > should render correctly 1`] = `
 <body>
   <div>
-    <button
-      class="dropdown-item"
-      type="button"
-    />
-    
+    <li>
+      <button
+        class="dropdown-item"
+        type="button"
+      />
+    </li>
     <!--&lt;DropdownItem&gt;-->
   </div>
 </body>
@@ -16,11 +17,12 @@ exports[`DropdownItem > should render correctly 1`] = `
 exports[`DropdownItem > should render custom class 1`] = `
 <body>
   <div>
-    <button
-      class="coconut dropdown-item"
-      type="button"
-    />
-    
+    <li>
+      <button
+        class="coconut dropdown-item"
+        type="button"
+      />
+    </li>
     <!--&lt;DropdownItem&gt;-->
   </div>
 </body>
