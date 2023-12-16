@@ -1,0 +1,215 @@
+import { Meta, Canvas, Controls, Story, Source } from '@storybook/blocks';
+import * as TabsStories from './Tabs.stories';
+
+<Meta title="Components/Tabs" />
+
+# Tabs <small class="bootstrap-docs">[Bootstrap Tabs](https://getbootstrap.com/docs/5.3/components/navs-tabs/#javascript-behavior)</small>
+
+`Tabs` are a user interface design pattern that organizes content into distinct sections, allowing users to navigate between them seamlessly
+
+<Canvas withSource="none">
+  <Story of={TabsStories.Basic} />
+</Canvas>
+
+<Source
+  dark
+  language="html"
+  code={` 
+<script lang="ts">
+  import { TabContent, TabPane } from '@sveltestrap/sveltestrap';
+</script>
+
+<TabContent>
+  <TabPane tabId="alpha" tab="Alpha" active>
+    <h2 class="text-content">Alpha</h2>
+    <img
+      alt="Alpha Flight"
+      src="https://upload.wikimedia.org/wikipedia/en/4/49/Alpha_Flight_cast_picture_%28John_Byrne_era%29.gif"
+    />
+  </TabPane>
+  <TabPane tabId="bravo" tab="Bravo">
+    <h2 class="text-content">Bravo</h2>
+    <img
+      alt="Johnny Bravo"
+      src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Johnny_Bravo_series_logo.png/320px-Johnny_Bravo_series_logo.png"
+    />
+  </TabPane>
+  <TabPane tabId="charlie" tab="Charlie">
+    <h2 class="text-content">Charlie</h2>
+    <img alt="Charlie Brown" src="https://upload.wikimedia.org/wikipedia/en/2/22/Charlie_Brown.png" />
+  </TabPane>
+</TabContent>
+`} />
+
+## Pills
+
+<Canvas withSource="none">
+  <Story of={TabsStories.Pills} />
+</Canvas>
+
+<Source
+  dark
+  language="html"
+  code={` 
+<script lang="ts">
+  import { TabContent, TabPane } from '@sveltestrap/sveltestrap';
+</script>
+
+<TabContent pills">
+  <TabPane tabId="alpha" tab="Alpha" active>
+    <img
+      alt="Alpha Flight"
+      src="https://upload.wikimedia.org/wikipedia/en/4/49/Alpha_Flight_cast_picture_%28John_Byrne_era%29.gif"
+    />
+  </TabPane>
+  <TabPane tabId="bravo" tab="Bravo">
+    <img
+      alt="Johnny Bravo"
+      src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Johnny_Bravo_series_logo.png/320px-Johnny_Bravo_series_logo.png"
+    />
+  </TabPane>
+  <TabPane tabId="charlie" tab="Charlie">
+    <img alt="Charlie Brown" src="https://upload.wikimedia.org/wikipedia/en/2/22/Charlie_Brown.png" />
+  </TabPane>
+</TabContent>
+`} />
+
+## Disabled
+
+<Canvas withSource="none">
+  <Story of={TabsStories.Disabled} />
+</Canvas>
+
+<Source
+  dark
+  language="html"
+  code={` 
+<script lang="ts">
+  import { TabContent, TabPane } from '@sveltestrap/sveltestrap';
+</script>
+
+<TabContent pills">
+  <TabPane tabId="alpha" tab="Alpha" active>
+    <img
+      alt="Alpha Flight"
+      src="https://upload.wikimedia.org/wikipedia/en/4/49/Alpha_Flight_cast_picture_%28John_Byrne_era%29.gif"
+    />
+  </TabPane>
+  <TabPane tabId="bravo" tab="Bravo">
+    <img
+      alt="Johnny Bravo"
+      src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Johnny_Bravo_series_logo.png/320px-Johnny_Bravo_series_logo.png"
+    />
+  </TabPane>
+  <TabPane tabId="charlie" tab="Charlie" disabled>
+    <img alt="Charlie Brown" src="https://upload.wikimedia.org/wikipedia/en/2/22/Charlie_Brown.png" />
+  </TabPane>
+</TabContent>
+`} />
+
+## Slots
+
+<Canvas withSource="none">
+  <Story of={TabsStories.Slots} />
+</Canvas>
+
+<Source
+  dark
+  language="html"
+  code={` 
+<script lang="ts">
+  import { Icon, TabContent, TabPane } from '@sveltestrap/sveltestrap';
+</script>
+
+<TabContent>
+  <TabPane tabId="alpha" active>
+    <span slot="tab">
+      Alpha <Icon name="gear" />
+    </span>
+    <img
+      alt="Alpha Flight"
+      src="https://upload.wikimedia.org/wikipedia/en/4/49/Alpha_Flight_cast_picture_%28John_Byrne_era%29.gif"
+    />
+  </TabPane>
+  <TabPane tabId="bravo">
+    <span slot="tab">
+      Bravo <Icon name="hand-thumbs-up" />
+    </span>
+    <img
+      alt="Johnny Bravo"
+      src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Johnny_Bravo_series_logo.png/320px-Johnny_Bravo_series_logo.png"
+    />
+  </TabPane>
+  <TabPane tabId="charlie">
+    <span slot="tab">
+      Charlie <Icon name="alarm" />
+    </span>
+    <img alt="Charlie Brown" src="https://upload.wikimedia.org/wikipedia/en/2/22/Charlie_Brown.png" />
+  </TabPane>
+</TabContent>
+`} />
+
+## Vertical
+
+<Canvas withSource="none">
+  <Story of={TabsStories.Vertical} />
+</Canvas>
+
+<Source
+  dark
+  language="html"
+  code={` 
+<script lang="ts">
+  import { TabContent, TabPane } from '@sveltestrap/sveltestrap';
+</script>
+
+<TabContent vertical pills>
+  <TabPane tabId="alpha" tab="Alpha" active>
+    <h2>Alpha</h2>
+    <img
+      alt="Alpha Flight"
+      src="https://upload.wikimedia.org/wikipedia/en/4/49/Alpha_Flight_cast_picture_%28John_Byrne_era%29.gif"
+    />
+  </TabPane>
+  <TabPane tabId="bravo" tab="Bravo">
+    <h2>Bravo</h2>
+    <img
+      alt="Johnny Bravo"
+      src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Johnny_Bravo_series_logo.png/320px-Johnny_Bravo_series_logo.png"
+    />
+  </TabPane>
+  <TabPane tabId="charlie" tab="Charlie">
+    <h2>Charlie</h2>
+    <img alt="Charlie Brown" src="https://upload.wikimedia.org/wikipedia/en/2/22/Charlie_Brown.png" />
+  </TabPane>
+</TabContent>
+`} />
+
+## Events
+
+<Canvas withSource="none">
+  <Story of={TabsStories.Events} />
+</Canvas>
+
+<Source
+  dark
+  language="html"
+  code={` 
+<script lang="ts">
+  import { TabContent, TabPane } from '@sveltestrap/sveltestrap';
+  let status = 'alpha';
+</script>
+
+<h5>Current state: {status}</h5>
+<TabContent on:tab={(e) => (status = e.detail)}>
+  <TabPane tabId="alpha" tab="Alpha" active>
+    <h2>Alpha</h2>
+  </TabPane>
+  <TabPane tabId="bravo" tab="Bravo">
+    <h2>Bravo</h2>
+  </TabPane>
+  <TabPane tabId="charlie" tab="Charlie">
+    <h2>Charlie</h2>
+  </TabPane>
+</TabContent>
+`} />

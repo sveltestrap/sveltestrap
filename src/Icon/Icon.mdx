@@ -1,0 +1,20 @@
+import { Meta, Canvas, Controls, Story, Source } from '@storybook/blocks';
+import * as IconStories from './Icon.stories';
+
+<Meta title="Components/Icon" />
+
+# Icon <small class="bootstrap-docs">[Bootstrap Icon](https://icons.getbootstrap.com/)</small>
+
+The `<Icon>` component provides a versatile solution for effortlessly integrating scalable vector icons into Svelte applications.
+
+<Canvas>
+  <Story of={IconStories.Basic} />
+</Canvas>
+
+<Controls of={IconStories.Basic} />
+
+## All Icons
+
+<Canvas withSource="none">
+  <Story of={IconStories.AllIcons} />
+</Canvas>
