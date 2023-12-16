@@ -2,7 +2,7 @@
 
 This pattern is used to allow testing of Svelte slots:
 
-```
+```jsx
 {#if children}
   {children}
 {:else}

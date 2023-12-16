@@ -11,6 +11,9 @@ export default {
     '@storybook/addon-links',
     '@storybook/addon-svelte-csf'
   ],
+  docs: {
+    autodocs: 'tag'
+  },
   core: {
      builder: {
       name: 'webpack5',
@@ -39,9 +42,6 @@ export default {
         handler(warning);
       }
     }
-  },
-  docs: {
-    autodocs: 'tag'
   },
   webpackFinal: async (config, { configType }) => {
     config.optimization = {
