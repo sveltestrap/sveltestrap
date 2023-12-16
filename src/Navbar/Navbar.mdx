@@ -1,0 +1,119 @@
+import { Meta, Canvas, Controls, Story, Source } from '@storybook/blocks';
+import * as NavbarStories from './Navbar.stories';
+
+<Meta title="Components/Navbar" />
+
+# Navbar <small class="bootstrap-docs">[Bootstrap Navbar](https://getbootstrap.com/docs/5.3/components/navbar/)</small>
+
+The `<Navbar>` component provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages. You can read more about
+
+<Canvas>
+  <Story of={NavbarStories.Basic} />
+</Canvas>
+
+<Controls of={NavbarStories.Basic} />
+
+## Colors
+
+Change the Navbar's background color using the `color` prop. Use the `light` or `dark` props to change Navbar text color for lighter or darker `color` values.
+
+<Canvas withSource="none">
+  <Story of={NavbarStories.Colors} />
+</Canvas>
+
+<Source dark language="html" code={`
+<script lang="ts">
+  import { Navbar, NavbarBrand } from '@sveltestrap/sveltstrap';
+</script>
+
+<Navbar color="light">
+  <NavbarBrand href="/">Light Navbar</NavbarBrand>
+</Navbar>
+`} />
+
+## Sizes
+
+<Canvas withSource="none">
+  <Story of={NavbarStories.Sizes} />
+</Canvas>
+
+<Source dark language="html" code={`
+<script lang="ts">
+  import {
+    Collapse,
+    NavbarToggler,
+    NavbarBrand,
+    Nav,
+    Navbar,
+    NavItem,
+    NavLink,
+    Dropdown,
+    DropdownToggle,
+    DropdownMenu,
+    DropdownItem
+  } from '@sveltestrap/sveltestrap';
+
+  let isOpen = false;
+
+  function handleUpdate(event) {
+    isOpen = event.detail.isOpen;
+  }
+</script>
+
+<Navbar color="light" light expand="md" container="md">
+  <NavbarBrand href="/">NavBar with md container</NavbarBrand>
+  <NavbarToggler on:click={() => (isOpen = !isOpen)} />
+  <Collapse {isOpen} navbar expand="md" on:update={handleUpdate}>
+    <Nav class="ms-auto" navbar>
+      <NavItem>
+        <NavLink href="#components/">Components</NavLink>
+      </NavItem>
+      <NavItem>
+        <NavLink href="https://github.com/sveltestrap/sveltestrap">GitHub</NavLink>
+      </NavItem>
+      <Dropdown nav inNavbar>
+        <DropdownToggle nav caret>Options</DropdownToggle>
+        <DropdownMenu end>
+          <DropdownItem>Option 1</DropdownItem>
+          <DropdownItem>Option 2</DropdownItem>
+          <DropdownItem divider />
+          <DropdownItem>Reset</DropdownItem>
+        </DropdownMenu>
+      </Dropdown>
+    </Nav>
+  </Collapse>
+</Navbar>
+`} />
+
+## Toggler
+
+<Canvas withSource="none">
+  <Story of={NavbarStories.Toggler} />
+</Canvas>
+
+<Source dark language="html" code={`
+<script lang="ts">
+  import {
+    Collapse,
+    Nav,
+    Navbar,
+    NavbarBrand,
+    NavbarToggler
+  } from '@sveltestrap/sveltstrap';
+</script>
+
+<Navbar color="light" light>
+  <NavbarBrand href="/" class="me-auto">sveltestrap</NavbarBrand>
+  <NavbarToggler on:click={toggle} />
+  <Collapse {isOpen} navbar>
+    <Nav navbar>
+      <NavItem>
+        <NavLink href="#components/">Components</NavLink>
+      </NavItem>
+      <NavItem>
+        <NavLink href="https://github.com/sveltestrap/sveltestrap">GitHub</NavLink>
+      </NavItem>
+    </Nav>
+  </Collapse>
+</Navbar>
+`} />
