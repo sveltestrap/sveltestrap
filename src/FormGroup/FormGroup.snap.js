@@ -6,9 +6,9 @@ exports[`FormGroup > should render correctly 1`] = `
     <div
       class=""
     >
-
+       
     </div>
-
+    
     <!--&lt;FormGroup&gt;-->
   </div>
 </body>
@@ -20,9 +20,9 @@ exports[`FormGroup > should render custom class 1`] = `
     <div
       class="paint"
     >
-
+       
     </div>
-
+    
     <!--&lt;FormGroup&gt;-->
   </div>
 </body>
