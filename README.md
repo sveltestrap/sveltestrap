@@ -141,8 +141,8 @@ If you prefer the '@sveltestrap/sveltestrap' import, you can move the package to
 ```
 
 ## Maintainers
-[![avatar](https://images.weserv.nl/?url=avatars.githubusercontent.com/u/1918732?v=4&h=48&w=48&fit=cover&mask=circle&maxage=7d)](https://github.com/dysfunc)
 [![avatar](https://images.weserv.nl/?url=avatars.githubusercontent.com/u/405608?v=4&h=48&w=48&fit=cover&mask=circle&maxage=7d)](https://github.com/bestguy)
+[![avatar](https://images.weserv.nl/?url=avatars.githubusercontent.com/u/1918732?v=4&h=48&w=48&fit=cover&mask=circle&maxage=7d)](https://github.com/dysfunc)
 
 ## Contributors
 [![avatar](https://images.weserv.nl/?url=avatars.githubusercontent.com/u/145370889?v=4&h=48&w=48&fit=cover&mask=circle&maxage=7d)](https://github.com/msmauric)
