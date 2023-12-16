@@ -67,7 +67,7 @@
     fluid: false,
     thumbnail: false,
     figure: false,
-    src: 'https://picsum.photos/id/155/1000/400.jpg'
+    src: 'https://picsum.photos/id/155/1400/400.jpg'
   }}
 />
 

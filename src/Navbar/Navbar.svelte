@@ -17,10 +17,21 @@
   export let light = false;
   export let sticky = '';
 
+  let containerProps = {
+    sm: container === 'sm',
+    md: container === 'md',
+    lg: container === 'lg',
+    xl: container === 'xl',
+    xxl: container === 'xxl',
+    fluid: container === 'fluid'
+  };
+
   function getExpandClass(expand) {
     if (expand === false) {
       return false;
-    } else if (expand === true || expand === 'xs') {
+    }
+
+    if (expand === true || expand === 'xs') {
       return 'navbar-expand';
     }
 
@@ -38,7 +49,7 @@
 
 <nav {...$$restProps} class={classes} data-bs-theme={theme}>
   {#if container}
-    <Container fluid={container === 'fluid'}>
+    <Container {...containerProps}>
       <slot />
     </Container>
   {:else}

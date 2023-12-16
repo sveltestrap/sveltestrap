@@ -1,11 +1,11 @@
-declare module 'sveltestrap' {
+declare module sveltestrap {
   import { SvelteComponent } from 'svelte';
   import { HTMLAttributes } from 'svelte/elements';
   import { BackgroundColor } from '../shared';
 
   export interface NavbarProps extends HTMLAttributes<HTMLElement> {
     color?: BackgroundColor;
-    container?: boolean | 'fluid'; // TODO also sm-xxl?
+    container?: boolean | 'sm' | 'md' | 'lg' | 'xl' | 'xxl' | 'fluid';
     dark?: boolean;
     expand?: boolean | string;
     fixed?: string;
