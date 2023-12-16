@@ -145,7 +145,7 @@ If you prefer the '@sveltestrap/sveltestrap' import, you can move the package to
 [![avatar](https://images.weserv.nl/?url=avatars.githubusercontent.com/u/405608?v=4&h=48&w=48&fit=cover&mask=circle&maxage=7d)](https://github.com/bestguy)
 
 ## Contributors
-[![avatar](https://images.weserv.nl/?url=avatars.githubusercontent.com/u/145370889?v=4&h=48&w=48&fit=cover&mask=circle&maxage=7d)](https://github.com/marcomauricio1)
+[![avatar](https://images.weserv.nl/?url=avatars.githubusercontent.com/u/145370889?v=4&h=48&w=48&fit=cover&mask=circle&maxage=7d)](https://github.com/msmauric)
 [![avatar](https://images.weserv.nl/?url=avatars.githubusercontent.com/u/40482274?v=4&h=48&w=48&fit=cover&mask=circle&maxage=7d)](https://github.com/eddie0329)
 [![avatar](https://images.weserv.nl/?url=avatars.githubusercontent.com/u/15244006?v=4&h=48&w=48&fit=cover&mask=circle&maxage=7d)](https://github.com/BlackFenix2)
 [![avatar](https://images.weserv.nl/?url=avatars.githubusercontent.com/u/41120635?v=4&h=48&w=48&fit=cover&mask=circle&maxage=7d)](https://github.com/frederikhors)
@@ -193,3 +193,4 @@ If you prefer the '@sveltestrap/sveltestrap' import, you can move the package to
 [![avatar](https://images.weserv.nl/?url=avatars.githubusercontent.com/u/766828?v=4&h=48&w=48&fit=cover&mask=circle&maxage=7d)](https://github.com/RoryDuncan)
 [![avatar](https://images.weserv.nl/?url=avatars.githubusercontent.com/u/11891837?v=4&h=48&w=48&fit=cover&mask=circle&maxage=7d)](https://github.com/splimter)
 [![avatar](https://images.weserv.nl/?url=avatars.githubusercontent.com/u/2003039?v=4&h=48&w=48&fit=cover&mask=circle&maxage=7d)](https://github.com/glominashvili)
+[![avatar](https://images.weserv.nl/?url=avatars.githubusercontent.com/u/16706735?v=4&h=48&w=48&fit=cover&mask=circle&maxage=7d)](https://github.com/urispmts)
