@@ -653,7 +653,7 @@ Toast Stories
 }
 
 /*-----------------
-Tabs Exmaple Stories
+Tabs Example Stories
 -----------------*/
 
 .tab-example .text-content {
@@ -667,7 +667,7 @@ Tabs Exmaple Stories
 }
 
 /*-----------------
-Card Exmaple Stories
+Card Example Stories
 -----------------*/
 
 .card-example .card-width {
@@ -675,7 +675,7 @@ Card Exmaple Stories
 }
 
 /*-----------------
-Fade Exmaple Stories
+Fade Example Stories
 -----------------*/
 
 .fade-example .card-width {
@@ -684,4 +684,18 @@ Fade Exmaple Stories
 
 .fade-example .text-content {
   color: var(--color-gray-300);
+}
+
+/*-----------------
+Nav Examples Stories
+-----------------*/
+
+.nav-example p,
+.nav-example .nav-link.active,
+.nav-example a.active {
+  color: var(--color-white);
+}
+
+.nav-example .disabled {
+  color: var(--color-gray-800);
 }
