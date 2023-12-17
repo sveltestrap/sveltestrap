@@ -10,6 +10,7 @@ declare module 'sveltestrap' {
     animation?: boolean;
     container?: ContainerType;
     dismissible?: boolean;
+    hideOnOutsideClick?: boolean;
     isOpen?: boolean;
     placement?: PopoverPlacement;
     target: string;

@@ -5,17 +5,73 @@
   import { InlineContainer } from '../InlineContainer';
   import { Portal } from '../Portal';
 
+  /**
+   * Additional CSS class names for the popover.
+   * @type {string}
+   */
   let className = '';
   export { className as class };
+
+  /**
+   * Flag to enable animation for the popover.
+   * @type {boolean}
+   */
   export let animation = true;
-  export let children = undefined;
+
+  /**
+   * The content to be displayed within the popover.
+   * @type {string}
+   */
+  export let children = '';
+
+  /**
+   * The container in which the popover should be rendered.
+   * @type {string | undefined}
+   */
   export let container = undefined;
+
+  /**
+   * Flag to indicate if the popover should be dismissible.
+   * @type {boolean}
+   */
   export let dismissible = false;
+
+  /**
+   * Flag to hide the popover on outside click.
+   * @type {boolean}
+   */
+  export let hideOnOutsideClick = false;
+
+  /**
+   * Controls the visibility of the popover.
+   * @type {boolean}
+   */
   export let isOpen = false;
+
+  /**
+   * The preferred placement of the popover.
+   * @type {string}
+   */
   export let placement = 'top';
+
+  /**
+   * The target element to which the popover is attached.
+   * @type {string}
+   */
   export let target = '';
+
+  /**
+   * The title of the popover.
+   * @type {string}
+   */
   export let title = '';
+
+  /**
+   * The trigger action to open/close the popover.
+   * @type {string}
+   */
   export let trigger = 'click';
+
   let targetEl;
   let popoverEl;
   let popperInstance;
@@ -59,6 +115,7 @@
 
   onMount(() => {
     targetEl = document.querySelector(`#${target}`);
+
     switch (trigger) {
       case 'hover':
         targetEl.addEventListener('mouseover', open);
@@ -70,9 +127,14 @@
         break;
       default:
         targetEl.addEventListener('click', toggle);
-        if (dismissible) targetEl.addEventListener('blur', close);
+
+        if (dismissible) {
+          targetEl.addEventListener('blur', close);
+        }
+
         break;
     }
+
     return () => {
       switch (trigger) {
         case 'hover':
@@ -85,20 +147,33 @@
           break;
         default:
           targetEl.removeEventListener('click', toggle);
-          if (dismissible) targetEl.removeEventListener('blur', close);
+
+          if (dismissible) {
+            targetEl.removeEventListener('blur', close);
+          }
           break;
       }
     };
   });
+
+  const handleOutsideClick = (event) => {
+    if (isOpen && hideOnOutsideClick && !popoverEl.contains(event.target)) {
+      isOpen = false;
+    }
+  };
 
   $: if (!target) {
     throw new Error('Need target!');
   }
 
   $: {
-    if (popperPlacement === 'left') bsPlacement = 'start';
-    else if (popperPlacement === 'right') bsPlacement = 'end';
-    else bsPlacement = popperPlacement;
+    if (popperPlacement === 'left') {
+      bsPlacement = 'start';
+    } else if (popperPlacement === 'right') {
+      bsPlacement = 'end';
+    } else {
+      bsPlacement = popperPlacement;
+    }
   }
 
   $: classes = classnames(
@@ -111,6 +186,8 @@
 
   $: outer = container === 'inline' ? InlineContainer : Portal;
 </script>
+
+<svelte:window on:mousedown={handleOutsideClick} />
 
 {#if isOpen}
   <svelte:component this={outer}>
