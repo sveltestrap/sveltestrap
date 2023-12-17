@@ -1,8 +1,8 @@
 declare module 'sveltestrap' {
   import { SvelteComponent } from 'svelte';
-  import { HTMLButtonAttributes } from 'svelte/elements';
+  import { HTMLLiAttributes } from 'svelte/elements';
 
-  export interface DropdownItemProps extends HTMLButtonAttributes {
+  export interface DropdownItemProps extends HTMLLiAttributes {
     active?: boolean;
     divider?: boolean;
     header?: boolean;

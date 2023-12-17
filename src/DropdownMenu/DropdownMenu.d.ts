@@ -2,7 +2,7 @@ declare module 'sveltestrap' {
   import { SvelteComponent } from 'svelte';
   import { HTMLAttributes } from 'svelte/elements';
 
-  export interface DropdownMenuProps extends HTMLAttributes<HTMLDivElement> {
+  export interface DropdownMenuProps extends HTMLAttributes<HTMLUListElement> {
     end?: boolean;
     right?: boolean;
   }
