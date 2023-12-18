@@ -639,6 +639,27 @@ Icon Example Story
   margin-bottom: 30px;
 }
 
+.icon-example {
+  display: grid;
+  gap: 8px;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  margin: 16px 0;
+}
+
+.icon-example > * {
+  align-items: center;
+  justify-content: center;
+  padding: 48px 24px;
+}
+
+.icon-example > * > i {
+  font-size: 32px;
+}
+
+.icon-example > * > span {
+  font-size: var(--font-size-medium);
+}
+
 /*-----------------
 Toast Stories
 -----------------*/
@@ -739,13 +760,6 @@ Carousel Examples Stories
 
 .carousel-example .carousel-size {
   width: 600px;
-}
-
-.dropdown-example .drop-canvas-size {
-  height: 200px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .dropdown-example .drop-height {

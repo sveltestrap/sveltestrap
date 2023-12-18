@@ -22,7 +22,7 @@
 
 <script>
   import { Story, Template } from '@storybook/addon-svelte-csf';
-  import { Input, TabContent, TabPane } from '@sveltestrap/sveltestrap';
+  import { Card, Input } from '@sveltestrap/sveltestrap';
 
   const icons = [
     '123',
@@ -1880,10 +1880,12 @@
     'fuel-pump-fill',
     'fuel-pump'
   ];
-  let filter;
-  $: filteredIcons = filter ? icons.filter((name) => name.toLowerCase().includes(filter.toLowerCase())) : icons;
 
-  const firstLetters = Array.from(new Set(icons.map((name) => name[0].toUpperCase()))).sort();
+  let filter = '';
+
+  $: filteredIcons = filter.length
+    ? icons.filter((name) => name.toLowerCase().indexOf(filter.toLowerCase()) > -1)
+    : icons;
 </script>
 
 <Template let:args>
@@ -1897,29 +1899,14 @@
 <Story name="Basic" />
 
 <Story name="AllIcons">
+  <Input bind:value={filter} type="search" placeholder="Filter..." class="icon-filter" />
+
   <div class="icon-example">
-    <Input bind:value={filter} type="search" placeholder="Filter..." class="icon-filter" />
-    <TabContent>
-      {#each firstLetters as letter}
-        <TabPane class="pt-3" tab={letter} tabId={letter}>
-          <ul class="row row-cols-3 row-cols-sm-4 row-cols-lg-6 row-cols-xl-8 list-unstyled list">
-            {#each filteredIcons.filter((name) => name.toUpperCase().startsWith(letter)) as name}
-              <li class="col mb-4">
-                <div class="d-block text-dark text-decoration-none">
-                  <div class="p-3 py-4 mb-2 bg-light text-center rounded">
-                    <Icon {name} />
-                  </div>
-                  <div class="text-content">
-                    <div class="small text-decoration-none text-center">
-                      {name}
-                    </div>
-                  </div>
-                </div>
-              </li>
-            {/each}
-          </ul>
-        </TabPane>
-      {/each}
-    </TabContent>
+    {#each filteredIcons as name}
+      <Card>
+        <Icon {name} />
+        <span>{name}</span>
+      </Card>
+    {/each}
   </div>
 </Story>

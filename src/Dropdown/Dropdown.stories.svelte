@@ -86,15 +86,28 @@
 
   let isOpen = false;
 
-  const directions = ['down', 'right', 'left', 'up', 'start', 'end'];
+  const directions = ['down', 'up', 'left', 'right', 'start', 'end'];
   const sizes = ['sm', '', 'lg'];
+
+  const basicSource = `<Dropdown direction="down">
+  <DropdownToggle color="primary" caret>Dropdown</DropdownToggle>
+  <DropdownMenu>
+    <DropdownItem header>Header</DropdownItem>
+    <DropdownItem>Some Action</DropdownItem>
+    <DropdownItem disabled>Action (disabled)</DropdownItem>
+    <DropdownItem divider />
+    <DropdownItem>Foo Action</DropdownItem>
+    <DropdownItem>Bar Action</DropdownItem>
+    <DropdownItem>Quo Action</DropdownItem>
+  </DropdownMenu>
+</Dropdown>`;
 </script>
 
 <Template let:args>
   <div class="dropdown-example">
     <div class="drop-height">
       <Dropdown {...args}>
-        <DropdownToggle caret>Drop{args.direction}</DropdownToggle>
+        <DropdownToggle color="primary" caret>Drop{args.direction}</DropdownToggle>
         <DropdownMenu>
           <DropdownItem header>Header</DropdownItem>
           <DropdownItem>Some Action</DropdownItem>
@@ -109,13 +122,13 @@
   </div>
 </Template>
 
-<Story name="Basic" />
+<Story name="Basic" source={basicSource} />
 
 <Story name="Alignment">
   <div class="dropdown-example">
-    <div class="drop-canvas-size">
+    <div class="drop-height">
       <Dropdown>
-        <DropdownToggle caret>Dropdown's menu is right-aligned</DropdownToggle>
+        <DropdownToggle color="primary" caret>Dropdown's menu is right-aligned</DropdownToggle>
         <DropdownMenu end>
           <DropdownItem header>Header</DropdownItem>
           <DropdownItem disabled>Action</DropdownItem>
@@ -128,40 +141,32 @@
 
 <Story name="Direction">
   <div class="dropdown-example">
-    <div class="drop-canvas-size">
-      <div class="column">
-        <div class="columns">
-          {#each directions as direction}
-            <Dropdown class="m-3" {direction}>
-              <DropdownToggle caret>Drop{direction}</DropdownToggle>
-              <DropdownMenu>
-                <DropdownItem>Another Action</DropdownItem>
-                <DropdownItem>Another Action</DropdownItem>
-              </DropdownMenu>
-            </Dropdown>
-          {/each}
-        </div>
-      </div>
+    <div class="horizontal drop-height">
+      {#each directions as direction}
+        <Dropdown {direction}>
+          <DropdownToggle color="primary" caret>Drop{direction}</DropdownToggle>
+          <DropdownMenu>
+            <DropdownItem>Another Action</DropdownItem>
+            <DropdownItem>Another Action</DropdownItem>
+          </DropdownMenu>
+        </Dropdown>
+      {/each}
     </div>
   </div>
 </Story>
 
 <Story name="Sizes">
   <div class="dropdown-example">
-    <div class="drop-canvas-size">
-      <div class="column">
-        <div class="columns">
-          {#each sizes as size}
-            <Dropdown class="m-3" {size}>
-              <DropdownToggle caret>Dropdown {size}</DropdownToggle>
-              <DropdownMenu>
-                <DropdownItem>Another Action</DropdownItem>
-                <DropdownItem>Another Action</DropdownItem>
-              </DropdownMenu>
-            </Dropdown>
-          {/each}
-        </div>
-      </div>
+    <div class="horizontal drop-height">
+      {#each sizes as size}
+        <Dropdown {size}>
+          <DropdownToggle color="primary" caret>Dropdown {size}</DropdownToggle>
+          <DropdownMenu>
+            <DropdownItem>Another Action</DropdownItem>
+            <DropdownItem>Another Action</DropdownItem>
+          </DropdownMenu>
+        </Dropdown>
+      {/each}
     </div>
   </div>
 </Story>
@@ -212,50 +217,39 @@
   <div class="dropdown-example">
     <div class="drop-height">
       <ButtonToolbar>
-        <div class="columns">
-          <div class="column">
-            <Dropdown class="m-3" autoClose={true}>
-              <DropdownToggle caret>Default</DropdownToggle>
-              <DropdownMenu>
-                <DropdownItem>Menu item</DropdownItem>
-                <DropdownItem>Menu item</DropdownItem>
-                <DropdownItem>Menu item</DropdownItem>
-              </DropdownMenu>
-            </Dropdown>
-          </div>
-
-          <div class="column">
-            <Dropdown class="m-3" autoClose="outside">
-              <DropdownToggle caret>Outside</DropdownToggle>
-              <DropdownMenu>
-                <DropdownItem>Menu item</DropdownItem>
-                <DropdownItem>Menu item</DropdownItem>
-                <DropdownItem>Menu item</DropdownItem>
-              </DropdownMenu>
-            </Dropdown>
-          </div>
-
-          <div class="column">
-            <Dropdown class="m-3" autoClose="inside">
-              <DropdownToggle caret>Inside</DropdownToggle>
-              <DropdownMenu>
-                <DropdownItem>Menu item</DropdownItem>
-                <DropdownItem>Menu item</DropdownItem>
-                <DropdownItem>Menu item</DropdownItem>
-              </DropdownMenu>
-            </Dropdown>
-          </div>
-
-          <div class="column">
-            <Dropdown class="m-3" autoClose={false}>
-              <DropdownToggle caret>Manually</DropdownToggle>
-              <DropdownMenu>
-                <DropdownItem>Menu item</DropdownItem>
-                <DropdownItem>Menu item</DropdownItem>
-                <DropdownItem>Menu item</DropdownItem>
-              </DropdownMenu>
-            </Dropdown>
-          </div>
+        <div class="horizontal">
+          <Dropdown autoClose={true}>
+            <DropdownToggle color="primary" caret>Default dropdown</DropdownToggle>
+            <DropdownMenu>
+              <DropdownItem>Menu item</DropdownItem>
+              <DropdownItem>Menu item</DropdownItem>
+              <DropdownItem>Menu item</DropdownItem>
+            </DropdownMenu>
+          </Dropdown>
+          <Dropdown autoClose="outside">
+            <DropdownToggle color="success" caret>Clickable inside</DropdownToggle>
+            <DropdownMenu>
+              <DropdownItem>Menu item</DropdownItem>
+              <DropdownItem>Menu item</DropdownItem>
+              <DropdownItem>Menu item</DropdownItem>
+            </DropdownMenu>
+          </Dropdown>
+          <Dropdown autoClose="inside">
+            <DropdownToggle color="warning" caret>Clickable outside</DropdownToggle>
+            <DropdownMenu>
+              <DropdownItem>Menu item</DropdownItem>
+              <DropdownItem>Menu item</DropdownItem>
+              <DropdownItem>Menu item</DropdownItem>
+            </DropdownMenu>
+          </Dropdown>
+          <Dropdown autoClose={false}>
+            <DropdownToggle color="danger" caret>Manually close</DropdownToggle>
+            <DropdownMenu>
+              <DropdownItem>Menu item</DropdownItem>
+              <DropdownItem>Menu item</DropdownItem>
+              <DropdownItem>Menu item</DropdownItem>
+            </DropdownMenu>
+          </Dropdown>
         </div>
       </ButtonToolbar>
     </div>

@@ -22,7 +22,7 @@ The `<Dropdown>` component is a user interface element that displays lists of li
 <Source
   dark
   language="html"
-  code={` 
+  code={`
 <script lang="ts">
   import {
     Dropdown,
@@ -51,7 +51,7 @@ The `<Dropdown>` component is a user interface element that displays lists of li
 <Source
   dark
   language="html"
-  code={` 
+  code={`
 <script lang="ts">
   import {
     Dropdown,
@@ -61,8 +61,8 @@ The `<Dropdown>` component is a user interface element that displays lists of li
   } from '@sveltestrap/sveltestrap';
 </script>
 {#each directions as direction}
-  <Dropdown class="m-3" {direction}>
-    <DropdownToggle caret>Drop{direction}</DropdownToggle>
+  <Dropdown {direction}>
+    <DropdownToggle color="primary" caret>Drop{direction}</DropdownToggle>
     <DropdownMenu>
       <DropdownItem>Another Action</DropdownItem>
       <DropdownItem>Another Action</DropdownItem>
@@ -81,7 +81,7 @@ The `<Dropdown>` component is a user interface element that displays lists of li
 <Source
   dark
   language="html"
-  code={` 
+  code={`
 <script lang="ts">
   import {
     Dropdown,
@@ -91,8 +91,8 @@ The `<Dropdown>` component is a user interface element that displays lists of li
   } from '@sveltestrap/sveltestrap';
 </script>
 {#each sizes as size}
-  <Dropdown class="m-3" {size}>
-    <DropdownToggle caret>Dropdown {size}</DropdownToggle>
+  <Dropdown {size}>
+    <DropdownToggle color="primary" caret>Dropdown {size}</DropdownToggle>
     <DropdownMenu>
       <DropdownItem>Another Action</DropdownItem>
       <DropdownItem>Another Action</DropdownItem>
@@ -111,7 +111,7 @@ The `<Dropdown>` component is a user interface element that displays lists of li
 <Source
   dark
   language="html"
-  code={` 
+  code={`
 <script lang="ts">
   import {
     Dropdown,
@@ -146,7 +146,7 @@ The `<Dropdown>` component is a user interface element that displays lists of li
 <Source
   dark
   language="html"
-  code={` 
+  code={`
 <script lang="ts">
   import {
     Dropdown
@@ -191,7 +191,7 @@ The `<Dropdown>` component is a user interface element that displays lists of li
 <Source
   dark
   language="html"
-  code={` 
+  code={`
 <script lang="ts">
   import {
     ButtonToolbar,
@@ -204,7 +204,7 @@ The `<Dropdown>` component is a user interface element that displays lists of li
 
 <ButtonToolbar>
   <Dropdown autoClose={true}>
-    <DropdownToggle caret>Default</DropdownToggle>
+    <DropdownToggle color="primary" caret>Default</DropdownToggle>
     <DropdownMenu>
       <DropdownItem>Menu item</DropdownItem>
       <DropdownItem>Menu item</DropdownItem>
@@ -212,7 +212,7 @@ The `<Dropdown>` component is a user interface element that displays lists of li
     </DropdownMenu>
   </Dropdown>
   <Dropdown autoClose="outside">
-    <DropdownToggle caret>Outside</DropdownToggle>
+    <DropdownToggle color="success" caret>Outside</DropdownToggle>
     <DropdownMenu>
       <DropdownItem>Menu item</DropdownItem>
       <DropdownItem>Menu item</DropdownItem>
@@ -220,7 +220,7 @@ The `<Dropdown>` component is a user interface element that displays lists of li
     </DropdownMenu>
   </Dropdown>
   <Dropdown autoClose="inside">
-    <DropdownToggle caret>Inside</DropdownToggle>
+    <DropdownToggle color="warning" caret>Inside</DropdownToggle>
     <DropdownMenu>
       <DropdownItem>Menu item</DropdownItem>
       <DropdownItem>Menu item</DropdownItem>
@@ -228,7 +228,7 @@ The `<Dropdown>` component is a user interface element that displays lists of li
     </DropdownMenu>
   </Dropdown>
   <Dropdown autoClose={false}>
-    <DropdownToggle caret>manually</DropdownToggle>
+    <DropdownToggle color="danger" caret>manually</DropdownToggle>
     <DropdownMenu>
       <DropdownItem>Menu item</DropdownItem>
       <DropdownItem>Menu item</DropdownItem>
