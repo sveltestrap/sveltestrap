@@ -28,8 +28,7 @@
    * The container in which the tooltip should be rendered.
    * @type {string}
    */
-  export let container = '';
-
+  export let container = undefined;
   /**
    * Unique identifier for the tooltip.
    * @type {string}
@@ -112,7 +111,8 @@
   }
 
   function registerEventListeners() {
-    if (target === null || !target) {
+    // eslint-disable-next-line eqeqeq
+    if (target == null || !target) {
       targetEl = null;
       return;
     }
@@ -128,7 +128,8 @@
     }
 
     // If targetEl has not been found yet
-    if (targetEl === null) {
+    // eslint-disable-next-line eqeqeq
+    if (targetEl == null) {
       // Check if target can be found via querySelector
       try {
         targetEl = document.querySelector(`#${target}`);
@@ -162,9 +163,13 @@
   }
 
   $: {
-    if (popperPlacement === 'left') bsPlacement = 'start';
-    else if (popperPlacement === 'right') bsPlacement = 'end';
-    else bsPlacement = popperPlacement;
+    if (popperPlacement === 'left') {
+      bsPlacement = 'start';
+    } else if (popperPlacement === 'right') {
+      bsPlacement = 'end';
+    } else {
+      bsPlacement = popperPlacement;
+    }
   }
 
   $: classes = classnames(
