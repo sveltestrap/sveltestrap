@@ -724,3 +724,19 @@ Tooltip Examples Stories
   width: 350px;
   text-align: center;
 }
+
+/*-----------------
+Modal Examples Stories
+-----------------*/
+
+.modal-example .text-content {
+  color: var(--color-gray-300);
+}
+
+/*-----------------
+Carousel Examples Stories
+-----------------*/
+
+.carousel-example .carousel-size {
+  width: 600px;
+}

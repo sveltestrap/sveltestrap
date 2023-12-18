@@ -1,0 +1,394 @@
+import { Meta, Canvas, Controls, Source, Story } from '@storybook/blocks';
+import * as ModalStories from './Modal.stories';
+
+<Meta title="Components/Modal" />
+
+# Modal <small class="bootstrap-docs">[Bootstrap Modal](https://getbootstrap.com/docs/5.3/components/modal/)</small>
+
+The `<Modal>` component is a user interface element that adds dialogs for lightboxes, user notifications, or completely custom content.
+
+<Canvas>
+  <Story of={ModalStories.Basic} />
+</Canvas>
+
+<Controls of={ModalStories.Basic} />
+
+## Shorthand
+
+<Canvas withSource="none">
+  <Story of={ModalStories.Shorthand} />
+</Canvas>
+
+<Source dark language="html" code={`
+<script lang="ts">
+  import { Button, Modal } from '@sveltestrap/sveltestrap';
+  let open = false;
+  const toggle = () => (open = !open);
+</script>
+
+<div>
+  <Button color="danger" on:click={toggle}>Open Modal</Button>
+  <Modal body header="Modal title" isOpen={open} {toggle}>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua.
+  </Modal>
+</div>
+`} />
+
+## Sizes
+
+<Canvas withSource="none">
+  <Story of={ModalStories.Sizes} />
+</Canvas>
+
+<Source dark language="html" code={`
+<script lang="ts">
+  import { 
+    Button,
+    ButtonGroup,
+    Modal,
+    ModalBody,
+    ModalFooter,
+    ModalHeader
+  } from '@sveltestrap/sveltestrap';
+  let open = false;
+  let size: any;
+  const toggle = () => {
+    size = undefined;
+    open = !open;
+  };
+  const toggleLg = () => {
+    size = 'lg';
+    open = !open;
+  };
+  const toggleSm = () => {
+    size = 'sm';
+    open = !open;
+  };
+  const toggleXl = () => {
+    size = 'xl';
+    open = !open;
+  };
+</script>
+
+<div>
+  <ButtonGroup>
+    <Button color="success" on:click={toggleSm}>Open Small Modal</Button>
+    <Button color="warning" on:click={toggle}>Open Default Modal</Button>
+    <Button color="danger" on:click={toggleLg}>Open Large Modal</Button>
+    <Button color="dark" on:click={toggleXl}>Open Extra Large Modal</Button>
+  </ButtonGroup>
+
+  <Modal isOpen={open} {toggle} {size}>
+    <ModalHeader {toggle}>Modal title</ModalHeader>
+    <ModalBody>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua.
+    </ModalBody>
+    <ModalFooter>
+      <Button color="primary" on:click={toggle}>Do Something</Button>
+      <Button color="secondary" on:click={toggle}>Cancel</Button>
+    </ModalFooter>
+  </Modal>
+</div>
+`} />
+
+## Fullscreen
+
+<Canvas withSource="none">
+  <Story of={ModalStories.Fullscreen} />
+</Canvas>
+
+<Source dark language="html" code={`
+<script lang="ts">
+  import { 
+    Button,
+    ButtonGroup,
+    Modal,
+    ModalBody,
+    ModalFooter,
+    ModalHeader 
+  } from '@sveltestrap/sveltestrap';
+  let open = false;
+  let fullscreen: any;
+  const toggle = () => {
+    fullscreen = undefined;
+    open = !open;
+  };
+  const toggleAlways = () => {
+    fullscreen = true;
+    open = !open;
+  };
+</script>
+
+<Button color="primary" on:click={toggleAlways}>
+  Open Always Modal
+</Button>
+
+<Modal isOpen={open} {toggle} {fullscreen}>
+  <ModalHeader {toggle}>Modal title</ModalHeader>
+    <ModalBody>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua.
+    </ModalBody>
+    <ModalFooter>
+      <Button color="primary" on:click={toggle}>Do Something</Button>
+      <Button color="secondary" on:click={toggle}>Cancel</Button>
+    </ModalFooter>
+  </Modal>
+`} />
+
+## Scrolling
+
+<Canvas withSource="none">
+  <Story of={ModalStories.Scrolling} />
+</Canvas>
+
+<Source dark language="html" code={`
+<script lang="ts">
+  import { 
+    Button,
+    ButtonGroup,
+    Modal,
+    ModalBody,
+    ModalFooter,
+    ModalHeader 
+  } from '@sveltestrap/sveltestrap';
+  let open = false;
+  let openScrollable = false;
+  const toggle = () => (open = !open);
+  const toggleScrollable = () => (openScrollable = !openScrollable);
+</script>
+
+<div>
+  <Button color="primary" on:click={toggle}>Default scrolling</Button>
+  <Button color="success" on:click={toggleScrollable}
+    >Scrollable modal body</Button
+  >
+  <Modal isOpen={open} {toggle}>
+    <ModalHeader {toggle}>Modal title</ModalHeader>
+    <ModalBody>
+      <p style="min-height: 1000px;">
+        This is some placeholder content to show the scrolling behavior for
+        modals. Instead of repeating the text the modal, we use an inline style
+        set a minimum height, thereby extending the length of the overall modal
+        and demonstrating the overflow scrolling. When content becomes longer
+        than the height of the viewport, scrolling will move the modal as
+        needed.
+      </p>
+    </ModalBody>
+    <ModalFooter>
+      <Button color="primary" on:click={toggle}>Do Something</Button>
+      <Button color="secondary" on:click={toggle}>Cancel</Button>
+    </ModalFooter>
+  </Modal>
+
+  <Modal isOpen={openScrollable} toggle={toggleScrollable} scrollable>
+    <ModalHeader toggle={toggleScrollable}>Modal title</ModalHeader>
+    <ModalBody>
+      <p style="min-height: 1000px;">
+        This is some placeholder content to show the scrolling behavior for
+        modals. Instead of repeating the text the modal, we use an inline style
+        set a minimum height, thereby extending the length of the overall modal
+        and demonstrating the overflow scrolling. When content becomes longer
+        than the height of the viewport, scrolling will move the modal as
+        needed.
+      </p>
+    </ModalBody>
+    <ModalFooter>
+      <Button color="primary" on:click={toggleScrollable}>Do Something</Button>
+      <Button color="secondary" on:click={toggleScrollable}>Cancel</Button>
+    </ModalFooter>
+  </Modal>
+</div>
+
+`} />
+
+## Backdrop
+
+<Canvas withSource="none">
+  <Story of={ModalStories.Backdrop} />
+</Canvas>
+
+<Source dark language="html" code={`
+<script lang="ts">
+  import { 
+    Button,
+    ButtonGroup,
+    Modal,
+    ModalBody,
+    ModalFooter,
+    ModalHeader 
+  } from '@sveltestrap/sveltestrap';
+  let open = false;
+  const toggle = () => (open = !open);
+</script>
+
+<div>
+  <Button color="danger" on:click={toggle}>Modal with no Backdrop</Button>
+  <Modal isOpen={open} backdrop={false} {toggle}>
+    <ModalHeader {toggle}>Modal title</ModalHeader>
+    <ModalBody>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua.
+    </ModalBody>
+    <ModalFooter>
+      <Button color="primary" on:click={toggle}>Do Something</Button>
+      <Button color="secondary" on:click={toggle}>Cancel</Button>
+    </ModalFooter>
+  </Modal>
+</div>
+`} />
+
+## Static Backdrop
+
+<Canvas withSource="none">
+  <Story of={ModalStories.StaticBackdrop} />
+</Canvas>
+
+<Source dark language="html" code={`
+<script lang="ts">
+  import { 
+    Button,
+    ButtonGroup,
+    Modal,
+    ModalBody,
+    ModalFooter,
+    ModalHeader 
+  } from '@sveltestrap/sveltestrap';
+  let open = false;
+  const toggle = () => (open = !open);
+</script>
+
+<div>
+  <Button color="danger" on:click={toggle}>Modal with Static Backdrop</Button>
+  <Modal isOpen={open} backdrop="static" {toggle}>
+    <ModalHeader {toggle}>Modal title</ModalHeader>
+    <ModalBody>
+      Clicking outside modal or hitting Escape does not dismiss.
+    </ModalBody>
+    <ModalFooter>
+      <Button color="primary" on:click={toggle}>Do Something</Button>
+      <Button color="secondary" on:click={toggle}>Cancel</Button>
+    </ModalFooter>
+  </Modal>
+</div>
+`} />
+
+## Fade
+
+<Canvas withSource="none">
+  <Story of={ModalStories.Fade} />
+</Canvas>
+
+<Source dark language="html" code={`
+<script lang="ts">
+  import { 
+    Button,
+    ButtonGroup,
+    Modal,
+    ModalBody,
+    ModalFooter,
+    ModalHeader 
+  } from '@sveltestrap/sveltestrap';
+  let open = false;
+  const toggle = () => (open = !open);
+</script>
+
+<div>
+  <Button color="danger" on:click={toggle}>Modal with no Fade</Button>
+  <Modal isOpen={open} fade={false} {toggle}>
+    <ModalHeader {toggle}>Modal title</ModalHeader>
+    <ModalBody>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua.
+    </ModalBody>
+    <ModalFooter>
+      <Button color="primary" on:click={toggle}>Do Something</Button>
+      <Button color="secondary" on:click={toggle}>Cancel</Button>
+    </ModalFooter>
+  </Modal>
+</div>
+`} />
+
+## Events
+
+<Canvas withSource="none">
+  <Story of={ModalStories.Events} />
+</Canvas>
+
+<Source dark language="html" code={`
+<script lang="ts">
+  import { Button, Modal } from '@sveltestrap/sveltestrap';
+  let open = false;
+  let status = 'Closed';
+  const toggle = () => (open = !open);
+</script>
+
+<div>
+  <h5>Current state: {status}</h5>
+  <Button color="danger" on:click={toggle}>Open Modal</Button>
+  <Modal
+    body
+    header="Modal title"
+    isOpen={open}
+    {toggle}
+    on:opening={() => (status = 'Opening...')}
+    on:open={() => (status = 'Opened')}
+    on:closing={() => (status = 'Closing...')}
+    on:close={() => (status = 'Closed')}
+  >
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua.
+  </Modal>
+</div>
+`} />
+
+## Static
+
+<Canvas withSource="none">
+  <Story of={ModalStories.Static} />
+</Canvas>
+
+<Source dark language="html" code={`
+<script lang="ts">
+  import { Modal, ModalBody, ModalHeader } from '@sveltestrap/sveltestrap';
+</script>
+
+<div>
+  <Modal static isOpen>
+    <ModalHeader>Static Modal</ModalHeader>
+    <ModalBody>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+      magna aliqua.
+    </ModalBody>
+  </Modal>
+</div>
+`} />
+
+## External Content
+
+<Canvas withSource="none">
+  <Story of={ModalStories.ExternalContent} />
+</Canvas>
+
+<Source dark language="html" code={`
+<script lang="ts">
+  import { Button, Icon, Modal } from '@sveltestrap/sveltestrap';
+  let open = false;
+  const toggle = () => (open = !open);
+</script>
+
+<div>
+  <Button color="danger" on:click={toggle}>Open Modal</Button>
+  <Modal isOpen={open} {toggle} body>
+    <div slot="external" class="text-end">
+      <Button color="link" class="text-white" size="lg" on:click={toggle}>
+        <Icon name="x" class="h1" />
+      </Button>
+    </div>
+    <h4>You can add content outside the Modal.</h4>
+    <p>Click the X on right to close.</p>
+  </Modal>
+</div>
+`} />
