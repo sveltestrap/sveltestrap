@@ -711,3 +711,16 @@ ListGroup Examples Stories
 .listgroup-example .text-content {
   color: var(--color-gray-300);
 }
+
+/*-----------------
+Tooltip Examples Stories
+-----------------*/
+
+.tooltip-example .text-content {
+  color: var(--color-gray-300);
+}
+
+.tooltip-example .tooltip-width {
+  width: 350px;
+  text-align: center;
+}
