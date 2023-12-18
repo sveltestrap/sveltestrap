@@ -1,0 +1,239 @@
+import { Meta, Canvas, Controls, Story, Source } from '@storybook/blocks';
+import * as DropdownStories from './Dropdown.stories';
+
+<Meta title="Components/Dropdown " />
+
+# Dropdown <small class="bootstrap-docs">[Bootstrap Dropdown](https://getbootstrap.com/docs/5.3/components/dropdowns/)</small>
+
+The `<Dropdown>` component is a user interface element that displays lists of links and more through contextual overlays.
+
+<Canvas>
+  <Story of={DropdownStories.Basic} />
+</Canvas>
+
+<Controls of={DropdownStories.Basic} />
+
+## Alignment
+
+<Canvas withSource="none">
+  <Story of={DropdownStories.Alignment} />
+</Canvas>
+
+<Source
+  dark
+  language="html"
+  code={` 
+<script lang="ts">
+  import {
+    Dropdown,
+    DropdownItem,
+    DropdownMenu,
+    DropdownToggle
+  } from '@sveltestrap/sveltestrap';
+</script>
+
+<Dropdown>
+  <DropdownToggle caret>Dropdown's menu is right-aligned</DropdownToggle>
+  <DropdownMenu end>
+    <DropdownItem header>Header</DropdownItem>
+    <DropdownItem disabled>Action</DropdownItem>
+    <DropdownItem>Another Action</DropdownItem>
+  </DropdownMenu>
+</Dropdown>
+`} />
+
+## Direction
+
+<Canvas withSource="none">
+  <Story of={DropdownStories.Direction} />
+</Canvas>
+
+<Source
+  dark
+  language="html"
+  code={` 
+<script lang="ts">
+  import {
+    Dropdown,
+    DropdownItem,
+    DropdownMenu,
+    DropdownToggle
+  } from '@sveltestrap/sveltestrap';
+</script>
+{#each directions as direction}
+  <Dropdown class="m-3" {direction}>
+    <DropdownToggle caret>Drop{direction}</DropdownToggle>
+    <DropdownMenu>
+      <DropdownItem>Another Action</DropdownItem>
+      <DropdownItem>Another Action</DropdownItem>
+    </DropdownMenu>
+  </Dropdown>
+{/each}
+
+`} />
+
+## Sizes
+
+<Canvas withSource="none">
+  <Story of={DropdownStories.Sizes} />
+</Canvas>
+
+<Source
+  dark
+  language="html"
+  code={` 
+<script lang="ts">
+  import {
+    Dropdown,
+    DropdownItem,
+    DropdownMenu,
+    DropdownToggle
+  } from '@sveltestrap/sveltestrap';
+</script>
+{#each sizes as size}
+  <Dropdown class="m-3" {size}>
+    <DropdownToggle caret>Dropdown {size}</DropdownToggle>
+    <DropdownMenu>
+      <DropdownItem>Another Action</DropdownItem>
+      <DropdownItem>Another Action</DropdownItem>
+    </DropdownMenu>
+  </Dropdown>
+{/each}
+`}
+/>
+
+## Container
+
+<Canvas withSource="none">
+  <Story of={DropdownStories.Container} />
+</Canvas>
+
+<Source
+  dark
+  language="html"
+  code={` 
+<script lang="ts">
+  import {
+    Dropdown,
+    DropdownItem,
+    DropdownMenu,
+    DropdownToggle,
+    Input
+  } from '@sveltestrap/sveltestrap';
+</script>
+
+<Dropdown {isOpen} toggle={() => (isOpen = !isOpen)}>
+  <DropdownToggle tag="div" class="d-inline-block">
+    <Input />
+  </DropdownToggle>
+  <DropdownMenu>
+    <DropdownItem header>Header</DropdownItem>
+    <DropdownItem disabled>Action</DropdownItem>
+    <DropdownItem>Another Action</DropdownItem>
+    <DropdownItem divider />
+    <DropdownItem>Another Action</DropdownItem>
+  </DropdownMenu>
+</Dropdown>
+
+`} />
+
+## SetActiveFromChild
+
+<Canvas withSource="none">
+  <Story of={DropdownStories.SetActiveFromChild} />
+</Canvas>
+
+<Source
+  dark
+  language="html"
+  code={` 
+<script lang="ts">
+  import {
+    Dropdown
+    DropdownItem,
+    DropdownMenu,
+    DropdownToggle,
+    Nav,
+    NavItem,
+    NavLink,
+    Navbar,
+  } from '@sveltestrap/sveltestrap';
+</script>
+
+<Navbar color="dark" dark expand="md">
+  <Nav navbar>
+    <NavItem>
+      <NavLink href="/components/">Inactive Link</NavLink>
+    </NavItem>
+    <Dropdown nav setActiveFromChild>
+      <DropdownToggle nav class="nav-link" caret>
+        Dropdown
+      </DropdownToggle>
+      <DropdownMenu>
+        <DropdownItem href="#" active>
+          Lancelot
+        </DropdownItem>
+        <DropdownItem href="#">Link</DropdownItem>
+        <DropdownItem href="#">Secret</DropdownItem>
+        <DropdownItem href="#">Chimp</DropdownItem>
+      </DropdownMenu>
+    </Dropdown>
+  </Nav>
+</Navbar>
+`} />
+
+## AutoClose
+
+<Canvas withSource="none">
+  <Story of={DropdownStories.AutoClose} />
+</Canvas>
+
+<Source
+  dark
+  language="html"
+  code={` 
+<script lang="ts">
+  import {
+    ButtonToolbar,
+    Dropdown,
+    DropdownItem,
+    DropdownMenu,
+    DropdownToggle
+  } from '@sveltestrap/sveltestrap';
+</script>
+
+<ButtonToolbar>
+  <Dropdown autoClose={true}>
+    <DropdownToggle caret>Default</DropdownToggle>
+    <DropdownMenu>
+      <DropdownItem>Menu item</DropdownItem>
+      <DropdownItem>Menu item</DropdownItem>
+      <DropdownItem>Menu item</DropdownItem>
+    </DropdownMenu>
+  </Dropdown>
+  <Dropdown autoClose="outside">
+    <DropdownToggle caret>Outside</DropdownToggle>
+    <DropdownMenu>
+      <DropdownItem>Menu item</DropdownItem>
+      <DropdownItem>Menu item</DropdownItem>
+      <DropdownItem>Menu item</DropdownItem>
+    </DropdownMenu>
+  </Dropdown>
+  <Dropdown autoClose="inside">
+    <DropdownToggle caret>Inside</DropdownToggle>
+    <DropdownMenu>
+      <DropdownItem>Menu item</DropdownItem>
+      <DropdownItem>Menu item</DropdownItem>
+      <DropdownItem>Menu item</DropdownItem>
+    </DropdownMenu>
+  </Dropdown>
+  <Dropdown autoClose={false}>
+    <DropdownToggle caret>manually</DropdownToggle>
+    <DropdownMenu>
+      <DropdownItem>Menu item</DropdownItem>
+      <DropdownItem>Menu item</DropdownItem>
+      <DropdownItem>Menu item</DropdownItem>
+    </DropdownMenu>
+  </Dropdown>
+</ButtonToolbar>
+`} />
