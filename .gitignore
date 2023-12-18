@@ -18,6 +18,7 @@
 !.prettierignore
 !.prettierrc.json
 !.storybook
+!.tsconfig.json
 !.vercelignore
 *.mock.json
 
@@ -33,3 +34,5 @@ npm-debug.log*
 
 # testing
 /coverage
+artifacts
+/cypress

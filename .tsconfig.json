@@ -3,6 +3,7 @@
   "include": ["src/**/*.d.ts"],
   "exclude": [
     "node_modules/*",
+    "tests/*",
     "src/**/*.spec.js",
     "src/**/*.js",
     "src/**/*.stories.svelte",

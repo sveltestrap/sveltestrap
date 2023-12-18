@@ -1,6 +1,6 @@
 {
-  "./src/**/*.{js,ts,json,svelte}": [
-    "svelte-check --tsconfig ./tsconfig.json",
+  "./{src,tests/sveltekit/src}/**/*.{js,ts,json,svelte}": [
+    "svelte-check --tsconfig ./.tsconfig.json",
     "eslint -c ./.eslintrc.json --fix",
     "prettier --write"
   ]
