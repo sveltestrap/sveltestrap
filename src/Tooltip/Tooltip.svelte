@@ -158,8 +158,11 @@
   }
 
   $: if (targetEl) {
-    if (isOpen) targetEl.setAttribute('aria-describedby', id);
-    else targetEl.removeAttribute('aria-describedby');
+    if (isOpen) {
+      targetEl.setAttribute('aria-describedby', id);
+    } else {
+      targetEl.removeAttribute('aria-describedby');
+    }
   }
 
   $: {
