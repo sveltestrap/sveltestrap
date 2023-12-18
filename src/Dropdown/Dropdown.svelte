@@ -11,18 +11,79 @@
   setContext('dropdownContext', context);
   const navbarContext = getContext('navbar');
 
+  // Additional CSS class names to add to the container.
   let className = '';
+
+  /**
+   * Exports a prop `class` which can be used to apply custom CSS classes.
+   * @type {string}
+   */
   export { className as class };
+
+  /**
+   * A boolean indicating whether the Dropdown is active (open).
+   * @type {boolean}
+   */
   export let active = false;
+
+  /**
+   * A boolean indicating whether the Dropdown should automatically close when an item is selected.
+   * @type {boolean}
+   */
   export let autoClose = true;
+
+  /**
+   * The direction in which the Dropdown menu should expand ('down', 'up', 'left', 'right').
+   * @type {string}
+   */
   export let direction = 'down';
+
+  /**
+   * A boolean indicating whether the Dropdown should expand upwards.
+   * @type {boolean}
+   */
   export let dropup = false;
+
+  /**
+   * A boolean indicating whether the Dropdown is part of a group.
+   * @type {boolean}
+   */
   export let group = false;
+
+  /**
+   * A boolean indicating whether the Dropdown is inside a Navbar.
+   * @type {boolean}
+   */
   export let inNavbar = navbarContext ? navbarContext.inNavbar : false;
+
+  /**
+   * A boolean indicating whether the Dropdown is currently open.
+   * @type {boolean}
+   */
   export let isOpen = false;
+
+  /**
+   * A boolean indicating whether the Dropdown is used in a navigation bar.
+   * @type {boolean}
+   */
   export let nav = false;
+
+  /**
+   * A boolean indicating whether the Dropdown should set its active state based on a child item's selection.
+   * @type {boolean}
+   */
   export let setActiveFromChild = false;
+
+  /**
+   * The size variant for the Dropdown.
+   * @type {string}
+   */
   export let size = '';
+
+  /**
+   * A function that can be used to toggle the state of the Dropdown.
+   * @type {Function | undefined}
+   */
   export let toggle = undefined;
 
   const [popperRef, popperContent] = createPopperActions();
