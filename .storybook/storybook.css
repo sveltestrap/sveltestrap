@@ -726,6 +726,14 @@ Tooltip Examples Stories
 }
 
 /*-----------------
+Modal Examples Stories
+-----------------*/
+
+.modal-example .text-content {
+  color: var(--color-gray-300);
+}
+
+/*-----------------
 Carousel Examples Stories
 -----------------*/
 
