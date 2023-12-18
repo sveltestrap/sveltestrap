@@ -207,8 +207,8 @@ body .sidebar-container {
  -----------------*/
 
 .welcome-page {
-   max-width: 1080px !important;
- }
+  max-width: 1080px !important;
+}
 
 .sbdocs.sbdocs-wrapper {
   justify-content: flex-start;
@@ -698,4 +698,16 @@ Nav Examples Stories
 
 .nav-example .disabled {
   color: var(--color-gray-800);
+}
+
+/*-----------------
+ListGroup Examples Stories
+-----------------*/
+
+.listgroup-example .listgroup-item-size {
+  width: 450px;
+}
+
+.listgroup-example .text-content {
+  color: var(--color-gray-300);
 }
