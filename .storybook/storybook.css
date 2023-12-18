@@ -724,3 +724,11 @@ Tooltip Examples Stories
   width: 350px;
   text-align: center;
 }
+
+/*-----------------
+Carousel Examples Stories
+-----------------*/
+
+.carousel-example .carousel-size {
+  width: 600px;
+}
