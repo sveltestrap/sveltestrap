@@ -1,0 +1,178 @@
+import { Meta, Canvas, Controls, Story, Source } from '@storybook/blocks';
+import * as ListGroupStories from './ListGroup.stories';
+
+<Meta title="Components/ListGroup" />
+
+# ListGroup <small class="bootstrap-docs">[Bootstrap ListGroup](https://getbootstrap.com/docs/5.3/components/list-group/)</small>
+
+The `<ListGroup>` component is a flexible user interface element that displays a series of content.
+
+<Canvas>
+  <Story of={ListGroupStories.Basic} />
+</Canvas>
+
+<Controls of={ListGroupStories.Basic} />
+
+## Colors
+
+<Canvas withSource="none">
+  <Story of={ListGroupStories.Colors} />
+</Canvas>
+
+<Source
+  dark
+  language="html"
+  code={`
+<script lang="ts">
+  import { ListGroup, ListGroupItem } from '@sveltestrap/sveltestrap';
+  const colors = [
+    'primary',
+    'secondary',
+    'success',
+    'danger',
+    'warning',
+    'info',
+    'light',
+    'dark'
+  ];
+</script>
+
+<ListGroup>
+  {#each colors as color}
+    <ListGroupItem {color}>{color}</ListGroupItem>
+  {/each}
+</ListGroup>
+`} />
+
+## Actions
+
+<Canvas withSource="none">
+  <Story of={ListGroupStories.Actions} />
+</Canvas>
+
+<Source
+  dark
+  language="html"
+  code={`
+<script lang="ts">
+  import { ListGroup, ListGroupItem } from '@sveltestrap/sveltestrap';
+</script>
+
+<ListGroup>
+  <ListGroupItem active tag="a" href="https://svelte.dev" action>
+    Active
+  </ListGroupItem>
+  <ListGroupItem tag="a" href="https://svelte.dev" action>
+    Bravo
+  </ListGroupItem>
+  <ListGroupItem tag="a" href="https://svelte.dev" action>
+    Charlie
+  </ListGroupItem>
+  <ListGroupItem tag="a" href="https://svelte.dev" action>
+    Delta
+  </ListGroupItem>
+  <ListGroupItem disabled tag="a" href="https://svelte.dev" action>
+    Disabled
+  </ListGroupItem>
+</ListGroup>
+
+<ListGroup>
+  <ListGroupItem active tag="button" action>
+    Active
+  </ListGroupItem>
+  <ListGroupItem tag="button" action>
+    Bravo
+  </ListGroupItem>
+  <ListGroupItem tag="button" action>
+    Charlie
+  </ListGroupItem>
+  <ListGroupItem tag="button" action>
+    Delta
+  </ListGroupItem>
+  <ListGroupItem disabled tag="button" action>
+    Disabled
+  </ListGroupItem>
+</ListGroup>
+`} />
+
+## Flush
+
+You can remove borders and rounded corners by setting the `flush` prop to `true`.
+
+<Canvas withSource="none">
+  <Story of={ListGroupStories.Flush} />
+</Canvas>
+
+<Source
+  dark
+  language="html"
+  code={`
+<script lang="ts">
+  import { ListGroup, ListGroupItem } from '@sveltestrap/sveltestrap';
+</script>
+
+<ListGroup flush>
+  <ListGroupItem disabled tag="a" href="#" active>
+    Active
+  </ListGroupItem>
+  <ListGroupItem tag="a" href="#">
+    Dapibus ac facilisis in
+  </ListGroupItem>
+  <ListGroupItem tag="a" href="#">
+    Morbi leo risus
+  </ListGroupItem>
+  <ListGroupItem tag="a" href="#">
+    Porta ac consectetur ac
+  </ListGroupItem>
+  <ListGroupItem tag="a" href="#" disabled>
+    Disabled
+  </ListGroupItem>
+</ListGroup>
+`} />
+
+## Horizontal
+
+<Canvas withSource="none">
+  <Story of={ListGroupStories.Horizontal} />
+</Canvas>
+
+<Source
+  dark
+  language="html"
+  code={`
+<script lang="ts">
+  import { ListGroup, ListGroupItem } from '@sveltestrap/sveltestrap';
+</script>
+
+<ListGroup horizontal>
+  <ListGroupItem active>Active</ListGroupItem>
+  <ListGroupItem>Lorem</ListGroupItem>
+  <ListGroupItem>Ipsum</ListGroupItem>
+  <ListGroupItem>Dolor</ListGroupItem>
+  <ListGroupItem>Sit</ListGroupItem>
+  <ListGroupItem disabled>Amet</ListGroupItem>
+</ListGroup>
+`} />
+
+## Numbered
+
+<Canvas withSource="none">
+  <Story of={ListGroupStories.Numbered} />
+</Canvas>
+
+<Source
+  dark
+  language="html"
+  code={`
+<script lang="ts">
+  import { ListGroup, ListGroupItem } from '@sveltestrap/sveltestrap';
+</script>
+
+<ListGroup numbered>
+  <ListGroupItem active>Active</ListGroupItem>
+  <ListGroupItem>Dapibus ac facilisis in</ListGroupItem>
+  <ListGroupItem>Morbi leo risus</ListGroupItem>
+  <ListGroupItem>Porta ac consectetur ac</ListGroupItem>
+  <ListGroupItem disabled>Disabled</ListGroupItem>
+</ListGroup>
+`} />
