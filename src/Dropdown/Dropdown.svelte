@@ -163,7 +163,7 @@
       return;
     }
 
-    if (autoClose === true || autoClose === 'inside') {
+    if (autoClose === true || autoClose === 'outside') {
       handleToggle(e);
     }
   }

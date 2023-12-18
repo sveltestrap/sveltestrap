@@ -28,7 +28,7 @@
       return;
     }
 
-    if (toggle && ($context.autoClose === true || $context.autoClose === 'outside')) {
+    if (toggle && ($context.autoClose === true || $context.autoClose === 'inside')) {
       $context.toggle(e);
     }
   }

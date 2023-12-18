@@ -741,13 +741,6 @@ Carousel Examples Stories
   width: 600px;
 }
 
-.dropdown-example .drop-canvas-size {
-  height: 200px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .dropdown-example .drop-height {
   height: 200px;
 }
