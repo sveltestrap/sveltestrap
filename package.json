@@ -66,10 +66,6 @@
     "test:coverage": "vitest --run --coverage && open ./coverage/index.html"
   },
   "devDependencies": {
-    "@babel/cli": "^7.23.4",
-    "@babel/core": "^7.23.3",
-    "@babel/preset-env": "^7.23.3",
-    "@babel/preset-typescript": "^7.23.3",
     "@storybook/addon-docs": "^7.6.5",
     "@storybook/addon-essentials": "^7.6.5",
     "@storybook/addon-interactions": "^7.6.5",
@@ -116,7 +112,7 @@
     "@popperjs/core": "^2.11.8"
   },
   "peerDependencies": {
-    "svelte": "^4.0.0 || ^5.0.0"
+    "svelte": "^4.0.0 || ^5.0.0 || ^5.0.0-next.0"
   },
   "browserslist": "last 2 versions"
 }
