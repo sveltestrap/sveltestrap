@@ -73,7 +73,7 @@
   const colors = ['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark'];
 
   let isOpen = false;
-  let status = 'Opened';
+  let status = 'Closed';
 
   function toggle() {
     isOpen = !isOpen;
