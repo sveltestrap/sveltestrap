@@ -60,12 +60,10 @@ The `<Alert>` component provides contextual feedback messages for typical user a
 <Source dark language="html" code={`
 <script lang="ts">
   import { Alert } from '@sveltestrap/sveltestrap';
-
-let isOpen = true;
-const toggle = () => {
-visible = !visible;
-};
-
+  let isOpen = true;
+  const toggle = () => {
+    visible = !visible;
+  };
 </script>
 
 <Alert
@@ -103,7 +101,6 @@ visible = !visible;
 <Source dark language="html" code={`
 <script lang="ts">
   import { Alert, Button } from '@sveltestrap/sveltestrap';
-  
   let isOpen = true;
   const toggle = () => {
     visible = !visible;
