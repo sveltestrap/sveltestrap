@@ -63,7 +63,7 @@ The `<Toast>` component is a user interface element designed to provide unobtrus
   code={` 
 <script lang="ts">
   import { Button, Toast, ToastBody, ToastHeader } from '@sveltestrap/sveltestrap';
-  let isOpen = 'true';
+  let isOpen = false;
   function toggle() {
     isOpen = !isOpen;
   }
@@ -97,7 +97,7 @@ The `<Toast>` component is a user interface element designed to provide unobtrus
   code={` 
 <script lang="ts">
   import { Button, Toast } from '@sveltestrap/sveltestrap';
-  let isOpen = 'true';
+  let isOpen = false;
 </script>
 
 <Button on:click={() => (isOpen = true)} disabled={isOpen}>
@@ -122,8 +122,8 @@ The `<Toast>` component is a user interface element designed to provide unobtrus
   code={` 
 <script lang="ts">
   import { Button, Toast } from '@sveltestrap/sveltestrap';
-  let isOpen = 'true';
-  let status = 'Opened';
+  let isOpen = false;
+  let status = 'Closed';
   function toggle() {
     isOpen = !isOpen;
   }
