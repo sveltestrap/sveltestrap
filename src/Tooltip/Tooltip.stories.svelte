@@ -64,7 +64,7 @@
 <Template let:args>
   {#key args}
     <div class="mt-3">
-      <Button id={`btn-${args.placement}`}>show {args.placement}</Button>
+      <Button id={`btn-${args.placement}`} color="primary">Show {args.placement}</Button>
       <Tooltip {...args} target={`btn-${args.placement}`} args.placement>{args.placement} tooltip!</Tooltip>
     </div>
   {/key}
@@ -74,7 +74,7 @@
 
 <Story name="HTML">
   <div>
-    <Button id="btn-right-html">HTML right</Button>
+    <Button id="btn-right-html" color="primary">HTML Tooltips</Button>
     <Tooltip target="btn-right-html" placement="right">
       <strong>Hello</strong> <i>World</i>!
     </Tooltip>
@@ -85,7 +85,7 @@
   <div class="tooltip-example">
     <div class="text-content">
       <div class="mt-3">
-        <Button id="controlledBtn">You could hover here</Button>
+        <Button id="controlledBtn" color="primary">You could hover here</Button>
         <Tooltip bind:isOpen placement="right" target="controlledBtn">This is a Tooltip controlled externally.</Tooltip>
         <hr />
         <label>
