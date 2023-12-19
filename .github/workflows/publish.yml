@@ -26,7 +26,7 @@ jobs:
         run: pnpm install
       - name: Build Sveltestrap
         run: |
-          pnpm run docs:build
+          pnpm run build
       - name: Release new version
         uses: JS-DevTools/npm-publish@v3
         with:
