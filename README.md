@@ -131,7 +131,7 @@ Note that this issue does not affect SvelteKit.
 </Row>
 ```
 
-If you prefer the '@sveltestrap/sveltestrap' import, you can move the package to `devDependencies` block in your `package.json` so that sapper will parse the es bundle
+If you prefer the `@sveltestrap/sveltestrap` import, you can move the package to `devDependencies` block in your `package.json` so that sapper will parse the es bundle
 
 ```json
 "devDependencies": {
