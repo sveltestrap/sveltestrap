@@ -5,7 +5,7 @@ import * as AlertStories from './Alert.stories';
 
 # Alerts <small class="bootstrap-docs">[Bootstrap Alerts](https://getbootstrap.com/docs/5.3/components/alerts/)</small>
 
-The `<Alert>` component provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages. You can read more about
+The `<Alert>` component provides contextual feedback messages for typical user actions with the handful of available and flexible alert messages. You can read more about
 
 <Canvas>
   <Story of={AlertStories.Basic} />
@@ -14,6 +14,7 @@ The `<Alert>` component provide contextual feedback messages for typical user ac
 <Controls of={AlertStories.Basic} />
 
 ## Colors
+
 <Canvas withSource="none">
   <Story of={AlertStories.Colors} />
 </Canvas>
@@ -22,19 +23,21 @@ The `<Alert>` component provide contextual feedback messages for typical user ac
 <script lang="ts">
   import { Alert } from '@sveltestrap/sveltestrap';
 
-  const colors = [
-    'primary',
-    'secondary',
-    'success',
-    'danger',
-    'warning',
-    'info',
-    'light',
-    'dark'
-  ];
+const colors = [
+'primary',
+'secondary',
+'success',
+'danger',
+'warning',
+'info',
+'light',
+'dark'
+];
+
 </script>
 
 {#each colors as color}
+
   <Alert {color}>
     <h4 class="alert-heading text-capitalize">{color}</h4>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -48,7 +51,9 @@ The `<Alert>` component provide contextual feedback messages for typical user ac
 
 ## Fade
 
-<p>You can disable the <code>Alert</code> fade transition by setting the <code>fade</code> prop to <code>false</code>.</p>
+<p>
+  You can disable the <code>Alert</code> fade transition by setting the <code>fade</code> prop to <code>false</code>.
+</p>
 
 <Canvas withSource="none">
   <Story of={AlertStories.Fade} />
@@ -58,11 +63,12 @@ The `<Alert>` component provide contextual feedback messages for typical user ac
 <script lang="ts">
   import { Alert } from '@sveltestrap/sveltestrap';
 
-  let isOpen = true;
+let isOpen = true;
 
-  const toggle = () => {
-    visible = !visible;
-  };
+const toggle = () => {
+visible = !visible;
+};
+
 </script>
 
 <Alert
@@ -76,6 +82,7 @@ The `<Alert>` component provide contextual feedback messages for typical user ac
 `} />
 
 ## Header
+
 <Canvas withSource="none">
   <Story of={AlertStories.Header} />
 </Canvas>
@@ -91,6 +98,7 @@ The `<Alert>` component provide contextual feedback messages for typical user ac
 `} />
 
 ## Controlled
+
 <Canvas withSource="none">
   <Story of={AlertStories.Controlled} />
 </Canvas>
@@ -99,21 +107,25 @@ The `<Alert>` component provide contextual feedback messages for typical user ac
 <script lang="ts">
   import { Alert, Button } from '@sveltestrap/sveltestrap';
 
-  let isOpen = true;
+let isOpen = true;
 
-  const toggle = () => {
-    visible = !visible;
-  };
+const toggle = () => {
+visible = !visible;
+};
+
 </script>
 
 <Alert color="primary" isOpen={isOpen} toggle={() => (isOpen = false)}>
   I can be controlled via <code>isOpen</code> and <code>toggle</code>.
 </Alert>
 
-<Button color="danger" on:click={toggle}>You can toggle me here.</Button>
+<Button color="danger" on:click={toggle}>
+  You can toggle me here.
+</Button>
 `} />
 
 ## Dismissible
+
 <Canvas withSource="none">
   <Story of={AlertStories.Dismissible} />
 </Canvas>
@@ -124,6 +136,8 @@ The `<Alert>` component provide contextual feedback messages for typical user ac
 </script>
 
 <Story name="Dismissible">
-  <Alert color="info" dismissible>I am an alert and I can be dismissed!</Alert>
+  <Alert color="info" dismissible>
+    I am an alert and I can be dismissed!
+  </Alert>
 </Story>
 `} />
