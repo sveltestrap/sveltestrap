@@ -634,29 +634,53 @@ Icon Example Story
   color: var(--color-gray-300);
 }
 
-.icon-example .icon-filter {
-  width: auto;
-  margin-bottom: 30px;
+.icon-filter {
+  margin-bottom: 32px;
 }
 
 .icon-example {
   display: grid;
-  gap: 8px;
+  gap: 16px;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  margin: 16px 0;
 }
 
-.icon-example > * {
+.icon-example > div {
   align-items: center;
+  background-color: var(--color-dark-100);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-base);
+  color: var(--color-white);
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   padding: 48px 24px;
+  text-align: center;
+  transition: all 0.2s ease-in-out;
 }
 
-.icon-example > * > i {
+.icon-example > div.copying {
+  background-color: var(--color-blue-400);
+}
+
+.icon-example > div:hover {
+  border-color: var(--color-blue-400);
+  box-shadow: 0 0 0 3px var(--color-blue-400);
+  transform: scale(1.05);
+  z-index: 10;
+}
+
+.icon-example > div:active {
+  border-color: var(--color-blue-400);
+  box-shadow: 0 0 0 3px var(--color-blue-400);
+}
+
+.icon-example > div > i {
+  display: block;
   font-size: 32px;
 }
 
-.icon-example > * > span {
+.icon-example > div > span {
+  display: block;
   font-size: var(--font-size-medium);
 }
 

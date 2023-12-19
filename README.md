@@ -38,7 +38,7 @@ It's essential to note that Bootstrap 5 components do not come with Bootstrap st
 <head>
   <link
     rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
   />
 </head>
 ```
@@ -46,7 +46,7 @@ It's essential to note that Bootstrap 5 components do not come with Bootstrap st
 2. Add to your main `App.svelte` file
 ```html
 <svelte:head>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
 </svelte:head>
 ```
 
@@ -54,7 +54,7 @@ It's essential to note that Bootstrap 5 components do not come with Bootstrap st
 
 ```html
 <style>
-  @import 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css';
+  @import 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css';
 </style>
 ```
 
