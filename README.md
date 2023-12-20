@@ -140,6 +140,9 @@ If you prefer the `@sveltestrap/sveltestrap` import, you can move the package to
   },
 ```
 
+## Sponsors
+[![avatar](https://images.weserv.nl/?url=https://opensense.s3.amazonaws.com/logo-horizontal-white-colored-emblem.svg?v=4&h=48&w=240&fit=cover&maxage=5d)](https://www.opensense.com?utm_source=github)
+
 ## Maintainers
 [![avatar](https://images.weserv.nl/?url=avatars.githubusercontent.com/u/1918732?v=4&h=48&w=48&fit=cover&mask=circle&maxage=5d)](https://github.com/dysfunc)
 [![avatar](https://images.weserv.nl/?url=avatars.githubusercontent.com/u/405608?v=4&h=48&w=48&fit=cover&mask=circle&maxage=5d)](https://github.com/bestguy)
