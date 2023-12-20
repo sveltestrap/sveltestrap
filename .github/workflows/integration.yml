@@ -1,0 +1,41 @@
+name: Integration Tests
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - tests/**
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    name: Tests
+    if: |
+      (
+        !contains(github.event.head_commit.message, '[skip ci]') &&
+        !contains(github.event.head_commit.message, 'version bump')
+      )
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8.11
+      - name: Install Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+          cache: 'pnpm'
+          registry-url: 'https://registry.npmjs.org'
+      - name: Install dependencies
+        run: pnpm install
+      - name: Install Playwright Browsers
+        run: pnpm exec playwright install --with-deps
+      - name: Run tests
+        run: pnpm exec playwright test
+      - uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 30

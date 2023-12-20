@@ -57,7 +57,7 @@
 </script>
 
 <div class={classes} bind:this={accordionId}>
-  <AccordionHeader on:click={() => onToggle()} class={!accordionOpen && 'collapsed'}>
+  <AccordionHeader on:click={onToggle} class={!accordionOpen && 'collapsed'}>
     <slot name="header" />
     {header}
   </AccordionHeader>
