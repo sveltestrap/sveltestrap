@@ -14,14 +14,6 @@ export default {
   docs: {
     autodocs: 'tag'
   },
-  core: {
-     builder: {
-      name: 'webpack5',
-       options: {
-        lazyCompilation: true
-      }
-    }
-  },
   framework: {
     name: '@storybook/svelte-webpack5',
     options: {
@@ -29,6 +21,12 @@ export default {
         tsconfigFile: './tsconfig.json',
         transpileOnly: true
       }),
+      builder: {
+        name: 'webpack5',
+        options: {
+          lazyCompilation: true
+        }
+      },
       onwarn: (warning, handler) => {
         if (
           warning.code === 'a11y-missing-content' ||
