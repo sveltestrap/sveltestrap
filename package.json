@@ -64,7 +64,7 @@
     "test": "vitest --run --coverage",
     "test:watch": "vitest",
     "test:coverage": "vitest --run --coverage && open ./coverage/index.html",
-    "test:integration": "npx playwright test"
+    "test:integration": "pnpm --prefix ./tests/app install && npx playwright test"
   },
   "devDependencies": {
     "@playwright/test": "^1.40.1",
