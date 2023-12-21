@@ -10,8 +10,7 @@ export default defineConfig({
 
   snapshotPathTemplate: 'tests/snapshots/{arg}{ext}',
   expect: {
-    toHaveScreenshot: {
-      maxDiffPixels: 300,
+    toMatchSnapshot: {
       maxDiffPixelRatio: 0.1
     }
   },
