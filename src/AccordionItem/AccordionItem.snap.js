@@ -23,8 +23,8 @@ exports[`AccordionItem > should render correctly 1`] = `
         <!--&lt;AccordionHeader&gt;-->
          
         <div
-          class="accordion-collapse"
-          style="overflow: hidden;"
+          class="accordion-collapse collapsing"
+          style="overflow: hidden; height: 0px;"
         >
           <div
             class="accordion-body"
@@ -64,8 +64,8 @@ exports[`AccordionItem > should render custom class 1`] = `
         <!--&lt;AccordionHeader&gt;-->
          
         <div
-          class="accordion-collapse"
-          style="overflow: hidden;"
+          class="accordion-collapse collapsing"
+          style="overflow: hidden; height: 0px;"
         >
           <div
             class="accordion-body"

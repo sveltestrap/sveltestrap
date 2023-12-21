@@ -9,7 +9,7 @@ declare module 'sveltestrap' {
   }
 
   export interface AccordionEvents {
-    toggle: CustomEvent<{ [id: string]: boolean }>;
+    toggle: CustomEvent<{ [element: any]: boolean }>;
   }
 
   export interface AccordionSlots {

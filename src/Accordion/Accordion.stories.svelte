@@ -28,7 +28,7 @@
 </script>
 
 <script>
-  import { Story, Template } from '@storybook/addon-svelte-csf';
+  import { Story } from '@storybook/addon-svelte-csf';
   import { AccordionItem } from '@sveltestrap/sveltestrap';
 
   let id = 1;

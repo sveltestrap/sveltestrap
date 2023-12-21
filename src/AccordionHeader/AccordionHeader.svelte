@@ -1,8 +1,13 @@
 <script>
   import { classnames } from '../utils';
 
+  // Additional CSS class names to use
   let className = '';
 
+  /**
+   * Additional CSS class names to use
+   * @type {string}
+   */
   export { className as class };
 
   $: classes = classnames(className, 'accordion-button');

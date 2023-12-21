@@ -34,11 +34,11 @@
   /**
    * @type {HTMLDivElement}
    */
-  let accordionId;
+  let accordionRef;
 
   onMount(() => {
     if (active) {
-      toggle(accordionId);
+      toggle(accordionRef);
     }
   });
 
@@ -47,21 +47,21 @@
       active = !active;
     }
 
-    toggle(accordionId);
+    toggle(accordionRef);
 
-    dispatch('toggle', !accordionOpen);
+    dispatch('toggle', !isOpen);
   };
 
   $: classes = classnames(className, 'accordion-item');
-  $: accordionOpen = stayOpen ? active : $open === accordionId;
+  $: isOpen = stayOpen ? active : $open === accordionRef;
 </script>
 
-<div class={classes} bind:this={accordionId}>
-  <AccordionHeader on:click={onToggle} class={!accordionOpen && 'collapsed'}>
+<div class={classes} bind:this={accordionRef}>
+  <AccordionHeader on:click={onToggle} class={!isOpen && 'collapsed'}>
     <slot name="header" />
     {header}
   </AccordionHeader>
-  <Collapse isOpen={accordionOpen} class="accordion-collapse" on:introstart on:introend on:outrostart on:outroend>
+  <Collapse {isOpen} class="accordion-collapse" on:introstart on:introend on:outrostart on:outroend>
     <div class="accordion-body">
       <slot />
     </div>
