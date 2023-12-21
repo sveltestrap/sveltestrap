@@ -7,19 +7,20 @@ export default defineConfig({
   retries: process.env.CI ? 2 : 0,
   workers: process.env.CI ? 1 : undefined,
   reporter: 'html',
-  snapshotPathTemplate: 'tests/snapshots//{arg}{ext}',
+  snapshotPathTemplate: 'tests/snapshots/{arg}{ext}',
   expect: {
     toHaveScreenshot: {
       maxDiffPixels: 300
-    },
+    }
   },
   use: {
-    trace: 'on-first-retry',
+    baseURL: 'http://localhost:3000',
+    trace: 'on-first-retry'
   },
   projects: [
     {
       name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
+      use: { ...devices['Desktop Chrome'] }
     }
   ],
   webServer: {
