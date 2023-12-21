@@ -1,4 +1,5 @@
 ![Unit Tests](https://github.com/Sveltestrap/sveltestrap/actions/workflows/unit.yml/badge.svg)
+![Integration Tests](https://github.com/Sveltestrap/sveltestrap/actions/workflows/integration.yml/badge.svg)
 
 ![sveltestrap](https://github.com/sveltestrap/sveltestrap/assets/1918732/9e00bb52-01ac-44ba-a79e-46922fcdfea6)
 ## Bootstrap 5 Components for Svelte 4+
@@ -141,7 +142,7 @@ If you prefer the `@sveltestrap/sveltestrap` import, you can move the package to
 ```
 
 ## Sponsors
-[![avatar](https://images.weserv.nl/?url=https://opensense.s3.amazonaws.com/logo-horizontal-white-colored-emblem.svg?v=4&h=48&w=240&fit=cover&maxage=5d)](https://www.opensense.com?utm_source=github)
+[![avatar](https://images.weserv.nl/?url=https://opensense.s3.amazonaws.com/logo-horizontal-white-colored-emblem.svg?v=4&h=60&w=260&fit=cover&maxage=5d)](https://www.opensense.com?utm_source=github)
 
 ## Maintainers
 [![avatar](https://images.weserv.nl/?url=avatars.githubusercontent.com/u/1918732?v=4&h=48&w=48&fit=cover&mask=circle&maxage=5d)](https://github.com/dysfunc)
