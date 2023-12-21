@@ -119,7 +119,7 @@
 <main>
   <h1>Sveltestrap</h1>
 
-  <section data-testid="example-accordion">
+  <section data-testid="accordion">
     <h2>Accordion</h2>
 
     <Accordion>
@@ -138,7 +138,7 @@
     </Accordion>
   </section>
 
-  <section data-testid="example-alert">
+  <section data-testid="alert">
     <h2>Alerts</h2>
 
     {#each colors as color}
@@ -151,7 +151,7 @@
     {/each}
   </section>
 
-  <section data-testid="example-badge">
+  <section data-testid="badge">
     <h2>Badges</h2>
 
     {#each colors as color}
@@ -159,7 +159,7 @@
     {/each}
   </section>
 
-  <section data-testid="example-breadcrumb">
+  <section data-testid="breadcrumb">
     <h2>Breadcrumbs</h2>
 
     <Breadcrumb>
@@ -184,7 +184,7 @@
     </Breadcrumb>
   </section>
 
-  <section data-testid="example-button">
+  <section data-testid="button">
     <h2>Buttons</h2>
 
     <Button>Hello World</Button>
@@ -194,7 +194,7 @@
     <Button>Hello World</Button>
   </section>
 
-  <section data-testid="example-button-group">
+  <section data-testid="button-group">
     <h2>Button Group</h2>
 
     <ButtonGroup>
@@ -204,7 +204,7 @@
     </ButtonGroup>
   </section>
 
-  <section data-testid="example-button-toolbar">
+  <section data-testid="button-toolbar">
     <h2>Button Toolbar</h2>
 
     <ButtonToolbar>
@@ -214,7 +214,7 @@
     </ButtonToolbar>
   </section>
 
-  <section data-testid="example-card">
+  <section data-testid="card">
     <h2>Cards</h2>
 
     <Card class="mb-3">
@@ -232,7 +232,7 @@
     </Card>
   </section>
 
-  <section data-testid="example-carousel">
+  <section data-testid="carousel">
     <h2>Carousel</h2>
 
     <div class="carousel-example">
@@ -256,7 +256,7 @@
     </div>
   </section>
 
-  <section data-testid="example-dropdown">
+  <section data-testid="dropdown">
     <h2>Dropdown</h2>
 
     <Dropdown isOpen={isDropdownOpen} toggle={() => (isDropdownOpen = !isDropdownOpen)}>
