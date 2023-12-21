@@ -282,4 +282,9 @@
     max-width: 800px;
     padding: 32px;
   }
+
+  main,
+  main * {
+    box-sizing: border-box;
+  }
 </style>
