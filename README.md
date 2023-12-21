@@ -1,4 +1,5 @@
 ![Unit Tests](https://github.com/Sveltestrap/sveltestrap/actions/workflows/unit.yml/badge.svg)
+![Integration Tests](https://github.com/Sveltestrap/sveltestrap/actions/workflows/integration.yml/badge.svg)
 
 ![sveltestrap](https://github.com/sveltestrap/sveltestrap/assets/1918732/9e00bb52-01ac-44ba-a79e-46922fcdfea6)
 ## Bootstrap 5 Components for Svelte 4+
