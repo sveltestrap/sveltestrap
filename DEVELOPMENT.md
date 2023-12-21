@@ -91,14 +91,6 @@ Run all tests and generate a report
 > pnpm test:integration:report
 ```
 
-## Deploying Documentation
-
-Run the deploy command to automaically build the docs source and push it to the `storybook` branch.
-
-```vim
-> pnpm run docs:deploy
-```
-
 ## License
 
 [MIT](LICENSE)
