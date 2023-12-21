@@ -9,7 +9,7 @@
   let className = '';
 
   /**
-   * Exports a prop `class` which can be used to apply custom CSS classes.
+   * Additional CSS class names to add to the container.
    * @type {string}
    */
   export { className as class };
@@ -21,40 +21,33 @@
   export let flush = false;
 
   /**
-   * Controls whether the accordion should stay open when another is opened.
+   * Controls whether the accordion should stay open when an item is clicked.
    * @type {boolean}
    */
   export let stayOpen = false;
 
-  // A store to manage the open state of the accordion.
-  const open = writable();
+  const open = writable(null);
 
-  // Setting a context for child components, providing them with shared state and functions.
   setContext('accordion', {
     open,
     stayOpen,
     /**
      * Toggles the open state of the accordion based on the provided ID.
-     * @param {string | number} id - The unique identifier for the accordion item.
+     * @param {HTMLDivElement} element - The accordion item element
      */
-    toggle: (id) => {
-      if ($open === id) {
-        open.set();
+    toggle: (element) => {
+      if ($open === element) {
+        open.set(null);
       } else {
-        open.set(id);
+        open.set(element);
       }
 
-      // Dispatching a custom event with the current state.
       dispatch('toggle', {
-        [id]: $open === id
+        [element]: $open === element
       });
     }
   });
 
-  /**
-   * Computed property that combines custom and default class names.
-   * @type {string}
-   */
   $: classes = classnames(className, 'accordion', { 'accordion-flush': flush });
 </script>
 
