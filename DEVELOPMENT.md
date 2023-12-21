@@ -61,7 +61,10 @@ Running either of these commands will execute all unit tests.
 | `pnpm test`                       | Single run with no coverage report                   |
 | `pnpm test:watch`                 | Watches for changes                                  |
 | `pnpm test:coverage`              | Executes tests and launches a coverage report        |
+| `pnpm test:integration`           | Executes integration tests                           |
+| `pnpm test:integration:report`    | Executes integration tests and launchesreport        |
 
+### Unit Tests
 Run all tests
 ```vim
 > pnpm test
@@ -75,6 +78,17 @@ Run a specific test
 Run all tests and generate a code coverage report
 ```vim
 > pnpm test:coverage
+```
+
+### Integration Tests
+Run all tests
+```vim
+> pnpm test:integration
+```
+
+Run all tests and generate a report
+```vim
+> pnpm test:integration:report
 ```
 
 ## Deploying Documentation
