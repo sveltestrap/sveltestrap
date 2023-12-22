@@ -92,9 +92,9 @@
   {#each colors as color}
     <Alert {color}>
       <h4 class="alert-heading text-capitalize">Heading</h4>
-      This is the contents of my alert message.
+      This is the contents of a<b><u>{color}</u></b> alert message.
 
-      <a href="#todo" class="alert-link"> Also, alert-links are colored to match the alert color! </a>
+      <a href="#todo" class="alert-link"> Also, links are colored to match the assigned alert color! </a>
     </Alert>
   {/each}
 </Story>
