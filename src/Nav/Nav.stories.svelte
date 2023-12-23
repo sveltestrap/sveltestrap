@@ -4,7 +4,11 @@
   export const meta = {
     title: 'Stories/Nav',
     component: Nav,
-    parameters: {},
+    parameters: {
+      controls: {
+        exclude: /^(default)$/g
+      }
+    },
     argTypes: {
       card: {
         control: 'boolean'
@@ -38,6 +42,18 @@
           type: 'select'
         },
         options: ['', 'xs', 'sm', 'md', 'lg', 'xl']
+      },
+      'default ': {
+        description: 'This is the default content slot.',
+        table: {
+          category: 'slots',
+          type: {
+            summary: 'any'
+          },
+          defaultValue: {
+            summary: 'empty'
+          }
+        }
       }
     },
     args: {
@@ -128,7 +144,7 @@
 </Story>
 
 <Story name="Tabs">
-  <div class="nav-example">
+  <div class="nav-example tabs">
     <Nav tabs>
       <NavItem>
         <NavLink href="#" active>Link</NavLink>

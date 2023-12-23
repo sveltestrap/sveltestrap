@@ -4,7 +4,11 @@
   export const meta = {
     title: 'Stories/Popovers',
     component: Popover,
-    parameters: {},
+    parameters: {
+      controls: {
+        exclude: /^(default)$/g
+      }
+    },
     argTypes: {
       animation: {
         control: 'boolean'
@@ -53,6 +57,30 @@
           type: 'select'
         },
         options: ['click', 'hover', 'focus']
+      },
+      'title ': {
+        description: 'This slot is used for provided a custom title.',
+        table: {
+          category: 'slots',
+          type: {
+            summary: 'any'
+          },
+          defaultValue: {
+            summary: 'empty'
+          }
+        }
+      },
+      'default ': {
+        description: 'This is the default content slot.',
+        table: {
+          category: 'slots',
+          type: {
+            summary: 'any'
+          },
+          defaultValue: {
+            summary: 'empty'
+          }
+        }
       }
     },
     args: {

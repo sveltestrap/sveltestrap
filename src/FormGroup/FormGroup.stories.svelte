@@ -4,7 +4,11 @@
   export const meta = {
     title: 'Stories/FormGroup',
     component: FormGroup,
-    parameters: {},
+    parameters: {
+      controls: {
+        exclude: /^(default)$/g
+      }
+    },
     argTypes: {
       class: {
         className: 'string',
@@ -39,6 +43,30 @@
         },
         options: ['div', 'fieldset'],
         table: { disable: true }
+      },
+      'label ': {
+        description: 'This slot is used for provided a custom label.',
+        table: {
+          category: 'slots',
+          type: {
+            summary: 'any'
+          },
+          defaultValue: {
+            summary: 'empty'
+          }
+        }
+      },
+      'default ': {
+        description: 'This is the default content slot.',
+        table: {
+          category: 'slots',
+          type: {
+            summary: 'any'
+          },
+          defaultValue: {
+            summary: 'empty'
+          }
+        }
       }
     },
     args: {

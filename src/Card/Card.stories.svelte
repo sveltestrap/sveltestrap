@@ -4,7 +4,11 @@
   export const meta = {
     title: 'Stories/Card',
     component: Card,
-    parameters: {},
+    parameters: {
+      controls: {
+        exclude: /^(click|default)$/g
+      }
+    },
     argTypes: {
       class: {
         className: 'string',
@@ -24,6 +28,18 @@
       },
       outline: {
         control: 'boolean'
+      },
+      'default ': {
+        description: 'This is the default content slot.',
+        table: {
+          category: 'slots',
+          type: {
+            summary: 'any'
+          },
+          defaultValue: {
+            summary: 'empty'
+          }
+        }
       }
     },
     args: {

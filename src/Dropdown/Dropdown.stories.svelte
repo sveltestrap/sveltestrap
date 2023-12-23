@@ -4,7 +4,11 @@
   export const meta = {
     title: 'Stories/Dropdown',
     component: Dropdown,
-    parameters: {},
+    parameters: {
+      controls: {
+        exclude: /^(default)$/g
+      }
+    },
     argTypes: {
       class: {
         className: 'string',
@@ -53,6 +57,18 @@
       toggle: {
         control: 'boolean',
         table: { disable: true }
+      },
+      'default ': {
+        description: 'This is the default content slot.',
+        table: {
+          category: 'slots',
+          type: {
+            summary: 'any'
+          },
+          defaultValue: {
+            summary: 'empty'
+          }
+        }
       }
     },
     args: {

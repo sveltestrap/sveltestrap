@@ -4,7 +4,11 @@
   export const meta = {
     title: 'Stories/Progress',
     component: Progress,
-    parameters: {},
+    parameters: {
+      controls: {
+        exclude: /^(default)$/g
+      }
+    },
     argTypes: {
       class: {
         className: 'string',
@@ -36,6 +40,18 @@
       },
       barClassName: {
         control: 'text'
+      },
+      'default ': {
+        description: 'This is the default content slot.',
+        table: {
+          category: 'slots',
+          type: {
+            summary: 'any'
+          },
+          defaultValue: {
+            summary: 'empty'
+          }
+        }
       }
     },
     args: {

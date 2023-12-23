@@ -4,7 +4,11 @@
   export const meta = {
     title: 'Stories/Offcanvas',
     component: Offcanvas,
-    parameters: {},
+    parameters: {
+      controls: {
+        exclude: /^(default)$/g
+      }
+    },
     argTypes: {
       class: {
         control: false,
@@ -59,6 +63,30 @@
       },
       xxl: {
         control: 'boolean'
+      },
+      'header ': {
+        description: 'This is the slot to use for custom headings.',
+        table: {
+          category: 'slots',
+          type: {
+            summary: 'any'
+          },
+          defaultValue: {
+            summary: 'empty'
+          }
+        }
+      },
+      'default ': {
+        description: 'This is the default content slot.',
+        table: {
+          category: 'slots',
+          type: {
+            summary: 'any'
+          },
+          defaultValue: {
+            summary: 'empty'
+          }
+        }
       }
     },
     args: {

@@ -4,10 +4,17 @@
   export const meta = {
     title: 'Stories/Buttons',
     component: Button,
-    parameters: {},
+    parameters: {
+      controls: {
+        exclude: /^(click|default)$/g
+      }
+    },
     argTypes: {
       class: {
-        className: 'string'
+        control: false,
+        table: {
+          disable: true
+        }
       },
       children: {
         control: ''
@@ -50,6 +57,18 @@
           type: 'select'
         },
         options: ['sm', 'md', 'lg']
+      },
+      'default ': {
+        description: 'This is the default content slot.',
+        table: {
+          category: 'slots',
+          type: {
+            summary: 'any'
+          },
+          defaultValue: {
+            summary: 'empty'
+          }
+        }
       }
     },
     args: {

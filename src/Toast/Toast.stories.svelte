@@ -4,8 +4,27 @@
   export const meta = {
     title: 'Stories/Toast',
     component: Toast,
-    parameters: {},
+    parameters: {
+      controls: {
+        exclude: /^(close|closing|default|open|opening)$/g
+      }
+    },
     argTypes: {
+      color: {
+        control: {
+          type: 'select'
+        },
+        options: ['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark'],
+        description: 'Color of the Toast background.',
+        table: {
+          type: {
+            summary: 'string'
+          },
+          defaultValue: {
+            summary: 'primary'
+          }
+        }
+      },
       class: {
         className: 'string',
         table: { disable: true }
@@ -34,24 +53,71 @@
       },
       toggle: {
         control: 'null',
-        table: { disable: true }
-      },
-      color: {
-        control: {
-          type: 'select'
-        },
-        options: ['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark'],
-        description: 'Color of the Toast background.',
         table: {
-          type: { summary: 'string' },
-          defaultValue: { summary: 'primary' }
+          disable: true
         }
       },
-      close: {
-        table: { disable: true }
+      'on:open': {
+        control: false,
+        description: 'This event is fired once the Toast has opened.',
+        table: {
+          category: 'events',
+          type: {
+            summary: 'Function'
+          },
+          defaultValue: {
+            summary: 'null'
+          }
+        }
       },
-      closing: {
-        table: { disable: true }
+      'on:opening': {
+        control: false,
+        description: 'This event is fired immediately once open has been triggered.',
+        table: {
+          category: 'events',
+          type: {
+            summary: 'Function'
+          },
+          defaultValue: {
+            summary: 'null'
+          }
+        }
+      },
+      'on:close': {
+        description: 'This event is fired once the Toast has closed.',
+        table: {
+          category: 'events',
+          type: {
+            summary: 'Function'
+          },
+          defaultValue: {
+            summary: 'null'
+          }
+        }
+      },
+      'on:closing': {
+        description: 'This event is fired immediately once close has been triggered.',
+        table: {
+          category: 'events',
+          type: {
+            summary: 'Function'
+          },
+          defaultValue: {
+            summary: 'null'
+          }
+        }
+      },
+      'default ': {
+        description: 'This is the default content slot.',
+        table: {
+          category: 'slots',
+          type: {
+            summary: 'any'
+          },
+          defaultValue: {
+            summary: 'empty'
+          }
+        }
       }
     },
     args: {
@@ -103,6 +169,16 @@
     countdownInterval = null;
     startCountdown();
   }
+
+  const basicStorySource = `
+<div class="p-3 bg-primary mb-3 rounded">
+  <Toast>
+    <ToastHeader>Sveltestrap</ToastHeader>
+    <ToastBody>
+      This is a toast on a primary background — check it out!
+    </ToastBody>
+  </Toast>
+</div>`;
 </script>
 
 <Template let:args>
@@ -118,7 +194,7 @@
   </div>
 </Template>
 
-<Story name="Basic" />
+<Story name="Basic" source={basicStorySource} />
 
 <Story name="Icons">
   <div class="columns">
@@ -160,12 +236,12 @@
   </Toast>
 
   {#if !isOpen}
-    <Button on:click={reopen}>Show Toast</Button>
+    <Button color="primary" on:click={reopen}>Show Toast</Button>
   {/if}
 </Story>
 
 <Story name="Autohide">
-  <Button on:click={startCount} disabled={isOpen}>Show Toast that autohides</Button>
+  <Button color="primary" on:click={startCount} disabled={isOpen}>Show Toast that autohides</Button>
   <Toast autohide body header="Autohides in {seconds} sec" {isOpen} on:close={() => (isOpen = false)}>
     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
     aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
@@ -175,7 +251,9 @@
 <Story name="Events">
   <div class="toast-events">
     <h5>Current state: {status}</h5>
-    <Button color="danger" on:click={toggle}>Open Toast</Button>
+
+    <Button color="danger" on:click={toggle}>{isOpen ? 'Close' : 'Open'} Toast</Button>
+
     <Toast
       body
       header="It's Toasterific"

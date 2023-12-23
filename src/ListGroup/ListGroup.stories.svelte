@@ -4,7 +4,11 @@
   export const meta = {
     title: 'Stories/ListGroup',
     component: ListGroup,
-    parameters: {},
+    parameters: {
+      controls: {
+        exclude: /^(default)$/g
+      }
+    },
     argTypes: {
       class: {
         className: 'string',
@@ -18,6 +22,18 @@
       },
       numbered: {
         control: 'boolean'
+      },
+      'default ': {
+        description: 'This is the default content slot.',
+        table: {
+          category: 'slots',
+          type: {
+            summary: 'any'
+          },
+          defaultValue: {
+            summary: 'empty'
+          }
+        }
       }
     },
     args: {
