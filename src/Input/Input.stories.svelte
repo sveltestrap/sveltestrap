@@ -4,7 +4,11 @@
   export const meta = {
     title: 'Stories/Inputs',
     component: Input,
-    parameters: {},
+    parameters: {
+      controls: {
+        exclude: /^(blur|change|default|focus|input|keydown|keypress|keyup)$/g
+      }
+    },
     argTypes: {
       class: {
         className: 'string',
@@ -130,6 +134,18 @@
       },
       value: {
         control: 'text'
+      },
+      'default ': {
+        description: 'This is the default content slot.',
+        table: {
+          category: 'slots',
+          type: {
+            summary: 'any'
+          },
+          defaultValue: {
+            summary: 'empty'
+          }
+        }
       }
     },
     args: {

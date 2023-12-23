@@ -11,7 +11,9 @@ The `<FormGroup>` component is a fundamental building block for creating organiz
   <Story of={FormGroupStories.Basic} />
 </Canvas>
 
-<Controls of={FormGroupStories.Basic} />
+<div id="form-group-controls">
+  <Controls of={FormGroupStories.Basic} />
+</div>
 
 ## Floating Labels
 
@@ -22,7 +24,7 @@ The `<FormGroup>` component is a fundamental building block for creating organiz
 <Source
   dark
   language="html"
-  code={` 
+  code={`
 <script>
   import { Badge, Form, Input } from '@sveltestrap/sveltestrap';
 </script>
@@ -31,7 +33,7 @@ The `<FormGroup>` component is a fundamental building block for creating organiz
   <FormGroup floating label="Floating Label">
     <Input placeholder="Enter a value" />
   </FormGroup>
-  
+
   <FormGroup floating label="Select labels always float">
     <Input type="select" placeholder="Enter a value">
       <option />

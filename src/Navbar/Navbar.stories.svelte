@@ -4,7 +4,11 @@
   export const meta = {
     title: 'Stories/Navbar',
     component: Navbar,
-    parameters: {},
+    parameters: {
+      controls: {
+        exclude: /^(default)$/g
+      }
+    },
     argTypes: {
       class: {
         control: false,
@@ -56,6 +60,18 @@
       },
       sticky: {
         control: ''
+      },
+      'default ': {
+        description: 'This is the default content slot.',
+        table: {
+          category: 'slots',
+          type: {
+            summary: 'any'
+          },
+          defaultValue: {
+            summary: 'empty'
+          }
+        }
       }
     },
     args: {

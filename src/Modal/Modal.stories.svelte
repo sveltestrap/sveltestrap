@@ -4,7 +4,11 @@
   export const meta = {
     title: 'Stories/Modal',
     component: Modal,
-    parameters: {},
+    parameters: {
+      controls: {
+        exclude: /^(close|closing|default|external|open|opening)$/g
+      }
+    },
     argTypes: {
       class: {
         className: 'string',
@@ -81,6 +85,80 @@
       returnFocusAfterClose: {
         control: 'boolean',
         table: { disable: true }
+      },
+      'on:open': {
+        control: false,
+        description: 'This event is fired once the Modal has opened.',
+        table: {
+          category: 'events',
+          type: {
+            summary: 'Function'
+          },
+          defaultValue: {
+            summary: 'null'
+          }
+        }
+      },
+      'on:opening': {
+        control: false,
+        description: 'This event is fired immediately once open has been triggered.',
+        table: {
+          category: 'events',
+          type: {
+            summary: 'Function'
+          },
+          defaultValue: {
+            summary: 'null'
+          }
+        }
+      },
+      'on:close': {
+        description: 'This event is fired once the Modal has closed.',
+        table: {
+          category: 'events',
+          type: {
+            summary: 'Function'
+          },
+          defaultValue: {
+            summary: 'null'
+          }
+        }
+      },
+      'on:closing': {
+        description: 'This event is fired immediately once close has been triggered.',
+        table: {
+          category: 'events',
+          type: {
+            summary: 'Function'
+          },
+          defaultValue: {
+            summary: 'null'
+          }
+        }
+      },
+      'default ': {
+        description: 'This is the default content slot.',
+        table: {
+          category: 'slots',
+          type: {
+            summary: 'any'
+          },
+          defaultValue: {
+            summary: 'empty'
+          }
+        }
+      },
+      'external ': {
+        description: 'This is for any content to include outside of the modal.',
+        table: {
+          category: 'slots',
+          type: {
+            summary: 'any'
+          },
+          defaultValue: {
+            summary: 'empty'
+          }
+        }
       }
     },
     args: {

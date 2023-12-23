@@ -385,18 +385,10 @@ li.sbdocs.sbdocs-li {
   font-weight: var(--font-weight-medium);
 }
 
-.docblock-argstable-body > tr[title*='Hide events items'] > td,
-.docblock-argstable-body > tr[title*='Show events items'] > td,
-.docblock-argstable-body > tr[title*='Show events items'] + tr,
-.docblock-argstable-body > tr[title*='Hide events items'] + tr,
-.docblock-argstable-body > tr[title*='Show events items'] + tr + tr,
-.docblock-argstable-body > tr[title*='Hide events items'] + tr + tr,
-.docblock-argstable-body > tr[title*='Hide slots items'] > td,
-.docblock-argstable-body > tr[title*='Hide slots items'] + tr,
-.docblock-argstable-body > tr[title*='Show slots items'] + tr,
-.docblock-argstable-body > tr[title*='Hide slots items'] + tr + tr,
-.docblock-argstable-body > tr[title*='Show slots items'] + tr + tr,
-.docblock-argstable-body > tr[title*='Show slots items'] > td {
+#alert-controls > div > table > tbody > tr:nth-child(9),
+#offcanvas-controls > div > table > tbody > tr:nth-child(18),
+#popover-controls > div > table > tbody > tr:nth-child(11),
+#form-group-controls > div > table > tbody > tr:nth-child(8) {
   display: none;
 }
 
@@ -741,7 +733,8 @@ Nav Examples Stories
   color: var(--color-white);
 }
 
-.nav-example .disabled {
+.nav-example .disabled,
+.nav-example.tabs .active {
   color: var(--color-gray-800);
 }
 

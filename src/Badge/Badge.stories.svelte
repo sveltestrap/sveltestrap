@@ -4,7 +4,11 @@
   export const meta = {
     title: 'Stories/Badges',
     component: Badge,
-    parameters: {},
+    parameters: {
+      controls: {
+        exclude: /^(default)$/g
+      }
+    },
     argTypes: {
       class: {
         control: false,
@@ -26,6 +30,18 @@
       },
       pill: {
         control: 'boolean'
+      },
+      'default ': {
+        description: 'This is the default content slot.',
+        table: {
+          category: 'slots',
+          type: {
+            summary: 'any'
+          },
+          defaultValue: {
+            summary: 'empty'
+          }
+        }
       }
     },
     args: {

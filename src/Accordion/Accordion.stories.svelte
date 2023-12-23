@@ -4,7 +4,11 @@
   export const meta = {
     title: 'Stories/Accordion',
     component: Accordion,
-    parameters: {},
+    parameters: {
+      controls: {
+        exclude: /^(default)$/g
+      }
+    },
     argTypes: {
       class: {
         control: false,
@@ -17,6 +21,18 @@
       },
       stayOpen: {
         control: 'boolean'
+      },
+      'default ': {
+        description: 'This is the default content slot.',
+        table: {
+          category: 'slots',
+          type: {
+            summary: 'any'
+          },
+          defaultValue: {
+            summary: 'empty'
+          }
+        }
       }
     },
     args: {
