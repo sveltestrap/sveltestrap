@@ -276,7 +276,9 @@
 
     <Toast
       body
+      theme="dark"
       header="It's Toasterific"
+      --bs-toast-color="#fff"
       {isOpen}
       on:open={() => (status = 'Opened')}
       on:opening={() => (status = 'Opening...')}

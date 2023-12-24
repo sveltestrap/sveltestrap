@@ -97,7 +97,7 @@
   <div
     {...$$restProps}
     class={classes}
-    data-bs-theme={theme || null}
+    data-bs-theme={theme}
     transition:fadeTrans={{ duration: fade && duration }}
     on:introstart={() => dispatch('opening')}
     on:introend={() => dispatch('open')}
