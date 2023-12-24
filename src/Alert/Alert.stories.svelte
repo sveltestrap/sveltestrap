@@ -142,7 +142,7 @@
 </Story>
 
 <Story name="Controlled">
-  <Alert color="primary" {isOpen} toggle={() => (isOpen = false)}>
+  <Alert theme="dark" color="primary" {isOpen} toggle={() => (isOpen = false)}>
     I can be controlled via <code>isOpen</code> and <code>toggle</code>.
   </Alert>
 

@@ -256,7 +256,9 @@
 
     <Toast
       body
+      theme="dark"
       header="It's Toasterific"
+      --bs-toast-color="#fff"
       {isOpen}
       on:open={() => (status = 'Opened')}
       on:opening={() => (status = 'Opening...')}
@@ -266,6 +268,25 @@
       Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
       magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
       consequat.
+    </Toast>
+  </div>
+</Story>
+
+<Story name="Theming">
+  <div class="horizontal gap-lg toast-events">
+    <Toast body theme="dark" header="Dark Theme" style="--bs-toast-color: #fff;" isOpen={true}>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+      magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+      consequat.
+    </Toast>
+
+    <Toast theme="light" style="--bs-toast-color: #000;">
+      <ToastHeader>Light Theme</ToastHeader>
+      <ToastBody>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat.
+      </ToastBody>
     </Toast>
   </div>
 </Story>

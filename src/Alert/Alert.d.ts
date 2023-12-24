@@ -14,6 +14,7 @@ declare module 'sveltestrap' {
     isOpen?: boolean;
     toggle?: () => void;
     transition?: FadeProps;
+    theme?: string;
   }
 
   export interface AlertEvents {}

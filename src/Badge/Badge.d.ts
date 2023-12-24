@@ -7,6 +7,7 @@ declare module 'sveltestrap' {
     color?: Color;
     href?: string;
     pill?: boolean;
+    theme?: string;
   }
 
   export interface BadgeEvents {}

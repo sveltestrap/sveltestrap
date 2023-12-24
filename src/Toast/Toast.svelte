@@ -67,6 +67,12 @@
    */
   export let toggle = null;
 
+  /**
+   * The theme name override to apply to this component instance.
+   * @type {string | undefined}
+   */
+  export let theme = null;
+
   let timeout;
 
   onDestroy(() => {
@@ -86,6 +92,7 @@
   <div
     {...$$restProps}
     class={classes}
+    data-bs-theme={theme || null}
     transition:fadeTrans={{ duration: fade && duration }}
     on:introstart={() => dispatch('opening')}
     on:introend={() => dispatch('open')}

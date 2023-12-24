@@ -479,6 +479,11 @@ pre.prismjs {
   gap: 8px;
 }
 
+.horizontal .gap-lg,
+.vertical .gap-lg {
+  gap: 16px;
+}
+
 .horizontal {
   align-items: center;
 }

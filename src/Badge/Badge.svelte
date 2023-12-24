@@ -32,11 +32,17 @@
    */
   export let pill = false;
 
+  /**
+   * The theme name override to apply to this component instance.
+   * @type {string | undefined}
+   */
+  export let theme = null;
+
   $: classes = classnames(className, 'badge', `text-bg-${color}`, pill ? 'rounded-pill' : false);
 </script>
 
 {#if href}
-  <a {...$$restProps} {href} class={classes}>
+  <a {...$$restProps} {href} class={classes} data-bs-theme={theme || null}>
     {#if children}
       {children}
     {:else}
@@ -44,7 +50,7 @@
     {/if}
   </a>
 {:else}
-  <span {...$$restProps} class={classes}>
+  <span {...$$restProps} class={classes} data-bs-theme={theme || null}>
     {#if children}
       {children}
     {:else}
