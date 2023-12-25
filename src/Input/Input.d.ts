@@ -14,6 +14,7 @@ declare module 'sveltestrap' {
     label?: string;
     plaintext?: boolean;
     reverse?: boolean;
+    theme?: string;
     valid?: boolean;
   }
 

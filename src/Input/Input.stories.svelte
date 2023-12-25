@@ -132,6 +132,21 @@
       reverse: {
         control: 'boolean'
       },
+      theme: {
+        control: {
+          type: 'select'
+        },
+        options: ['dark', 'light', 'auto'],
+        description: 'The theme style to apply.',
+        table: {
+          type: {
+            summary: 'string'
+          },
+          defaultValue: {
+            summary: 'auto'
+          }
+        }
+      },
       value: {
         control: 'text'
       },
@@ -149,14 +164,15 @@
       }
     },
     args: {
-      type: 'text',
-      plaintext: false,
-      invalid: false,
-      valid: false,
       bsSize: undefined,
       disabled: false,
+      invalid: false,
       placeholder: 'placeholder',
+      plaintext: false,
       reverse: false,
+      theme: null,
+      type: 'text',
+      valid: false,
       value: ''
     }
   };
@@ -344,6 +360,57 @@
           says you are focused.
         </p>
       {/if}
+    </div>
+  </div>
+</Story>
+
+<Story name="Theming">
+  <div class="horizontal gap-xl form-width input-example">
+    <div>
+      <Input type="select" theme="dark">
+        {#each [1, 2, 3, 4, 5] as option}
+          <option>{option}</option>
+        {/each}
+      </Input>
+      <br />
+      {#each ['eenie', 'meanie', 'minie', 'moe'] as value}
+        <Input
+          type="radio"
+          theme="dark"
+          bind:group={radioGroup}
+          {value}
+          label={value.charAt(0).toUpperCase() + value.slice(1)}
+        />
+      {/each}
+      <br />
+      <Input theme="dark" type="checkbox" label="Check me out" />
+      <br />
+      <Input theme="dark" type="checkbox" reverse label="Reverse Label" />
+      <br />
+      <Input theme="dark" type="switch" label="Switch me on" />
+    </div>
+    <div>
+      <Input type="select" theme="light">
+        {#each [1, 2, 3, 4, 5] as option}
+          <option>{option}</option>
+        {/each}
+      </Input>
+      <br />
+      {#each ['eenie', 'meanie', 'minie', 'moe'] as value}
+        <Input
+          type="radio"
+          theme="light"
+          bind:group={radioGroup}
+          {value}
+          label={value.charAt(0).toUpperCase() + value.slice(1)}
+        />
+      {/each}
+      <br />
+      <Input theme="light" type="checkbox" label="Check me out" />
+      <br />
+      <Input theme="light" type="checkbox" reverse label="Reverse Label" />
+      <br />
+      <Input theme="light" type="switch" label="Switch me on" />
     </div>
   </div>
 </Story>
