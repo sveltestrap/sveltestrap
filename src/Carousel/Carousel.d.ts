@@ -9,6 +9,7 @@ declare module 'sveltestrap' {
     keyboard?: boolean;
     pause?: 'hover' | false;
     ride?: boolean;
+    theme?: string;
   }
 
   export interface CarouselEvents {}
