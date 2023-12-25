@@ -69,10 +69,14 @@
 
   /**
    * The theme name override to apply to this component instance.
-   * @type {string | undefined}
+   * @type {string | null}
    */
   export let theme = null;
 
+  /**
+   * The timer ID for the autohide timeout.
+   * @type {number}
+   */
   let timeout;
 
   onDestroy(() => {
@@ -80,6 +84,7 @@
   });
 
   $: if (isOpen && autohide) {
+    // @ts-ignore
     timeout = setTimeout(() => (isOpen = false), delay);
   }
 
