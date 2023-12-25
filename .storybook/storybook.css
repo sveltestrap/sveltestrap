@@ -385,7 +385,7 @@ li.sbdocs.sbdocs-li {
   font-weight: var(--font-weight-medium);
 }
 
-#alert-controls > div > table > tbody > tr:nth-child(9),
+#alert-controls > div > table > tbody > tr:nth-child(10),
 #offcanvas-controls > div > table > tbody > tr:nth-child(18),
 #popover-controls > div > table > tbody > tr:nth-child(11),
 #form-group-controls > div > table > tbody > tr:nth-child(8) {
@@ -479,9 +479,19 @@ pre.prismjs {
   gap: 8px;
 }
 
-.horizontal .gap-lg,
-.vertical .gap-lg {
+.horizontal.gap-lg,
+.vertical.gap-lg {
   gap: 16px;
+}
+
+.horizontal.gap-xl,
+.vertical.gap-xl {
+  gap: 24px;
+}
+
+.horizontal.gap-xxl,
+.vertical.gap-xxl {
+  gap: 32px;
 }
 
 .horizontal {

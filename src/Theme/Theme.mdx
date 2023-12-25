@@ -1,0 +1,20 @@
+import { Meta, Canvas, Story, Source } from '@storybook/blocks';
+import * as ThemeStories from './Theme.stories';
+
+<Meta title="Components/Theme" />
+
+# Theme
+
+The `<Theme>` component is a convenient way to assign a scoped theme to one or more components without impacting the global theme setting. You can also use it to wrap your entire application. You can assign the theme values `light`, `dark` and `auto` to the `theme` property of the `<Theme>` wrapper.
+
+<Canvas>
+  <Story of={ThemeStories.Basic} />
+</Canvas>
+
+## Theme Toggler
+
+The `<ThemeToggler>` component provides an easy to toggle your global theme setting. The component exposes `currentColorMode` and `toggleColorMode` for full control over the toggle action.
+
+<Canvas>
+  <Story of={ThemeStories.Toggler} />
+</Canvas>
