@@ -128,9 +128,28 @@ The `<Alert>` component provides contextual feedback messages for typical user a
   import { Alert } from '@sveltestrap/sveltestrap';
 </script>
 
-<Story name="Dismissible">
-  <Alert color="info" dismissible>
-    I am an alert and I can be dismissed!
-  </Alert>
-</Story>
+<Alert color="info" dismissible>
+  I am an alert and I can be dismissed!
+</Alert>
+`} />
+
+## Theming
+
+<Canvas withSource="none">
+  <Story of={AlertStories.Theming} />
+</Canvas>
+
+<Source dark language="html" code={`
+<script lang="ts">
+  import { Alert } from '@sveltestrap/sveltestrap';
+</script>
+
+<Alert theme="dark" color="primary" isOpen={true}>
+  <h4 class="alert-heading">Dark Theme</h4>
+  I am a <code>dark</code> themed primary alert!
+</Alert>
+
+<Alert theme="light" heading="Light Theme" color="primary" isOpen={true}>
+  I am a <code>light</code> themed primary alert!
+</Alert>
 `} />

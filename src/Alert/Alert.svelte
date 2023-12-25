@@ -65,7 +65,7 @@
 
   /**
    * The theme name override to apply to this component instance.
-   * @type {string | undefined}
+   * @type {string | null}
    */
   export let theme = null;
 
@@ -84,13 +84,7 @@
 </script>
 
 {#if isOpen}
-  <div
-    {...$$restProps}
-    data-bs-theme={theme || null}
-    transition:fadeTransition={transition}
-    class={classes}
-    role="alert"
-  >
+  <div {...$$restProps} data-bs-theme={theme} transition:fadeTransition={transition} class={classes} role="alert">
     {#if heading || $$slots.heading}
       <h4 class="alert-heading">
         {heading}<slot name="heading" />

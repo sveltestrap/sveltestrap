@@ -49,6 +49,21 @@
       isOpen: {
         control: 'boolean'
       },
+      theme: {
+        control: {
+          type: 'select'
+        },
+        options: ['dark', 'light', 'auto'],
+        description: 'The theme style to apply.',
+        table: {
+          type: {
+            summary: 'string'
+          },
+          defaultValue: {
+            summary: 'auto'
+          }
+        }
+      },
       toggle: {
         control: false,
         table: {
@@ -95,7 +110,8 @@
       dismissible: false,
       fade: true,
       heading: '',
-      isOpen: true
+      isOpen: true,
+      theme: null
     }
   };
 </script>
@@ -142,9 +158,20 @@
 </Story>
 
 <Story name="Controlled">
-  <Alert theme="dark" color="primary" {isOpen} toggle={() => (isOpen = false)}>
+  <Alert color="primary" {isOpen} toggle={() => (isOpen = false)}>
     I can be controlled via <code>isOpen</code> and <code>toggle</code>.
   </Alert>
 
   <Button color="danger" on:click={toggle}>You can toggle me here.</Button>
+</Story>
+
+<Story name="Theming">
+  <Alert theme="dark" color="primary" isOpen={true}>
+    <h4 class="alert-heading">Dark Theme</h4>
+    I am a<code>dark</code> themed primary alert!
+  </Alert>
+
+  <Alert theme="light" heading="Light Theme" color="primary" isOpen={true}>
+    I am a <code>light</code> themed primary alert!
+  </Alert>
 </Story>
