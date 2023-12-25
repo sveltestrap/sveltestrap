@@ -14,6 +14,7 @@ declare module 'sveltestrap' {
     nav?: boolean;
     setActiveFromChild?: boolean;
     size?: string;
+    theme?: string;
     toggle?: () => void;
   }
 
