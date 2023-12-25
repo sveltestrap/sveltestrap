@@ -29,6 +29,12 @@
   export let fluid = false;
 
   /**
+   * The theme name override to apply to this component instance.
+   * @type {string | null}
+   */
+  export let theme = null;
+
+  /**
    * Thumbnail image indicator flag
    * @type {boolean}
    */
@@ -41,4 +47,4 @@
   });
 </script>
 
-<img {alt} {...$$restProps} class={classes} />
+<img {alt} {...$$restProps} data-bs-theme={theme} class={classes} />

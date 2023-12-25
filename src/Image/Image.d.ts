@@ -6,6 +6,7 @@ declare module 'svetlestrap' {
     alt?: string;
     figure?: boolean;
     fluid?: boolean;
+    theme?: string;
     thumbnail?: boolean;
   }
 
