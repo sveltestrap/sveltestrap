@@ -176,3 +176,35 @@ You can remove borders and rounded corners by setting the `flush` prop to `true`
   <ListGroupItem disabled>Disabled</ListGroupItem>
 </ListGroup>
 `} />
+
+## Theming
+
+<Canvas withSource="none">
+  <Story of={ListGroupStories.Theming} />
+</Canvas>
+
+<Source
+  dark
+  language="html"
+  code={`
+<script lang="ts">
+  import { ListGroup, ListGroupItem } from '@sveltestrap/sveltestrap';
+</script>
+
+<ListGroup theme="dark">
+  <ListGroupItem active>Active</ListGroupItem>
+  <ListGroupItem color="primary">Bravo</ListGroupItem>
+  <ListGroupItem color="success">Charlie</ListGroupItem>
+  <ListGroupItem color="warning">Delta</ListGroupItem>
+  <ListGroupItem color="danger">Echo</ListGroupItem>
+  <ListGroupItem disabled>Disabled</ListGroupItem>
+</ListGroup>
+
+<ListGroup theme="light">
+  <ListGroupItem active>Active</ListGroupItem>
+  <ListGroupItem color="primary">Bravo</ListGroupItem>
+  <ListGroupItem color="success">Charlie</ListGroupItem>
+  <ListGroupItem color="warning">Delta</ListGroupItem>
+  <ListGroupItem color="danger">Echo</ListGroupItem>
+  <ListGroupItem disabled>Disabled</ListGroupItem>
+</ListGroup>`} />

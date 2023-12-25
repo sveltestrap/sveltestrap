@@ -6,6 +6,7 @@ declare module 'sveltestrap' {
     flush?: boolean;
     horizontal?: boolean;
     numbered?: boolean;
+    theme?: string;
   }
 
   export interface ListGroupEvents {}
