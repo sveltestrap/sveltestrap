@@ -8,6 +8,7 @@ declare module 'sveltestrap' {
     body?: boolean;
     inverse?: boolean;
     outline?: boolean;
+    theme?: string;
   }
 
   export interface CardEvents {}
