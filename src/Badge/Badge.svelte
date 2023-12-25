@@ -34,7 +34,7 @@
 
   /**
    * The theme name override to apply to this component instance.
-   * @type {string | undefined}
+   * @type {string | null}
    */
   export let theme = null;
 
@@ -42,7 +42,7 @@
 </script>
 
 {#if href}
-  <a {...$$restProps} {href} class={classes} data-bs-theme={theme || null}>
+  <a {...$$restProps} {href} class={classes} data-bs-theme={theme}>
     {#if children}
       {children}
     {:else}
@@ -50,7 +50,7 @@
     {/if}
   </a>
 {:else}
-  <span {...$$restProps} class={classes} data-bs-theme={theme || null}>
+  <span {...$$restProps} class={classes} data-bs-theme={theme}>
     {#if children}
       {children}
     {:else}
