@@ -797,3 +797,12 @@ Carousel Examples Stories
 .dropdown-example .drop-height {
   height: 200px;
 }
+
+/*-----------------
+Style Examples Stories
+-----------------*/
+
+.style-example {
+  align-items: start;
+  min-height: 120px;
+}

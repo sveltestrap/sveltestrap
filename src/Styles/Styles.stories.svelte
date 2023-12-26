@@ -37,7 +37,7 @@
 <Story name="Theme">
   <Styles {theme} />
 
-  <div class="horizontal">
+  <div class="horizontal style-example">
     <Dropdown isOpen={true} autoClose="manual">
       <DropdownToggle caret>Menu</DropdownToggle>
       <DropdownMenu>
@@ -56,6 +56,4 @@
       auto <Icon name="circle-half" />
     </Button>
   </div>
-
-  <br /><br /><br /><br /><br /><br /><br /><br />
 </Story>
