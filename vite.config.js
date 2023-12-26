@@ -1,54 +1,28 @@
 import { defineConfig } from 'vite';
 import { svelte } from '@sveltejs/vite-plugin-svelte';
 
-import autoPreprocess from 'svelte-preprocess';
-import autoprefixer from 'autoprefixer'
-
-export default defineConfig(({ command, mode }) => {
-  return {
-    plugins: [
-      svelte({
-        emitCss: false,
-        compilerOptions: {
-          accessors: true,
-          hydratable: true
-        },
-        preprocess: autoPreprocess({
-          postcss: {
-            plugins: [autoprefixer()]
-          }
-        })
-      })
+export default defineConfig({
+  plugins: [
+    svelte({
+      emitCss: false,
+      compilerOptions: {
+        accessors: true,
+        hydratable: true
+      }
+    })
+  ],
+  test: {
+    globals: true,
+    environment: 'jsdom',
+    setupFiles: './vite.setup.js',
+    testTimeout: 20000,
+    alias: [
+      {
+        find: /^svelte$/,
+        replacement: 'svelte/internal'
+      }
     ],
-    build: {
-      outDir: 'dist',
-      lib: {
-        entry: './src/index.js',
-        name: 'sveltestrap',
-        fileName: (format) => format === 'umd' ? 'sveltestrap.js' : 'sveltestrap.es.js'
-      },
-      rollupOptions: {
-        external: ['svelte'],
-        output: {
-          globals: {
-            svelte: 'svelte',
-          },
-        },
-      },
-    },
-    test: {
-      globals: true,
-      environment: 'jsdom',
-      setupFiles: './vite.setup.js',
-      testTimeout: 20000,
-      alias: [
-        {
-          find: /^svelte$/,
-          replacement: "svelte/internal"
-        }
-      ],
-      include: ['./src/**/*.spec.js'],
-      resolveSnapshotPath: (testPath, snapExtension) => testPath.replace(/\.spec\.([tj]s?)/, `${snapExtension}.$1`)
-    }
+    include: ['./src/**/*.spec.js'],
+    resolveSnapshotPath: (testPath, snapExtension) => testPath.replace(/\.spec\.([tj]s?)/, `${snapExtension}.$1`)
   }
 });
