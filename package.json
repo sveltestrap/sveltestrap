@@ -48,9 +48,9 @@
     ".": {
       "types": "./src/index.d.ts",
       "svelte": "./src/index.js",
-      "require": "./dist/strapstrap.js",
-      "module": "./dist/strapstrap.ejs",
-      "import": "./dist/strapstrap.ejs"
+      "require": "./dist/sveltestrap.js",
+      "module": "./dist/sveltestrap.ejs",
+      "import": "./dist/sveltestrap.ejs"
     }
   },
   "scripts": {
