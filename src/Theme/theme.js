@@ -5,8 +5,8 @@ export const colorMode = writable(getInitialColorMode());
 colorMode.subscribe((mode) => useColorMode(mode));
 
 function getInitialColorMode() {
-  const currentTheme = document.documentElement.getAttribute('data-bs-theme');
-  const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const currentTheme = globalThis.document?.documentElement.getAttribute('data-bs-theme') || 'light';
+  const prefersDarkMode = globalThis.window?.matchMedia('(prefers-color-scheme: dark)').matches || false;
 
   return currentTheme === 'dark' || (currentTheme === 'auto' && prefersDarkMode) ? 'dark' : 'light';
 }
@@ -15,7 +15,12 @@ export function useColorMode(element, mode) {
   let target = element;
 
   if (arguments.length === 1) {
-    target = document.documentElement;
+    target = globalThis.document?.documentElement;
+
+    if (!target) {
+      return;
+    }
+
     mode = element;
     colorMode.update(() => mode);
   }
@@ -24,7 +29,12 @@ export function useColorMode(element, mode) {
 }
 
 export function toggleColorMode(element) {
-  const target = element || document.documentElement;
+  const target = element || globalThis.document?.documentElement;
+
+  if (!target) {
+    return;
+  }
+
   const currentMode = target.getAttribute('data-bs-theme');
   const newMode = currentMode === 'dark' ? 'light' : 'dark';
 

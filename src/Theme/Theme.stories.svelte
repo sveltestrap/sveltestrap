@@ -22,12 +22,7 @@
     Toast,
     ThemeToggler,
     Icon,
-    Dropdown,
-    DropdownItem,
-    DropdownMenu,
-    DropdownToggle,
     colorMode,
-    toggleColorMode,
     useColorMode
   } from '@sveltestrap/sveltestrap';
 </script>
@@ -54,6 +49,30 @@
       consequat.
     </Toast>
   </Theme>
+</Story>
+
+<Story name="Hook">
+  <Button color="primary" outline active={$colorMode === 'light'} on:click={() => useColorMode('light')}>
+    light <Icon name="sun-fill" />
+  </Button>
+  <Button color="primary" outline active={$colorMode === 'dark'} on:click={() => useColorMode('dark')}>
+    dark <Icon name="moon-stars-fill" />
+  </Button>
+  <Button color="primary" outline active={$colorMode === 'auto'} on:click={() => useColorMode('auto')}>
+    auto <Icon name="circle-half" />
+  </Button>
+</Story>
+
+<Story name="Store">
+  <Button color="primary" outline active={$colorMode === 'light'} on:click={() => ($colorMode = 'light')}>
+    light <Icon name="sun-fill" />
+  </Button>
+  <Button color="primary" outline active={$colorMode === 'dark'} on:click={() => ($colorMode = 'dark')}>
+    dark <Icon name="moon-stars-fill" />
+  </Button>
+  <Button color="primary" outline active={$colorMode === 'auto'} on:click={() => ($colorMode = 'auto')}>
+    auto <Icon name="circle-half" />
+  </Button>
 </Story>
 
 <Story name="Toggler">
