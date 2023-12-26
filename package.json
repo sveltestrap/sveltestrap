@@ -49,7 +49,7 @@
   },
   "scripts": {
     "start": "storybook dev -p 6006",
-    "build": "svelte-package --input ./src --output ./dist && publint --strict",
+    "build": "svelte-package --input ./src && publint --strict",
     "docs:build": "storybook build -o docs && cp -r ./.storybook/docs/* ./docs",
     "docs:deploy": "pnpm run docs:build && npx gh-pages -d docs",
     "check": "svelte-check --tsconfig ./tsconfig.json",
