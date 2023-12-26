@@ -35,16 +35,8 @@
 </Story>
 
 <Story name="Theme">
-  <Styles />
+  <Styles {theme} />
 
-  <ThemeToggler let:currentColorMode let:toggleColorMode>
-    <Button color="primary" on:click={() => toggleColorMode()}>Toggle Theme: {currentColorMode}</Button>
-  </ThemeToggler>
-
-  <Button color="primary" on:click={() => toggleColorMode()}>Toggle Theme</Button>
-  <Button color="primary" on:click={() => useColorMode('dark')}>Dark Mode</Button>
-  <Button color="primary" on:click={() => useColorMode('light')}>Light Mode</Button>
-  <p>Color mode: {$colorMode}</p>
   <div class="horizontal">
     <Dropdown isOpen={true} autoClose="manual">
       <DropdownToggle caret>Menu</DropdownToggle>
