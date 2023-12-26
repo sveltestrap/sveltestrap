@@ -2,11 +2,11 @@ import { defineConfig } from 'vite';
 import { svelte } from '@sveltejs/vite-plugin-svelte';
 
 export default defineConfig({
-  plugins: [svelte()],
+  plugins: [svelte({ emitCss: false })],
   test: {
     globals: true,
     environment: 'jsdom',
-    setupFiles: './vite.setup.js',
+    setupFiles: ['test-setup.js'],
     testTimeout: 20000,
     alias: [
       {
