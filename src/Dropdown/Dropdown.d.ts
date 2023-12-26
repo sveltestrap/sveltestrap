@@ -2,7 +2,7 @@ import { SvelteComponent } from 'svelte';
 import { HTMLDivElement } from 'svelte/elements';
 import { Direction } from '../shared';
 
-export interface DropdownItemProps extends HTMLAttributes<HTMLDivElement> {
+export interface DropdownProps extends HTMLAttributes<HTMLDivElement> {
   active?: boolean;
   autoClose?: boolean | string;
   direction?: Direction;
@@ -16,10 +16,10 @@ export interface DropdownItemProps extends HTMLAttributes<HTMLDivElement> {
   toggle?: () => void;
 }
 
-export interface DropdownItemEvents {}
+export interface DropdownEvents {}
 
-export interface DropdownItemSlots {
+export interface DropdownSlots {
   default: {};
 }
 
-export default class DropdownItem extends SvelteComponent<DropdownItemProps, DropdownItemEvents, DropdownItemSlots> {}
+export default class Dropdown extends SvelteComponent<DropdownProps, DropdownEvents, DropdownSlots> {}
