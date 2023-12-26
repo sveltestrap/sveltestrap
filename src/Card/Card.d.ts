@@ -1,6 +1,6 @@
 import { SvelteComponent } from 'svelte';
 import { HTMLAttributes } from 'svelte/elements';
-import { Color } from './shared';
+import { Color } from '../shared';
 
 export interface CardProps extends HTMLAttributes<HTMLDivElement> {
   color?: Color;
