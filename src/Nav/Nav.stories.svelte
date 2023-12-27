@@ -261,3 +261,37 @@
     </Nav>
   </div>
 </Story>
+
+<Story name="Theming">
+  <div class="nav-example">
+    <Nav tabs theme="dark" class="mb-3">
+      <NavItem>
+        <NavLink href="#" active>Link</NavLink>
+      </NavItem>
+      <NavItem>
+        <NavLink href="#">Link</NavLink>
+      </NavItem>
+      <NavItem>
+        <NavLink href="#">Another Link</NavLink>
+      </NavItem>
+      <NavItem>
+        <NavLink disabled href="#">Disabled Link</NavLink>
+      </NavItem>
+    </Nav>
+
+    <Nav tabs theme="light">
+      <NavItem>
+        <NavLink href="#" active>Link</NavLink>
+      </NavItem>
+      <NavItem>
+        <NavLink href="#">Link</NavLink>
+      </NavItem>
+      <NavItem>
+        <NavLink href="#">Another Link</NavLink>
+      </NavItem>
+      <NavItem>
+        <NavLink disabled href="#">Disabled Link</NavLink>
+      </NavItem>
+    </Nav>
+  </div>
+</Story>

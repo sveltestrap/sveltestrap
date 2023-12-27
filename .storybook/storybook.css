@@ -743,13 +743,13 @@ Nav Examples Stories
 -----------------*/
 
 .nav-example p,
-.nav-example .nav-link.active,
-.nav-example a.active {
+.nav-example ul:not([data-bs-theme="light"]) .nav-link.active,
+.nav-example ul:not([data-bs-theme="light"]) a.active {
   color: var(--color-white);
 }
 
 .nav-example .disabled,
-.nav-example.tabs .active {
+.nav-example.tabs ul:not([data-bs-theme="light"]) .active {
   color: var(--color-gray-800);
 }
 
