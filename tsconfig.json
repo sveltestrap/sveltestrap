@@ -1,6 +1,6 @@
 {
   "extends": "@tsconfig/svelte/tsconfig.json",
-  "include": ["src/**/*.d.ts", "test-setup.js"],
+  "include": ["src/**/*.d.ts", "vitest.setup.js"],
   "exclude": ["node_modules/*", "src/**/*.spec.js", "src/**/*.js", "src/**/*.stories.svelte", "src/**/*.svelte"],
   "compilerOptions": {
     "baseUrl": ".",
