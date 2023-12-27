@@ -1,12 +1,32 @@
 <script>
   import { classnames } from '../utils';
 
+  /**
+   * Additional CSS class names for the <ul> element.
+   * @type {string}
+   */
   let className = '';
   export { className as class };
+
+  /**
+   * Determines whether the modal header includes a close button.
+   * @type {boolean | undefined}
+   */
   export let toggle = undefined;
+
+  /**
+   * The aria-label for the close button.
+   * @type {string}
+   */
+
   export let closeAriaLabel = 'Close';
-  export let children = undefined;
+  /**
+   * The unique id of the modal header.
+   * @type {string}
+   */
   export let id = undefined;
+
+  export let children = undefined;
 
   $: classes = classnames(className, 'modal-header');
 </script>
