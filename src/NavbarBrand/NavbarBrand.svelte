@@ -2,7 +2,7 @@
   import { classnames } from '../utils';
 
   /**
-   * Additional CSS class names for the navbar.
+   * Additional CSS class names for the navbar brand.
    * @type {string}
    */
   let className = '';
