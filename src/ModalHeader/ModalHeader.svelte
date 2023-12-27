@@ -2,7 +2,7 @@
   import { classnames } from '../utils';
 
   /**
-   * Additional CSS class names for the <ul> element.
+   * Additional CSS class names to apply
    * @type {string}
    */
   let className = '';

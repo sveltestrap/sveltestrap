@@ -24,13 +24,11 @@
 
   const dispatch = createEventDispatcher();
 
-  // Additional CSS class name for the component.
-  let className = '';
-
   /**
-   * Additional CSS class name for the component.
+   * Additional CSS class names to apply
    * @type {string}
    */
+  let className = '';
   export { className as class };
 
   // Prevents the modal from closing when the backdrop has been clicked.
