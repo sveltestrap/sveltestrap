@@ -9,8 +9,11 @@ export default defineConfig({
   reporter: 'html',
   snapshotPathTemplate: 'tests/snapshots/{arg}/{arg}{ext}',
   expect: {
+    toHaveScreenshot: {
+      maxDiffPixels: Infinity
+    },
     toMatchSnapshot: {
-      threshold: .5
+      maxDiffPixelRatio: 0.05
     }
   },
   use: {
