@@ -1,12 +1,9 @@
 {
   "name": "@sveltestrap/sveltestrap",
   "version": "6.0.5",
-  "main": "dist/sveltestrap.js",
-  "module": "dist/sveltestrap.es.js",
-  "jsnext:main": "dist/sveltestrap.es.js",
-  "svelte": "src/index.js",
-  "types": "src/index.d.ts",
   "type": "module",
+  "types": "dist/index.d.ts",
+  "svelte": "./dist/index.js",
   "keywords": [
     "svelte",
     "components",
@@ -38,7 +35,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git@github.com:sveltestrap/sveltestrap.git"
+    "url": "https://github.com/sveltestrap/sveltestrap.git"
   },
   "files": [
     "dist",
@@ -46,20 +43,18 @@
   ],
   "exports": {
     ".": {
-      "types": "./src/index.d.ts",
-      "svelte": "./src/index.js",
-      "require": "./dist/sveltestrap.js",
-      "module": "./dist/sveltestrap.ejs",
-      "import": "./dist/sveltestrap.ejs"
+      "types": "./dist/index.d.ts",
+      "svelte": "./dist/index.js"
     }
   },
   "scripts": {
     "start": "storybook dev -p 6006",
-    "build": "vite build",
+    "build": "svelte-package --input ./src && pnpm lint:package",
     "docs:build": "storybook build -o docs && cp -r ./.storybook/docs/* ./docs",
     "docs:deploy": "pnpm run docs:build && npx gh-pages -d docs",
     "check": "svelte-check --tsconfig ./tsconfig.json",
     "lint": "eslint -c ./.eslintrc.json --fix \"{tests/app/src,src}/**/*.{js,ts,json,svelte}\"",
+    "lint:package": "publint --strict",
     "format": "prettier --write \"{tests/app/src,src}/**/*.{js,ts,json,svelte}\"",
     "test": "vitest --run --coverage",
     "test:watch": "vitest",
@@ -82,6 +77,7 @@
     "@storybook/svelte-vite": "^7.6.6",
     "@storybook/svelte-webpack5": "^7.6.6",
     "@storybook/theming": "^7.6.6",
+    "@sveltejs/package": "^2.2.4",
     "@sveltejs/vite-plugin-svelte": "^3.0.1",
     "@testing-library/jest-dom": "^6.1.4",
     "@testing-library/svelte": "^4.0.5",
@@ -97,17 +93,16 @@
     "eslint-plugin-vitest": "^0.3.10",
     "husky": "^6.0.0",
     "jsdom": "^22.1.0",
-    "json-loader": "^0.5.7",
     "lint-staged": "^10.5.4",
+    "postcss": "^8.4.32",
     "prettier": "^3.1.0",
     "prettier-plugin-svelte": "^3.1.2",
+    "publint": "^0.2.7",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "storybook": "^7.6.6",
     "svelte": "^4.2.8",
     "svelte-check": "^3.6.2",
-    "svelte-loader": "^3.1.9",
-    "svelte-preprocess": "^5.1.1",
     "typescript": "^4.3.2",
     "vite": "^5.0.2",
     "vitest": "^0.34.6"
