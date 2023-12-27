@@ -1,6 +1,6 @@
 {
   "name": "@sveltestrap/sveltestrap",
-  "version": "6.0.5",
+  "version": "6.1.0",
   "type": "module",
   "types": "./dist/index.d.ts",
   "svelte": "./dist/index.js",
