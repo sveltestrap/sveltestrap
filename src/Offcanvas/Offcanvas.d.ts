@@ -17,6 +17,7 @@ export interface OffcanvasProps extends HTMLAttributes<HTMLDivElement> {
   lg?: boolean;
   xl?: boolean;
   xxl?: boolean;
+  theme?: string;
   toggle?: () => void;
 }
 
