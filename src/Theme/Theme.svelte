@@ -1,7 +1,10 @@
 <script>
-  import { useColorMode } from './theme';
+  import { useColorMode } from './helpers';
+
   export let theme = 'dark';
-  export let ref = null;
+
+  let ref = null;
+
   $: ref && useColorMode(ref, theme);
 </script>
 

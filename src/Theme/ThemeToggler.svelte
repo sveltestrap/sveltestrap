@@ -1,5 +1,5 @@
 <script>
-  import { colorMode, toggleColorMode } from './theme';
+  import { colorMode, toggleColorMode } from './helpers';
 
   let currentColorMode = $colorMode;
 
