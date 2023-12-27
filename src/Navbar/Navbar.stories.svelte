@@ -216,3 +216,35 @@
     </Collapse>
   </Navbar>
 </Story>
+
+<Story name="Theming">
+  <Navbar color="dark" theme="dark">
+    <NavbarBrand href="/" class="me-auto">sveltestrap</NavbarBrand>
+    <NavbarToggler on:click={toggle} class="me-2" />
+    <Collapse {isOpen} navbar>
+      <Nav navbar>
+        <NavItem>
+          <NavLink href="#components/">Components</NavLink>
+        </NavItem>
+        <NavItem>
+          <NavLink href="https://github.com/sveltestrap/sveltestrap">GitHub</NavLink>
+        </NavItem>
+      </Nav>
+    </Collapse>
+  </Navbar>
+
+  <Navbar color="light" theme="light">
+    <NavbarBrand href="/" class="me-auto">sveltestrap</NavbarBrand>
+    <NavbarToggler on:click={toggle} class="me-2" />
+    <Collapse {isOpen} navbar>
+      <Nav navbar>
+        <NavItem>
+          <NavLink href="#components/">Components</NavLink>
+        </NavItem>
+        <NavItem>
+          <NavLink href="https://github.com/sveltestrap/sveltestrap">GitHub</NavLink>
+        </NavItem>
+      </Nav>
+    </Collapse>
+  </Navbar>
+</Story>

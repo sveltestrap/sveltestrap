@@ -10,6 +10,7 @@ export interface NavbarProps extends HTMLAttributes<HTMLElement> {
   fixed?: string;
   light?: boolean;
   sticky?: string;
+  theme?: string;
 }
 
 export interface NavbarEvents {}

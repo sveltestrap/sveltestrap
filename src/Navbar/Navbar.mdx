@@ -117,3 +117,51 @@ Change the Navbar's background color using the `color` prop. Use the `light` or 
   </Collapse>
 </Navbar>
 `} />
+
+## Theming
+
+<Canvas withSource="none">
+  <Story of={NavbarStories.Theming} />
+</Canvas>
+
+<Source dark language="html" code={`
+<script lang="ts">
+  import {
+    Collapse,
+    Nav,
+    Navbar,
+    NavbarBrand,
+    NavbarToggler
+  } from '@sveltestrap/sveltstrap';
+</script>
+
+<Navbar color="dark" theme="dark">
+  <NavbarBrand href="/" class="me-auto">sveltestrap</NavbarBrand>
+  <NavbarToggler on:click={toggle} class="me-2" />
+  <Collapse {isOpen} navbar>
+    <Nav navbar>
+      <NavItem>
+        <NavLink href="#components/">Components</NavLink>
+      </NavItem>
+      <NavItem>
+        <NavLink href="https://github.com/sveltestrap/sveltestrap">GitHub</NavLink>
+      </NavItem>
+    </Nav>
+  </Collapse>
+</Navbar>
+
+<Navbar color="light" theme="light">
+  <NavbarBrand href="/" class="me-auto">sveltestrap</NavbarBrand>
+  <NavbarToggler on:click={toggle} class="me-2" />
+  <Collapse {isOpen} navbar>
+    <Nav navbar>
+      <NavItem>
+        <NavLink href="#components/">Components</NavLink>
+      </NavItem>
+      <NavItem>
+        <NavLink href="https://github.com/sveltestrap/sveltestrap">GitHub</NavLink>
+      </NavItem>
+    </Nav>
+  </Collapse>
+</Navbar>
+`} />
