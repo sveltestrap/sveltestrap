@@ -111,3 +111,55 @@
     </PaginationItem>
   </Pagination>
 </Story>
+
+<Story name="Theming">
+  <div class="vertical gap-xl">
+    <Pagination theme="dark" ariaLabel="Dark page navigation example">
+      <PaginationItem>
+        <PaginationLink first href="#" />
+      </PaginationItem>
+      <PaginationItem>
+        <PaginationLink previous href="#" />
+      </PaginationItem>
+      <PaginationItem>
+        <PaginationLink href="#">1</PaginationLink>
+      </PaginationItem>
+      <PaginationItem active>
+        <PaginationLink href="#">2</PaginationLink>
+      </PaginationItem>
+      <PaginationItem>
+        <PaginationLink href="#">3</PaginationLink>
+      </PaginationItem>
+      <PaginationItem>
+        <PaginationLink next href="#" />
+      </PaginationItem>
+      <PaginationItem>
+        <PaginationLink last href="#" />
+      </PaginationItem>
+    </Pagination>
+
+    <Pagination theme="light" ariaLabel="Light page navigation example">
+      <PaginationItem>
+        <PaginationLink first href="#" />
+      </PaginationItem>
+      <PaginationItem>
+        <PaginationLink previous href="#" />
+      </PaginationItem>
+      <PaginationItem>
+        <PaginationLink href="#">1</PaginationLink>
+      </PaginationItem>
+      <PaginationItem active>
+        <PaginationLink href="#">2</PaginationLink>
+      </PaginationItem>
+      <PaginationItem>
+        <PaginationLink href="#">3</PaginationLink>
+      </PaginationItem>
+      <PaginationItem>
+        <PaginationLink next href="#" />
+      </PaginationItem>
+      <PaginationItem>
+        <PaginationLink last href="#" />
+      </PaginationItem>
+    </Pagination>
+  </div>
+</Story>
