@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-// https://github.com/microsoft/playwright/pull/28453
+// disabling snapshots until https://github.com/microsoft/playwright/pull/28453
 
 test('components', async ({ page }) => {
   await page.goto('http://localhost:3000');

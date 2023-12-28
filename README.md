@@ -1,7 +1,6 @@
 ![Unit Tests](https://github.com/Sveltestrap/sveltestrap/actions/workflows/unit.yml/badge.svg)
 ![Integration Tests](https://github.com/Sveltestrap/sveltestrap/actions/workflows/integration.yml/badge.svg)
 
-![sveltestrap](https://github.com/sveltestrap/sveltestrap/assets/1918732/9e00bb52-01ac-44ba-a79e-46922fcdfea6)
 ## Bootstrap 5 Components for Svelte 4+
 
 Sveltestrap is a library designed to simplify the integration of [Bootstrap 5](https://getbootstrap.com) components into your [Svelte](https://svelte.dev) applications. It eliminates the need for Bootstrap component classes, the inclusion of Bootstrap's JavaScript, and reliance on jQuery.
@@ -13,7 +12,9 @@ Please note that Sveltestrap <u>**does not directly embed Bootstrap style**</u>.
 **Note**
 If you looking for Svelte 3.x support, you can use the original [sveltestrap](https://github.com/bestguy/sveltestrap) package.
 
-[![slack](https://img.shields.io/badge/Slack-4A154B?style=for-the-badge&logo=slack&bgColor=black&logoColor=white)](https://join.slack.com/t/sveltestrap/shared_invite/zt-28y9c8a8k-6~9UI~26Cx7pF1JKeQZPyA)
+### Join the Community
+[![slack](https://img.shields.io/badge/Slack-Sveltestrap-1703732139275)](https://join.slack.com/t/sveltestrap/shared_invite/zt-28y9c8a8k-6~9UI~26Cx7pF1JKeQZPyA)
+[![discord](https://img.shields.io/badge/Discord-Sveltestrap-1703732139275)](https://discord.gg/fvBuqxxM)
 
 ---
 
@@ -200,3 +201,5 @@ If you prefer the `@sveltestrap/sveltestrap` import, you can move the package to
 [![avatar](https://images.weserv.nl/?url=avatars.githubusercontent.com/u/16706735?v=4&h=48&w=48&fit=cover&mask=circle&maxage=5d)](https://github.com/urispmts)
 [![avatar](https://images.weserv.nl/?url=avatars.githubusercontent.com/u/6674275?v=4&h=48&w=48&fit=cover&mask=circle&maxage=5d)](https://github.com/sebastienwarin)
 [![avatar](https://images.weserv.nl/?url=avatars.githubusercontent.com/u/69360379?v=4&h=48&w=48&fit=cover&mask=circle&maxage=5d)](https://github.com/Inqnuam)
+[![avatar](https://images.weserv.nl/?url=avatars.githubusercontent.com/u/1667261?v=4&h=48&w=48&fit=cover&mask=circle&maxage=5d)](https://github.com/lachlancollins)
+[![avatar](https://images.weserv.nl/?url=avatars.githubusercontent.com/u/43024885?v=4&h=48&w=48&fit=cover&mask=circle&maxage=5d)](https://github.com/vostrnad)
