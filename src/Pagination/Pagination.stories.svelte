@@ -10,6 +10,9 @@
       }
     },
     argTypes: {
+      ariaLabel: {
+        control: 'text'
+      },
       class: {
         className: 'string',
         table: { disable: true }
@@ -23,8 +26,20 @@
         },
         options: ['', 'sm', 'lg']
       },
-      ariaLabel: {
-        control: 'text'
+      theme: {
+        control: {
+          type: 'select'
+        },
+        options: ['dark', 'light', 'auto'],
+        description: 'The theme style to apply.',
+        table: {
+          type: {
+            summary: 'string'
+          },
+          defaultValue: {
+            summary: 'auto'
+          }
+        }
       },
       'default ': {
         description: 'This is the default content slot.',
@@ -40,9 +55,10 @@
       }
     },
     args: {
+      ariaLabel: 'Page navigation example',
       listClassName: '',
       size: '',
-      ariaLabel: 'Page navigation example'
+      theme: null
     }
   };
 </script>

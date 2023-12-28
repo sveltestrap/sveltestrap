@@ -372,6 +372,11 @@ li.sbdocs.sbdocs-li {
   ArgsTable
  -----------------*/
 
+.docblock-argstable {
+  box-shadow: 0 0 0 1px rgba(255,255,255,.1);
+  border-radius: 4px;
+}
+
 .docblock-argstable-head {
   border: 1px solid var(--color-dark-0);
   border-radius: 4px 4px 0 0;
@@ -387,7 +392,7 @@ li.sbdocs.sbdocs-li {
 
 #alert-controls > div > table > tbody > tr:nth-child(10),
 #offcanvas-controls > div > table > tbody > tr:nth-child(19),
-#popover-controls > div > table > tbody > tr:nth-child(11),
+#popover-controls > div > table > tbody > tr:nth-child(12),
 #form-group-controls > div > table > tbody > tr:nth-child(8) {
   display: none;
 }

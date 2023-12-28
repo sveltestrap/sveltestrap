@@ -34,6 +34,21 @@
       tabs: {
         control: 'boolean'
       },
+      theme: {
+        control: {
+          type: 'select'
+        },
+        options: ['dark', 'light', 'auto'],
+        description: 'The theme style to apply.',
+        table: {
+          type: {
+            summary: 'string'
+          },
+          defaultValue: {
+            summary: 'auto'
+          }
+        }
+      },
       underline: {
         control: 'boolean'
       },
@@ -65,6 +80,7 @@
       navbar: false,
       pills: false,
       tabs: false,
+      theme: null,
       underline: false,
       vertical: ''
     }

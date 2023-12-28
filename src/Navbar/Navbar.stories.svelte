@@ -61,6 +61,21 @@
       sticky: {
         control: ''
       },
+      theme: {
+        control: {
+          type: 'select'
+        },
+        options: ['dark', 'light', 'auto'],
+        description: 'The theme style to apply.',
+        table: {
+          type: {
+            summary: 'string'
+          },
+          defaultValue: {
+            summary: 'auto'
+          }
+        }
+      },
       'default ': {
         description: 'This is the default content slot.',
         table: {
@@ -82,7 +97,8 @@
       expand: 'md',
       fixed: '',
       light: true,
-      sticky: ''
+      sticky: '',
+      theme: null
     }
   };
 </script>

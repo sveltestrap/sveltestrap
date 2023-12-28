@@ -49,6 +49,21 @@
           disable: true
         }
       },
+      theme: {
+        control: {
+          type: 'select'
+        },
+        options: ['dark', 'light', 'auto'],
+        description: 'The theme style to apply.',
+        table: {
+          type: {
+            summary: 'string'
+          },
+          defaultValue: {
+            summary: 'auto'
+          }
+        }
+      },
       title: {
         control: ''
       },
@@ -91,6 +106,7 @@
       hideOnOutsideClick: false,
       isOpen: false,
       placement: 'top',
+      theme: null,
       title: 'Popover',
       trigger: 'click'
     }
@@ -117,7 +133,9 @@
 <Story name="Basic" let:args source={basicSource}>
   <Button color="primary" id="btn-top-basic">Show on {args.placement}</Button>
   {#key args}
-    <Popover {...args} target="btn-top-basic">This is a Popover on the top of the trigger.</Popover>
+    <Popover {...args} target="btn-top-basic" style={args.theme === 'dark' ? 'color: #fff;' : ''}
+      >This is a Popover on the top of the trigger.</Popover
+    >
   {/key}
 </Story>
 
