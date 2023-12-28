@@ -177,3 +177,24 @@
     You can click inside this Popover and it will not dismiss. Dismissal will only occur if the click is outside of the popover.
   </Popover>
 </Story>
+
+<Story name="Theming">
+  <div class="horizontal gap-lg">
+    <Button color="dark" id="btn-dark-theme">Show dark theme</Button>
+    <Button color="light" id="btn-light-theme">Show light theme</Button>
+  </div>
+
+  <Popover theme="light" placement="right" target="btn-light-theme" hideOnOutsideClick>
+    <div slot="title">
+      <i>Hello</i> <b>World!</b>
+    </div>
+    You can click inside this Popover and it will not dismiss. Dismissal will only occur if the click is outside of the popover.
+  </Popover>
+
+  <Popover theme="dark" placement="right" target="btn-dark-theme" hideOnOutsideClick>
+    <div slot="title" style="color: #fff;">
+      <i>Hello</i> <b>World!</b>
+    </div>
+    You can click inside this Popover and it will not dismiss. Dismissal will only occur if the click is outside of the popover.
+  </Popover>
+</Story>
