@@ -26,6 +26,12 @@
    */
   export let stayOpen = false;
 
+  /**
+   * The theme name override to apply to this component instance.
+   * @type {string | null}
+   */
+  export let theme = null;
+
   const open = writable(null);
 
   setContext('accordion', {
@@ -51,6 +57,6 @@
   $: classes = classnames(className, 'accordion', { 'accordion-flush': flush });
 </script>
 
-<div class={classes} {...$$restProps}>
+<div class={classes} data-bs-theme={theme} {...$$restProps}>
   <slot />
 </div>
