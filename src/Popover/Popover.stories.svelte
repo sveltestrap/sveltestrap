@@ -122,12 +122,12 @@
 
   const basicSource = `<Button color="primary" id="btn-top-basic">Show on top</Button>
 
-  <Popover
-    target="btn-top-basic"
-    placement="top"
-    title="Popover Top">
-    This is a Popover on the top of the trigger.
-  </Popover>`;
+<Popover
+  target="btn-top-basic"
+  placement="top"
+  title="Popover Top">
+  This is a Popover on the top of the trigger.
+</Popover>`;
 </script>
 
 <Story name="Basic" let:args source={basicSource}>

@@ -5,7 +5,7 @@ import * as ThemeStories from './Theme.stories';
 
 # Theme Provider
 
-The `<Theme>` component is a convenient way to assign a scoped theme to one or more components without impacting the global theme setting. You can also use it to wrap your entire application. You can assign the theme values `light`, `dark` and `auto` to the `theme` property of the `<Theme>` wrapper.
+The `<Theme>` provider is a convenient way to assign a scoped theme to one or more components without impacting the global theme setting, it can also be used to wrap your entire app. You can assign the theme values `light`, `dark` and `auto` to the `theme` property of the `<Theme>` provider.
 
 <Canvas>
   <Story of={ThemeStories.Basic} />
@@ -61,7 +61,7 @@ You can directly set the global theme mode using the `$colorMode` store by assig
 
 ## Theme Toggler
 
-The `<ThemeToggler>` component provides an easy to toggle your global theme setting. The component exposes `currentColorMode` and `toggleColorMode` for full control over the toggle action.
+The `<ThemeToggler>` component makes it easy to toggle your global theme setting. The component exposes two variables `currentColorMode` and `toggleColorMode` for full control over the toggle action.
 
 <Canvas withSource="none">
   <Story of={ThemeStories.Toggler} />
