@@ -96,3 +96,29 @@ The `<Tooltip>` component is a user interface element that provides supplementar
   </Tooltip>
 </div>
 `} />
+
+## Theming
+
+<Canvas withSource="none">
+  <Story of={TooltipStories.Theming} />
+</Canvas>
+
+<Source
+  dark
+  language="html"
+  code={`
+<script lang="ts">
+  import { Button } from '@sveltestrap/sveltestrap';
+</script>
+
+<Button id="btn-dark-theme" color="dark">Dark Theme</Button>
+<Button id="btn-light-theme" color="light" class="ml-2">Light Theme</Button>
+
+<Tooltip theme="dark" target="btn-dark-theme" placement="right">
+  This a <strong>dark theme</strong> tooltip!
+</Tooltip>
+
+<Tooltip theme="light" target="btn-light-theme" placement="right">
+  This a <strong>light theme</strong> tooltip!
+</Tooltip>
+`} />
