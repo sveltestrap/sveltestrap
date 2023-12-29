@@ -10,6 +10,7 @@ export interface OffcanvasHeaderEvents {}
 
 export interface OffcanvasHeaderSlots {
   default: {};
+  close: {};
 }
 
 export default class OffcanvasHeader extends SvelteComponent<
