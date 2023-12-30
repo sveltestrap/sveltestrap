@@ -12,10 +12,7 @@ export interface ListGroupItemProps extends HTMLAnchorAttributes {
 }
 
 export interface ListGroupItemEvents {
-  open: CustomEvent<void>;
-  opening: CustomEvent<void>;
-  closing: CustomEvent<void>;
-  close: CustomEvent<void>;
+  click: WindowEventMap['click'];
 }
 
 export interface ListGroupItemSlots {
