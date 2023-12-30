@@ -37,6 +37,9 @@
       row: {
         control: 'boolean'
       },
+      spacing: {
+        control: 'text'
+      },
       tag: {
         control: {
           type: 'select'
@@ -74,6 +77,7 @@
       disabled: false,
       floating: false,
       inline: false,
+      spacing: 'mb-3',
       label: '',
       row: false
     }
@@ -99,7 +103,7 @@
 
 <Story name="Floating">
   <Form>
-    <div class="vertical form-width">
+    <div class="form-width">
       <FormGroup floating label="Floating Label">
         <Input placeholder="Enter a value" />
       </FormGroup>

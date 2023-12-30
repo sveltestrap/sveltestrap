@@ -6,11 +6,8 @@
    * @type {string}
    */
   export let className = '';
-  /**
-   * Additional CSS class name for the component
-   * @type {string}
-   */
   export { className as class };
+
   /**
    * Indicates whether the FormGroup is checked.
    * @type {boolean}
@@ -48,12 +45,18 @@
   export let row = false;
 
   /**
+   * The classname to use for spacing between the FormGroup and other components.
+   * @type {string}
+   */
+  export let spacing = 'mb-3';
+
+  /**
    * A custom tag for the FormGroup
    * @type {string}
    */
   export let tag = null;
 
-  $: classes = classnames(className, {
+  $: classes = classnames(className, spacing, {
     row,
     'form-check': check,
     'form-check-inline': check && inline,
