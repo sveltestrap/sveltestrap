@@ -6,7 +6,9 @@ export interface FormProps extends HTMLFormAttributes {
   validated?: boolean;
 }
 
-export interface FormEvents {}
+export interface FormEvents {
+  submit: WindowEventMap['submit'];
+}
 
 export interface FormSlots {
   default: {};

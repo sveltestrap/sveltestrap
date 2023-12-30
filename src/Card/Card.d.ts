@@ -9,7 +9,9 @@ export interface CardProps extends HTMLAttributes<HTMLDivElement> {
   outline?: boolean;
 }
 
-export interface CardEvents {}
+export interface CardEvents {
+  click: WindowEventMap['click'];
+}
 
 export interface CardSlots {
   default: {};
