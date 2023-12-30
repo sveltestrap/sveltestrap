@@ -388,7 +388,7 @@ li.sbdocs.sbdocs-li {
 #alert-controls > div > table > tbody > tr:nth-child(9),
 #offcanvas-controls > div > table > tbody > tr:nth-child(18),
 #popover-controls > div > table > tbody > tr:nth-child(11),
-#form-group-controls > div > table > tbody > tr:nth-child(8) {
+#form-group-controls > div > table > tbody > tr:nth-child(9) {
   display: none;
 }
 
