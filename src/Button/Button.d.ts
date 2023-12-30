@@ -21,6 +21,9 @@ export interface ButtonProps extends HTMLButtonAttributes {
 
 export interface ButtonEvents {
   click: WindowEventMap['click'];
+  mouseover: WindowEventMap['mouseover'];
+  mouseenter: WindowEventMap['mouseenter'];
+  mouseleave: WindowEventMap['mouseleave'];
 }
 
 export interface ButtonSlots {

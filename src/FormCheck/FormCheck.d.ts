@@ -12,7 +12,12 @@ export interface FormCheckProps extends HTMLInputAttributes {
   valid?: boolean;
 }
 
-export interface FormCheckEvents {}
+export interface FormCheckEvents {
+  blur: WindowEventMap['blur'];
+  change: WindowEventMap['change'];
+  focus: WindowEventMap['focus'];
+  input: WindowEventMap['input'];
+}
 
 export interface FormCheckSlots {
   default: {};

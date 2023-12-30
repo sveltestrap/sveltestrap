@@ -13,7 +13,7 @@ export interface AccordionItemEvents {
 
 export interface AccordionItemSlots {
   default: {};
-  header: {};
+  header?: {};
 }
 
 export default class AccordionItem extends SvelteComponent<
