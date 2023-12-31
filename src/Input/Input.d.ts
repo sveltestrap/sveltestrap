@@ -17,7 +17,20 @@ export interface InputProps extends HTMLInputAttributes, HTMLSelectAttributes, H
   valid?: boolean;
 }
 
-export interface InputEvents {}
+export interface InputEvents {
+  blur: WindowEventMap['blur'];
+  change: WindowEventMap['change'];
+  click: WindowEventMap['click'];
+  focus: WindowEventMap['focus'];
+  input: WindowEventMap['input'];
+  mouseenter: WindowEventMap['mouseenter'];
+  mouseleave: WindowEventMap['mouseleave'];
+  mouseover: WindowEventMap['mouseover'];
+  keydown: WindowEventMap['keydown'];
+  keypress: WindowEventMap['keypress'];
+  keyup: WindowEventMap['keyup'];
+  paste: DocumentAndElementEventHandlersEventMap['paste'];
+}
 
 export interface InputSlots {
   default?: {};

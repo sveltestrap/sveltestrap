@@ -8,6 +8,7 @@ export interface FormGroupProps extends HTMLAttributes<HTMLDivElement> {
   inline?: boolean;
   label?: string;
   row?: boolean;
+  spacing?: string;
   tag?: 'div' | 'fieldset';
 }
 

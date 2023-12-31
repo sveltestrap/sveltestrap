@@ -3,7 +3,9 @@ import { DropdownProps } from '../Dropdown';
 
 export interface ButtonDropdownProps extends Omit<DropdownProps, 'group'> {}
 
-export interface ButtonDropdownEvents {}
+export interface ButtonDropdownEvents {
+  click: WindowEventMap['click'];
+}
 
 export interface ButtonDropdownSlots {
   default: {};

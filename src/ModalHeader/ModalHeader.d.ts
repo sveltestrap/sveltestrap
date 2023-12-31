@@ -10,6 +10,7 @@ export interface ModalHeaderEvents {}
 
 export interface ModalHeaderSlots {
   default: {};
+  close: {};
 }
 
 export default class ModalHeader extends SvelteComponent<ModalHeaderProps, ModalHeaderEvents, ModalHeaderSlots> {}

@@ -13,7 +13,6 @@ Please note that Sveltestrap <u>**does not directly embed Bootstrap style**</u>.
 If you looking for Svelte 3.x support, you can use the original [sveltestrap](https://github.com/bestguy/sveltestrap) package.
 
 ### Join the Community
-[![slack](https://img.shields.io/badge/Slack-Sveltestrap-1703732139275)](https://join.slack.com/t/sveltestrap/shared_invite/zt-28y9c8a8k-6~9UI~26Cx7pF1JKeQZPyA)
 [![discord](https://img.shields.io/badge/Discord-Sveltestrap-1703732139275)](https://discord.gg/fvBuqxxM)
 
 ---
@@ -203,3 +202,4 @@ If you prefer the `@sveltestrap/sveltestrap` import, you can move the package to
 [![avatar](https://images.weserv.nl/?url=avatars.githubusercontent.com/u/69360379?v=4&h=48&w=48&fit=cover&mask=circle&maxage=5d)](https://github.com/Inqnuam)
 [![avatar](https://images.weserv.nl/?url=avatars.githubusercontent.com/u/1667261?v=4&h=48&w=48&fit=cover&mask=circle&maxage=5d)](https://github.com/lachlancollins)
 [![avatar](https://images.weserv.nl/?url=avatars.githubusercontent.com/u/43024885?v=4&h=48&w=48&fit=cover&mask=circle&maxage=5d)](https://github.com/vostrnad)
+[![avatar](https://images.weserv.nl/?url=avatars.githubusercontent.com/u/24857799?v=4&h=48&w=48&fit=cover&mask=circle&maxage=5d)](https://github.com/x64v)

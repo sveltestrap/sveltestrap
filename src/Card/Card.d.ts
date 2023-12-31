@@ -10,7 +10,9 @@ export interface CardProps extends HTMLAttributes<HTMLDivElement> {
   theme?: string;
 }
 
-export interface CardEvents {}
+export interface CardEvents {
+  click: WindowEventMap['click'];
+}
 
 export interface CardSlots {
   default: {};

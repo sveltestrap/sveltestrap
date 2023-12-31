@@ -4,7 +4,7 @@ exports[`FormGroup > should render correctly 1`] = `
 <body>
   <div>
     <div
-      class=""
+      class="mb-3"
     >
        
     </div>
@@ -18,7 +18,7 @@ exports[`FormGroup > should render custom class 1`] = `
 <body>
   <div>
     <div
-      class="paint"
+      class="paint mb-3"
     >
        
     </div>

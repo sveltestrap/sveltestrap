@@ -393,7 +393,7 @@ li.sbdocs.sbdocs-li {
 #alert-controls > div > table > tbody > tr:nth-child(10),
 #offcanvas-controls > div > table > tbody > tr:nth-child(19),
 #popover-controls > div > table > tbody > tr:nth-child(12),
-#form-group-controls > div > table > tbody > tr:nth-child(8) {
+#form-group-controls > div > table > tbody > tr:nth-child(9) {
   display: none;
 }
 

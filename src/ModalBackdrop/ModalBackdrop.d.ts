@@ -6,7 +6,9 @@ export interface ModalBackdropProps extends HTMLAttributes<HTMLDivElement> {
   isOpen?: boolean;
 }
 
-export interface ModalBackdropEvents {}
+export interface ModalBackdropEvents {
+  click: WindowEventMap['click'];
+}
 
 export interface ModalBackdropSlots {
   default: {};
