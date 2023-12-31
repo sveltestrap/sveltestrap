@@ -141,8 +141,19 @@
 
 <Story name="Toolbar">
   <ButtonToolbar>
-    <Button color="primary">File</Button>
-    <Button color="primary">Edit</Button>
-    <Button color="primary">View</Button>
+    <ButtonGroup class="me-2">
+      <Button color="primary">1</Button>
+      <Button color="primary">2</Button>
+      <Button color="primary">3</Button>
+      <Button color="primary">4</Button>
+    </ButtonGroup>
+    <ButtonGroup class="me-2">
+      <Button color="primary">5</Button>
+      <Button color="primary">6</Button>
+      <Button color="primary">7</Button>
+    </ButtonGroup>
+    <ButtonGroup>
+      <Button color="primary">8</Button>
+    </ButtonGroup>
   </ButtonToolbar>
 </Story>
