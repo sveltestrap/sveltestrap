@@ -2,7 +2,7 @@
   import Button from './Button.svelte';
 
   export const meta = {
-    title: 'Stories/Buttons',
+    title: 'Stories/Button',
     component: Button,
     parameters: {
       controls: {
