@@ -1,12 +1,11 @@
 <script>
   import { classnames } from '../utils';
 
-  // Additional CSS class name for the component
-  let className = '';
   /**
    * Additional CSS class name for the component
    * @type {string}
    */
+  let className = '';
   export { className as class };
 
   /**
@@ -64,7 +63,7 @@
   export let outline = false;
 
   /**
-   * Size of the component.
+   * Size of the Button.
    * @type {string}
    */
   export let size = '';

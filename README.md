@@ -14,6 +14,7 @@ If you looking for Svelte 3.x support, you can use the original [sveltestrap](ht
 
 ### Join the Community
 [![discord](https://img.shields.io/badge/Discord-Sveltestrap-1703732139275)](https://discord.gg/fvBuqxxM)
+[![discord](https://img.shields.io/discord/1186498806460710973?label=Online)](https://discord.com/channels/1186498806460710973/1186498807236677645)
 
 ---
 

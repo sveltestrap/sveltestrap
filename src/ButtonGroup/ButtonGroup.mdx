@@ -1,0 +1,94 @@
+import { Meta, Canvas, Controls, Story, Source } from '@storybook/blocks';
+import * as ButtonGroupStories from './ButtonGroup.stories';
+
+<Meta title="Components/ButtonGroup" />
+
+# ButtonGroup <small class="bootstrap-docs">[Bootstrap Button Group](https://getbootstrap.com/docs/5.3/components/button-group/)</small>
+
+The `<ButtonGroup>` component groups a series of buttons together on a single line or stack them in a vertical column.
+
+<Canvas>
+  <Story of={ButtonGroupStories.Basic} />
+</Canvas>
+
+<Controls of={ButtonGroupStories.Basic} />
+
+## Styles
+<Canvas withSource="none">
+  <Story of={ButtonGroupStories.Styles} />
+</Canvas>
+
+<Source dark language="html" code={`
+<script lang="ts">
+  import { Button, ButtonGroup } from '@sveltestrap/sveltestrap';
+</script>
+
+<ButtonGroup>
+  <Button color="danger">Left</Button>
+  <Button color="warning">Middle</Button>
+  <Button color="success">Right</Button>
+</ButtonGroup>
+`} />
+
+## Outlines
+<Canvas withSource="none">
+  <Story of={ButtonGroupStories.Outlines} />
+</Canvas>
+
+<Source dark language="html" code={`
+<script lang="ts">
+  import { Button, ButtonGroup } from '@sveltestrap/sveltestrap';
+</script>
+
+<ButtonGroup>
+  <Button color="primary" outline>Left</Button>
+  <Button color="primary" outline>Middle</Button>
+  <Button color="primary" outline>Right</Button>
+</ButtonGroup>
+`} />
+
+## Sizes
+
+<Canvas withSource="none">
+  <Story of={ButtonGroupStories.Sizes} />
+</Canvas>
+
+<Source dark language="html" code={`
+<script lang="ts">
+  import { Button, ButtonGroup } from '@sveltestrap/sveltestrap';
+
+  const sizeMap = ['sm', 'md', 'lg'];
+
+  const sizeToColorMap = {
+    sm: 'primary',
+    md: 'warning',
+    lg: 'danger'
+  };
+</script>
+
+{#each sizeMap as size}
+  <ButtonGroup {size}>
+    <Button color={sizeToColorMap[size]}>Left</Button>
+    <Button color={sizeToColorMap[size]}>Middle</Button>
+    <Button color={sizeToColorMap[size]}>Right</Button>
+  </ButtonGroup>
+{/each}
+`} />
+
+## Vertical variation
+
+<Canvas withSource="none">
+  <Story of={ButtonGroupStories.Vertical} />
+</Canvas>
+
+<Source dark language="html" code={`
+<script lang="ts">
+  import { Button, ButtonGroup } from '@sveltestrap/sveltestrap';
+</script>
+
+<ButtonGroup vertical>
+  <Button color="primary">Top</Button>
+  <Button color="primary">Middle</Button>
+  <Button color="primary">Bottom</Button>
+</ButtonGroup>
+`} />

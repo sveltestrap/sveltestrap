@@ -108,6 +108,24 @@
   </div>
 </Story>
 
+<Story name="Positioned">
+  <div class="mb-3">
+    <Button color="primary" class="position-relative">
+      Inbox <Badge color="danger" pill class="position-absolute top-0 start-100 translate-middle"
+        >100+
+        <span class="visually-hidden">Unread messages</span>
+      </Badge>
+    </Button>
+  </div>
+  <div>
+    <Button color="primary" class="position-relative">
+      Profile <Badge color="danger" pill class="position-absolute top-0 start-100 translate-middle p-2 border">
+        <span class="visually-hidden">New alerts</span>
+      </Badge>
+    </Button>
+  </div>
+</Story>
+
 <Story name="Pills">
   <div class="horizontal">
     {#each colors as color}

@@ -14,6 +14,7 @@ The `<Badge>` component is used to provide visual cues or supplementary informat
 <Controls of={BadgeStories.Basic} />
 
 ## Colors
+
 <Canvas withSource="none">
   <Story of={BadgeStories.Colors} />
 </Canvas>
@@ -40,6 +41,7 @@ The `<Badge>` component is used to provide visual cues or supplementary informat
 `} />
 
 ## Pills
+
 <p>You can change the visual style of any <code>Badge</code> by adding the <code>pill</code> prop to the component.</p>
 
 <Canvas withSource="none">
@@ -68,6 +70,7 @@ The `<Badge>` component is used to provide visual cues or supplementary informat
 `} />
 
 ## Buttons
+
 <Canvas withSource="none">
   <Story of={BadgeStories.Buttons} />
 </Canvas>
@@ -88,7 +91,32 @@ The `<Badge>` component is used to provide visual cues or supplementary informat
 </Button>
 `} />
 
+## Positioned
+
+<Canvas withSource="none">
+  <Story of={BadgeStories.Positioned} />
+</Canvas>
+
+<Source dark language="html" code={`
+<script lang="ts">
+  import { Button, Badge } from '@sveltestrap/sveltestrap';
+</script>
+
+<Button color="primary" class="position-relative">
+  Inbox <Badge color="danger" pill class="position-absolute top-0 start-100 translate-middle">100+
+    <span class="visually-hidden">Unread messages</span>
+  </Badge>
+</Button>
+
+<Button color="primary" class="position-relative">
+  Profile <Badge color="danger" pill class="position-absolute top-0 start-100 translate-middle p-2 border">
+    <span class="visually-hidden">New alerts</span>
+  </Badge>
+</Button>
+`} />
+
 ## Headings
+
 <Canvas withSource="none">
   <Story of={BadgeStories.Headings} />
 </Canvas>
@@ -107,6 +135,7 @@ The `<Badge>` component is used to provide visual cues or supplementary informat
 `} />
 
 ## Links
+
 <Canvas withSource="none">
   <Story of={BadgeStories.Links} />
 </Canvas>
@@ -118,3 +147,4 @@ The `<Badge>` component is used to provide visual cues or supplementary informat
 
 <Badge href="https://svelte.dev" color="primary">Link Badge</Badge>
 `} />
+
