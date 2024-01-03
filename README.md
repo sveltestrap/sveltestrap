@@ -1,5 +1,7 @@
 ![Unit Tests](https://github.com/Sveltestrap/sveltestrap/actions/workflows/unit.yml/badge.svg)
 ![Integration Tests](https://github.com/Sveltestrap/sveltestrap/actions/workflows/integration.yml/badge.svg)
+[![license](https://img.shields.io/badge/license-MIT-%23bada55&color=7289da)](https://github.com/sveltestrap/sveltestrap/blob/main/LICENSE)
+[![npm version](https://img.shields.io/npm/v/@sveltestrap/sveltestrap?logo=npm&color=cb3837&label=Latest)](https://www.npmjs.com/package/@sveltestrap/sveltestrap)
 
 ## Bootstrap 5 Components for Svelte 4+
 
@@ -13,8 +15,7 @@ Please note that Sveltestrap <u>**does not directly embed Bootstrap style**</u>.
 If you looking for Svelte 3.x support, you can use the original [sveltestrap](https://github.com/bestguy/sveltestrap) package.
 
 ### Join the Community
-[![discord](https://img.shields.io/badge/Discord-Sveltestrap-1703732139275)](https://discord.gg/fvBuqxxM)
-[![discord](https://img.shields.io/discord/1186498806460710973?label=Online)](https://discord.com/channels/1186498806460710973/1186498807236677645)
+[![Discord](https://img.shields.io/discord/1186498806460710973?label=Sveltestrap&logo=discord&color=7289da)](https://discord.gg/fvBuqxxM)
 
 ---
 
