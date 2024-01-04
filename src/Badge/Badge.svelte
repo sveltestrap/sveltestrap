@@ -2,6 +2,18 @@
   import { classnames } from '../utils';
 
   /**
+   * Text to be read by screen readers.
+   * @type {string}
+   */
+  export let ariaLabel = '';
+
+  /**
+   * Determines if the badge should have a border
+   * @type {string}
+   */
+  export let border = false;
+
+  /**
    * Additional CSS class names.
    * @type {string}
    */
@@ -27,12 +39,39 @@
   export let href = '';
 
   /**
+   * Create a circular indicator for absolute positioned badge.
+   * @type {string}
+   */
+  export let indicator = false;
+
+  /**
    * Flag to indicate if the badge should have a pill shape.
    * @type {boolean}
    */
   export let pill = false;
 
-  $: classes = classnames(className, 'badge', `text-bg-${color}`, pill ? 'rounded-pill' : false);
+  /**
+   * Flag to indicate if the badge should be absolutely positioned.
+   * @type {boolean}
+   */
+  export let positioned = false;
+
+  /**
+   * Classes determining where the badge should be absolutely positioned.
+   * @type {string}
+   */
+  export let placement = 'top-0 start-100';
+
+  $: classes = classnames(
+    'badge',
+    `text-bg-${color}`,
+    pill ? 'rounded-pill' : false,
+    positioned ? 'position-absolute translate-middle' : false,
+    positioned ? placement : false,
+    indicator ? 'p-2 border' : false,
+    border ? 'border' : false,
+    className
+  );
 </script>
 
 {#if href}
@@ -42,6 +81,9 @@
     {:else}
       <slot />
     {/if}
+    {#if positioned || indicator}
+      <span class="visually-hidden">{ariaLabel}</span>
+    {/if}
   </a>
 {:else}
   <span {...$$restProps} class={classes}>
@@ -49,6 +91,9 @@
       {children}
     {:else}
       <slot />
+    {/if}
+    {#if positioned || indicator}
+      <span class="visually-hidden">{ariaLabel}</span>
     {/if}
   </span>
 {/if}

@@ -10,6 +10,12 @@
       }
     },
     argTypes: {
+      ariaLabel: {
+        control: ''
+      },
+      border: {
+        control: 'boolean'
+      },
       class: {
         control: false,
         table: {
@@ -28,8 +34,17 @@
       href: {
         control: ''
       },
+      indicator: {
+        control: 'boolean'
+      },
       pill: {
         control: 'boolean'
+      },
+      positioned: {
+        control: 'boolean'
+      },
+      placement: {
+        control: ''
       },
       'default ': {
         description: 'This is the default content slot.',
@@ -45,11 +60,16 @@
       }
     },
     args: {
+      ariaLabel: '',
+      border: false,
       class: '',
       children: '',
       color: 'primary',
       href: '',
-      pill: false
+      indicator: false,
+      pill: false,
+      placement: 'top-0 start-100',
+      positioned: false
     }
   };
 </script>
@@ -60,15 +80,16 @@
 
   const colors = ['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark'];
 
-  let isOpen = true;
-  let toggle = () => (isOpen = !isOpen);
+  const basicSource = `
+   <Badge color="primary">Badge</Badge>
+  `;
 </script>
 
 <Template let:args>
   <Badge {...args} />
 </Template>
 
-<Story name="Basic" args={{ color: 'primary', children: 'Badge' }} />
+<Story name="Basic" args={{ color: 'primary', children: 'Badge' }} source={basicSource} />
 
 <Story name="Colors">
   <div class="horizontal">
@@ -95,17 +116,12 @@
 <Story name="Positioned">
   <div class="mb-3">
     <Button color="primary" class="position-relative">
-      Inbox <Badge color="danger" pill class="position-absolute top-0 start-100 translate-middle"
-        >100+
-        <span class="visually-hidden">Unread messages</span>
-      </Badge>
+      Inbox <Badge color="danger" pill positioned ariaLabel="Unread messages">100+</Badge>
     </Button>
   </div>
   <div>
     <Button color="primary" class="position-relative">
-      Profile <Badge color="danger" pill class="position-absolute top-0 start-100 translate-middle p-2 border">
-        <span class="visually-hidden">New alerts</span>
-      </Badge>
+      Profile <Badge color="danger" pill border indicator positioned ariaLabel="New alerts"></Badge>
     </Button>
   </div>
 </Story>
