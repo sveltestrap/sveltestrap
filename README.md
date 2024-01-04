@@ -15,7 +15,7 @@ Please note that Sveltestrap <u>**does not directly embed Bootstrap style**</u>.
 If you looking for Svelte 3.x support, you can use the original [sveltestrap](https://github.com/bestguy/sveltestrap) package.
 
 ### Join the Community
-[![Discord](https://img.shields.io/discord/1186498806460710973?label=Sveltestrap&logo=discord&color=7289da)](https://discord.gg/fvBuqxxM)
+[![Discord](https://img.shields.io/discord/1186498806460710973?label=Sveltestrap&logo=discord&color=7289da)](https://discord.gg/VS9T72ucaU)
 
 ---
 
