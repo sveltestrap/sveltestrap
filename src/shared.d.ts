@@ -1,9 +1,3 @@
-export declare type Breakpoints = 'sm' | 'md' | 'lg' | 'xl';
-
-export declare type ContainerType = 'body' | 'inline';
-
-export declare type Color = 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'light' | 'dark';
-
 export declare type BackgroundColor =
   | 'primary'
   | 'secondary'
@@ -27,6 +21,27 @@ export declare type BackgroundColor =
   | 'body'
   | 'body-secondary'
   | 'body-tertiary';
+
+export declare type Breakpoints = 'sm' | 'md' | 'lg' | 'xl';
+
+export declare type Color = 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'light' | 'dark';
+
+export declare type ColumnProps =
+  | string
+  | number
+  | {
+      xs?: number;
+      sm?: number;
+      md?: number;
+      lg?: number;
+      xl?: number;
+    };
+
+export declare type ContainerType = 'body' | 'inline';
+
+export declare type Direction = 'up' | 'down' | 'left' | 'right' | 'start' | 'end';
+
+export declare type Placement = 'start' | 'end' | 'top' | 'bottom';
 
 export declare type TextColor =
   | 'primary'
@@ -53,18 +68,3 @@ export declare type TextColor =
   | 'white'
   | 'black-50'
   | 'white-50';
-
-export declare type Direction = 'up' | 'down' | 'left' | 'right' | 'start' | 'end';
-
-export type Placement = 'start' | 'end' | 'top' | 'bottom';
-
-export type ColumnProps =
-  | string
-  | number
-  | {
-      xs?: number;
-      sm?: number;
-      md?: number;
-      lg?: number;
-      xl?: number;
-    };
