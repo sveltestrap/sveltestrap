@@ -9,7 +9,7 @@
 
   /**
    * Determines if the badge should have a border
-   * @type {string}
+   * @type {boolean}
    */
   export let border = false;
 
@@ -40,7 +40,7 @@
 
   /**
    * Create a circular indicator for absolute positioned badge.
-   * @type {string}
+   * @type {boolean}
    */
   export let indicator = false;
 
