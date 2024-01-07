@@ -84,4 +84,14 @@ export { Toast } from './Toast';
 export { ToastBody } from './ToastBody';
 export { ToastHeader } from './ToastHeader';
 export { Tooltip } from './Tooltip';
-export * from './shared';
+
+export type {
+  BackgroundColor,
+  Breakpoints,
+  Color,
+  ColumnProps,
+  ContainerType,
+  Direction,
+  Placement,
+  TextColor
+} from './shared';
