@@ -93,6 +93,7 @@ export type {
   ColumnProps,
   ContainerType,
   Direction,
+  InputType,
   Placement,
   Shadow,
   TextColor

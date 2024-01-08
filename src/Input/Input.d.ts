@@ -1,6 +1,6 @@
 import { SvelteComponent } from 'svelte';
 import { HTMLInputAttributes, HTMLSelectAttributes, HTMLTextareaAttributes } from 'svelte/elements';
-import { Color } from '../shared';
+import { Color, InputType } from '../shared';
 
 export interface InputProps extends HTMLInputAttributes, HTMLSelectAttributes, HTMLTextareaAttributes {
   bsSize?: 'lg' | 'sm';
@@ -14,6 +14,7 @@ export interface InputProps extends HTMLInputAttributes, HTMLSelectAttributes, H
   plaintext?: boolean;
   reverse?: boolean;
   theme?: string;
+  type?: InputType;
   valid?: boolean;
 }
 
