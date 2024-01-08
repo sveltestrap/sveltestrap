@@ -57,6 +57,12 @@
   export let card = false;
 
   /**
+   * The theme name override to apply to this component instance.
+   * @type {string | null}
+   */
+  export let theme = null;
+
+  /**
    * Indicates whether the nav should have an underline style.
    * @type {boolean}
    */
@@ -100,6 +106,6 @@
   );
 </script>
 
-<ul {...$$restProps} class={classes}>
+<ul {...$$restProps} class={classes} data-bs-theme={theme}>
   <slot />
 </ul>

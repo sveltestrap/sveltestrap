@@ -34,6 +34,21 @@
       tabs: {
         control: 'boolean'
       },
+      theme: {
+        control: {
+          type: 'select'
+        },
+        options: ['dark', 'light', 'auto'],
+        description: 'The theme style to apply.',
+        table: {
+          type: {
+            summary: 'string'
+          },
+          defaultValue: {
+            summary: 'auto'
+          }
+        }
+      },
       underline: {
         control: 'boolean'
       },
@@ -65,6 +80,7 @@
       navbar: false,
       pills: false,
       tabs: false,
+      theme: null,
       underline: false,
       vertical: ''
     }
@@ -258,6 +274,40 @@
       <NavLink href="#">Link</NavLink>
       <NavLink href="#">Another Link</NavLink>
       <NavLink disabled href="#">Disabled Link</NavLink>
+    </Nav>
+  </div>
+</Story>
+
+<Story name="Theming">
+  <div class="nav-example">
+    <Nav tabs theme="dark" class="mb-3">
+      <NavItem>
+        <NavLink href="#" active>Link</NavLink>
+      </NavItem>
+      <NavItem>
+        <NavLink href="#">Link</NavLink>
+      </NavItem>
+      <NavItem>
+        <NavLink href="#">Another Link</NavLink>
+      </NavItem>
+      <NavItem>
+        <NavLink disabled href="#">Disabled Link</NavLink>
+      </NavItem>
+    </Nav>
+
+    <Nav tabs theme="light">
+      <NavItem>
+        <NavLink href="#" active>Link</NavLink>
+      </NavItem>
+      <NavItem>
+        <NavLink href="#">Link</NavLink>
+      </NavItem>
+      <NavItem>
+        <NavLink href="#">Another Link</NavLink>
+      </NavItem>
+      <NavItem>
+        <NavLink disabled href="#">Disabled Link</NavLink>
+      </NavItem>
     </Nav>
   </div>
 </Story>

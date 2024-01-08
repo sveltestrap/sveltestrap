@@ -5,6 +5,7 @@ export interface AccordionProps extends HTMLAttributes<HTMLDivElement> {
   class?: string;
   flush?: boolean;
   stayOpen?: boolean;
+  theme?: string;
 }
 
 export interface AccordionEvents {

@@ -10,6 +10,7 @@ export interface TooltipProps extends HTMLAttributes<HTMLDivElement> {
   isOpen?: boolean;
   placement?: TooltipPlacement;
   target: string | HTMLElement;
+  theme?: string;
 }
 
 export interface TooltipEvents {}

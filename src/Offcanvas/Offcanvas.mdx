@@ -81,6 +81,7 @@ The `<Offcanvas>` component is used to manage and present content in a compact a
 `} />
 
 ## Placement
+
 <Canvas withSource="none">
   <Story of={OffcanvasStories.Placement} />
 </Canvas>
@@ -138,6 +139,7 @@ The `<Offcanvas>` component is used to manage and present content in a compact a
 `} />
 
 ## Slots
+
 - <code>default</code> This slot is used to render the content for <code>Offcanvas</code> body.
 - <code>header</code> Use this slot to create a custom formatted header for the <code>Offcanvas</code>.
 
@@ -168,8 +170,8 @@ The `<Offcanvas>` component is used to manage and present content in a compact a
 </Offcanvas>
 `} />
 
-
 ## Manual
+
 <Canvas withSource="none">
   <Story of={OffcanvasStories.Manual} />
 </Canvas>
@@ -194,6 +196,7 @@ The `<Offcanvas>` component is used to manage and present content in a compact a
 `} />
 
 ## Scrolling
+
 <Canvas withSource="none">
   <Story of={OffcanvasStories.Scrolling} />
 </Canvas>
@@ -227,6 +230,7 @@ The `<Offcanvas>` component is used to manage and present content in a compact a
 `} />
 
 ## Custom Width & Content
+
 <Canvas withSource="none">
   <Story of={OffcanvasStories.Custom} />
 </Canvas>
@@ -249,5 +253,36 @@ The `<Offcanvas>` component is used to manage and present content in a compact a
   <div on:click={() => (isOpen = false)}>
     <img src="https://picsum.photos/150/1200" alt="Meaningless content" />
   </div>
+</Offcanvas>
+`} />
+
+## Theming
+
+<Canvas withSource="none">
+  <Story of={OffcanvasStories.Theming} />
+</Canvas>
+
+<Source dark language="html" code={`
+<script lang="ts">
+  import { Button, Offcanvas } from '@sveltestrap/sveltestrap';
+
+  let isOpen = false;
+  let endOpen = false;
+
+  const toggle = () => (isOpen = !isOpen)
+  const toggleEnd = () => (endOpen = !endOpen);
+</script>
+
+<Button color="dark" on:click={toggle}>Dark Theme</Button>
+<Button color="light" on:click={() => (endOpen = !endOpen)}>Light Theme</Button>
+
+<Offcanvas theme="dark" {isOpen} {toggle} header="Dark Theme" placement="start">
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+  aliqua.
+</Offcanvas>
+
+<Offcanvas theme="light" isOpen={endOpen} toggle={toggleEnd} header="Light Theme" placement="end">
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+  aliqua.
 </Offcanvas>
 `} />

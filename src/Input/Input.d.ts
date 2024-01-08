@@ -13,6 +13,7 @@ export interface InputProps extends HTMLInputAttributes, HTMLSelectAttributes, H
   label?: string;
   plaintext?: boolean;
   reverse?: boolean;
+  theme?: string;
   valid?: boolean;
 }
 

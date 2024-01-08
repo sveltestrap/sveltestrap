@@ -81,6 +81,12 @@
   export let size = '';
 
   /**
+   * The theme name override to apply to this component instance.
+   * @type {string | null}
+   */
+  export let theme = null;
+
+  /**
    * A function that can be used to toggle the state of the Dropdown.
    * @type {Function | undefined}
    */
@@ -178,11 +184,11 @@
 </script>
 
 {#if nav}
-  <li {...$$restProps} class={classes} bind:this={component}>
+  <li {...$$restProps} class={classes} data-bs-theme={theme} bind:this={component}>
     <slot />
   </li>
 {:else}
-  <div {...$$restProps} class={classes} bind:this={component}>
+  <div {...$$restProps} class={classes} data-bs-theme={theme} bind:this={component}>
     <slot />
   </div>
 {/if}

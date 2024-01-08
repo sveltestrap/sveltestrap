@@ -1,6 +1,10 @@
 <script>
   import { classnames } from '../utils';
 
+  /**
+   * Additional CSS class names for the toggler.
+   * @type {string}
+   */
   let className = '';
   export { className as class };
 

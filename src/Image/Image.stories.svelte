@@ -21,6 +21,21 @@
       fluid: {
         control: 'boolean'
       },
+      theme: {
+        control: {
+          type: 'select'
+        },
+        options: ['dark', 'light', 'auto'],
+        description: 'The theme style to apply.',
+        table: {
+          type: {
+            summary: 'string'
+          },
+          defaultValue: {
+            summary: 'auto'
+          }
+        }
+      },
       thumbnail: {
         control: 'boolean'
       },
@@ -34,6 +49,7 @@
     args: {
       alt: '',
       fluid: false,
+      theme: null,
       thumbnail: false
     }
   };
@@ -44,9 +60,9 @@
   import { Image, Figure } from '@sveltestrap/sveltestrap';
 
   const thumbnails = [
-    'https://picsum.photos/100/100?random=1',
-    'https://picsum.photos/100/100?random=2',
-    'https://picsum.photos/100/100?random=3'
+    'https://picsum.photos/100/100?random=' + Math.round(Math.random() * 1000),
+    'https://picsum.photos/100/100?random=' + Math.round(Math.random() * 1000),
+    'https://picsum.photos/100/100?random=' + Math.round(Math.random() * 1000)
   ];
 </script>
 
@@ -88,4 +104,18 @@
   <Figure caption="I believe this is a cow needing a haircut">
     <Image fluid alt="Landscape" src="https://picsum.photos/id/200/800/600" />
   </Figure>
+</Story>
+
+<Story name="Theming">
+  <div class="horizontal">
+    {#each thumbnails as thumbnail}
+      <Image theme="dark" thumbnail alt="This is a thumbnail Image" src={thumbnail} />
+    {/each}
+  </div>
+
+  <div class="horizontal">
+    {#each thumbnails as thumbnail}
+      <Image theme="light" thumbnail alt="This is a thumbnail Image" src={thumbnail} />
+    {/each}
+  </div>
 </Story>

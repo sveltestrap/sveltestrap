@@ -13,6 +13,7 @@ export interface DropdownProps extends HTMLAttributes<HTMLDivElement> {
   nav?: boolean;
   setActiveFromChild?: boolean;
   size?: string;
+  theme?: string;
   toggle?: () => void;
 }
 

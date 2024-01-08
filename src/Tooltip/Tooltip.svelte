@@ -54,6 +54,12 @@
   export let target = '';
 
   /**
+   * The theme name override to apply to this component instance.
+   * @type {string | null}
+   */
+  export let theme = null;
+
+  /**
    * @type {string}
    */
   let bsPlacement;
@@ -188,7 +194,15 @@
 
 {#if isOpen}
   <svelte:component this={outer}>
-    <div bind:this={tooltipEl} {...$$restProps} class={classes} {id} role="tooltip" x-placement={popperPlacement}>
+    <div
+      bind:this={tooltipEl}
+      {...$$restProps}
+      class={classes}
+      {id}
+      role="tooltip"
+      data-bs-theme={theme}
+      x-placement={popperPlacement}
+    >
       <div class="tooltip-arrow" data-popper-arrow />
       <div class="tooltip-inner">
         {#if children}

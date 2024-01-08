@@ -1,13 +1,18 @@
 <script>
   import { classnames } from '../utils';
 
-  // Additional CSS class name for the component
-  let className = '';
+  /**
+   * The ARIA label for the pagination.
+   * @type {string}
+   * @default 'pagination'
+   */
+  export let ariaLabel = 'pagination';
 
   /**
    * Additional CSS class name for the component
    * @type {string}
    */
+  let className = '';
   export { className as class };
 
   /**
@@ -25,11 +30,10 @@
   export let size = '';
 
   /**
-   * The ARIA label for the pagination.
-   * @type {string}
-   * @default 'pagination'
+   * The theme name override to apply to this component instance.
+   * @type {string | null}
    */
-  export let ariaLabel = 'pagination';
+  export let theme = null;
 
   $: classes = classnames(className);
 
@@ -38,7 +42,7 @@
   });
 </script>
 
-<nav {...$$restProps} class={classes} aria-label={ariaLabel}>
+<nav {...$$restProps} class={classes} aria-label={ariaLabel} data-bs-theme={theme}>
   <ul class={listClasses}>
     <slot />
   </ul>

@@ -14,6 +14,7 @@ The `<Accordion>` component is used to manage and present content in a compact a
 <Controls of={AccordionStories.Basic} />
 
 ## Events
+
 <Canvas withSource="none">
   <Story of={AccordionStories.Events} />
 </Canvas>
@@ -65,6 +66,7 @@ The `<Accordion>` component is used to manage and present content in a compact a
 `} />
 
 ## Flush
+
 <Canvas withSource="none">
   <Story of={AccordionStories.Flush} />
 </Canvas>
@@ -84,6 +86,7 @@ The `<Accordion>` component is used to manage and present content in a compact a
 `} />
 
 ## Stay Open
+
 <Canvas withSource="none">
   <Story of={AccordionStories.StayOpen} />
 </Canvas>
@@ -103,6 +106,7 @@ The `<Accordion>` component is used to manage and present content in a compact a
 `} />
 
 ## Slots
+
 <Canvas withSource="none">
   <Story of={AccordionStories.Slots} />
 </Canvas>
@@ -113,6 +117,48 @@ The `<Accordion>` component is used to manage and present content in a compact a
 </script>
 
 <Accordion>
+  <AccordionItem active>
+    <h4 class="m-0" slot="header">Home</h4>
+    Fallbrook
+  </AccordionItem>
+  <AccordionItem>
+    <h4 class="m-0" slot="header">School</h4>
+    <a href="#home">Buena Vista Elementary</a>
+  </AccordionItem>
+  <AccordionItem>
+    <h4 class="m-0" slot="header">Library</h4>
+    UCSB Library
+  </AccordionItem>
+</Accordion>
+`} />
+
+## Theming
+
+<Canvas withSource="none">
+  <Story of={AccordionStories.Theming} />
+</Canvas>
+
+<Source dark language="html" code={`
+<script lang="ts">
+  import { Accordion, AccordionItem } from '@sveltestrap/sveltestrap';
+</script>
+
+<Accordion theme="dark">
+  <AccordionItem active>
+    <h4 class="m-0" slot="header">Home</h4>
+    Fallbrook
+  </AccordionItem>
+  <AccordionItem>
+    <h4 class="m-0" slot="header">School</h4>
+    <a href="#home">Buena Vista Elementary</a>
+  </AccordionItem>
+  <AccordionItem>
+    <h4 class="m-0" slot="header">Library</h4>
+    UCSB Library
+  </AccordionItem>
+</Accordion>
+
+<Accordion theme="light">
   <AccordionItem active>
     <h4 class="m-0" slot="header">Home</h4>
     Fallbrook

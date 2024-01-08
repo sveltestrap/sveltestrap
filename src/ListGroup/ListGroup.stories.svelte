@@ -23,6 +23,21 @@
       numbered: {
         control: 'boolean'
       },
+      theme: {
+        control: {
+          type: 'select'
+        },
+        options: ['dark', 'light', 'auto'],
+        description: 'The theme style to apply.',
+        table: {
+          type: {
+            summary: 'string'
+          },
+          defaultValue: {
+            summary: 'auto'
+          }
+        }
+      },
       'default ': {
         description: 'This is the default content slot.',
         table: {
@@ -39,7 +54,8 @@
     args: {
       flush: false,
       horizontal: false,
-      numbered: false
+      numbered: false,
+      theme: null
     }
   };
 </script>
@@ -141,6 +157,31 @@
         <ListGroupItem>Dapibus ac facilisis in</ListGroupItem>
         <ListGroupItem>Morbi leo risus</ListGroupItem>
         <ListGroupItem>Porta ac consectetur ac</ListGroupItem>
+        <ListGroupItem disabled>Disabled</ListGroupItem>
+      </ListGroup>
+    </div>
+  </div>
+</Story>
+
+<Story name="Theming">
+  <div class="listgroup-example vertical gap-xxl">
+    <div class="listgroup-item-size">
+      <ListGroup theme="dark">
+        <ListGroupItem active>Active</ListGroupItem>
+        <ListGroupItem color="primary">Bravo</ListGroupItem>
+        <ListGroupItem color="success">Charlie</ListGroupItem>
+        <ListGroupItem color="warning">Delta</ListGroupItem>
+        <ListGroupItem color="danger">Echo</ListGroupItem>
+        <ListGroupItem disabled>Disabled</ListGroupItem>
+      </ListGroup>
+    </div>
+    <div class="listgroup-item-size">
+      <ListGroup theme="light">
+        <ListGroupItem active>Active</ListGroupItem>
+        <ListGroupItem color="primary">Bravo</ListGroupItem>
+        <ListGroupItem color="success">Charlie</ListGroupItem>
+        <ListGroupItem color="warning">Delta</ListGroupItem>
+        <ListGroupItem color="danger">Echo</ListGroupItem>
         <ListGroupItem disabled>Disabled</ListGroupItem>
       </ListGroup>
     </div>

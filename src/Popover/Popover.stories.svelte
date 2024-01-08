@@ -49,6 +49,21 @@
           disable: true
         }
       },
+      theme: {
+        control: {
+          type: 'select'
+        },
+        options: ['dark', 'light', 'auto'],
+        description: 'The theme style to apply.',
+        table: {
+          type: {
+            summary: 'string'
+          },
+          defaultValue: {
+            summary: 'auto'
+          }
+        }
+      },
       title: {
         control: ''
       },
@@ -91,6 +106,7 @@
       hideOnOutsideClick: false,
       isOpen: false,
       placement: 'top',
+      theme: null,
       title: 'Popover',
       trigger: 'click'
     }
@@ -106,18 +122,20 @@
 
   const basicSource = `<Button color="primary" id="btn-top-basic">Show on top</Button>
 
-  <Popover
-    target="btn-top-basic"
-    placement="top"
-    title="Popover Top">
-    This is a Popover on the top of the trigger.
-  </Popover>`;
+<Popover
+  target="btn-top-basic"
+  placement="top"
+  title="Popover Top">
+  This is a Popover on the top of the trigger.
+</Popover>`;
 </script>
 
 <Story name="Basic" let:args source={basicSource}>
   <Button color="primary" id="btn-top-basic">Show on {args.placement}</Button>
   {#key args}
-    <Popover {...args} target="btn-top-basic">This is a Popover on the top of the trigger.</Popover>
+    <Popover {...args} target="btn-top-basic" style={args.theme === 'dark' ? 'color: #fff;' : ''}
+      >This is a Popover on the top of the trigger.</Popover
+    >
   {/key}
 </Story>
 
@@ -172,6 +190,27 @@
 
   <Popover placement="right" target="btn-outside-click" hideOnOutsideClick>
     <div slot="title">
+      <i>Hello</i> <b>World!</b>
+    </div>
+    You can click inside this Popover and it will not dismiss. Dismissal will only occur if the click is outside of the popover.
+  </Popover>
+</Story>
+
+<Story name="Theming">
+  <div class="horizontal gap-lg">
+    <Button color="dark" id="btn-dark-theme">Show dark theme</Button>
+    <Button color="light" id="btn-light-theme">Show light theme</Button>
+  </div>
+
+  <Popover theme="light" placement="right" target="btn-light-theme" hideOnOutsideClick>
+    <div slot="title">
+      <i>Hello</i> <b>World!</b>
+    </div>
+    You can click inside this Popover and it will not dismiss. Dismissal will only occur if the click is outside of the popover.
+  </Popover>
+
+  <Popover theme="dark" placement="right" target="btn-dark-theme" hideOnOutsideClick>
+    <div slot="title" style="color: #fff;">
       <i>Hello</i> <b>World!</b>
     </div>
     You can click inside this Popover and it will not dismiss. Dismissal will only occur if the click is outside of the popover.

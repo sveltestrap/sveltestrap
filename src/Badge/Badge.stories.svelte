@@ -46,6 +46,21 @@
       placement: {
         control: ''
       },
+      theme: {
+        control: {
+          type: 'select'
+        },
+        options: ['dark', 'light', 'auto'],
+        description: 'The theme style to apply.',
+        table: {
+          type: {
+            summary: 'string'
+          },
+          defaultValue: {
+            summary: 'auto'
+          }
+        }
+      },
       'default ': {
         description: 'This is the default content slot.',
         table: {
@@ -70,6 +85,7 @@
       pill: false,
       placement: 'top-0 start-100',
       positioned: false
+      theme: null
     }
   };
 </script>

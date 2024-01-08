@@ -54,6 +54,21 @@
         },
         options: ['sm', '', 'lg']
       },
+      theme: {
+        control: {
+          type: 'select'
+        },
+        options: ['dark', 'light', 'auto'],
+        description: 'The theme style to apply.',
+        table: {
+          type: {
+            summary: 'string'
+          },
+          defaultValue: {
+            summary: 'auto'
+          }
+        }
+      },
       toggle: {
         control: 'boolean',
         table: { disable: true }
@@ -81,6 +96,7 @@
       nav: false,
       setActiveFromChild: false,
       size: '',
+      theme: null,
       toggle: false
     }
   };
@@ -268,6 +284,35 @@
           </Dropdown>
         </div>
       </ButtonToolbar>
+    </div>
+  </div>
+</Story>
+
+<Story name="Theming">
+  <div class="horizontal gap-xxl dropdown-example">
+    <div class="drop-height">
+      <Dropdown theme="dark" autoClose="manual" isOpen={true}>
+        <DropdownToggle color="dark" caret>Dark Theme</DropdownToggle>
+        <DropdownMenu>
+          <DropdownItem header>Header</DropdownItem>
+          <DropdownItem disabled>Action</DropdownItem>
+          <DropdownItem>Another Action</DropdownItem>
+          <DropdownItem divider />
+          <DropdownItem>Another Action</DropdownItem>
+        </DropdownMenu>
+      </Dropdown>
+    </div>
+    <div class="drop-height">
+      <Dropdown theme="light" autoClose="manual" isOpen={true}>
+        <DropdownToggle color="light" caret>Light Theme</DropdownToggle>
+        <DropdownMenu>
+          <DropdownItem header>Header</DropdownItem>
+          <DropdownItem disabled>Action</DropdownItem>
+          <DropdownItem>Another Action</DropdownItem>
+          <DropdownItem divider />
+          <DropdownItem>Another Action</DropdownItem>
+        </DropdownMenu>
+      </Dropdown>
     </div>
   </div>
 </Story>

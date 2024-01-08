@@ -41,6 +41,21 @@
         control: 'text',
         table: { disable: true }
       },
+      theme: {
+        control: {
+          type: 'select'
+        },
+        options: ['dark', 'light', 'auto'],
+        description: 'The theme style to apply.',
+        table: {
+          type: {
+            summary: 'string'
+          },
+          defaultValue: {
+            summary: 'auto'
+          }
+        }
+      },
       'default ': {
         description: 'This is the default content slot.',
         table: {
@@ -127,4 +142,19 @@
       </div>
     </div>
   </div>
+</Story>
+
+<Story name="Theming">
+  <div class="horizontal gap-lg">
+    <Button id="btn-dark-theme" color="dark">Dark Theme</Button>
+    <Button id="btn-light-theme" color="light">Light Theme</Button>
+  </div>
+
+  <Tooltip theme="dark" target="btn-dark-theme" placement="top">
+    This a <strong>dark theme</strong> tooltip!
+  </Tooltip>
+
+  <Tooltip theme="light" target="btn-light-theme" placement="top">
+    This a <strong>light theme</strong> tooltip!
+  </Tooltip>
 </Story>

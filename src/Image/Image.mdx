@@ -56,3 +56,33 @@ The `<Image>` component is designed to be flexible and adaptive, supporting flui
   <Image fluid alt="Landscape" src="https://picsum.photos/id/200/800/600" />
 </Figure>
 `} />
+
+## Theming
+
+<Canvas withSource="none">
+  <Story of={ImageStories.Theming} />
+</Canvas>
+
+<Source dark language="html" code={`
+<script lang="ts">
+  import { Image } from '@sveltestrap/sveltestrap';
+
+  const thumbnails = [
+    'https://picsum.photos/100/100?random=1',
+    'https://picsum.photos/100/100?random=2',
+    'https://picsum.photos/100/100?random=3'
+  ];
+</script>
+
+<div class="horizontal">
+  {#each thumbnails as thumbnail}
+    <Image data-bs-theme="dark" thumbnail alt="This is a thumbnail Image" src={thumbnail} />
+  {/each}
+</div>
+
+<div class="horizontal">
+  {#each thumbnails as thumbnail}
+    <Image data-bs-theme="light" thumbnail alt="This is a thumbnail Image" src={thumbnail} />
+  {/each}
+</div>
+`} />

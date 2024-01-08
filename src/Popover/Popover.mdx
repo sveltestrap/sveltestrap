@@ -16,6 +16,7 @@ The `<Popover>` component is designed to enhance user interaction by providing c
 </div>
 
 ## Placement
+
 <Canvas withSource="none">
   <Story of={PopoverStories.Placement} />
 </Canvas>
@@ -42,6 +43,7 @@ The `<Popover>` component is designed to enhance user interaction by providing c
 `} />
 
 ## Triggers
+
 <Canvas withSource="none">
   <Story of={PopoverStories.Triggers} />
 </Canvas>
@@ -89,6 +91,7 @@ The `<Popover>` component is designed to enhance user interaction by providing c
 `} />
 
 ## Dismissible
+
 <Canvas withSource="none">
   <Story of={PopoverStories.Dismissible} />
 </Canvas>
@@ -109,6 +112,7 @@ The `<Popover>` component is designed to enhance user interaction by providing c
 `} />
 
 ## Outside Click
+
 <Canvas withSource="none">
   <Story of={PopoverStories.OutsideClick} />
 </Canvas>
@@ -121,6 +125,35 @@ The `<Popover>` component is designed to enhance user interaction by providing c
 <Button color="primary" id="btn-outside-click">Click me</Button>
 
 <Popover placement="right" target="btn-outside-click" hideOnOutsideClick>
+  <div slot="title">
+    <i>Hello</i> <b>World!</b>
+  </div>
+  You can click inside this Popover and it will not dismiss. Dismissal will only occur if the click is outside of the popover.
+</Popover>
+`} />
+
+## Theming
+
+<Canvas withSource="none">
+  <Story of={PopoverStories.Theming} />
+</Canvas>
+
+<Source dark language="html" code={`
+<script lang="ts">
+  import { Button, Popover } from '@sveltestrap/sveltestrap';
+</script>
+
+<Button color="dark" id="btn-dark-theme">Show dark theme</Button>
+<Button color="light" id="btn-light-theme">Show light theme</Button>
+
+<Popover theme="light" placement="right" target="btn-light-theme" hideOnOutsideClick>
+  <div slot="title">
+    <i>Hello</i> <b>World!</b>
+  </div>
+  You can click inside this Popover and it will not dismiss. Dismissal will only occur if the click is outside of the popover.
+</Popover>
+
+<Popover theme="dark" placement="right" target="btn-dark-theme" hideOnOutsideClick>
   <div slot="title">
     <i>Hello</i> <b>World!</b>
   </div>

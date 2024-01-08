@@ -9,6 +9,7 @@ export interface NavProps extends HTMLAttributes<HTMLUListElement> {
   navbar?: boolean;
   pills?: boolean;
   tabs?: boolean;
+  theme?: string;
   vertical?: boolean | string;
   underline?: boolean;
 }

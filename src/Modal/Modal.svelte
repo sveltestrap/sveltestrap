@@ -24,136 +24,147 @@
 
   const dispatch = createEventDispatcher();
 
-  // Additional CSS class names to add to the container.
+  /**
+   * Additional CSS class names to apply
+   * @type {string}
+   */
   let className = '';
-  // Additional CSS class names to add to the modal.
+  export { className as class };
+
+  // Prevents the modal from closing when the backdrop has been clicked.
   let staticModal = false;
 
   /**
-   * Exports a prop `class` which can be used to apply custom CSS classes.
-   * @type {string}
-   */
-  export { className as class };
-
-  /**
-   * Exports a prop `static` which can be used to render a modal that doesn't close when the backdrop is clicked.
+   * Prevents the modal from closing when the backdrop has been clicked.
    * @type {boolean}
    */
   export { staticModal as static };
 
   /**
-   * Exports a prop `isOpen` which can be used to control the modal state.
-   * @type {boolean}
-   */
-  export let isOpen = false;
-
-  /**
-   * Exports a prop `autoFocus` which can be used to automatically focus the modal when it first opens.
+   * Automatically puts focus on the modal with it first opens.
    * @type {boolean}
    */
   export let autoFocus = true;
 
   /**
-   * Exports a prop `body` indicating whether the modal should include a body content.
+   * Indicates whether the modal should include a body content.
    * @type {boolean}
    */
   export let body = false;
 
   /**
-   * Exports a prop `centered` to control the positioning of the modal, ensuring it is centered.
+   * Auto-positioning of the modal to ensure its centered in the viewport.
    * @type {boolean}
    */
   export let centered = false;
 
   /**
-   * Exports a prop `container` to specify the container element in which the modal should be rendered.
+   * Container element that the modal should be rendered.
    * @type {HTMLElement | null | undefined}
    */
   export let container = undefined;
 
   /**
-   * Exports a prop `fullscreen` to enable or disable fullscreen mode for the modal.
+   * Determines whether or no the modal is rendered in fullscreen mode.
    * @type {boolean}
    */
   export let fullscreen = false;
 
   /**
-   * Exports a prop `header` for customizing the modal header content.
+   * Customize the modal header content.
    * @type {string | undefined}
    */
   export let header = undefined;
 
   /**
-   * Exports a prop `keyboard` to control whether the modal can be closed using the keyboard.
+   * Used to control the modal state
+   * @type {boolean}
+   */
+  export let isOpen = false;
+
+  /**
+   * Ccontrol whether the modal can be closed using the ESC key.
    * @type {boolean}
    */
   export let keyboard = true;
 
   /**
-   * Exports a prop `scrollable` to determine if the modal content should be scrollable.
-   * @type {boolean}
-   */
-  export let scrollable = false;
-
-  /**
-   * Exports a prop `size` to specify the size of the modal (e.g., 'sm', 'lg').
-   * @type {string}
-   */
-  export let size = '';
-
-  /**
-   * Exports a prop `toggle` which can be used to toggle the modal state.
-   * @type {Function | undefined}
-   */
-  export let toggle = undefined;
-
-  /**
-   * Exports a prop `labelledBy` for accessibility, associating the modal with a header element.
-   * @type {string | undefined}
-   */
-  export let labelledBy = header ? `modal-${uuid()}` : undefined;
-
-  /**
-   * Exports a prop `backdrop` to control the visibility of the modal backdrop.
+   * Controls the visibility of the modal backdrop.
    * @type {boolean}
    */
   export let backdrop = true;
 
   /**
-   * Exports a prop `wrapClassName` for additional classes to be added to the modal wrapper.
-   * @type {string}
-   */
-  export let wrapClassName = '';
-
-  /**
-   * Exports a prop `modalClassName` for additional classes to be added to the modal content.
-   * @type {string}
-   */
-  export let modalClassName = '';
-
-  /**
-   * Exports a prop `contentClassName` for additional classes to be added to the modal body/content.
+   * Additional classes to be added to the modal body/content.
    * @type {string}
    */
   export let contentClassName = '';
 
   /**
-   * Exports a prop `fade` to control the fade effect when opening or closing the modal.
+   * Control the fade effect when opening or closing the modal.
    * @type {boolean}
    */
   export let fade = true;
 
   /**
-   * Exports a prop `unmountOnClose` to determine whether the modal should be unmounted when closed.
+   * `labelledBy` for accessibility, associating the modal with a header element.
+   * @type {string | undefined}
+   */
+  export let labelledBy = header ? `modal-${uuid()}` : undefined;
+
+  /**
+   * Additional classes to be added to the modal content.
+   * @type {string}
+   */
+  export let modalClassName = '';
+
+  /**
+   * Custom styling to apply to the modal.
+   * @type {string | null}
+   */
+  export let modalStyle = null;
+
+  /**
+   * Should focus should be returned to the triggering element after modal close.
+   * @type {boolean}
+   */
+  export let returnFocusAfterClose = true;
+
+  /**
+   * Determines if the modal content should be scrollable.
+   * @type {boolean}
+   */
+  export let scrollable = false;
+
+  /**
+   * Specify the size of the modal (e.g., 'sm', 'lg').
+   * @type {string}
+   */
+  export let size = '';
+
+  /**
+   * The theme name override to apply to this component instance.
+   * @type {string | null}
+   */
+  export let theme = null;
+
+  /**
+   * Callback to toggle the modal state.
+   * @type {Function | undefined}
+   */
+  export let toggle = undefined;
+
+  /**
+   * Determines whether the modal should be unmounted when closed.
    * @type {boolean}
    */
   export let unmountOnClose = true;
 
   /**
-   * Exports a prop `returnFocusAfterClose` to specify if focus should be returned to the triggering element after modal close.
-   * @type {boolean}
+   * Additional classes to be added to the modal wrapper.
+   * @type {string}
    */
-  export let returnFocusAfterClose = true;
+  export let wrapClassName = '';
 
   let hasOpened = false;
   let _isMounted = false;
@@ -312,12 +323,13 @@
 {#if _isMounted}
   <svelte:component this={outer}>
     <!-- svelte-ignore a11y-click-events-have-key-events -->
-    <div class={wrapClassName} tabindex="-1" {...$$restProps}>
+    <div class={wrapClassName} tabindex="-1" {...$$restProps} data-bs-theme={theme}>
       {#if isOpen}
         <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
         <div
           in:modalIn|global
           out:modalOut|global
+          style={modalStyle}
           aria-labelledby={labelledBy}
           class={classnames('modal', modalClassName, {
             fade,

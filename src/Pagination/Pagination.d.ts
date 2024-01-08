@@ -5,6 +5,7 @@ export interface PaginationProps extends HTMLAttributes<HTMLElement> {
   arialabel?: string;
   listClassName?: string;
   size?: string;
+  theme?: string;
 }
 
 export interface PaginationEvents {}

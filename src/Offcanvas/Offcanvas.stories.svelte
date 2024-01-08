@@ -64,6 +64,21 @@
       xxl: {
         control: 'boolean'
       },
+      theme: {
+        control: {
+          type: 'select'
+        },
+        options: ['dark', 'light', 'auto'],
+        description: 'The theme style to apply.',
+        table: {
+          type: {
+            summary: 'string'
+          },
+          defaultValue: {
+            summary: 'auto'
+          }
+        }
+      },
       'header ': {
         description: 'This is the slot to use for custom headings.',
         table: {
@@ -106,6 +121,7 @@
       xl: false,
       xxl: false,
       style: '',
+      theme: null,
       toggle: undefined
     }
   };
@@ -299,5 +315,20 @@
     <div on:click={() => (isOpen = false)}>
       <img src="https://picsum.photos/150/1200" alt="Meaningless content" />
     </div>
+  </Offcanvas>
+</Story>
+
+<Story name="Theming">
+  <Button color="dark" on:click={toggle}>Dark Theme</Button>
+  <Button color="light" on:click={() => (endOpen = !endOpen)}>Light Theme</Button>
+
+  <Offcanvas theme="dark" {isOpen} {toggle} header="Dark Theme" placement="start">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+    aliqua.
+  </Offcanvas>
+
+  <Offcanvas theme="light" isOpen={endOpen} toggle={toggleEnd} header="Light Theme" placement="end">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+    aliqua.
   </Offcanvas>
 </Story>

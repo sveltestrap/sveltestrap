@@ -16,10 +16,10 @@
   export let children = undefined;
 
   /**
-   * The color theme for the alert.
+   * ARIA label for the close button.
    * @type {string}
    */
-  export let color = 'success';
+  export let closeAriaLabel = 'Close';
 
   /**
    * Additional CSS class names for the close button.
@@ -28,16 +28,22 @@
   export let closeClassName = '';
 
   /**
-   * ARIA label for the close button.
+   * The color theme for the alert.
    * @type {string}
    */
-  export let closeAriaLabel = 'Close';
+  export let color = 'success';
 
   /**
    * Flag to indicate if the alert is dismissible.
    * @type {boolean}
    */
   export let dismissible = false;
+
+  /**
+   * Flag to enable fade transition.
+   * @type {boolean}
+   */
+  export let fade = true;
 
   /**
    * Heading text for the alert.
@@ -58,10 +64,10 @@
   export let toggle = undefined;
 
   /**
-   * Flag to enable fade transition.
-   * @type {boolean}
+   * The theme name override to apply to this component instance.
+   * @type {string | null}
    */
-  export let fade = true;
+  export let theme = null;
 
   /**
    * Transition configuration.
@@ -78,7 +84,7 @@
 </script>
 
 {#if isOpen}
-  <div {...$$restProps} transition:fadeTransition={transition} class={classes} role="alert">
+  <div {...$$restProps} data-bs-theme={theme} transition:fadeTransition={transition} class={classes} role="alert">
     {#if heading || $$slots.heading}
       <h4 class="alert-heading">
         {heading}<slot name="heading" />

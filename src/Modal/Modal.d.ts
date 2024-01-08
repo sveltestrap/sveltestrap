@@ -17,9 +17,11 @@ export interface ModalProps extends HTMLAttributes<HTMLDivElement> {
   keyboard?: boolean;
   labelledBy?: string;
   modalClassName?: string;
+  modalStyle?: string;
   returnFocusAfterClose?: boolean;
   scrollable?: boolean;
   size?: string;
+  theme?: string;
   toggle?: () => void;
   unmountOnClose?: boolean;
   wrapClassName?: string;

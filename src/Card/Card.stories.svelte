@@ -29,6 +29,21 @@
       outline: {
         control: 'boolean'
       },
+      theme: {
+        control: {
+          type: 'select'
+        },
+        options: ['dark', 'light', 'auto'],
+        description: 'The theme style to apply.',
+        table: {
+          type: {
+            summary: 'string'
+          },
+          defaultValue: {
+            summary: 'auto'
+          }
+        }
+      },
       'default ': {
         description: 'This is the default content slot.',
         table: {
@@ -46,7 +61,8 @@
       body: false,
       color: undefined,
       inverse: false,
-      outline: false
+      outline: false,
+      theme: null
     }
   };
 </script>
@@ -122,6 +138,41 @@
       <Card body color="dark" inverse class="mb-3">Dark</Card>
 
       <Card body color="light" class="mb-3">Light</Card>
+    </div>
+  </div>
+</Story>
+
+<Story name="Theming">
+  <div class="card-example vertical gap-lg">
+    <div class="card-width">
+      <Card theme="dark" class="mb-3">
+        <CardHeader>
+          <CardTitle>Dark Theme</CardTitle>
+        </CardHeader>
+        <CardBody>
+          <CardSubtitle>Card subtitle</CardSubtitle>
+          <CardText>
+            Some quick example text to build on the card title and make up the bulk of the card's content.
+          </CardText>
+          <Button>Button</Button>
+        </CardBody>
+        <CardFooter>Footer</CardFooter>
+      </Card>
+    </div>
+    <div class="card-width">
+      <Card theme="light">
+        <CardHeader>
+          <CardTitle>Light Theme</CardTitle>
+        </CardHeader>
+        <CardBody>
+          <CardSubtitle>Card subtitle</CardSubtitle>
+          <CardText>
+            Some quick example text to build on the card title and make up the bulk of the card's content.
+          </CardText>
+          <Button>Button</Button>
+        </CardBody>
+        <CardFooter>Footer</CardFooter>
+      </Card>
     </div>
   </div>
 </Story>

@@ -372,6 +372,11 @@ li.sbdocs.sbdocs-li {
   ArgsTable
  -----------------*/
 
+.docblock-argstable {
+  box-shadow: 0 0 0 1px rgba(255,255,255,.1);
+  border-radius: 4px;
+}
+
 .docblock-argstable-head {
   border: 1px solid var(--color-dark-0);
   border-radius: 4px 4px 0 0;
@@ -385,9 +390,9 @@ li.sbdocs.sbdocs-li {
   font-weight: var(--font-weight-medium);
 }
 
-#alert-controls > div > table > tbody > tr:nth-child(9),
-#offcanvas-controls > div > table > tbody > tr:nth-child(18),
-#popover-controls > div > table > tbody > tr:nth-child(11),
+#alert-controls > div > table > tbody > tr:nth-child(10),
+#offcanvas-controls > div > table > tbody > tr:nth-child(19),
+#popover-controls > div > table > tbody > tr:nth-child(12),
 #form-group-controls > div > table > tbody > tr:nth-child(9) {
   display: none;
 }
@@ -477,6 +482,21 @@ pre.prismjs {
 .vertical {
   display: inline-flex;
   gap: 8px;
+}
+
+.horizontal.gap-lg,
+.vertical.gap-lg {
+  gap: 16px;
+}
+
+.horizontal.gap-xl,
+.vertical.gap-xl {
+  gap: 24px;
+}
+
+.horizontal.gap-xxl,
+.vertical.gap-xxl {
+  gap: 32px;
 }
 
 .horizontal {
@@ -728,13 +748,13 @@ Nav Examples Stories
 -----------------*/
 
 .nav-example p,
-.nav-example .nav-link.active,
-.nav-example a.active {
+.nav-example ul:not([data-bs-theme="light"]) .nav-link.active,
+.nav-example ul:not([data-bs-theme="light"]) a.active {
   color: var(--color-white);
 }
 
 .nav-example .disabled,
-.nav-example.tabs .active {
+.nav-example.tabs ul:not([data-bs-theme="light"]) .active {
   color: var(--color-gray-800);
 }
 
@@ -781,4 +801,13 @@ Carousel Examples Stories
 
 .dropdown-example .drop-height {
   height: 200px;
+}
+
+/*-----------------
+Style Examples Stories
+-----------------*/
+
+.style-example {
+  align-items: start;
+  min-height: 120px;
 }

@@ -11,6 +11,7 @@ export interface BadgeProps extends HTMLAnchorAttributes {
   pill?: boolean;
   placement?: string;
   positioned?: boolean;
+  theme?: string;
 }
 
 export interface BadgeEvents {}

@@ -5,6 +5,7 @@ export interface ListGroupProps extends HTMLAttributes<HTMLUListElement> {
   flush?: boolean;
   horizontal?: boolean;
   numbered?: boolean;
+  theme?: string;
 }
 
 export interface ListGroupEvents {}

@@ -20,6 +20,21 @@
         },
         options: ['sm', '', 'lg']
       },
+      theme: {
+        control: {
+          type: 'select'
+        },
+        options: ['dark', 'light', 'auto'],
+        description: 'The theme style to apply.',
+        table: {
+          type: {
+            summary: 'string'
+          },
+          defaultValue: {
+            summary: 'auto'
+          }
+        }
+      },
       'default ': {
         description: 'This is the default content slot.',
         table: {
@@ -34,13 +49,14 @@
       }
     },
     args: {
-      size: ''
+      size: '',
+      theme: null
     }
   };
 </script>
 
 <script>
-  import { Story, Source, Template } from '@storybook/addon-svelte-csf';
+  import { Story, Template } from '@storybook/addon-svelte-csf';
   import { InputGroupText, Input } from '@sveltestrap/sveltestrap';
 </script>
 
@@ -104,5 +120,36 @@
         <Input />
       </InputGroup>
     </div>
+  </div>
+</Story>
+
+<Story name="Theming">
+  <div class="form-width vertical gap-lg">
+    <InputGroup theme="dark">
+      <InputGroupText>
+        <Input addon type="checkbox" aria-label="Checkbox for following text input" />
+      </InputGroupText>
+
+      <Input placeholder="Check it out" />
+    </InputGroup>
+
+    <InputGroup theme="light">
+      <Input placeholder="placeholder email" />
+      <InputGroupText>@example.com</InputGroupText>
+    </InputGroup>
+
+    <InputGroup theme="dark">
+      <InputGroupText>$</InputGroupText>
+      <InputGroupText>$</InputGroupText>
+      <Input placeholder="Dolla dolla billz yo!" />
+      <InputGroupText>$</InputGroupText>
+      <InputGroupText>$</InputGroupText>
+    </InputGroup>
+
+    <InputGroup theme="light">
+      <InputGroupText>$</InputGroupText>
+      <Input placeholder="Amount" min={0} max={100} type="number" step="1" />
+      <InputGroupText>.00</InputGroupText>
+    </InputGroup>
   </div>
 </Story>

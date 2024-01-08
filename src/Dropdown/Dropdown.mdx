@@ -237,3 +237,44 @@ The `<Dropdown>` component is a user interface element that displays lists of li
   </Dropdown>
 </ButtonToolbar>
 `} />
+
+## Theming
+
+<Canvas withSource="none">
+  <Story of={DropdownStories.Theming} />
+</Canvas>
+
+<Source
+  dark
+  language="html"
+  code={`
+<script lang="ts">
+  import {
+    Dropdown,
+    DropdownItem,
+    DropdownMenu,
+    DropdownToggle
+  } from '@sveltestrap/sveltestrap';
+</script>
+
+<Dropdown theme="dark" autoClose="manual" isOpen={true}>
+  <DropdownToggle color="dark" caret>Dark Theme</DropdownToggle>
+  <DropdownMenu>
+    <DropdownItem header>Header</DropdownItem>
+    <DropdownItem disabled>Action</DropdownItem>
+    <DropdownItem>Another Action</DropdownItem>
+    <DropdownItem divider />
+    <DropdownItem>Another Action</DropdownItem>
+  </DropdownMenu>
+</Dropdown>
+
+<Dropdown theme="light" autoClose="manual" isOpen={true}>
+  <DropdownToggle color="light" caret>Light Theme</DropdownToggle>
+  <DropdownMenu>
+    <DropdownItem header>Header</DropdownItem>
+    <DropdownItem disabled>Action</DropdownItem>
+    <DropdownItem>Another Action</DropdownItem>
+    <DropdownItem divider />
+    <DropdownItem>Another Action</DropdownItem>
+  </DropdownMenu>
+</Dropdown>`} />

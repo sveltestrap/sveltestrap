@@ -9,17 +9,21 @@
 
 <script>
   import { Story } from '@storybook/addon-svelte-csf';
+
   import {
     Button,
-    Container,
     Icon,
     Dropdown,
     DropdownItem,
     DropdownMenu,
-    DropdownToggle
+    DropdownToggle,
+    ThemeToggler,
+    colorMode,
+    toggleColorMode,
+    useColorMode
   } from '@sveltestrap/sveltestrap';
 
-  let theme = 'light';
+  let theme = $colorMode;
 </script>
 
 <Story name="Basic">
@@ -33,8 +37,8 @@
 <Story name="Theme">
   <Styles {theme} />
 
-  <div class="horizontal">
-    <Dropdown isOpen={true}>
+  <div class="horizontal style-example">
+    <Dropdown isOpen={true} autoClose="manual">
       <DropdownToggle caret>Menu</DropdownToggle>
       <DropdownMenu>
         <DropdownItem>Another Action</DropdownItem>
@@ -42,16 +46,14 @@
       </DropdownMenu>
     </Dropdown>
 
-    <Button color="primary" outline active={theme === 'light'} on:click={() => (theme = 'light')}>
+    <Button color="primary" outline active={$colorMode === 'light'} on:click={() => ($colorMode = 'light')}>
       light <Icon name="sun-fill" />
     </Button>
-    <Button color="primary" outline active={theme === 'dark'} on:click={() => (theme = 'dark')}>
+    <Button color="primary" outline active={$colorMode === 'dark'} on:click={() => ($colorMode = 'dark')}>
       dark <Icon name="moon-stars-fill" />
     </Button>
-    <Button color="primary" outline active={theme === 'auto'} on:click={() => (theme = 'auto')}>
+    <Button color="primary" outline active={$colorMode === 'auto'} on:click={() => ($colorMode = 'auto')}>
       auto <Icon name="circle-half" />
     </Button>
   </div>
-
-  <br /><br /><br /><br />
 </Story>

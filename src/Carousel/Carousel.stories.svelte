@@ -14,25 +14,40 @@
         className: 'string',
         table: { disable: true }
       },
-      items: {
-        control: 'array',
-        table: { disable: true }
-      },
       activeIndex: {
         control: 'number',
         table: { disable: true }
       },
-      ride: {
-        control: 'boolean'
-      },
       interval: {
         control: 'number'
+      },
+      items: {
+        control: 'array',
+        table: { disable: true }
+      },
+      keyboard: {
+        control: 'boolean'
       },
       pause: {
         control: 'boolean'
       },
-      keyboard: {
+      ride: {
         control: 'boolean'
+      },
+      theme: {
+        control: {
+          type: 'select'
+        },
+        options: ['dark', 'light', 'auto'],
+        description: 'The theme style to apply.',
+        table: {
+          type: {
+            summary: 'string'
+          },
+          defaultValue: {
+            summary: 'auto'
+          }
+        }
       },
       'default ': {
         description: 'This is the default content slot.',
@@ -48,12 +63,13 @@
       }
     },
     args: {
-      items: [],
       activeIndex: 0,
-      ride: true,
       interval: 5000,
+      items: [],
+      keyboard: true,
       pause: true,
-      keyboard: true
+      ride: true,
+      theme: null
     }
   };
 </script>

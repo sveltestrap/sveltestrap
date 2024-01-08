@@ -61,6 +61,12 @@
    * @type {string}
    */
   export let placement = 'top-0 start-100';
+ 
+  /**
+   * The theme name override to apply to this component instance.
+   * @type {string | null}
+   */
+  export let theme = null;
 
   $: classes = classnames(
     'badge',
@@ -75,7 +81,7 @@
 </script>
 
 {#if href}
-  <a {...$$restProps} {href} class={classes}>
+  <a {...$$restProps} {href} class={classes} data-bs-theme={theme}>
     {#if children}
       {children}
     {:else}
@@ -86,7 +92,7 @@
     {/if}
   </a>
 {:else}
-  <span {...$$restProps} class={classes}>
+  <span {...$$restProps} class={classes} data-bs-theme={theme}>
     {#if children}
       {children}
     {:else}

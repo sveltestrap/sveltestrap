@@ -131,6 +131,12 @@
   export let size = undefined;
 
   /**
+   * The theme name override to apply to this component instance.
+   * @type {string | null}
+   */
+  export let theme = null;
+
+  /**
    * Type of the Input.
    * @type {string}
    * @default 'text'
@@ -188,6 +194,7 @@
         formControlClass = 'form-control';
         tag = 'input';
     }
+
     if (plaintext) {
       formControlClass = `${formControlClass}-plaintext`;
       tag = 'input';
@@ -217,6 +224,7 @@
   {#if type === 'text'}
     <input
       {...$$restProps}
+      data-bs-theme={theme}
       class={classes}
       type="text"
       bind:value
@@ -237,6 +245,7 @@
   {:else if type === 'password'}
     <input
       {...$$restProps}
+      data-bs-theme={theme}
       class={classes}
       type="password"
       bind:value
@@ -257,6 +266,7 @@
   {:else if type === 'color'}
     <input
       {...$$restProps}
+      data-bs-theme={theme}
       class={classes}
       type="color"
       bind:value
@@ -276,6 +286,7 @@
   {:else if type === 'email'}
     <input
       {...$$restProps}
+      data-bs-theme={theme}
       class={classes}
       type="email"
       bind:value
@@ -297,6 +308,7 @@
   {:else if type === 'file'}
     <input
       {...$$restProps}
+      data-bs-theme={theme}
       class={classes}
       type="file"
       bind:files
@@ -320,6 +332,7 @@
   {:else if type === 'checkbox' || type === 'radio' || type === 'switch'}
     <FormCheck
       {...$$restProps}
+      data-bs-theme={theme}
       class={className}
       size={bsSize}
       {type}
@@ -346,6 +359,7 @@
   {:else if type === 'url'}
     <input
       {...$$restProps}
+      data-bs-theme={theme}
       class={classes}
       type="url"
       bind:value
@@ -366,6 +380,7 @@
   {:else if type === 'number'}
     <input
       {...$$restProps}
+      data-bs-theme={theme}
       class={classes}
       type="number"
       bind:value
@@ -385,6 +400,7 @@
   {:else if type === 'date'}
     <input
       {...$$restProps}
+      data-bs-theme={theme}
       class={classes}
       type="date"
       bind:value
@@ -404,6 +420,7 @@
   {:else if type === 'time'}
     <input
       {...$$restProps}
+      data-bs-theme={theme}
       class={classes}
       type="time"
       bind:value
@@ -423,6 +440,7 @@
   {:else if type === 'datetime'}
     <input
       {...$$restProps}
+      data-bs-theme={theme}
       type="datetime"
       bind:value
       bind:this={inner}
@@ -442,6 +460,7 @@
   {:else if type === 'datetime-local'}
     <input
       {...$$restProps}
+      data-bs-theme={theme}
       class={classes}
       type="datetime-local"
       bind:value
@@ -461,6 +480,7 @@
   {:else if type === 'month'}
     <input
       {...$$restProps}
+      data-bs-theme={theme}
       class={classes}
       type="month"
       bind:value
@@ -480,6 +500,7 @@
   {:else if type === 'color'}
     <input
       {...$$restProps}
+      data-bs-theme={theme}
       type="color"
       bind:value
       bind:this={inner}
@@ -499,6 +520,7 @@
   {:else if type === 'range'}
     <input
       {...$$restProps}
+      data-bs-theme={theme}
       type="range"
       bind:value
       bind:this={inner}
@@ -518,6 +540,7 @@
   {:else if type === 'search'}
     <input
       {...$$restProps}
+      data-bs-theme={theme}
       class={classes}
       type="search"
       bind:value
@@ -538,6 +561,7 @@
   {:else if type === 'tel'}
     <input
       {...$$restProps}
+      data-bs-theme={theme}
       class={classes}
       type="tel"
       bind:value
@@ -558,6 +582,7 @@
   {:else if type === 'week'}
     <input
       {...$$restProps}
+      data-bs-theme={theme}
       class={classes}
       type="week"
       bind:value
@@ -577,6 +602,7 @@
   {:else}
     <input
       {...$$restProps}
+      data-bs-theme={theme}
       {type}
       on:blur
       on:change={handleInput}
@@ -596,6 +622,7 @@
 {:else if tag === 'textarea'}
   <textarea
     {...$$restProps}
+    data-bs-theme={theme}
     class={classes}
     bind:value
     bind:this={inner}
@@ -614,6 +641,7 @@
 {:else if tag === 'select' && !multiple}
   <select
     {...$$restProps}
+    data-bs-theme={theme}
     class={classes}
     bind:value
     bind:this={inner}
@@ -631,6 +659,7 @@
   <!-- {:else if tag === 'select' && multiple}
   <select
     {...$$restProps}
+    data-bs-theme={theme}
     multiple
     class={classes}
     on:blur
