@@ -22,6 +22,8 @@ export declare type BackgroundColor =
   | 'body-secondary'
   | 'body-tertiary';
 
+export declare type Border = 'border' | 'border-top' | 'border-end' | 'border-bottom' | 'border-start';
+
 export declare type Breakpoints = 'sm' | 'md' | 'lg' | 'xl';
 
 export declare type Color = 'primary' | 'secondary' | 'success' | 'danger' | 'warning' | 'info' | 'light' | 'dark';
@@ -42,6 +44,8 @@ export declare type ContainerType = 'body' | 'inline';
 export declare type Direction = 'up' | 'down' | 'left' | 'right' | 'start' | 'end';
 
 export declare type Placement = 'start' | 'end' | 'top' | 'bottom';
+
+export declare type Shadow = 'shadow-sm' | 'shadow' | 'shadow-lg' | 'shadow-none';
 
 export declare type TextColor =
   | 'primary'

@@ -9,7 +9,7 @@
 
   /**
    * Determines if the badge should have a border
-   * @type {boolean}
+   * @type {boolean | string}
    */
   export let border = false;
 
@@ -61,7 +61,13 @@
    * @type {string}
    */
   export let placement = 'top-0 start-100';
- 
+
+  /**
+   * Determines if the badge should have a shadow
+   * @type {boolean | string}
+   */
+  export let shadow = false;
+
   /**
    * The theme name override to apply to this component instance.
    * @type {string | null}
@@ -74,8 +80,9 @@
     pill ? 'rounded-pill' : false,
     positioned ? 'position-absolute translate-middle' : false,
     positioned ? placement : false,
-    indicator ? 'p-2 border' : false,
-    border ? 'border' : false,
+    indicator ? 'p-2' : false,
+    border ? (typeof border === 'string' ? border : 'border') : false,
+    shadow ? (typeof shadow === 'string' ? shadow : 'shadow') : false,
     className
   );
 </script>

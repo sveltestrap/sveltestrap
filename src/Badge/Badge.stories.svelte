@@ -14,7 +14,10 @@
         control: ''
       },
       border: {
-        control: 'boolean'
+        control: {
+          type: 'select'
+        },
+        options: ['', 'border', 'border-top', 'border-end', 'border-bottom', 'border-start']
       },
       class: {
         control: false,
@@ -45,6 +48,12 @@
       },
       placement: {
         control: ''
+      },
+      shadow: {
+        control: {
+          type: 'select'
+        },
+        options: ['', 'shadow-none', 'shadow-sm', 'shadow', 'shadow-lg']
       },
       theme: {
         control: {
@@ -84,7 +93,8 @@
       indicator: false,
       pill: false,
       placement: 'top-0 start-100',
-      positioned: false
+      positioned: false,
+      shadow: false,
       theme: null
     }
   };
@@ -137,7 +147,7 @@
   </div>
   <div>
     <Button color="primary" class="position-relative">
-      Profile <Badge color="danger" pill border indicator positioned ariaLabel="New alerts"></Badge>
+      Profile <Badge color="danger" pill indicator positioned ariaLabel="New alerts"></Badge>
     </Button>
   </div>
 </Story>
