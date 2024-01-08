@@ -6,7 +6,10 @@ colorMode.subscribe((mode) => useColorMode(mode));
 
 function getInitialColorMode() {
   const currentTheme = globalThis.document?.documentElement.getAttribute('data-bs-theme') || 'light';
-  const prefersDarkMode = globalThis.window?.matchMedia('(prefers-color-scheme: dark)').matches || false;
+  const prefersDarkMode =
+    typeof globalThis.window?.matchMedia === 'function'
+      ? globalThis.window?.matchMedia('(prefers-color-scheme: dark)').matches
+      : false;
 
   return currentTheme === 'dark' || (currentTheme === 'auto' && prefersDarkMode) ? 'dark' : 'light';
 }
