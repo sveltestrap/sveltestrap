@@ -153,3 +153,39 @@ The `<Toast>` component is a user interface element designed to provide unobtrus
   consequat.
 </Toast>
 `} />
+
+## Theming
+
+<Canvas withSource="none">
+  <Story of={ToastStories.Theming} />
+</Canvas>
+
+<Source
+  dark
+  language="html"
+  code={`
+<script lang="ts">
+  import { Toast } from '@sveltestrap/sveltestrap';
+</script>
+
+<Toast
+  body
+  theme="dark"
+  header="Dark Theme"
+  style="--bs-toast-color: #fff;"
+  isOpen={true}
+>
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+  magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+  consequat.
+</Toast>
+
+<Toast theme="light" style="--bs-toast-color: #000;">
+  <ToastHeader>Light Theme</ToastHeader>
+  <ToastBody>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+    magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    consequat.
+  </ToastBody>
+</Toast>
+`} />

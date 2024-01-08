@@ -12,7 +12,7 @@
   const dispatch = createEventDispatcher();
 
   /**
-   * CSS classes to apply to the offcanvas element.
+   * Additional CSS class names to apply.
    * @type {string}
    */
   let className = '';
@@ -109,6 +109,12 @@
   export let style = '';
 
   /**
+   * The theme name override to apply to this component instance.
+   * @type {string | null}
+   */
+  export let theme = null;
+
+  /**
    * Function to toggle the state of the offcanvas.
    * @type {undefined|function}
    */
@@ -191,6 +197,7 @@
     aria-modal={isOpen ? true : undefined}
     class={classes}
     role={isOpen ? 'dialog' : undefined}
+    data-bs-theme={theme}
     style={`visibility: ${isOpen || isTransitioning ? 'visible' : 'hidden'};${style}`}
     tabindex="-1"
   >

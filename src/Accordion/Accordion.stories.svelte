@@ -22,6 +22,21 @@
       stayOpen: {
         control: 'boolean'
       },
+      theme: {
+        control: {
+          type: 'select'
+        },
+        options: ['dark', 'light', 'auto'],
+        description: 'The theme style to apply.',
+        table: {
+          type: {
+            summary: 'string'
+          },
+          defaultValue: {
+            summary: 'auto'
+          }
+        }
+      },
       'default ': {
         description: 'This is the default content slot.',
         table: {
@@ -38,7 +53,8 @@
     args: {
       class: '',
       flush: false,
-      stayOpen: false
+      stayOpen: false,
+      theme: null
     }
   };
 </script>
@@ -128,6 +144,38 @@
 
 <Story name="Slots">
   <Accordion>
+    <AccordionItem active>
+      <h4 class="m-0" slot="header">Home</h4>
+      Fallbrook
+    </AccordionItem>
+    <AccordionItem>
+      <h4 class="m-0" slot="header">School</h4>
+      <a href="#home">Buena Vista Elementary</a>
+    </AccordionItem>
+    <AccordionItem>
+      <h4 class="m-0" slot="header">Library</h4>
+      UCSB Library
+    </AccordionItem>
+  </Accordion>
+</Story>
+
+<Story name="Theming">
+  <Accordion theme="dark" class="mb-4">
+    <AccordionItem active>
+      <h4 class="m-0" slot="header">Home</h4>
+      Fallbrook
+    </AccordionItem>
+    <AccordionItem>
+      <h4 class="m-0" slot="header">School</h4>
+      <a href="#home">Buena Vista Elementary</a>
+    </AccordionItem>
+    <AccordionItem>
+      <h4 class="m-0" slot="header">Library</h4>
+      UCSB Library
+    </AccordionItem>
+  </Accordion>
+
+  <Accordion theme="light">
     <AccordionItem active>
       <h4 class="m-0" slot="header">Home</h4>
       Fallbrook

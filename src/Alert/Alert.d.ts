@@ -13,6 +13,7 @@ export interface AlertProps extends HTMLAttributes<HTMLDivElement> {
   isOpen?: boolean;
   toggle?: () => void;
   transition?: FadeProps;
+  theme?: string;
 }
 
 export interface AlertEvents {}

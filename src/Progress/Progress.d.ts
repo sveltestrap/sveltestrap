@@ -10,6 +10,7 @@ export interface ProgressProps extends HTMLAttributes<HTMLDivElement> {
   max?: string | number;
   multi?: boolean;
   striped?: boolean;
+  theme?: string;
   value?: string | number;
 }
 

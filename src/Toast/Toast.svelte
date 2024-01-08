@@ -67,6 +67,16 @@
    */
   export let toggle = null;
 
+  /**
+   * The theme name override to apply to this component instance.
+   * @type {string | null}
+   */
+  export let theme = null;
+
+  /**
+   * The timer ID for the autohide timeout.
+   * @type {number}
+   */
   let timeout;
 
   onDestroy(() => {
@@ -74,6 +84,7 @@
   });
 
   $: if (isOpen && autohide) {
+    // @ts-ignore
     timeout = setTimeout(() => (isOpen = false), delay);
   }
 
@@ -86,6 +97,7 @@
   <div
     {...$$restProps}
     class={classes}
+    data-bs-theme={theme}
     transition:fadeTrans={{ duration: fade && duration }}
     on:introstart={() => dispatch('opening')}
     on:introend={() => dispatch('open')}

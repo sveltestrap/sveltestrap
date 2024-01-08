@@ -86,6 +86,25 @@
         control: 'boolean',
         table: { disable: true }
       },
+      modalStyle: {
+        control: 'text',
+        table: { disable: true }
+      },
+      theme: {
+        control: {
+          type: 'select'
+        },
+        options: ['dark', 'light', 'auto'],
+        description: 'The theme style to apply.',
+        table: {
+          type: {
+            summary: 'string'
+          },
+          defaultValue: {
+            summary: 'auto'
+          }
+        }
+      },
       'on:open': {
         control: false,
         description: 'This event is fired once the Modal has opened.',
@@ -162,21 +181,22 @@
       }
     },
     args: {
-      isOpen: false,
       autoFocus: true,
+      backdrop: true,
       body: false,
       centered: false,
       container: undefined,
+      fade: true,
       fullscreen: false,
       header: undefined,
+      isOpen: false,
       keyboard: true,
+      returnFocusAfterClose: true,
       scrollable: false,
       size: 'md',
+      theme: null,
       toggle: undefined,
-      backdrop: true,
-      fade: true,
-      unmountOnClose: true,
-      returnFocusAfterClose: true
+      unmountOnClose: true
     }
   };
 </script>
@@ -190,33 +210,39 @@
   let status = 'Closed';
   let fullscreen;
   let size;
+
   const toggle = () => {
     size = undefined;
     open = !open;
   };
+
   const toggleLg = () => {
     size = 'lg';
     open = !open;
   };
+
   const toggleSm = () => {
     size = 'sm';
     open = !open;
   };
+
   const toggleXl = () => {
     size = 'xl';
     open = !open;
   };
+
   const toggleAlways = () => {
     fullscreen = true;
     open = !open;
   };
+
   const toggleScrollable = () => (openScrollable = !openScrollable);
 </script>
 
 <Template let:args>
   <div>
     <Button color="danger" on:click={toggle}>Open Modal</Button>
-    <Modal {...args} isOpen={open} {toggle}>
+    <Modal {...args} isOpen={open} {toggle} modalStyle="--bs-modal-color: {args.theme === 'dark' ? '#fff' : '#111'}">
       <ModalHeader {toggle}>Modal title</ModalHeader>
       <ModalBody>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore

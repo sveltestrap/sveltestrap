@@ -7,6 +7,7 @@ export interface CardProps extends HTMLAttributes<HTMLDivElement> {
   body?: boolean;
   inverse?: boolean;
   outline?: boolean;
+  theme?: string;
 }
 
 export interface CardEvents {

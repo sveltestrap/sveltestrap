@@ -13,6 +13,7 @@ export interface PopoverProps extends HTMLAttributes<HTMLDivElement> {
   isOpen?: boolean;
   placement?: PopoverPlacement;
   target: string;
+  theme?: string;
   title?: string;
   trigger?: Triggers;
 }

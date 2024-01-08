@@ -51,6 +51,21 @@
       isOpen: {
         control: 'boolean'
       },
+      theme: {
+        control: {
+          type: 'select'
+        },
+        options: ['dark', 'light', 'auto'],
+        description: 'The theme style to apply.',
+        table: {
+          type: {
+            summary: 'string'
+          },
+          defaultValue: {
+            summary: 'auto'
+          }
+        }
+      },
       toggle: {
         control: 'null',
         table: {
@@ -184,7 +199,12 @@
 <Template let:args>
   <div class="toast-width">
     <div class="p-3 bg-{args.color} mb-3 rounded">
-      <Toast {...args} class="me-1">
+      <Toast
+        {...args}
+        theme={args.theme || null}
+        style="--bs-toast-color: {args.theme === 'dark' ? '#fff' : '#111'};"
+        class="me-1"
+      >
         <ToastHeader>Sveltestrap</ToastHeader>
         <ToastBody>
           This is a toast on a {args.color} background — check it out!
@@ -256,7 +276,9 @@
 
     <Toast
       body
+      theme="dark"
       header="It's Toasterific"
+      --bs-toast-color="#fff"
       {isOpen}
       on:open={() => (status = 'Opened')}
       on:opening={() => (status = 'Opening...')}
@@ -266,6 +288,25 @@
       Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
       magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
       consequat.
+    </Toast>
+  </div>
+</Story>
+
+<Story name="Theming">
+  <div class="horizontal gap-lg toast-events">
+    <Toast body theme="dark" header="Dark Theme" style="--bs-toast-color: #fff;" isOpen={true}>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+      magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+      consequat.
+    </Toast>
+
+    <Toast theme="light" style="--bs-toast-color: #000;">
+      <ToastHeader>Light Theme</ToastHeader>
+      <ToastBody>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat.
+      </ToastBody>
     </Toast>
   </div>
 </Story>

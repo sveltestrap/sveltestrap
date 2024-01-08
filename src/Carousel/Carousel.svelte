@@ -15,22 +15,10 @@
   export { className as class };
 
   /**
-   * An array of items to be displayed in the carousel.
-   * @type {Array}
-   */
-  export let items = [];
-
-  /**
    * The index of the currently active item in the carousel.
    * @type {number}
    */
   export let activeIndex = 0;
-
-  /**
-   * A boolean indicating whether the carousel should automatically cycle through items.
-   * @type {boolean}
-   */
-  export let ride = true;
 
   /**
    * The time interval (in milliseconds) between automatic transitions of the carousel items.
@@ -39,16 +27,34 @@
   export let interval = 5000;
 
   /**
-   * A boolean indicating whether automatic cycling of the carousel should pause on hover.
-   * @type {boolean}
+   * An array of items to be displayed in the carousel.
+   * @type {Array}
    */
-  export let pause = true;
+  export let items = [];
 
   /**
    * A boolean indicating whether the carousel should respond to keyboard navigation.
    * @type {boolean}
    */
   export let keyboard = true;
+
+  /**
+   * A boolean indicating whether automatic cycling of the carousel should pause on hover.
+   * @type {boolean}
+   */
+  export let pause = true;
+
+  /**
+   * A boolean indicating whether the carousel should automatically cycle through items.
+   * @type {boolean}
+   */
+  export let ride = true;
+
+  /**
+   * The theme name override to apply to this component instance.
+   * @type {string | null}
+   */
+  export let theme = null;
 
   let _rideTimeoutId = false;
   let _removeVisibilityChangeListener = false;
@@ -117,9 +123,10 @@
 <svelte:window on:keydown={handleKeydown} />
 
 <div
-  role="presentation"
   {...$$restProps}
+  role="presentation"
   class={classes}
+  data-bs-theme={theme}
   on:mouseenter={() => (pause ? clearRideTimeout() : undefined)}
   on:mouseleave={() => (pause ? setRideTimeout() : undefined)}
 >

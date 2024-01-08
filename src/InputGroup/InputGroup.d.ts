@@ -3,6 +3,7 @@ import { HTMLAttributes } from 'svelte/elements';
 
 export interface InputGroupProps extends HTMLAttributes<HTMLDivElement> {
   size?: 'sm' | 'lg';
+  theme?: string;
 }
 
 export interface InputGroupEvents {}

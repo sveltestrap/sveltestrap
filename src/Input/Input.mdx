@@ -24,7 +24,7 @@ You can set the `type` prop to `text`, `email`, `password`, `url`, `search`, or 
 <Source
   dark
   language="html"
-  code={` 
+  code={`
 <script>
   import { Input } from '@sveltestrap/sveltestrap';
 </script>
@@ -56,7 +56,7 @@ You can set the `type` prop to `range`, or `number` to render number inputs.
 <Source
   dark
   language="html"
-  code={` 
+  code={`
 <script>
   import { Input } from '@sveltestrap/sveltestrap';
 </script>
@@ -77,7 +77,7 @@ You can set the `type` prop to `datetime-local`, `date`, or `time` to render dat
 <Source
   dark
   language="html"
-  code={` 
+  code={`
 <script>
   import { Input } from '@sveltestrap/sveltestrap';
 </script>
@@ -100,7 +100,7 @@ You can set the `type` prop to `color` to render color inputs.
 <Source
   dark
   language="html"
-  code={` 
+  code={`
 <script>
   import { Input } from '@sveltestrap/sveltestrap';
 
@@ -118,7 +118,7 @@ You can set the `type` prop to `color` to render color inputs.
 <Source
   dark
   language="html"
-  code={` 
+  code={`
 <script>
   import { Input } from '@sveltestrap/sveltestrap';
 </script>
@@ -148,7 +148,7 @@ You can set the `type` prop to `color` to render color inputs.
 <Source
   dark
   language="html"
-  code={` 
+  code={`
 <script>
   import { FormText, Input } from '@sveltestrap/sveltestrap';
 </script>
@@ -168,7 +168,7 @@ You can set the `type` prop to `color` to render color inputs.
 <Source
   dark
   language="html"
-  code={` 
+  code={`
 <script>
   import { FormGroup, Input } from '@sveltestrap/sveltestrap';
 </script>
@@ -195,7 +195,7 @@ You can set the `type` prop to `color` to render color inputs.
 <Source
   dark
   language="html"
-  code={` 
+  code={`
 <script>
   import { FormGroup, Input, Label } from '@sveltestrap/sveltestrap';
 </script>
@@ -223,7 +223,7 @@ You can set the `type` prop to `color` to render color inputs.
 <Source
   dark
   language="html"
-  code={` 
+  code={`
 <script>
   import { FormGroup, Input, Label } from '@sveltestrap/sveltestrap';
 </script>
@@ -264,3 +264,47 @@ You can set the `type` prop to `color` to render color inputs.
 {/if}
 
 `} />
+
+## Theming
+
+<Canvas withSource="none">
+  <Story of={InputStories.Theming} />
+</Canvas>
+
+<Source
+  dark
+  language="html"
+  code={`
+<script>
+  import { Input } from '@sveltestrap/sveltestrap';
+</script>
+<div>
+  <Input type="select" theme="dark">
+    {#each [1, 2, 3, 4, 5] as option}
+      <option>{option}</option>
+    {/each}
+  </Input>
+
+  {#each ['eenie', 'meanie', 'minie', 'moe'] as value}
+    <Input type="radio" theme="dark" bind:group={radioGroup} {value} label={value} />
+  {/each}
+
+  <Input theme="dark" type="checkbox" label="Check me out" />
+  <Input theme="dark" type="checkbox" reverse label="Reverse Label" />
+  <Input theme="dark" type="switch" label="Switch me on" />
+</div>
+<div>
+  <Input type="select" theme="light">
+    {#each [1, 2, 3, 4, 5] as option}
+      <option>{option}</option>
+    {/each}
+  </Input>
+
+  {#each ['eenie', 'meanie', 'minie', 'moe'] as value}
+    <Input type="radio" theme="light" bind:group={radioGroup} {value} label={value} />
+  {/each}
+
+  <Input theme="light" type="checkbox" label="Check me out" />
+  <Input theme="light" type="checkbox" reverse label="Reverse Label" />
+  <Input theme="light" type="switch" label="Switch me on" />
+</div>`} />

@@ -14,6 +14,7 @@ The `<Nav>` component is a responsive navigation component that can be customize
 <Controls of={NavStories.Basic} />
 
 ## Tabs
+
 <Canvas withSource="none">
   <Story of={NavStories.Tabs} />
 </Canvas>
@@ -60,6 +61,7 @@ The `<Nav>` component is a responsive navigation component that can be customize
 `} />
 
 ## Pills
+
 <Canvas withSource="none">
   <Story of={NavStories.Pills} />
 </Canvas>
@@ -106,6 +108,7 @@ The `<Nav>` component is a responsive navigation component that can be customize
 `} />
 
 ## Underline
+
 <Canvas withSource="none">
   <Story of={NavStories.Underline} />
 </Canvas>
@@ -152,6 +155,7 @@ The `<Nav>` component is a responsive navigation component that can be customize
 `} />
 
 ## Vertical
+
 <Canvas withSource="none">
   <Story of={NavStories.Vertical} />
 </Canvas>
@@ -191,5 +195,51 @@ The `<Nav>` component is a responsive navigation component that can be customize
   <NavLink href="#">Link</NavLink>
   <NavLink href="#">Another Link</NavLink>
   <NavLink disabled href="#">Disabled Link</NavLink>
+</Nav>
+`} />
+
+## Theming
+
+<Canvas withSource="none">
+  <Story of={NavStories.Theming} />
+</Canvas>
+
+<Source dark language="html" code={`
+<script lang="ts">
+  import {
+    Nav,
+    NavItem,
+    NavLink
+  } from '@sveltestrap/sveltestrap';
+</script>
+
+<Nav theme="dark">
+  <NavItem active>
+    <NavLink href="#">Link</NavLink>
+  </NavItem>
+  <NavItem>
+    <NavLink href="#">Link</NavLink>
+  </NavItem>
+  <NavItem>
+    <NavLink href="#">Another Link</NavLink>
+  </NavItem>
+  <NavItem>
+    <NavLink disabled href="#">Disabled Link</NavLink>
+  </NavItem>
+</Nav>
+
+<Nav theme="light">
+  <NavItem active>
+    <NavLink href="#">Link</NavLink>
+  </NavItem>
+  <NavItem>
+    <NavLink href="#">Link</NavLink>
+  </NavItem>
+  <NavItem>
+    <NavLink href="#">Another Link</NavLink>
+  </NavItem>
+  <NavItem>
+    <NavLink disabled href="#">Disabled Link</NavLink>
+  </NavItem>
 </Nav>
 `} />

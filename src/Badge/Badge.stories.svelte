@@ -31,6 +31,21 @@
       pill: {
         control: 'boolean'
       },
+      theme: {
+        control: {
+          type: 'select'
+        },
+        options: ['dark', 'light', 'auto'],
+        description: 'The theme style to apply.',
+        table: {
+          type: {
+            summary: 'string'
+          },
+          defaultValue: {
+            summary: 'auto'
+          }
+        }
+      },
       'default ': {
         description: 'This is the default content slot.',
         table: {
@@ -49,7 +64,8 @@
       children: '',
       color: 'primary',
       href: '',
-      pill: false
+      pill: false,
+      theme: null
     }
   };
 </script>

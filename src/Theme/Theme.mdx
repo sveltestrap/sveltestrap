@@ -1,0 +1,102 @@
+import { Meta, Canvas, Story, Source } from '@storybook/blocks';
+import * as ThemeStories from './Theme.stories';
+
+<Meta title="Components/Theme" />
+
+# Theme Provider
+
+The `<Theme>` provider is a convenient way to assign a scoped theme to one or more components without impacting the global theme setting, it can also be used to wrap your entire app. You can assign the theme values `light`, `dark` and `auto` to the `theme` property of the `<Theme>` provider.
+
+<Canvas>
+  <Story of={ThemeStories.Basic} />
+</Canvas>
+
+## Theme Hook
+
+You can use the theme hook `useColorMode` to change the global theme mode by passing the values `light`, `dark` and `auto`.
+
+<Canvas withSource="none">
+  <Story of={ThemeStories.Hook} />
+</Canvas>
+
+<Source dark language="html" code={`
+<script>
+  import { Button, Icon, colorMode, useColorMode } from '@sveltestrap/sveltestrap';
+</script>
+
+<Button color="primary" outline active={$colorMode === 'light'} on:click={() => useColorMode('light')}>
+  light <Icon name="sun-fill" />
+</Button>
+<Button color="primary" outline active={$colorMode === 'dark'} on:click={() => useColorMode('dark')}>
+  dark <Icon name="moon-stars-fill" />
+</Button>
+<Button color="primary" outline active={$colorMode === 'auto'} on:click={() => useColorMode('auto')}>
+  auto <Icon name="circle-half" />
+</Button>
+`} />
+
+## Theme Store
+
+You can directly set the global theme mode using the `$colorMode` store by assigning the values `light`, `dark` and `auto`.
+
+<Canvas withSource="none">
+  <Story of={ThemeStories.Store} />
+</Canvas>
+
+<Source dark language="html" code={`
+<script>
+  import { Button, Icon, colorMode } from '@sveltestrap/sveltestrap';
+</script>
+
+<Button color="primary" outline active={$colorMode === 'light'} on:click={() => ($colorMode = 'light')}>
+  light <Icon name="sun-fill" />
+</Button>
+<Button color="primary" outline active={$colorMode === 'dark'} on:click={() => ($colorMode = 'dark')}>
+  dark <Icon name="moon-stars-fill" />
+</Button>
+<Button color="primary" outline active={$colorMode === 'auto'} on:click={() => ($colorMode = 'auto')}>
+  auto <Icon name="circle-half" />
+</Button>
+`} />
+
+## Theme Toggler
+
+The `<ThemeToggler>` component makes it easy to toggle your global theme setting. The component exposes two variables `currentColorMode` and `toggleColorMode` for full control over the toggle action.
+
+<Canvas withSource="none">
+  <Story of={ThemeStories.Toggler} />
+</Canvas>
+
+<Source dark language="html" code={`
+<script>
+  import {
+    Button,
+    Card,
+    CardBody,
+    CardHeader,
+    CardFooter,
+    CardSubtitle,
+    CardText,
+    CardTitle,
+    ThemeToggler
+  } from '@sveltestrap/sveltestrap';
+</script>
+
+<ThemeToggler let:currentColorMode let:toggleColorMode>
+  <Button color="primary" on:click={() => toggleColorMode()}>Toggle Theme: {currentColorMode}</Button>
+</ThemeToggler>
+
+<Card class="mt-3">
+  <CardHeader>
+    <CardTitle>Dark Theme</CardTitle>
+  </CardHeader>
+  <CardBody>
+    <CardSubtitle>Card subtitle</CardSubtitle>
+    <CardText>
+      Some quick example text to build on the card title and make up the bulk of the card's content.
+    </CardText>
+    <Button>Button</Button>
+  </CardBody>
+  <CardFooter>Footer</CardFooter>
+</Card>
+`} />

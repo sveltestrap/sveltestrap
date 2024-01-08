@@ -6,6 +6,7 @@ export interface BadgeProps extends HTMLAnchorAttributes {
   color?: Color;
   href?: string;
   pill?: boolean;
+  theme?: string;
 }
 
 export interface BadgeEvents {}

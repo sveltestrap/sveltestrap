@@ -125,4 +125,21 @@ describe('Alert', () => {
     expect(alert).not.toBeInTheDocument();
     expect(closeBtn).not.toBeInTheDocument();
   });
+
+  test('should render themed alert', async () => {
+    const { container, queryByRole } = TestHarness({
+      color: 'info',
+      children: 'I can be dismissed!',
+      dismissible: true,
+      fade: false,
+      theme: 'light'
+    });
+
+    const alert = queryByRole('alert');
+
+    expect(alert).toBeInTheDocument();
+    expect(alert.className).toBe('alert alert-info alert-dismissible');
+    expect(alert.dataset.bsTheme).toBe('light');
+    expect(container).toMatchSnapshot();
+  });
 });

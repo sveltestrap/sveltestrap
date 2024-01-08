@@ -33,6 +33,12 @@
    */
   export let outline = false;
 
+  /**
+   * The theme name override to apply to this component instance.
+   * @type {string | null}
+   */
+  export let theme = null;
+
   $: classes = classnames(
     className,
     'card',
@@ -43,6 +49,6 @@
 </script>
 
 <!-- svelte-ignore a11y-no-static-element-interactions -->
-<div {...$$restProps} class={classes} on:click>
+<div {...$$restProps} data-bs-theme={theme} class={classes} on:click>
   <slot />
 </div>

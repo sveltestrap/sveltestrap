@@ -10,27 +10,18 @@
       }
     },
     argTypes: {
-      class: {
-        className: 'string',
-        table: { disable: true }
+      animated: {
+        control: 'boolean'
       },
       bar: {
         control: 'boolean'
       },
-      multi: {
-        control: 'boolean'
+      barClassName: {
+        control: 'text'
       },
-      value: {
-        control: 'number'
-      },
-      max: {
-        control: 'number'
-      },
-      animated: {
-        control: 'boolean'
-      },
-      striped: {
-        control: 'boolean'
+      class: {
+        className: 'string',
+        table: { disable: true }
       },
       color: {
         control: {
@@ -38,8 +29,32 @@
         },
         options: ['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark']
       },
-      barClassName: {
-        control: 'text'
+      max: {
+        control: 'number'
+      },
+      multi: {
+        control: 'boolean'
+      },
+      striped: {
+        control: 'boolean'
+      },
+      theme: {
+        control: {
+          type: 'select'
+        },
+        options: ['dark', 'light', 'auto'],
+        description: 'The theme style to apply.',
+        table: {
+          type: {
+            summary: 'string'
+          },
+          defaultValue: {
+            summary: 'auto'
+          }
+        }
+      },
+      value: {
+        control: 'number'
       },
       'default ': {
         description: 'This is the default content slot.',
@@ -55,14 +70,15 @@
       }
     },
     args: {
-      bar: false,
-      multi: false,
-      value: 0,
-      max: 100,
       animated: false,
-      striped: false,
+      bar: false,
+      barClassName: '',
       color: 'primary',
-      barClassName: ''
+      max: 100,
+      multi: false,
+      striped: false,
+      theme: null,
+      value: 0
     }
   };
 </script>
@@ -87,6 +103,7 @@
   <Progress value={50} class="mb-2">1/2</Progress>
   <Progress value={75} class="mb-2">You're almost there!</Progress>
   <Progress color="success" value={100} class="mb-2">You did it!</Progress>
+
   <Progress multi class="mb-2">
     <Progress bar value={15}>Meh</Progress>
     <Progress bar color="success" value={30}>Wow!</Progress>
@@ -102,6 +119,7 @@
   <Progress striped color="info" value={50} class="mb-2" />
   <Progress striped color="warning" value={75} class="mb-2" />
   <Progress striped color="danger" value={100} class="mb-2" />
+
   <Progress multi class="mb-2">
     <Progress striped bar value={10} />
     <Progress striped bar color="success" value={30} />
@@ -116,6 +134,7 @@
   <Progress animated color="info" value={50} class="mb-2" />
   <Progress animated color="warning" value={75} class="mb-2" />
   <Progress animated color="danger" value={100} class="mb-2" />
+
   <Progress multi class="mb-2">
     <Progress animated bar value={10} />
     <Progress animated bar color="success" value={30} />
@@ -134,7 +153,9 @@
       <Progress bar color="warning" value={20} />
       <Progress bar color="danger" value={15} />
     </Progress>
+
     <br />
+
     <div class="text-content">With Labels</div>
     <Progress multi>
       <Progress bar value={15}>Meh</Progress>
@@ -142,7 +163,9 @@
       <Progress bar color="warning" value={25}>25%</Progress>
       <Progress bar color="danger" value={25}>LOOK OUT!!</Progress>
     </Progress>
+
     <br />
+
     <div class="text-content">Stripes and Animations</div>
     <Progress multi>
       <Progress bar striped value={15}>Stripes</Progress>
@@ -156,22 +179,45 @@
   <div class="progress-example">
     <div class="text-content">1 of 5</div>
     <Progress value={1} max={5} />
+
     <br />
+
     <div class="text-content">50 of 135</div>
     <Progress value={50} max={135} />
+
     <br />
+
     <div class="text-content">75 of 111</div>
     <Progress value={75} max={111} />
+
     <br />
+
     <div class="text-content">463 of 500</div>
     <Progress value={463} max={500} />
+
     <br />
+
     <div class="text-content">Various (40) of 55</div>
+
     <Progress multi>
       <Progress bar value={5} max={55}>5</Progress>
       <Progress bar color="success" value={15} max={55}>15</Progress>
       <Progress bar color="warning" value={10} max={55}>10</Progress>
       <Progress bar color="danger" value={10} max={55}>10</Progress>
     </Progress>
+  </div>
+</Story>
+
+<Story name="Theming">
+  <div class="progress-example">
+    <div class="text-content">Dark Theme</div>
+    <Progress theme="dark" value={25} class="mb-2">25%</Progress>
+    <Progress theme="dark" striped value={2 * 5} class="mb-2" />
+    <Progress theme="dark" animated value={2 * 5} class="mb-2" />
+
+    <div class="text-content">Light Theme</div>
+    <Progress theme="light" value={25} class="mb-2">25%</Progress>
+    <Progress theme="light" striped value={2 * 5} class="mb-2" />
+    <Progress theme="light" animated value={2 * 5} class="mb-2" />
   </div>
 </Story>

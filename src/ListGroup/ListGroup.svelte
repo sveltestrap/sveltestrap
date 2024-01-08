@@ -28,6 +28,12 @@
    */
   export let numbered = false;
 
+  /**
+   * The theme name override to apply to this component instance.
+   * @type {string | null}
+   */
+  export let theme = null;
+
   $: classes = classnames(className, 'list-group', {
     'list-group-flush': flush,
     'list-group-horizontal': horizontal,
@@ -36,11 +42,11 @@
 </script>
 
 {#if numbered}
-  <ol {...$$restProps} class={classes}>
+  <ol {...$$restProps} class={classes} data-bs-theme={theme}>
     <slot />
   </ol>
 {:else}
-  <ul {...$$restProps} class={classes}>
+  <ul {...$$restProps} class={classes} data-bs-theme={theme}>
     <slot />
   </ul>
 {/if}

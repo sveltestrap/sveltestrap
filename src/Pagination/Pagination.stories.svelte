@@ -10,6 +10,9 @@
       }
     },
     argTypes: {
+      ariaLabel: {
+        control: 'text'
+      },
       class: {
         className: 'string',
         table: { disable: true }
@@ -23,8 +26,20 @@
         },
         options: ['', 'sm', 'lg']
       },
-      ariaLabel: {
-        control: 'text'
+      theme: {
+        control: {
+          type: 'select'
+        },
+        options: ['dark', 'light', 'auto'],
+        description: 'The theme style to apply.',
+        table: {
+          type: {
+            summary: 'string'
+          },
+          defaultValue: {
+            summary: 'auto'
+          }
+        }
       },
       'default ': {
         description: 'This is the default content slot.',
@@ -40,9 +55,10 @@
       }
     },
     args: {
+      ariaLabel: 'Page navigation example',
       listClassName: '',
       size: '',
-      ariaLabel: 'Page navigation example'
+      theme: null
     }
   };
 </script>
@@ -110,4 +126,56 @@
       <PaginationLink last href="#" />
     </PaginationItem>
   </Pagination>
+</Story>
+
+<Story name="Theming">
+  <div class="vertical gap-xl">
+    <Pagination theme="dark" ariaLabel="Dark page navigation example">
+      <PaginationItem>
+        <PaginationLink first href="#" />
+      </PaginationItem>
+      <PaginationItem>
+        <PaginationLink previous href="#" />
+      </PaginationItem>
+      <PaginationItem>
+        <PaginationLink href="#">1</PaginationLink>
+      </PaginationItem>
+      <PaginationItem active>
+        <PaginationLink href="#">2</PaginationLink>
+      </PaginationItem>
+      <PaginationItem>
+        <PaginationLink href="#">3</PaginationLink>
+      </PaginationItem>
+      <PaginationItem>
+        <PaginationLink next href="#" />
+      </PaginationItem>
+      <PaginationItem>
+        <PaginationLink last href="#" />
+      </PaginationItem>
+    </Pagination>
+
+    <Pagination theme="light" ariaLabel="Light page navigation example">
+      <PaginationItem>
+        <PaginationLink first href="#" />
+      </PaginationItem>
+      <PaginationItem>
+        <PaginationLink previous href="#" />
+      </PaginationItem>
+      <PaginationItem>
+        <PaginationLink href="#">1</PaginationLink>
+      </PaginationItem>
+      <PaginationItem active>
+        <PaginationLink href="#">2</PaginationLink>
+      </PaginationItem>
+      <PaginationItem>
+        <PaginationLink href="#">3</PaginationLink>
+      </PaginationItem>
+      <PaginationItem>
+        <PaginationLink next href="#" />
+      </PaginationItem>
+      <PaginationItem>
+        <PaginationLink last href="#" />
+      </PaginationItem>
+    </Pagination>
+  </div>
 </Story>

@@ -5,6 +5,7 @@ export interface ImageProps extends HTMLImgAttributes {
   alt?: string;
   figure?: boolean;
   fluid?: boolean;
+  theme?: string;
   thumbnail?: boolean;
 }
 
