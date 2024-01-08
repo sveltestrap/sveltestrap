@@ -1,11 +1,17 @@
 import { SvelteComponent } from 'svelte';
 import { HTMLAnchorAttributes } from 'svelte/elements';
-import { Color } from '../shared';
+import { Border, Color, Shadow } from '../shared';
 
 export interface BadgeProps extends HTMLAnchorAttributes {
+  ariaLabel?: string;
+  border?: boolean | Border;
   color?: Color;
   href?: string;
+  indicator?: boolean;
   pill?: boolean;
+  placement?: string;
+  positioned?: boolean;
+  shadow?: boolean | Shadow;
   theme?: string;
 }
 

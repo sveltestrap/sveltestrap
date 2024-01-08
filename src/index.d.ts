@@ -88,11 +88,13 @@ export { Tooltip } from './Tooltip';
 export type {
   BackgroundColor,
   Breakpoints,
+  Border,
   Color,
   ColumnProps,
   ContainerType,
   Direction,
   InputType,
   Placement,
+  Shadow,
   TextColor
 } from './shared';

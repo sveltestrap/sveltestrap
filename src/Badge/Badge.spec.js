@@ -11,7 +11,7 @@ describe('Badge', () => {
 
     const badge = container.querySelector('.badge');
 
-    expect(badge.innerHTML).toBe('Hello world!');
+    expect(badge.innerHTML.trim()).toBe('Hello world!');
     expect(badge.className).toContain('badge');
     expect(badge.className).toContain('text-bg-secondary');
     expect(container).toMatchSnapshot();
@@ -61,6 +61,7 @@ describe('Badge', () => {
 
   test('should render link with href', () => {
     const { container } = TestHarness({
+      children: 'Hello World!',
       href: 'http://example.com/'
     });
 
@@ -68,6 +69,25 @@ describe('Badge', () => {
 
     expect(link.className).toBe('badge text-bg-secondary');
     expect(link.href).toBe('http://example.com/');
+    expect(container).toMatchSnapshot();
+  });
+
+  test('should render a positioned badge', () => {
+    const { container } = TestHarness({
+      positioned: true,
+      children: '100+',
+      ariaLabel: 'Unread messages'
+    });
+
+    const screenText = container.querySelector('.visually-hidden');
+    expect(screenText.innerHTML).toBe('Unread messages');
+
+    const badge = container.querySelector('.badge');
+    expect(badge.className).toContain('position-absolute');
+    expect(badge.className).toContain('translate-middle');
+    expect(badge.className).toContain('top-0');
+    expect(badge.className).toContain('start-100');
+
     expect(container).toMatchSnapshot();
   });
 });

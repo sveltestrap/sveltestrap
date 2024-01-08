@@ -103,15 +103,11 @@ The `<Badge>` component is used to provide visual cues or supplementary informat
 </script>
 
 <Button color="primary" class="position-relative">
-  Inbox <Badge color="danger" pill class="position-absolute top-0 start-100 translate-middle">100+
-    <span class="visually-hidden">Unread messages</span>
-  </Badge>
+  Inbox <Badge color="danger" pill positioned ariaLabel="Unread messages">100+</Badge>
 </Button>
 
 <Button color="primary" class="position-relative">
-  Profile <Badge color="danger" pill class="position-absolute top-0 start-100 translate-middle p-2 border">
-    <span class="visually-hidden">New alerts</span>
-  </Badge>
+  Profile <Badge color="danger" pill border indicator positioned ariaLabel="New alerts"></Badge>
 </Button>
 `} />
 
