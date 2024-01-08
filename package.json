@@ -1,7 +1,7 @@
 {
   "name": "@sveltestrap/sveltestrap",
   "description": "Bootstrap components for Svelte",
-  "version": "6.2.0",
+  "version": "6.2.1",
   "type": "module",
   "types": "./dist/index.d.ts",
   "svelte": "./dist/index.js",

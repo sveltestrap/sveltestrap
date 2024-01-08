@@ -143,43 +143,6 @@ If you prefer the `@sveltestrap/sveltestrap` import, you can move the package to
   },
 ```
 
-## Stubbing Tests
-This library uses `matchMedia` for theme detection. You can mock this in your tests by include the following in your test setup file.
-
-**Vitest**
-```js
-Object.defineProperty(window, 'matchMedia', {
-  writable: true,
-  value: vi.fn().mockImplementation(query => ({
-    matches: false,
-    media: query,
-    onchange: null,
-    addListener: vi.fn(), // deprecated
-    removeListener: vi.fn(), // deprecated
-    addEventListener: vi.fn(),
-    removeEventListener: vi.fn(),
-    dispatchEvent: vi.fn(),
-  }))
-});
-```
-
-**Jest**
-```js
-Object.defineProperty(window, 'matchMedia', {
-  writable: true,
-  value: jest.fn(query => ({
-    matches: false,
-    media: query,
-    onchange: null,
-    addListener: jest.fn(), // deprecated
-    removeListener: jest.fn(), // deprecated
-    addEventListener: jest.fn(),
-    removeEventListener: jest.fn(),
-    dispatchEvent: jest.fn(),
-  }))
-});
-```
-
 ## Sponsors
 [![avatar](https://images.weserv.nl/?url=https://opensense.s3.amazonaws.com/logo-horizontal-white-colored-emblem.svg?v=4&h=60&w=260&fit=cover&maxage=5d)](https://www.opensense.com?utm_source=github)
 
