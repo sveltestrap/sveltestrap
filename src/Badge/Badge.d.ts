@@ -5,7 +5,7 @@ import { Border, Color, Shadow } from '../shared';
 export interface BadgeProps extends HTMLAnchorAttributes {
   ariaLabel?: string;
   border?: boolean | Border;
-  color?: Color;
+  color?: string | Color;
   href?: string;
   indicator?: boolean;
   pill?: boolean;
