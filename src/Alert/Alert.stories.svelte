@@ -136,9 +136,9 @@
   {#each colors as color}
     <Alert {color}>
       <h4 class="alert-heading text-capitalize">Heading</h4>
-      This is the contents of a<b><u>{color}</u></b> alert message.
+      This is the contents of a&nbsp;<b><u>{color}</u></b> alert message.&nbsp;
 
-      <a href="#todo" class="alert-link"> Also, links are colored to match the assigned alert color! </a>
+      <a href="#todo" class="alert-link">Also, links are colored to match the assigned alert color! </a>
     </Alert>
   {/each}
 </Story>
@@ -168,10 +168,10 @@
 <Story name="Theming">
   <Alert theme="dark" color="primary" isOpen={true}>
     <h4 class="alert-heading">Dark Theme</h4>
-    I am a<code>dark</code> themed primary alert!
+    I am a&nbsp;<code>dark</code> themed primary alert!
   </Alert>
 
   <Alert theme="light" heading="Light Theme" color="primary" isOpen={true}>
-    I am a <code>light</code> themed primary alert!
+    I am a&nbsp;<code>light</code> themed primary alert!
   </Alert>
 </Story>
