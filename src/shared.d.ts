@@ -41,6 +41,31 @@ export declare type ContainerType = 'body' | 'inline';
 
 export declare type Direction = 'up' | 'down' | 'left' | 'right' | 'start' | 'end';
 
+export declare type InputType =
+  | 'button'
+  | 'checkbox'
+  | 'color'
+  | 'date'
+  | 'datetime-local'
+  | 'email'
+  | 'file'
+  | 'month'
+  | 'number'
+  | 'password'
+  | 'radio'
+  | 'range'
+  | 'reset'
+  | 'search'
+  | 'select'
+  | 'submit'
+  | 'switch'
+  | 'tel'
+  | 'text'
+  | 'textarea'
+  | 'time'
+  | 'url'
+  | 'week';
+
 export declare type Placement = 'start' | 'end' | 'top' | 'bottom';
 
 export declare type TextColor =

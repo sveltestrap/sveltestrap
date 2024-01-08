@@ -92,6 +92,7 @@ export type {
   ColumnProps,
   ContainerType,
   Direction,
+  InputType,
   Placement,
   TextColor
 } from './shared';

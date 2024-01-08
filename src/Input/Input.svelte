@@ -152,13 +152,14 @@
 
   /**
    * Value of the Input.
-   * @type {string}
+   * @type {string | undefined}
    * @default ''
    */
-  export let value = '';
+  export let value = undefined;
 
   let classes;
   let tag;
+
   $: {
     const isNotaNumber = new RegExp('\\D', 'g');
 
