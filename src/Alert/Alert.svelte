@@ -5,6 +5,7 @@
   /**
    * Additional CSS class names.
    * @type {string}
+   * @default ''
    */
   let className = '';
   export { className as class };
@@ -18,56 +19,65 @@
   /**
    * ARIA label for the close button.
    * @type {string}
+   * @default 'Close'
    */
   export let closeAriaLabel = 'Close';
 
   /**
    * Additional CSS class names for the close button.
    * @type {string}
+   * @default ''
    */
   export let closeClassName = '';
 
   /**
    * The color theme for the alert.
    * @type {string}
+   * @default 'success'
    */
   export let color = 'success';
 
   /**
    * Flag to indicate if the alert is dismissible.
    * @type {boolean}
+   * @default false
    */
   export let dismissible = false;
 
   /**
    * Flag to enable fade transition.
    * @type {boolean}
+   * @default true
    */
   export let fade = true;
 
   /**
    * Heading text for the alert.
    * @type {string}
+   * @default ''
    */
   export let heading = '';
 
   /**
    * Controls the visibility of the alert.
    * @type {boolean}
+   * @default true
    */
   export let isOpen = true;
 
   /**
    * Function to toggle the visibility of the alert.
    * @type {Function | undefined}
+   * @default undefined
    */
   export let toggle = undefined;
 
   /**
    * The theme name override to apply to this component instance.
-   * @type {string | null}
+   * @type {string | undefined}
+   * @default undefined
    */
-  export let theme = null;
+  export let theme = undefined;
 
   /**
    * Transition configuration.
