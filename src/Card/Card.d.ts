@@ -3,7 +3,7 @@ import { HTMLAttributes } from 'svelte/elements';
 import { Color } from '../shared';
 
 export interface CardProps extends HTMLAttributes<HTMLDivElement> {
-  color?: Color;
+  color?: Color | string;
   body?: boolean;
   inverse?: boolean;
   outline?: boolean;
