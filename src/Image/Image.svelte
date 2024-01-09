@@ -18,7 +18,7 @@
   export let alt = undefined;
 
   /**
-   * Determines if the image so apply the figure class
+   * Determines if the image should apply the figure class
    * @type {boolean}
    */
   export let figure = getContext('figure');
