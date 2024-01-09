@@ -147,7 +147,7 @@
   </div>
   <div>
     <Button color="primary" class="position-relative">
-      Profile <Badge color="danger" pill indicator positioned ariaLabel="New alerts"></Badge>
+      Profile <Badge color="danger" pill indicator border positioned ariaLabel="New alerts"></Badge>
     </Button>
   </div>
 </Story>
