@@ -5,7 +5,7 @@ import { Color } from '../shared';
 export interface ListGroupItemProps extends HTMLAnchorAttributes {
   action?: boolean;
   active?: boolean;
-  color?: Color;
+  color?: Color | string;
   disabled?: boolean;
   href?: string;
   tag?: 'a' | 'button' | 'li';
