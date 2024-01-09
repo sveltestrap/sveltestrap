@@ -2,35 +2,38 @@
   import { getContext } from 'svelte';
   import { classnames } from '../utils';
 
-  // Additional CSS class name for the component
-  let className = '';
   /**
    * Additional CSS class name for the component
    * @type {string}
+   * @default ''
    */
+  let className = '';
   export { className as class };
 
   /**
    * Alternative text for the image
-   * @type {string}
+   * @type {string | undefined}
+   * @default undefined
    */
   export let alt = undefined;
 
   /**
-   * Contextual information related to the figure component
-   * @type {HTMLElement}
+   * Determines if the image so apply the figure class
+   * @type {boolean}
    */
   export let figure = getContext('figure');
 
   /**
    * Fluid image indicator flag
    * @type {boolean}
+   * @default false
    */
   export let fluid = false;
 
   /**
    * The theme name override to apply to this component instance.
    * @type {string | null}
+   * @default null
    */
   export let theme = null;
 
