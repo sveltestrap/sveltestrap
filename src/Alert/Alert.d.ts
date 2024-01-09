@@ -6,7 +6,7 @@ import { Color } from '../shared';
 export interface AlertProps extends HTMLAttributes<HTMLDivElement> {
   closeAriaLabel?: string;
   closeClassName?: string;
-  color?: Color;
+  color?: Color | string;
   dismissible?: boolean;
   fade?: boolean;
   heading?: string;

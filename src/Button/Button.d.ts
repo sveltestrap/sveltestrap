@@ -1,12 +1,8 @@
 import { SvelteComponent } from 'svelte';
-import { HTMLButtonAttributes } from 'svelte/elements';
+import { HTMLAnchorAttributes, HTMLButtonAttributes } from 'svelte/elements';
 import { Color } from '../shared';
 
-declare type ButtonColor = Color | 'link';
-
-declare type ButtonSize = 'lg' | 'sm';
-
-export interface ButtonProps extends HTMLButtonAttributes {
+export interface ButtonProps extends HTMLAnchorAttributes, HTMLButtonAttributes {
   active?: boolean;
   block?: boolean;
   class?: string;
