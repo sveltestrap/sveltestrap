@@ -1,6 +1,11 @@
 <script>
   import { classnames } from '../utils';
 
+  /**
+   * Additional CSS class name for the component
+   * @type {string}
+   * @default ''
+   */
   let className = '';
   export { className as class };
 

@@ -9,6 +9,7 @@ export interface ToastProps extends HTMLAttributes<HTMLDivElement> {
   fade?: boolean;
   header?: string;
   isOpen?: boolean;
+  theme?: string;
   toggle?: () => void;
 }
 

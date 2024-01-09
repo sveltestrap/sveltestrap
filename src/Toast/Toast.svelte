@@ -7,23 +7,25 @@
 
   const dispatch = createEventDispatcher();
 
-  // Additional CSS class names to add to the container.
-  let className = '';
-
   /**
-   * Exports a prop `class` which can be used to apply custom CSS classes.
+   * Additional CSS class names to add to the container.
    * @type {string}
+   * @default ''
    */
+  let className = '';
   export { className as class };
+
   /**
    * Controls whether the Toast component autohides after a certain duration.
    * @type {boolean}
+   * @default false
    */
   export let autohide = false;
 
   /**
-   * Specifies whether the Toast component includes a body content.
+   * Specifies whether the Toast component includes a body wrapper.
    * @type {boolean}
+   * @default false
    */
   export let body = false;
 
@@ -50,7 +52,8 @@
 
   /**
    * Specifies the header content of the Toast component.
-   * @type {undefined}
+   * @type {string | undefined}
+   * @default undefined
    */
   export let header = undefined;
 
@@ -62,16 +65,18 @@
   export let isOpen = true;
 
   /**
-   * Function to toggle the visibility of the Toast component.
-   * @type {null}
-   */
-  export let toggle = null;
-
-  /**
    * The theme name override to apply to this component instance.
    * @type {string | null}
+   * @default null
    */
   export let theme = null;
+
+  /**
+   * Function to toggle the visibility of the Toast component.
+   * @type {null}
+   * @default null
+   */
+  export let toggle = null;
 
   /**
    * The timer ID for the autohide timeout.
