@@ -1,7 +1,7 @@
 import { SvelteComponent } from 'svelte';
 import { HTMLAttributes } from 'svelte/elements';
 
-declare type ColumnProps =
+export declare type ColumnProps =
   | string
   | boolean
   | number
