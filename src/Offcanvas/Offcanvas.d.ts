@@ -9,7 +9,7 @@ export interface OffcanvasProps extends HTMLAttributes<HTMLDivElement> {
   fade?: boolean;
   header?: string;
   isOpen: boolean;
-  keyboard: boolean;
+  keyboard?: boolean;
   placement?: Placement;
   scroll?: boolean;
   sm?: boolean;
