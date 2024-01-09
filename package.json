@@ -2,9 +2,27 @@
   "name": "@sveltestrap/sveltestrap",
   "description": "Bootstrap components for Svelte",
   "version": "6.2.1",
+  "license": "MIT",
+  "homepage": "https://sveltestrap.js.org",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sveltestrap/sveltestrap.git"
+  },
   "type": "module",
   "types": "./dist/index.d.ts",
   "svelte": "./dist/index.js",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "svelte": "./dist/index.js",
+      "import": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
   "keywords": [
     "svelte",
     "components",
@@ -34,20 +52,6 @@
     "toasts",
     "tooltips"
   ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/sveltestrap/sveltestrap.git"
-  },
-  "files": [
-    "dist",
-    "src"
-  ],
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "svelte": "./dist/index.js"
-    }
-  },
   "scripts": {
     "start": "storybook dev -p 6006",
     "build": "svelte-package --input ./src && pnpm lint:package",
