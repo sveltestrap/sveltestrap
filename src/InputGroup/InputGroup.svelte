@@ -1,17 +1,18 @@
 <script>
   import { classnames } from '../utils';
 
-  // Additional CSS class name for the component
-  let className = '';
   /**
    * Additional CSS class name for the component
    * @type {string}
+   * @default ''
    */
+  let className = '';
   export { className as class };
 
   /**
    * Size of the component.
    * @type {string}
+   * @default ''
    */
   export let size = '';
 
