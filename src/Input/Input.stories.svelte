@@ -299,7 +299,7 @@
     </FormGroup>
 
     <FormGroup>
-      <Input value="Multiple feedback" valid feedback={['I could be black', 'I could be white']} />
+      <Input value="Multiple feedback" valid feedback={['I could be here', 'I could be there']} />
     </FormGroup>
   </div>
 </Story>

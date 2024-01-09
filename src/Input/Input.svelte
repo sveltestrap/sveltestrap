@@ -3,17 +3,17 @@
   import { FormFeedback } from '../FormFeedback';
   import { classnames } from '../utils';
 
-  // Additional CSS class name for the component
-  let className = '';
   /**
    * Additional CSS class name for the component
    * @type {string}
+   * @default ''
    */
+  let className = '';
   export { className as class };
 
   /**
    * Bootstrap size of the Input.
-   * @type {string}
+   * @type {string | undefined}
    * @default undefined
    */
   export let bsSize = undefined;
@@ -27,42 +27,42 @@
 
   /**
    * Color variant for the Input.
-   * @type {string}
+   * @type {string | undefined}
    * @default undefined
    */
   export let color = undefined;
 
   /**
    * Indicates whether the Input is disabled.
-   * @type {boolean}
+   * @type {boolean | undefined}
    * @default undefined
    */
   export let disabled = undefined;
 
   /**
    * Feedback message for the Input.
-   * @type {string|Array}
+   * @type {string | Array}
    * @default undefined
    */
   export let feedback = undefined;
 
   /**
    * Array of files for file input.
-   * @type {Array}
+   * @type {Array | undefined}
    * @default undefined
    */
   export let files = undefined;
 
   /**
    * Group identifier for the Input.
-   * @type {string|undefined}
+   * @type {string | undefined}
    * @default undefined
    */
   export let group = undefined;
 
   /**
    * Inner content for the Input.
-   * @type {string|undefined}
+   * @type {string | undefined}
    * @default undefined
    */
   export let inner = undefined;
@@ -76,14 +76,14 @@
 
   /**
    * Label for the Input.
-   * @type {string|undefined}
+   * @type {string | undefined}
    * @default undefined
    */
   export let label = undefined;
 
   /**
    * Indicates whether the Input allows multiple selections.
-   * @type {boolean|undefined}
+   * @type {boolean | undefined}
    * @default undefined
    */
   export let multiple = undefined;
@@ -111,7 +111,7 @@
 
   /**
    * Indicates whether the Input is read-only.
-   * @type {boolean|undefined}
+   * @type {boolean | undefined}
    * @default undefined
    */
   export let readonly = undefined;
@@ -125,16 +125,16 @@
 
   /**
    * Size of the Input.
-   * @type {string|undefined}
+   * @type {string | undefined}
    * @default undefined
    */
   export let size = undefined;
 
   /**
    * The theme name override to apply to this component instance.
-   * @type {string | null}
+   * @type {string | undefined}
    */
-  export let theme = null;
+  export let theme = undefined;
 
   /**
    * Type of the Input.
@@ -153,7 +153,7 @@
   /**
    * Value of the Input.
    * @type {string | undefined}
-   * @default ''
+   * @default undefined
    */
   export let value = undefined;
 
