@@ -1,5 +1,5 @@
 import { SvelteComponent } from 'svelte';
-import { HTMLDivElement } from 'svelte/elements';
+import { HTMLAttributes } from 'svelte/elements';
 import { Direction } from '../shared';
 
 export interface DropdownProps extends HTMLAttributes<HTMLDivElement> {
