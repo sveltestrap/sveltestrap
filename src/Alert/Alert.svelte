@@ -3,7 +3,7 @@
   import { classnames } from '../utils';
 
   /**
-   * Additional CSS class names.
+   * Additional CSS classes for container element.
    * @type {string}
    * @default ''
    */

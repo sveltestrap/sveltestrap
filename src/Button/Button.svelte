@@ -2,8 +2,9 @@
   import { classnames } from '../utils';
 
   /**
-   * Additional CSS class name for the component
+   * Additional CSS classes for container element.
    * @type {string}
+   * @default ''
    */
   let className = '';
   export { className as class };
@@ -11,66 +12,78 @@
   /**
    * Indicates if the component is active.
    * @type {boolean}
+   * @default false
    */
   export let active = false;
 
   /**
    * Indicates if the component should be displayed as a block.
    * @type {boolean}
+   * @default false
    */
   export let block = false;
 
   /**
    * Children elements to be rendered inside the component.
    * @type {string}
+   * @default ''
    */
   export let children = '';
 
   /**
-   * Indicates if the component is a close button.
+   * Indicates if the button is a close button.
    * @type {boolean}
+   * @default false
    */
   export let close = false;
 
   /**
-   * Color theme for the component.
-   * @type {'primary'|'secondary'|string}
+   * Color theme for the button.
+   * @type {string}
+   * @default 'secondary'
    */
   export let color = 'secondary';
 
   /**
    * Indicates if the component is disabled.
    * @type {boolean}
+   * @default false
    */
   export let disabled = false;
 
   /**
-   * Hyperlink reference for the component.
+   * The URL to link to when the button is clicked.
+   * If set, will render an anchhor element instead of a button.
    * @type {string}
+   * @default ''
    */
   export let href = '';
 
   /**
    * Reference to the inner element of the component.
-   * @type {any}
+   * @type {HTMLElement}
+   * @default undefined
    */
   export let inner = undefined;
 
   /**
    * Indicates if the component should have an outline.
    * @type {boolean}
+   * @default false
    */
   export let outline = false;
 
   /**
    * Size of the Button.
    * @type {string}
+   * @default ''
    */
   export let size = '';
 
   /**
    * Value attribute for the button element.
    * @type {string}
+   * @default ''
    */
   export let value = '';
 

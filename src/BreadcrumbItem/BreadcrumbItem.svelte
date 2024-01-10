@@ -4,6 +4,7 @@
   /**
    * Additional CSS class names for the <li> element.
    * @type {string}
+   * @default ''
    */
   let className = '';
   export { className as class };
@@ -11,12 +12,14 @@
   /**
    * Indicates whether the breadcrumb item is active (i.e., the current page).
    * @type {boolean}
+   * @default false
    */
   export let active = false;
 
   /**
    * The content to be displayed within the breadcrumb item.
    * @type {string}
+   * @default ''
    */
   export let children = '';
 

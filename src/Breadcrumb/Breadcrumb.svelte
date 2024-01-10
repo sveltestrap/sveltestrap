@@ -5,6 +5,7 @@
   /**
    * Additional CSS class names for the <nav> element.
    * @type {string}
+   * @default ''
    */
   let className = '';
   export { className as class };
@@ -18,12 +19,14 @@
   /**
    * Custom divider character or string for the breadcrumb items.
    * @type {string}
+   * @default ''
    */
   export let divider = '';
 
   /**
    * Additional CSS class names for the <ol> element inside the breadcrumb.
    * @type {string}
+   * @default ''
    */
   export let listClassName = '';
 

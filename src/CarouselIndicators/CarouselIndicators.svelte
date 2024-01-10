@@ -1,11 +1,29 @@
 <script>
   import { classnames } from '../utils';
 
+  /**
+   * Additional CSS classes for container element.
+   * @type {string}
+   * @default ''
+   */
   let className = '';
-  let classes = '';
   export { className as class };
+
+  /**
+   * Carousel items.
+   * @type {any[]}
+   * @default []
+   */
   export let items = [];
+
+  /**
+   * Active carousel item index.
+   * @type {number}
+   * @default 0
+   */
   export let activeIndex = 0;
+
+  let classes = '';
 
   $: classes = classnames(className, 'carousel-indicators');
 </script>

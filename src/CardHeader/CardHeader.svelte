@@ -1,8 +1,19 @@
 <script>
   import { classnames } from '../utils';
 
+  /**
+   * Additional CSS classes for container element.
+   * @type {string}
+   * @default ''
+   */
   let className = '';
   export { className as class };
+
+  /**
+   * HTML tag to use for container element.
+   * @type {string}
+   * @default 'div'
+   */
   export let tag = 'div';
 
   $: classes = classnames(className, 'card-header');

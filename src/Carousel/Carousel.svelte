@@ -1,63 +1,68 @@
 <script>
   import { onDestroy, onMount } from 'svelte';
+
   import { browserEvent, classnames, getNewCarouselActiveIndex } from '../utils';
 
-  // Additional CSS class names to add to the container.
-  let classes = '';
-
-  // Additional CSS class names to add to the container.
-  let className = '';
-
   /**
-   * Exports a prop `class` which can be used to apply custom CSS classes.
+   * Additional CSS classes for container element.
    * @type {string}
+   * @default ''
    */
+  let className = '';
   export { className as class };
 
   /**
    * The index of the currently active item in the carousel.
    * @type {number}
+   * @default 0
    */
   export let activeIndex = 0;
 
   /**
    * The time interval (in milliseconds) between automatic transitions of the carousel items.
    * @type {number}
+   * @default 5000
    */
   export let interval = 5000;
 
   /**
    * An array of items to be displayed in the carousel.
    * @type {Array}
+   * @default []
    */
   export let items = [];
 
   /**
    * A boolean indicating whether the carousel should respond to keyboard navigation.
    * @type {boolean}
+   * @default true
    */
   export let keyboard = true;
 
   /**
    * A boolean indicating whether automatic cycling of the carousel should pause on hover.
    * @type {boolean}
+   * @default true
    */
   export let pause = true;
 
   /**
    * A boolean indicating whether the carousel should automatically cycle through items.
    * @type {boolean}
+   * @default true
    */
   export let ride = true;
 
   /**
    * The theme name override to apply to this component instance.
-   * @type {string | null}
+   * @type {string | undefined}
+   * @default undefined
    */
-  export let theme = null;
+  export let theme = undefined;
 
   let _rideTimeoutId = false;
   let _removeVisibilityChangeListener = false;
+  let classes = '';
 
   $: classes = classnames(className, 'carousel', 'slide');
 

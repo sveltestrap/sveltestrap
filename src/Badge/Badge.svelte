@@ -4,18 +4,21 @@
   /**
    * Text to be read by screen readers.
    * @type {string}
+   * @default ''
    */
   export let ariaLabel = '';
 
   /**
    * Determines if the badge should have a border
    * @type {boolean | string}
+   * @default false
    */
   export let border = false;
 
   /**
-   * Additional CSS class names.
+   * Additional CSS classes for container element.
    * @type {string}
+   * @default ''
    */
   let className = '';
   export { className as class };
@@ -23,56 +26,65 @@
   /**
    * The content to be displayed within the badge.
    * @type {string}
+   * @default ''
    */
   export let children = '';
 
   /**
    * The color theme for the badge.
    * @type {string}
+   * @default 'secondary'
    */
   export let color = 'secondary';
 
   /**
    * The href attribute for the badge, which turns it into a link if provided.
    * @type {string}
+   * @default ''
    */
   export let href = '';
 
   /**
    * Create a circular indicator for absolute positioned badge.
    * @type {boolean}
+   * @default false
    */
   export let indicator = false;
 
   /**
    * Flag to indicate if the badge should have a pill shape.
    * @type {boolean}
+   * @default false
    */
   export let pill = false;
 
   /**
    * Flag to indicate if the badge should be absolutely positioned.
    * @type {boolean}
+   * @default false
    */
   export let positioned = false;
 
   /**
    * Classes determining where the badge should be absolutely positioned.
    * @type {string}
+   * @default 'top-0 start-100'
    */
   export let placement = 'top-0 start-100';
 
   /**
    * Determines if the badge should have a shadow
    * @type {boolean | string}
+   * @default false
    */
   export let shadow = false;
 
   /**
    * The theme name override to apply to this component instance.
-   * @type {string | null}
+   * @type {string | undefined}
+   * @default undefined
    */
-  export let theme = null;
+  export let theme = undefined;
 
   $: classes = classnames(
     'badge',

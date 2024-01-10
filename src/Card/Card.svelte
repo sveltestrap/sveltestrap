@@ -1,43 +1,47 @@
 <script>
   import { classnames } from '../utils';
 
-  // Additional CSS class names to add to the container.
-  let className = '';
-
   /**
-   * Exports a prop `class` which can be used to apply custom CSS classes.
+   * Additional CSS classes for container element.
    * @type {string}
+   * @default ''
    */
+  let className = '';
   export { className as class };
+
   /**
    * Determines whether to include a card body.
    * @type {boolean}
+   * @default false
    */
   export let body = false;
 
   /**
    * Specifies the color theme of the card.
    * @type {string}
+   * @default ''
    */
   export let color = '';
 
   /**
    * Inverts the text color of the card.
    * @type {boolean}
+   * @default false
    */
   export let inverse = false;
 
   /**
    * Render the card with an outline style.
    * @type {boolean}
+   * @default false
    */
   export let outline = false;
 
   /**
    * The theme name override to apply to this component instance.
-   * @type {string | null}
+   * @type {string | undefined}
    */
-  export let theme = null;
+  export let theme = undefined;
 
   $: classes = classnames(
     className,
