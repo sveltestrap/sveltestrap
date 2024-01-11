@@ -7,12 +7,12 @@ export interface ButtonProps extends HTMLAnchorAttributes, HTMLButtonAttributes 
   block?: boolean;
   class?: string;
   close?: boolean;
-  color?: ButtonColor;
+  color?: Color | 'link' | string;
   disabled?: boolean;
   href?: string;
   inner?: HTMLElement;
   outline?: boolean;
-  size?: ButtonSize;
+  size?: 'sm' | 'lg' | string;
 }
 
 export interface ButtonEvents {
