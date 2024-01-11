@@ -145,4 +145,16 @@ describe('Input', () => {
     expect(container.querySelector('.invalid-feedback')).toBeNull();
     expect(container.querySelector('.valid-feedback')).toBeNull();
   });
+
+  test('should render max', () => {
+    const { container } = TestHarness({ type: 'date', max: '07-01-1987' });
+    const input = container.querySelector('input');
+    expect(input.getAttribute('max')).toBe('07-01-1987');
+  });
+
+  test('should render min', () => {
+    const { container } = TestHarness({ type: 'date', min: '07-01-1987' });
+    const input = container.querySelector('input');
+    expect(input.getAttribute('min')).toBe('07-01-1987');
+  });
 });
