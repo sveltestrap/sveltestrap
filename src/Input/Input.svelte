@@ -4,7 +4,7 @@
   import { classnames } from '../utils';
 
   /**
-   * Additional CSS class name for the component
+   * Additional CSS classes for the input.
    * @type {string}
    * @default ''
    */
@@ -12,28 +12,30 @@
   export { className as class };
 
   /**
-   * Bootstrap size of the Input.
+   * Bootstrap size to apply to the input.
    * @type {string | undefined}
    * @default undefined
    */
   export let bsSize = undefined;
 
   /**
-   * Indicates whether the Input is checked.
+   * Indicates whether the input should be checked
+   * Used with type "checkbox", "radio", and "switch".
    * @type {boolean}
    * @default false
    */
   export let checked = false;
 
   /**
-   * Color variant for the Input.
+   * Color selection of the input
+   * Used with type "color"
    * @type {string | undefined}
    * @default undefined
    */
   export let color = undefined;
 
   /**
-   * Indicates whether the Input is disabled.
+   * Determines whether the input is disabled.
    * @type {boolean | undefined}
    * @default undefined
    */
@@ -47,7 +49,8 @@
   export let feedback = undefined;
 
   /**
-   * Array of files for file input.
+   * Array of files for file names for input.
+   * Used with type "file"
    * @type {Array | undefined}
    * @default undefined
    */
@@ -55,6 +58,7 @@
 
   /**
    * Group identifier for the Input.
+   * Used with type "checkbox", "radio", and "switch".
    * @type {string | undefined}
    * @default undefined
    */
@@ -68,14 +72,15 @@
   export let inner = undefined;
 
   /**
-   * Indicates whether the Input is invalid.
+   * Indicates whether the input is invalid.
    * @type {boolean}
    * @default false
    */
   export let invalid = false;
 
   /**
-   * Label for the Input.
+   * Label for the input.
+   * Used with type "checkbox", "radio", "switch".
    * @type {string | undefined}
    * @default undefined
    */
@@ -83,6 +88,7 @@
 
   /**
    * Maximum value for the Input.
+   * Used with type "date", "datetime", "datetime-local", "month", "number", "time", "range", and "week"
    * @type {string | number | undefined}
    * @default undefined
    */
@@ -90,6 +96,7 @@
 
   /**
    * Minimum value for the Input.
+   * Used with type "date", "datetime", "datetime-local", "month", "number", "time", "range", and "week"
    * @type {string | number | undefined}
    * @default undefined
    */
@@ -97,6 +104,7 @@
 
   /**
    * Indicates whether the Input allows multiple selections.
+   * Used with type "email" and "file".
    * @type {boolean | undefined}
    * @default undefined
    */
@@ -110,62 +118,62 @@
   export let name = '';
 
   /**
-   * Placeholder text for the Input.
+   * Placeholder text for the input.
    * @type {string}
    * @default ''
    */
   export let placeholder = '';
 
   /**
-   * Indicates whether the Input is in plaintext mode.
+   * Indicates whether the input should be rendered in plaintext mode.
    * @type {boolean}
    * @default false
    */
   export let plaintext = false;
 
   /**
-   * Indicates whether the Input is read-only.
+   * Indicates whether the input is read-only.
    * @type {boolean | undefined}
    * @default undefined
    */
   export let readonly = undefined;
 
   /**
-   * Indicates whether the Input is reversed.
+   * Indicates whether the input is reversed.
    * @type {boolean}
    * @default false
    */
   export let reverse = false;
 
   /**
-   * Size of the Input.
+   * Determines the size of the input.
    * @type {string | undefined}
    * @default undefined
    */
   export let size = undefined;
 
   /**
-   * The theme name override to apply to this component instance.
+   * Theme name override to apply to the input.
    * @type {string | undefined}
    */
   export let theme = undefined;
 
   /**
-   * Type of the Input.
+   * Determines the type of input.
    * @type {string}
    * @default 'text'
    */
   export let type = 'text';
 
   /**
-   * Indicates whether the Input is valid.
+   * Indicates whether the input is valid.
    * @type {boolean}
    * @default false
    */
   export let valid = false;
 
   /**
-   * Value of the Input.
+   * Value of the input.
    * @type {string | undefined}
    * @default undefined
    */
