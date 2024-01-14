@@ -3,7 +3,7 @@ import { HTMLInputAttributes, HTMLSelectAttributes, HTMLTextareaAttributes } fro
 import { Color, InputType } from '../shared';
 
 export interface InputProps extends HTMLInputAttributes, HTMLSelectAttributes, HTMLTextareaAttributes {
-  bsSize?: 'lg' | 'sm';
+  bsSize?: 'lg' | 'sm' | string;
   color?: Color | string;
   feedback?: string | string[];
   files?: FileList;

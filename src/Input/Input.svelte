@@ -82,6 +82,20 @@
   export let label = undefined;
 
   /**
+   * Maximum value for the Input.
+   * @type {string | number | undefined}
+   * @default undefined
+   */
+  export let max = undefined;
+
+  /**
+   * Minimum value for the Input.
+   * @type {string | number | undefined}
+   * @default undefined
+   */
+  export let min = undefined;
+
+  /**
    * Indicates whether the Input allows multiple selections.
    * @type {boolean | undefined}
    * @default undefined
@@ -222,33 +236,12 @@
 </script>
 
 {#if tag === 'input'}
-  {#if type === 'text'}
+  {#if type === 'text' || type === 'password' || type === 'search' || type === 'tel' || type === 'url'}
     <input
       {...$$restProps}
+      {...{ type }}
       data-bs-theme={theme}
       class={classes}
-      type="text"
-      bind:value
-      bind:this={inner}
-      on:blur
-      on:change
-      on:focus
-      on:input
-      on:keydown
-      on:keypress
-      on:keyup
-      {disabled}
-      {name}
-      {placeholder}
-      {readonly}
-      {size}
-    />
-  {:else if type === 'password'}
-    <input
-      {...$$restProps}
-      data-bs-theme={theme}
-      class={classes}
-      type="password"
       bind:value
       bind:this={inner}
       on:blur
@@ -357,12 +350,12 @@
       {readonly}
       {valid}
     />
-  {:else if type === 'url'}
+  {:else if type === 'date' || type === 'datetime' || type === 'datetime-local' || type === 'month' || type === 'number' || type === 'time' || type === 'range' || type === 'week'}
     <input
       {...$$restProps}
+      {...{ type }}
       data-bs-theme={theme}
       class={classes}
-      type="url"
       bind:value
       bind:this={inner}
       on:blur
@@ -373,229 +366,8 @@
       on:keypress
       on:keyup
       {disabled}
-      {name}
-      {placeholder}
-      {readonly}
-      {size}
-    />
-  {:else if type === 'number'}
-    <input
-      {...$$restProps}
-      data-bs-theme={theme}
-      class={classes}
-      type="number"
-      bind:value
-      bind:this={inner}
-      on:blur
-      on:change
-      on:focus
-      on:input
-      on:keydown
-      on:keypress
-      on:keyup
-      {readonly}
-      {name}
-      {disabled}
-      {placeholder}
-    />
-  {:else if type === 'date'}
-    <input
-      {...$$restProps}
-      data-bs-theme={theme}
-      class={classes}
-      type="date"
-      bind:value
-      bind:this={inner}
-      on:blur
-      on:change
-      on:focus
-      on:input
-      on:keydown
-      on:keypress
-      on:keyup
-      {disabled}
-      {name}
-      {placeholder}
-      {readonly}
-    />
-  {:else if type === 'time'}
-    <input
-      {...$$restProps}
-      data-bs-theme={theme}
-      class={classes}
-      type="time"
-      bind:value
-      bind:this={inner}
-      on:blur
-      on:change
-      on:focus
-      on:input
-      on:keydown
-      on:keypress
-      on:keyup
-      {disabled}
-      {name}
-      {placeholder}
-      {readonly}
-    />
-  {:else if type === 'datetime'}
-    <input
-      {...$$restProps}
-      data-bs-theme={theme}
-      type="datetime"
-      bind:value
-      bind:this={inner}
-      on:blur
-      on:change
-      on:focus
-      on:input
-      on:keydown
-      on:keypress
-      on:keyup
-      {readonly}
-      class={classes}
-      {name}
-      {disabled}
-      {placeholder}
-    />
-  {:else if type === 'datetime-local'}
-    <input
-      {...$$restProps}
-      data-bs-theme={theme}
-      class={classes}
-      type="datetime-local"
-      bind:value
-      bind:this={inner}
-      on:blur
-      on:change
-      on:focus
-      on:input
-      on:keydown
-      on:keypress
-      on:keyup
-      {disabled}
-      {name}
-      {placeholder}
-      {readonly}
-    />
-  {:else if type === 'month'}
-    <input
-      {...$$restProps}
-      data-bs-theme={theme}
-      class={classes}
-      type="month"
-      bind:value
-      bind:this={inner}
-      on:blur
-      on:change
-      on:focus
-      on:input
-      on:keydown
-      on:keypress
-      on:keyup
-      {disabled}
-      {name}
-      {placeholder}
-      {readonly}
-    />
-  {:else if type === 'color'}
-    <input
-      {...$$restProps}
-      data-bs-theme={theme}
-      type="color"
-      bind:value
-      bind:this={inner}
-      on:blur
-      on:change
-      on:focus
-      on:input
-      on:keydown
-      on:keypress
-      on:keyup
-      {readonly}
-      class={classes}
-      {name}
-      {disabled}
-      {placeholder}
-    />
-  {:else if type === 'range'}
-    <input
-      {...$$restProps}
-      data-bs-theme={theme}
-      type="range"
-      bind:value
-      bind:this={inner}
-      on:blur
-      on:change
-      on:focus
-      on:input
-      on:keydown
-      on:keypress
-      on:keyup
-      {readonly}
-      class={classes}
-      {name}
-      {disabled}
-      {placeholder}
-    />
-  {:else if type === 'search'}
-    <input
-      {...$$restProps}
-      data-bs-theme={theme}
-      class={classes}
-      type="search"
-      bind:value
-      bind:this={inner}
-      on:blur
-      on:change
-      on:focus
-      on:input
-      on:keydown
-      on:keypress
-      on:keyup
-      {disabled}
-      {name}
-      {placeholder}
-      {readonly}
-      {size}
-    />
-  {:else if type === 'tel'}
-    <input
-      {...$$restProps}
-      data-bs-theme={theme}
-      class={classes}
-      type="tel"
-      bind:value
-      bind:this={inner}
-      on:blur
-      on:change
-      on:focus
-      on:input
-      on:keydown
-      on:keypress
-      on:keyup
-      {disabled}
-      {name}
-      {placeholder}
-      {readonly}
-      {size}
-    />
-  {:else if type === 'week'}
-    <input
-      {...$$restProps}
-      data-bs-theme={theme}
-      class={classes}
-      type="week"
-      bind:value
-      bind:this={inner}
-      on:blur
-      on:change
-      on:focus
-      on:input
-      on:keydown
-      on:keypress
-      on:keyup
-      {disabled}
+      {max}
+      {min}
       {name}
       {placeholder}
       {readonly}
@@ -604,6 +376,7 @@
     <input
       {...$$restProps}
       data-bs-theme={theme}
+      class={classes}
       {type}
       on:blur
       on:change={handleInput}
@@ -612,11 +385,10 @@
       on:keydown
       on:keypress
       on:keyup
-      {readonly}
-      class={classes}
       {name}
       {disabled}
       {placeholder}
+      {readonly}
       {value}
     />
   {/if}
@@ -656,24 +428,8 @@
   >
     <slot />
   </select>
-
-  <!-- {:else if tag === 'select' && multiple}
-  <select
-    {...$$restProps}
-    data-bs-theme={theme}
-    multiple
-    class={classes}
-    on:blur
-    on:focus
-    on:change
-    on:input
-    bind:value
-    bind:this={inner}
-    {name}
-    {disabled}>
-    <slot />
-  </select> -->
 {/if}
+
 {#if feedback}
   {#if Array.isArray(feedback)}
     {#each feedback as msg}
