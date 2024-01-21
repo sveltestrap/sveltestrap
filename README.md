@@ -138,9 +138,9 @@ If you prefer the `@sveltestrap/sveltestrap` import, you can move the package to
 
 ```json
 "devDependencies": {
-    "@sveltestrap/sveltestrap": "*.*.*",
-    ...
-  },
+  "@sveltestrap/sveltestrap": "*.*.*",
+  ...
+},
 ```
 
 ## Sponsors
