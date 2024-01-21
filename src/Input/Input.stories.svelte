@@ -108,6 +108,18 @@
           disable: true
         }
       },
+      max: {
+        control: 'number',
+        table: {
+          disable: true
+        }
+      },
+      min: {
+        control: 'number',
+        table: {
+          disable: true
+        }
+      },
       multiple: {
         control: 'boolean',
         table: {
