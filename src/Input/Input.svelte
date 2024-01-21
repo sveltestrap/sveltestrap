@@ -254,6 +254,7 @@
       bind:this={inner}
       on:blur
       on:change
+      on:click
       on:focus
       on:input
       on:keydown
@@ -275,6 +276,7 @@
       bind:this={inner}
       on:blur
       on:change
+      on:click
       on:focus
       on:input
       on:keydown
@@ -295,6 +297,7 @@
       bind:this={inner}
       on:blur
       on:change
+      on:click
       on:focus
       on:input
       on:keydown
@@ -318,6 +321,7 @@
       bind:this={inner}
       on:blur
       on:change
+      on:click
       on:focus
       on:input
       on:keydown
@@ -368,6 +372,7 @@
       bind:this={inner}
       on:blur
       on:change
+      on:click
       on:focus
       on:input
       on:keydown
@@ -388,6 +393,7 @@
       {type}
       on:blur
       on:change={handleInput}
+      on:click
       on:focus
       on:input={handleInput}
       on:keydown
@@ -409,6 +415,7 @@
     bind:this={inner}
     on:blur
     on:change
+    on:click
     on:focus
     on:input
     on:keydown
@@ -427,6 +434,7 @@
     bind:value
     bind:this={inner}
     on:blur
+    on:click
     on:change
     on:focus
     on:input
