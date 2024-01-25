@@ -260,6 +260,8 @@
       on:keydown
       on:keypress
       on:keyup
+      on:mousedown
+      on:mouseup
       {disabled}
       {name}
       {placeholder}
@@ -282,6 +284,8 @@
       on:keydown
       on:keypress
       on:keyup
+      on:mousedown
+      on:mouseup
       {disabled}
       {name}
       {placeholder}
@@ -303,6 +307,8 @@
       on:keydown
       on:keypress
       on:keyup
+      on:mousedown
+      on:mouseup
       {disabled}
       {multiple}
       {name}
@@ -327,6 +333,8 @@
       on:keydown
       on:keypress
       on:keyup
+      on:mousedown
+      on:mouseup
       {disabled}
       {invalid}
       {multiple}
@@ -353,6 +361,8 @@
       on:keydown
       on:keypress
       on:keyup
+      on:mousedown
+      on:mouseup
       {disabled}
       {invalid}
       {label}
@@ -378,6 +388,8 @@
       on:keydown
       on:keypress
       on:keyup
+      on:mousedown
+      on:mouseup
       {disabled}
       {max}
       {min}
@@ -399,6 +411,8 @@
       on:keydown
       on:keypress
       on:keyup
+      on:mousedown
+      on:mouseup
       {name}
       {disabled}
       {placeholder}
@@ -421,6 +435,8 @@
     on:keydown
     on:keypress
     on:keyup
+    on:mousedown
+    on:mouseup
     {disabled}
     {name}
     {placeholder}

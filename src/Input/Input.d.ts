@@ -18,23 +18,26 @@ export interface InputProps extends HTMLInputAttributes, HTMLSelectAttributes, H
   valid?: boolean;
 }
 
-declare type InputEvent<T extends Event = Event, EventTarget> = T & {
-  currentTarget: HTMLInputElement;
+type InputElementEvent<T extends HTMLInputElement, HTMLSelectElement, HTMLTextAreaElement> = Event & {
+  currentTarget: T;
+  target: T;
 };
 
 export interface InputEvents {
-  blur: InputEvent<FocusEvent>;
-  change: InputEvent<Event>;
-  click: InputEvent<MouseEvent>;
-  focus: InputEvent<FocusEvent>;
-  input: InputEvent<InputEvent>;
-  keydown: InputEvent<KeyboardEvent>;
-  keypress: InputEvent<KeyboardEvent>;
-  keyup: InputEvent<KeyboardEvent>;
-  mouseenter: InputEvent<MouseEvent>;
-  mouseover: InputEvent<MouseEvent>;
-  mouseleave: InputEvent<MouseEvent>;
-  paste: InputEvent<ClipboardEvent>;
+  blur: InputElementEvent<FocusEvent>;
+  change: InputElementEvent<Event>;
+  click: InputElementEvent<MouseEvent>;
+  focus: InputElementEvent<FocusEvent>;
+  input: InputElementEvent<InputEvent>;
+  keydown: InputElementEvent<KeyboardEvent>;
+  keypress: InputElementEvent<KeyboardEvent>;
+  keyup: InputElementEvent<KeyboardEvent>;
+  mousedown: InputElementEvent<MouseEvent>;
+  mouseenter: InputElementEvent<MouseEvent>;
+  mouseover: InputElementEvent<MouseEvent>;
+  mouseleave: InputElementEvent<MouseEvent>;
+  mouseup: InputElementEvent<MouseEvent>;
+  paste: InputElementEvent<ClipboardEvent>;
 }
 
 export interface InputSlots {
