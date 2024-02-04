@@ -11,10 +11,14 @@ export interface FadeProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 export interface FadeEvents {
+  close: CustomEvent<void>;
+  closing: CustomEvent<void>;
+  introend: CustomEvent<void>;
+  introstart: CustomEvent<void>;
   open: CustomEvent<void>;
   opening: CustomEvent<void>;
-  closing: CustomEvent<void>;
-  close: CustomEvent<void>;
+  outroend: CustomEvent<void>;
+  outrostart: CustomEvent<void>;
 }
 
 export interface FadeSlots {
