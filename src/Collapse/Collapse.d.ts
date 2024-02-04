@@ -16,8 +16,12 @@ export interface CollapseProps extends HTMLAttributes<HTMLDivElement> {
 export interface CollapseEvents {
   close: CustomEvent<void>;
   closing: CustomEvent<void>;
+  introend: CustomEvent<void>;
+  introstart: CustomEvent<void>;
   open: CustomEvent<void>;
   opening: CustomEvent<void>;
+  outroend: CustomEvent<void>;
+  outrostart: CustomEvent<void>;
   update: CustomEvent<boolean>;
 }
 
