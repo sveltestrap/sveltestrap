@@ -8,7 +8,7 @@ export interface AccordionItemProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 export interface AccordionItemEvents {
-  toggle: CustomEvent<void>;
+  toggle: CustomEvent<boolean>;
 }
 
 export interface AccordionItemSlots {
