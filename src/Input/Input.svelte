@@ -254,11 +254,14 @@
       bind:this={inner}
       on:blur
       on:change
+      on:click
       on:focus
       on:input
       on:keydown
       on:keypress
       on:keyup
+      on:mousedown
+      on:mouseup
       {disabled}
       {name}
       {placeholder}
@@ -275,11 +278,14 @@
       bind:this={inner}
       on:blur
       on:change
+      on:click
       on:focus
       on:input
       on:keydown
       on:keypress
       on:keyup
+      on:mousedown
+      on:mouseup
       {disabled}
       {name}
       {placeholder}
@@ -295,11 +301,14 @@
       bind:this={inner}
       on:blur
       on:change
+      on:click
       on:focus
       on:input
       on:keydown
       on:keypress
       on:keyup
+      on:mousedown
+      on:mouseup
       {disabled}
       {multiple}
       {name}
@@ -318,11 +327,14 @@
       bind:this={inner}
       on:blur
       on:change
+      on:click
       on:focus
       on:input
       on:keydown
       on:keypress
       on:keyup
+      on:mousedown
+      on:mouseup
       {disabled}
       {invalid}
       {multiple}
@@ -349,6 +361,8 @@
       on:keydown
       on:keypress
       on:keyup
+      on:mousedown
+      on:mouseup
       {disabled}
       {invalid}
       {label}
@@ -368,11 +382,14 @@
       bind:this={inner}
       on:blur
       on:change
+      on:click
       on:focus
       on:input
       on:keydown
       on:keypress
       on:keyup
+      on:mousedown
+      on:mouseup
       {disabled}
       {max}
       {min}
@@ -388,11 +405,14 @@
       {type}
       on:blur
       on:change={handleInput}
+      on:click
       on:focus
       on:input={handleInput}
       on:keydown
       on:keypress
       on:keyup
+      on:mousedown
+      on:mouseup
       {name}
       {disabled}
       {placeholder}
@@ -409,11 +429,14 @@
     bind:this={inner}
     on:blur
     on:change
+    on:click
     on:focus
     on:input
     on:keydown
     on:keypress
     on:keyup
+    on:mousedown
+    on:mouseup
     {disabled}
     {name}
     {placeholder}
@@ -427,6 +450,7 @@
     bind:value
     bind:this={inner}
     on:blur
+    on:click
     on:change
     on:focus
     on:input

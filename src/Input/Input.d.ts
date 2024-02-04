@@ -2,35 +2,52 @@ import { SvelteComponent } from 'svelte';
 import { HTMLInputAttributes, HTMLSelectAttributes, HTMLTextareaAttributes } from 'svelte/elements';
 import { Color, InputType } from '../shared';
 
-export interface InputProps extends HTMLInputAttributes, HTMLSelectAttributes, HTMLTextareaAttributes {
-  bsSize?: 'lg' | 'sm' | string;
-  color?: Color | string;
-  feedback?: string | string[];
-  files?: FileList;
-  group?: any;
-  inner?: HTMLElement;
-  invalid?: boolean;
-  label?: string;
-  plaintext?: boolean;
-  reverse?: boolean;
-  theme?: string;
-  type?: InputType;
-  valid?: boolean;
-}
+type MixedElementProps = HTMLInputAttributes &
+  HTMLSelectAttributes &
+  HTMLTextareaAttributes & {
+    bsSize?: 'lg' | 'sm' | string;
+    color?: Color | string;
+    feedback?: string | string[];
+    files?: FileList;
+    group?: any;
+    inner?: HTMLElement;
+    invalid?: boolean;
+    label?: string;
+    plaintext?: boolean;
+    reverse?: boolean;
+    theme?: string;
+    type?: InputType;
+    valid?: boolean;
+  };
+
+type MixedTargetProps = {
+  checked: boolean;
+  valueAsDate: Date;
+  valueAsNumber: number;
+};
+
+export interface InputProps extends MixedElementProps {}
+
+type InputElementEvent<E extends Event = Event> = E & {
+  currentTarget: (HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement) & MixedTargetProps;
+  target: (HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement) & MixedTargetProps;
+};
 
 export interface InputEvents {
-  blur: WindowEventMap['blur'];
-  change: WindowEventMap['change'];
-  click: WindowEventMap['click'];
-  focus: WindowEventMap['focus'];
-  input: WindowEventMap['input'];
-  mouseenter: WindowEventMap['mouseenter'];
-  mouseleave: WindowEventMap['mouseleave'];
-  mouseover: WindowEventMap['mouseover'];
-  keydown: WindowEventMap['keydown'];
-  keypress: WindowEventMap['keypress'];
-  keyup: WindowEventMap['keyup'];
-  paste: DocumentAndElementEventHandlersEventMap['paste'];
+  blur: InputElementEvent<FocusEvent>;
+  change: InputElementEvent<Event>;
+  click: InputElementEvent<MouseEvent>;
+  focus: InputElementEvent<FocusEvent>;
+  input: InputElementEvent<InputEvent>;
+  keydown: InputElementEvent<KeyboardEvent>;
+  keypress: InputElementEvent<KeyboardEvent>;
+  keyup: InputElementEvent<KeyboardEvent>;
+  mousedown: InputElementEvent<MouseEvent>;
+  mouseenter: InputElementEvent<MouseEvent>;
+  mouseover: InputElementEvent<MouseEvent>;
+  mouseleave: InputElementEvent<MouseEvent>;
+  mouseup: InputElementEvent<MouseEvent>;
+  paste: InputElementEvent<ClipboardEvent>;
 }
 
 export interface InputSlots {
