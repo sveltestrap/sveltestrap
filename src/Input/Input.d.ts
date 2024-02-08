@@ -18,6 +18,7 @@ type MixedElementProps = HTMLInputAttributes &
     theme?: string;
     type?: InputType;
     valid?: boolean;
+    value?: any;
   };
 
 type MixedTargetProps = {
