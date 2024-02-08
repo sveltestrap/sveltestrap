@@ -2,10 +2,7 @@ import { SvelteComponent } from 'svelte';
 import { HTMLInputAttributes, HTMLSelectAttributes, HTMLTextareaAttributes } from 'svelte/elements';
 import { Color, InputType } from '../shared';
 
-interface MixedElementProps extends Omit<
-  HTMLInputAttributes & HTMLSelectAttributes & HTMLTextareaAttributes,
-  'value'
-> {
+interface MixedElementProps extends Omit<HTMLInputAttributes & HTMLSelectAttributes & HTMLTextareaAttributes, 'value'> {
   bsSize?: 'lg' | 'sm' | string;
   color?: Color | string;
   feedback?: string | string[];
@@ -20,7 +17,7 @@ interface MixedElementProps extends Omit<
   type?: InputType;
   valid?: boolean;
   value?: any;
-};
+}
 
 type MixedTargetProps = {
   checked: boolean;
