@@ -238,8 +238,12 @@
     });
   }
 
-  const handleInput = (event) => {
-    value = event.target.value;
+  const handleInput = ({ target }) => {
+    if (target.type === 'number' || target.type === 'range') {
+      value = Number(target.value);
+    } else {
+      value = target.value;
+    }
   };
 </script>
 
@@ -381,9 +385,11 @@
       bind:value
       bind:this={inner}
       on:blur
+      on:change={handleInput}
       on:change
       on:click
       on:focus
+      on:input={handleInput}
       on:input
       on:keydown
       on:keypress
@@ -405,9 +411,11 @@
       {type}
       on:blur
       on:change={handleInput}
+      on:change
       on:click
       on:focus
       on:input={handleInput}
+      on:input
       on:keydown
       on:keypress
       on:keyup
