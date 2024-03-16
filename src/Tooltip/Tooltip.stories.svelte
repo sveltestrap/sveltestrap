@@ -24,6 +24,9 @@
         control: 'text',
         table: { disable: true }
       },
+      delay: {
+        control: 'number'
+      },
       id: {
         control: 'text',
         table: { disable: true }
@@ -73,6 +76,7 @@
       animation: true,
       children: '',
       container: undefined,
+      delay: 0,
       id: '',
       isOpen: false,
       placement: 'top',
@@ -117,7 +121,9 @@
     <div class="text-content">
       <div class="mt-3">
         <Button id="controlledBtn" color="primary">You could hover here</Button>
-        <Tooltip bind:isOpen placement="right" target="controlledBtn">This is a Tooltip controlled externally.</Tooltip>
+        <Tooltip bind:isOpen placement="right" target="controlledBtn" delay="500"
+          >This is a Tooltip controlled externally.</Tooltip
+        >
         <hr />
         <label>
           <input type="checkbox" bind:checked={isOpen} />
