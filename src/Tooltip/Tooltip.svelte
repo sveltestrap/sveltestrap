@@ -60,6 +60,12 @@
   export let theme = null;
 
   /**
+   * The delay for showing the tooltip (in milliseconds).
+   * @type {string | number}
+   */
+  export let delay = 0;
+
+  /**
    * @type {string}
    */
   let bsPlacement;
@@ -79,6 +85,10 @@
    * @type {HTMLDivElement | null}
    */
   let tooltipEl;
+  /**
+   * @type {string}
+   */
+  let showTimer;
 
   const checkPopperPlacement = {
     name: 'checkPopperPlacement',
@@ -105,11 +115,22 @@
     }
   }
 
-  const open = () => (isOpen = true);
-  const close = () => (isOpen = false);
+  const open = () => {
+    clearTimeout(showTimer);
+    showTimer = setTimeout(() => (isOpen = true), delay);
+  };
+
+  const close = () => {
+    clearTimeout(showTimer);
+    isOpen = false;
+  };
 
   onMount(registerEventListeners);
-  onDestroy(unregisterEventListeners);
+
+  onDestroy(() => {
+    unregisterEventListeners();
+    clearTimeout(showTimer);
+  });
 
   $: if (target) {
     unregisterEventListeners();
@@ -184,8 +205,8 @@
   $: classes = classnames(
     className,
     'tooltip',
-    animation ? 'fade' : false,
     `bs-tooltip-${bsPlacement}`,
+    animation ? 'fade' : false,
     isOpen ? 'show' : false
   );
 
@@ -201,6 +222,7 @@
       {id}
       role="tooltip"
       data-bs-theme={theme}
+      data-bs-delay={delay}
       x-placement={popperPlacement}
     >
       <div class="tooltip-arrow" data-popper-arrow />
