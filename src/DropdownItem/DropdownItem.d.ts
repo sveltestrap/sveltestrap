@@ -1,13 +1,16 @@
 import { SvelteComponent } from 'svelte';
-import { HTMLLiAttributes } from 'svelte/elements';
+import { HTMLButtonAttributes, HTMLAnchorAttributes, HTMLAttributes } from 'svelte/elements';
 
-export interface DropdownItemProps extends HTMLLiAttributes {
+interface MixedElementProps extends Omit<HTMLButtonAttributes & HTMLAnchorAttributes, 'target'> {}
+
+export interface DropdownItemProps extends MixedElementProps {
   active?: boolean;
   disabled?: boolean;
   divider?: boolean;
   header?: boolean;
   href?: string;
   toggle?: boolean;
+  target?: string | null;
 }
 
 export interface DropdownItemEvents {
