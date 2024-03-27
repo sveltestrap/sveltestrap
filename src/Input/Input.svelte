@@ -1,4 +1,5 @@
 <script>
+  import { tick } from 'svelte';
   import { FormCheck } from '../FormCheck';
   import { FormFeedback } from '../FormFeedback';
   import { classnames } from '../utils';
@@ -179,6 +180,10 @@
    */
   export let value = undefined;
 
+  let boundValue;
+  let bubblingValueChange;
+  $: update(value);
+
   let classes;
   let tag;
 
@@ -238,13 +243,25 @@
     });
   }
 
-  const handleInput = ({ target }) => {
-    if (target.type === 'number' || target.type === 'range') {
-      value = Number(target.value);
-    } else {
-      value = target.value;
+  function update(value) {
+    if (!bubblingValueChange) {
+      boundValue = value;
     }
-  };
+  }
+
+  function handleInput({ target }) {
+    let convertedValue = target.value;
+    if (type === 'number' || type === 'range') {
+      convertedValue = convertedValue !== '' ? +convertedValue : '';
+    }
+    if (value !== convertedValue) {
+      bubblingValueChange = true;
+      value = convertedValue;
+      tick().then(() => {
+        bubblingValueChange = false;
+      });
+    }
+  }
 </script>
 
 {#if tag === 'input'}
@@ -382,7 +399,7 @@
       {...{ type }}
       data-bs-theme={theme}
       class={classes}
-      bind:value
+      value={boundValue}
       bind:this={inner}
       on:blur
       on:change={handleInput}
@@ -425,7 +442,7 @@
       {disabled}
       {placeholder}
       {readonly}
-      {value}
+      value={boundValue}
     />
   {/if}
 {:else if tag === 'textarea'}
