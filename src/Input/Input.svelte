@@ -237,14 +237,6 @@
       [`btn-${bsSize}`]: bsSize && isBtn
     });
   }
-
-  const handleInput = ({ target }) => {
-    if (target.type === 'number' || target.type === 'range') {
-      value = Number(target.value);
-    } else {
-      value = target.value;
-    }
-  };
 </script>
 
 {#if tag === 'input'}
@@ -385,11 +377,11 @@
       bind:value
       bind:this={inner}
       on:blur
-      on:change={handleInput}
+      on:change
       on:change
       on:click
       on:focus
-      on:input={handleInput}
+      on:input
       on:input
       on:keydown
       on:keypress
@@ -410,11 +402,11 @@
       class={classes}
       {type}
       on:blur
-      on:change={handleInput}
+      on:change
       on:change
       on:click
       on:focus
-      on:input={handleInput}
+      on:input
       on:input
       on:keydown
       on:keypress
