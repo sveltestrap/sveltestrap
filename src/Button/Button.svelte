@@ -110,6 +110,8 @@
     class:disabled
     bind:this={inner}
     on:click
+    on:focus
+    on:blur
     {href}
     aria-label={ariaLabel || defaultAriaLabel}
   >
@@ -126,6 +128,8 @@
     {disabled}
     bind:this={inner}
     on:click
+    on:focus
+    on:blur
     {value}
     aria-label={ariaLabel || defaultAriaLabel}
   >
