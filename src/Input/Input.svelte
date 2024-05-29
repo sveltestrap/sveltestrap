@@ -237,14 +237,6 @@
       [`btn-${bsSize}`]: bsSize && isBtn
     });
   }
-
-  const handleInput = ({ target }) => {
-    if (target.type === 'number' || target.type === 'range') {
-      value = Number(target.value);
-    } else {
-      value = target.value;
-    }
-  };
 </script>
 
 {#if tag === 'input'}
@@ -385,11 +377,9 @@
       bind:value
       bind:this={inner}
       on:blur
-      on:change={handleInput}
       on:change
       on:click
       on:focus
-      on:input={handleInput}
       on:input
       on:keydown
       on:keypress
@@ -408,13 +398,13 @@
       {...$$restProps}
       data-bs-theme={theme}
       class={classes}
-      {type}
+      {...{ type }}
+      bind:this={inner}
+      bind:value
       on:blur
-      on:change={handleInput}
       on:change
       on:click
       on:focus
-      on:input={handleInput}
       on:input
       on:keydown
       on:keypress
@@ -425,7 +415,6 @@
       {disabled}
       {placeholder}
       {readonly}
-      {value}
     />
   {/if}
 {:else if tag === 'textarea'}
