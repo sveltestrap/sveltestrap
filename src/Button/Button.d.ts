@@ -20,6 +20,8 @@ export interface ButtonEvents {
   mouseover: WindowEventMap['mouseover'];
   mouseenter: WindowEventMap['mouseenter'];
   mouseleave: WindowEventMap['mouseleave'];
+  focus: WindowEventMap['focus'];
+  blur: WindowEventMap['blur'];
 }
 
 export interface ButtonSlots {
