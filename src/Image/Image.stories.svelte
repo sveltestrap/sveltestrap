@@ -1,5 +1,5 @@
 <script context="module">
-  import { Image as Images } from './Image.svelte';
+  import Image from './Image.svelte';
 
   export const meta = {
     title: 'Stories/Images',
@@ -57,7 +57,7 @@
 
 <script>
   import { Story, Template } from '@storybook/addon-svelte-csf';
-  import { Image, Figure } from '@sveltestrap/sveltestrap';
+  import { Figure } from '@sveltestrap/sveltestrap';
 
   const thumbnails = [
     'https://picsum.photos/100/100?random=' + Math.round(Math.random() * 1000),
