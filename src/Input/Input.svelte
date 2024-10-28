@@ -251,6 +251,7 @@
       on:blur
       on:change
       on:click
+      on:dblclick
       on:focus
       on:input
       on:keydown
@@ -275,6 +276,7 @@
       on:blur
       on:change
       on:click
+      on:dblclick
       on:focus
       on:input
       on:keydown
@@ -298,6 +300,7 @@
       on:blur
       on:change
       on:click
+      on:dblclick
       on:focus
       on:input
       on:keydown
@@ -379,6 +382,7 @@
       on:blur
       on:change
       on:click
+      on:dblclick
       on:focus
       on:input
       on:keydown
@@ -404,6 +408,7 @@
       on:blur
       on:change
       on:click
+      on:dblclick
       on:focus
       on:input
       on:keydown
@@ -427,6 +432,7 @@
     on:blur
     on:change
     on:click
+    on:dblclick
     on:focus
     on:input
     on:keydown
