@@ -36,6 +36,7 @@ export interface InputEvents {
   blur: InputElementEvent<FocusEvent>;
   change: InputElementEvent<Event>;
   click: InputElementEvent<MouseEvent>;
+  dblclick: InputElementEvent<MouseEvent>;
   focus: InputElementEvent<FocusEvent>;
   input: InputElementEvent<InputEvent>;
   keydown: InputElementEvent<KeyboardEvent>;

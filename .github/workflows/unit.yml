@@ -34,7 +34,7 @@ jobs:
       - name: Run tests
         run: pnpm test
       - name: Upload artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         if: failure()
         with:
           name: unit-tests
