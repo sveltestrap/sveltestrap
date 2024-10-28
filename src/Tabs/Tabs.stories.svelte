@@ -1,6 +1,6 @@
 <script context="module">
   export const meta = {
-    title: 'Stories/tabs',
+    title: 'Stories/Tabs',
     parameters: {},
     argTypes: {},
     args: {}
