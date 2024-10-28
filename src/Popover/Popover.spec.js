@@ -60,7 +60,6 @@ describe('Popover test', () => {
       placement: 'auto',
       isOpen: true
     });
-    console.log('containerPopover.outerHTML:', containerPopover.outerHTML);
     const popover = containerPopover.querySelector('.popover');
     const popoverContent = containerPopover.querySelector('.popover .popover-body');
     expect(popover.className.includes(POPOVER_POSITION_CLASS.auto)).toBeTruthy();
