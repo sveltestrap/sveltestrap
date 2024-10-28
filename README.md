@@ -117,32 +117,6 @@ or the [Styles](https://sveltestrap.js.org/?path=/story/components--styles) comp
 <Styles />
 ```
 
-## Using Sapper
-
-If you are using Sveltestrap with Sapper, it's recommended you import the component source directly.
-Note that this issue does not affect SvelteKit.
-
-```html
-<script>
-  import { Button, Col, Row } from '@sveltestrap/sveltestrap/src';
-</script>
-
-<Row>
-  <Col>
-    <Button color="primary" outline>Hello World!</Button>
-  </Col>
-</Row>
-```
-
-If you prefer the `@sveltestrap/sveltestrap` import, you can move the package to `devDependencies` block in your `package.json` so that sapper will parse the es bundle
-
-```json
-"devDependencies": {
-  "@sveltestrap/sveltestrap": "*.*.*",
-  ...
-},
-```
-
 ## Sponsors
 [![avatar](https://images.weserv.nl/?url=https://opensense.s3.amazonaws.com/logo-horizontal-white-colored-emblem.svg?v=4&h=60&w=260&fit=cover&maxage=5d)](https://www.opensense.com?utm_source=github)
 
