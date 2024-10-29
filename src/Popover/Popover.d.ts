@@ -2,7 +2,7 @@ import { SvelteComponent } from 'svelte';
 import { HTMLAttributes } from 'svelte/elements';
 import { ContainerType } from '../shared';
 
-declare type PopoverPlacement = 'left' | 'top' | 'bottom' | 'right';
+declare type PopoverPlacement = 'left' | 'top' | 'bottom' | 'right' | 'auto';
 declare type Triggers = 'click' | 'hover' | 'focus';
 
 export interface PopoverProps extends HTMLAttributes<HTMLDivElement> {
