@@ -14,7 +14,7 @@
    * The content to be displayed in the alert.
    * @type {any}
    */
-  export let children = undefined;
+  export let content = undefined;
 
   /**
    * ARIA label for the close button.
@@ -103,8 +103,8 @@
     {#if showClose}
       <button type="button" class={closeClassNames} aria-label={closeAriaLabel} on:click={handleToggle} />
     {/if}
-    {#if children}
-      {children}
+    {#if content}
+      {content}
     {:else}
       <slot />
     {/if}
