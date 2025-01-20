@@ -28,6 +28,6 @@
   $: classes = classnames(className, 'carousel-item');
 </script>
 
-<div {...$$restProps} class="{classes} active" class:active={itemIndex === activeIndex}>
+<div {...$$restProps} class={classes} class:active={itemIndex === activeIndex}>
   <slot />
 </div>
