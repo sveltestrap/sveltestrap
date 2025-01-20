@@ -5,7 +5,7 @@ const TestHarness = (props) => render(Alert, props);
 
 describe('Alert', () => {
   test('should render with default color and text', () => {
-    const { container, queryByRole } = TestHarness({ children: 'Hello world!' });
+    const { container, queryByRole } = TestHarness({ content: 'Hello world!' });
     const alert = queryByRole('alert');
 
     expect(alert.innerHTML.trim()).toBe('Hello world!');
@@ -16,7 +16,7 @@ describe('Alert', () => {
   test('should render specified color', () => {
     const { container, queryByRole } = TestHarness({
       color: 'primary',
-      children: 'Hello world!'
+      content: 'Hello world!'
     });
 
     const alert = queryByRole('alert');
@@ -39,7 +39,7 @@ describe('Alert', () => {
   test('should render custom class', () => {
     const { container, queryByRole } = TestHarness({
       color: 'danger',
-      children: 'Hello world!',
+      content: 'Hello world!',
       class: 'boogie'
     });
 
@@ -52,7 +52,7 @@ describe('Alert', () => {
   test('should render dismissible alert', async () => {
     const { container, queryByRole, queryByLabelText } = TestHarness({
       color: 'info',
-      children: 'I can be dismissed!',
+      content: 'I can be dismissed!',
       dismissible: true
     });
 
@@ -81,7 +81,7 @@ describe('Alert', () => {
 
     const { rerender, queryByRole, queryByLabelText } = TestHarness({
       color: 'info',
-      children: 'I can be dismissed!',
+      content: 'I can be dismissed!',
       isOpen,
       toggle
     });
@@ -106,7 +106,7 @@ describe('Alert', () => {
   test('should render alert without fade', async () => {
     const { queryByRole, queryByLabelText } = TestHarness({
       color: 'info',
-      children: 'I can be dismissed!',
+      content: 'I can be dismissed!',
       dismissible: true,
       fade: false
     });
@@ -129,7 +129,7 @@ describe('Alert', () => {
   test('should render themed alert', async () => {
     const { container, queryByRole } = TestHarness({
       color: 'info',
-      children: 'I can be dismissed!',
+      content: 'I can be dismissed!',
       dismissible: true,
       fade: false,
       theme: 'light'

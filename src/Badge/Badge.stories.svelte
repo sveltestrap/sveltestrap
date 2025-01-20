@@ -25,7 +25,7 @@
           disable: true
         }
       },
-      children: {
+      content: {
         control: ''
       },
       color: {
@@ -87,7 +87,7 @@
       ariaLabel: '',
       border: false,
       class: '',
-      children: '',
+      content: '',
       color: 'primary',
       href: '',
       indicator: false,
@@ -115,7 +115,7 @@
   <Badge {...args} />
 </Template>
 
-<Story name="Basic" args={{ color: 'primary', children: 'Badge' }} source={basicSource} />
+<Story name="Basic" args={{ color: 'primary', content: 'Badge' }} source={basicSource} />
 
 <Story name="Colors">
   <div class="horizontal">

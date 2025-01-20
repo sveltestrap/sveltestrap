@@ -28,7 +28,7 @@
    * @type {string}
    * @default ''
    */
-  export let children = '';
+  export let content = '';
 
   /**
    * The color theme for the badge.
@@ -101,8 +101,8 @@
 
 {#if href}
   <a {...$$restProps} {href} class={classes} data-bs-theme={theme}>
-    {#if children}
-      {children}
+    {#if content}
+      {content}
     {:else}
       <slot />
     {/if}
@@ -112,8 +112,8 @@
   </a>
 {:else}
   <span {...$$restProps} class={classes} data-bs-theme={theme}>
-    {#if children}
-      {children}
+    {#if content}
+      {content}
     {:else}
       <slot />
     {/if}

@@ -5,7 +5,7 @@ const TestHarness = (props) => render(ModalHeader, props);
 
 describe('ModalHeader', () => {
   test('should render correctly', () => {
-    const { container } = TestHarness({ children: 'Zap' });
+    const { container } = TestHarness({ content: 'Zap' });
     const component = container.querySelector('.modal-header');
 
     expect(component.className).toBe('modal-header');

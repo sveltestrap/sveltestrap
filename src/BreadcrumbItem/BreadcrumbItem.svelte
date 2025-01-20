@@ -21,14 +21,14 @@
    * @type {string}
    * @default ''
    */
-  export let children = '';
+  export let content = '';
 
   $: classes = classnames(className, active ? 'active' : false, 'breadcrumb-item');
 </script>
 
 <li {...$$restProps} class={classes} aria-current={active ? 'page' : undefined}>
-  {#if children}
-    {children}
+  {#if content}
+    {content}
   {:else}
     <slot />
   {/if}

@@ -3,7 +3,7 @@
 
   let className = '';
   export { className as class };
-  export let children = undefined;
+  export let content = undefined;
   export let closeAriaLabel = 'Close';
   export let toggle = undefined;
 
@@ -12,8 +12,8 @@
 
 <div {...$$restProps} class={classes}>
   <h5 class="offcanvas-title">
-    {#if children}
-      {children}
+    {#if content}
+      {content}
     {:else}
       <slot />
     {/if}
