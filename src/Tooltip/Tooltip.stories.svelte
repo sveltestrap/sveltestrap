@@ -17,7 +17,7 @@
       animation: {
         control: 'boolean'
       },
-      children: {
+      content: {
         control: 'text'
       },
       container: {
@@ -74,7 +74,7 @@
     },
     args: {
       animation: true,
-      children: '',
+      content: '',
       container: undefined,
       delay: 0,
       id: '',

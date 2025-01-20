@@ -5,7 +5,7 @@ const TestHarness = (props) => render(BreadcrumbItem, props);
 
 describe('BreadcrumbItem', () => {
   test('should render correctly', () => {
-    const { container } = TestHarness({ children: 'Alpha' });
+    const { container } = TestHarness({ content: 'Alpha' });
     const item = container.querySelector('.breadcrumb-item');
 
     expect(item.innerHTML).toBe('Alpha');

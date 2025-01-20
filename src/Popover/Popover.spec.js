@@ -22,13 +22,13 @@ const POPOVER_POSITION_CLASS = {
 };
 
 beforeEach(() => {
-  renderButton({ children: 'Hello BTN' });
+  renderButton({ content: 'Hello BTN' });
 });
 
 describe('Popover test', () => {
   it('should render text and default placement(top)', () => {
     const containerPopover = renderPopover({
-      children: 'Hello',
+      content: 'Hello',
       target: 'btn',
       isOpen: true
     });
@@ -41,7 +41,7 @@ describe('Popover test', () => {
 
   it('should render text and left placement', () => {
     const containerPopover = renderPopover({
-      children: 'Hello',
+      content: 'Hello',
       target: 'btn',
       placement: 'left',
       isOpen: true

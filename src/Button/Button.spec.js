@@ -5,7 +5,7 @@ const TestHarness = (props) => render(Button, props);
 
 describe('Button', () => {
   test('should render text and default color', () => {
-    const { container } = TestHarness({ children: 'Hello world!' });
+    const { container } = TestHarness({ content: 'Hello world!' });
     const button = container.querySelector('.btn');
 
     expect(button.innerHTML).toBe('Hello world!');
