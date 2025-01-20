@@ -1,7 +1,7 @@
 {
   "name": "@sveltestrap/sveltestrap",
   "description": "Bootstrap components for Svelte",
-  "version": "6.2.7",
+  "version": "6.2.8",
   "license": "MIT",
   "homepage": "https://sveltestrap.js.org",
   "repository": {

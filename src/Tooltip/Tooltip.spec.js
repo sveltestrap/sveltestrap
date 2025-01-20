@@ -13,7 +13,7 @@ const renderButton = (props) => {
 };
 
 beforeEach(() => {
-  renderButton({ children: 'Hello' });
+  renderButton({ content: 'Hello' });
 });
 
 const TOOLTIP_POSTION_CLASS = {
@@ -26,7 +26,7 @@ const TOOLTIP_POSTION_CLASS = {
 describe('Tooltip', () => {
   it('should render text and default placement(top)', () => {
     const containerTooltip = renderTooltip({
-      children: 'Hello world!',
+      content: 'Hello world!',
       target: 'btn',
       isOpen: true
     });
@@ -39,7 +39,7 @@ describe('Tooltip', () => {
 
   it('should render text and left placement', () => {
     const containerTooltip = renderTooltip({
-      children: 'Hello world!',
+      content: 'Hello world!',
       placement: 'left',
       target: 'btn',
       isOpen: true

@@ -14,7 +14,7 @@
    * The content to be displayed within the breadcrumb.
    * @type {string}
    */
-  export let children = '';
+  export let content = '';
 
   /**
    * Custom divider character or string for the breadcrumb items.
@@ -42,8 +42,8 @@
 
 <nav style={styles} {...$$restProps} class={className}>
   <ol class={listClasses}>
-    {#if children}
-      {children}
+    {#if content}
+      {content}
     {:else}
       <slot />
     {/if}

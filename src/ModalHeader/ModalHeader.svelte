@@ -26,15 +26,15 @@
    */
   export let id = undefined;
 
-  export let children = undefined;
+  export let content = undefined;
 
   $: classes = classnames(className, 'modal-header');
 </script>
 
 <div {...$$restProps} class={classes}>
   <h5 class="modal-title" {id}>
-    {#if children}
-      {children}
+    {#if content}
+      {content}
     {:else}
       <slot />
     {/if}

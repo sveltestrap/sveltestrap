@@ -6,7 +6,7 @@ const TestHarness = (props) => render(Badge, props);
 describe('Badge', () => {
   test('should render text and default color', () => {
     const { container } = TestHarness({
-      children: 'Hello world!'
+      content: 'Hello world!'
     });
 
     const badge = container.querySelector('.badge');
@@ -20,7 +20,7 @@ describe('Badge', () => {
   test('should render specified color', () => {
     const { container } = TestHarness({
       color: 'primary',
-      children: 'Hello world!'
+      content: 'Hello world!'
     });
 
     const badge = container.querySelector('.badge');
@@ -33,7 +33,7 @@ describe('Badge', () => {
   test('should render custom class', () => {
     const { container } = TestHarness({
       color: 'danger',
-      children: 'Hello world!',
+      content: 'Hello world!',
       class: 'boogie'
     });
 
@@ -48,7 +48,7 @@ describe('Badge', () => {
   test('should render pill', () => {
     const { container } = TestHarness({
       pill: true,
-      children: 'Hello world!'
+      content: 'Hello world!'
     });
 
     const badge = container.querySelector('.badge');
@@ -61,7 +61,7 @@ describe('Badge', () => {
 
   test('should render link with href', () => {
     const { container } = TestHarness({
-      children: 'Hello World!',
+      content: 'Hello World!',
       href: 'http://example.com/'
     });
 
@@ -75,7 +75,7 @@ describe('Badge', () => {
   test('should render a positioned badge', () => {
     const { container } = TestHarness({
       positioned: true,
-      children: '100+',
+      content: '100+',
       ariaLabel: 'Unread messages'
     });
 
