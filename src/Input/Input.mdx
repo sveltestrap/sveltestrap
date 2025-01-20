@@ -198,6 +198,13 @@ You can set the `type` prop to `color` to render color inputs.
   code={`
 <script>
   import { FormGroup, Input, Label } from '@sveltestrap/sveltestrap';
+  
+  let inner = '';
+  
+  const resize = () => {
+    inner.style.height = 'auto';
+    inner.style.height = 4 + inner.scrollHeight + 'px';
+  };
 </script>
 
 <FormGroup>
@@ -284,7 +291,7 @@ You can set the `type` prop to `color` to render color inputs.
       <option>{option}</option>
     {/each}
   </Input>
-
+  
   {#each ['eenie', 'meanie', 'minie', 'moe'] as value}
     <Input type="radio" theme="dark" bind:group={radioGroup} {value} label={value} />
   {/each}
@@ -299,7 +306,7 @@ You can set the `type` prop to `color` to render color inputs.
       <option>{option}</option>
     {/each}
   </Input>
-
+  
   {#each ['eenie', 'meanie', 'minie', 'moe'] as value}
     <Input type="radio" theme="light" bind:group={radioGroup} {value} label={value} />
   {/each}
