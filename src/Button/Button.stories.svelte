@@ -16,7 +16,7 @@
           disable: true
         }
       },
-      children: {
+      content: {
         control: ''
       },
       active: {
@@ -75,7 +75,7 @@
       class: '',
       active: false,
       block: false,
-      children: undefined,
+      content: undefined,
       close: false,
       color: 'secondary',
       disabled: false,
@@ -105,7 +105,7 @@
   <Button {...args} on:click></Button>
 </Template>
 
-<Story name="Basic" args={{ size: 'md', color: 'primary', children: 'Button' }} />
+<Story name="Basic" args={{ size: 'md', color: 'primary', content: 'Button' }} />
 
 <Story name="Colors" args={{ color: 'primary' }}>
   <div class="horizontal capitalize">

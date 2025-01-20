@@ -13,7 +13,7 @@
       animation: {
         control: 'boolean'
       },
-      children: {
+      content: {
         control: ''
       },
       class: {
@@ -100,7 +100,7 @@
     },
     args: {
       animation: true,
-      children: '',
+      content: '',
       container: undefined,
       dismissible: false,
       hideOnOutsideClick: false,

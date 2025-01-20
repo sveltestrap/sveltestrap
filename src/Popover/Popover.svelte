@@ -22,7 +22,7 @@
    * The content to be displayed within the popover.
    * @type {string}
    */
-  export let children = '';
+  export let content = '';
 
   /**
    * The container in which the popover should be rendered.
@@ -210,8 +210,8 @@
         <slot name="title">{title}</slot>
       </h3>
       <div class="popover-body">
-        {#if children}
-          {children}
+        {#if content}
+          {content}
         {:else}
           <slot />
         {/if}

@@ -16,7 +16,7 @@
           disable: true
         }
       },
-      children: {
+      content: {
         control: ''
       },
       closeClassName: {
@@ -103,7 +103,7 @@
     },
     args: {
       class: '',
-      children: undefined,
+      content: undefined,
       color: 'success',
       closeClassName: '',
       closeAriaLabel: 'Close',
@@ -130,7 +130,7 @@
   <Alert {...args} on:click></Alert>
 </Template>
 
-<Story name="Basic" args={{ children: "Hello, I'm a warning message.", color: 'warning' }} />
+<Story name="Basic" args={{ content: "Hello, I'm a warning message.", color: 'warning' }} />
 
 <Story name="Colors">
   {#each colors as color}

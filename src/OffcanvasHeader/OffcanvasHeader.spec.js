@@ -5,7 +5,7 @@ const TestHarness = (props) => render(OffcanvasHeader, props);
 
 describe('OffcanvasHeader', () => {
   test('should render correctly', () => {
-    const { container } = TestHarness({ children: 'Zap' });
+    const { container } = TestHarness({ content: 'Zap' });
     const component = container.querySelector('.offcanvas-header');
 
     expect(component.className).toBe('offcanvas-header');

@@ -22,7 +22,7 @@
    * The content to be displayed within the tooltip.
    * @type {string}
    */
-  export let children = '';
+  export let content = '';
 
   /**
    * The container in which the tooltip should be rendered.
@@ -227,8 +227,8 @@
     >
       <div class="tooltip-arrow" data-popper-arrow />
       <div class="tooltip-inner">
-        {#if children}
-          {children}
+        {#if content}
+          {content}
         {:else}
           <slot />
         {/if}

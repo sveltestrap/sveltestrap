@@ -16,7 +16,7 @@
           disable: true
         }
       },
-      children: {
+      content: {
         control: ''
       },
       divider: {
@@ -43,7 +43,7 @@
     },
     args: {
       class: '',
-      children: '',
+      content: '',
       divider: '/',
       listClassName: '',
       style: ''
