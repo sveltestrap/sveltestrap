@@ -67,13 +67,13 @@
   $: classes = classnames(className, 'carousel', 'slide');
 
   onMount(() => {
-    setRideTimeout();
+    startRideInterval();
 
     _removeVisibilityChangeListener = browserEvent(document, 'visibilitychange', () => {
       if (document.visibilityState === 'hidden') {
         clearRideInterval();
       } else {
-        setRideTimeout();
+        startRideInterval();
       }
     });
   });
@@ -106,7 +106,7 @@
     activeIndex = getNewCarouselActiveIndex(direction, items, activeIndex);
   }
 
-  function setRideTimeout() {
+  function startRideInterval() {
     clearRideInterval();
 
     if (ride) {
@@ -133,7 +133,7 @@
   class={classes}
   data-bs-theme={theme}
   on:mouseenter={() => (pause ? clearRideInterval() : undefined)}
-  on:mouseleave={() => (pause ? setRideTimeout() : undefined)}
+  on:mouseleave={() => (pause ? startRideInterval() : undefined)}
 >
   <slot />
 </div>
