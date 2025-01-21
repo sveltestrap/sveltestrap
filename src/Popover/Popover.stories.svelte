@@ -41,7 +41,7 @@
         control: {
           type: 'select'
         },
-        options: ['top', 'left', 'right', 'bottom']
+        options: ['top', 'left', 'right', 'bottom', 'auto']
       },
       target: {
         control: false,
@@ -117,7 +117,7 @@
   import { Story } from '@storybook/addon-svelte-csf';
   import { Button } from '@sveltestrap/sveltestrap';
 
-  const placements = ['top', 'right', 'left', 'bottom'];
+  const placements = ['top', 'right', 'left', 'bottom', 'auto'];
   const colors = ['primary', 'success', 'danger', 'warning'];
 
   const basicSource = `<Button color="primary" id="btn-top-basic">Show on top</Button>
