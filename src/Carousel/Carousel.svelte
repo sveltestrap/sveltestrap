@@ -60,27 +60,27 @@
    */
   export let theme = undefined;
 
-  let _rideTimeoutId = false;
+  let _rideIntervalId = false;
   let _removeVisibilityChangeListener = false;
   let classes = '';
 
   $: classes = classnames(className, 'carousel', 'slide');
 
   onMount(() => {
-    setRideTimeout();
+    startRideInterval();
 
     _removeVisibilityChangeListener = browserEvent(document, 'visibilitychange', () => {
       if (document.visibilityState === 'hidden') {
-        clearRideTimeout();
+        clearRideInterval();
       } else {
-        setRideTimeout();
+        startRideInterval();
       }
     });
   });
 
   onDestroy(() => {
-    if (_rideTimeoutId) {
-      clearTimeout(_rideTimeoutId);
+    if (_rideIntervalId) {
+      clearInterval(_rideIntervalId);
     }
 
     if (_removeVisibilityChangeListener) {
@@ -106,17 +106,17 @@
     activeIndex = getNewCarouselActiveIndex(direction, items, activeIndex);
   }
 
-  function setRideTimeout() {
-    clearRideTimeout();
+  function startRideInterval() {
+    clearRideInterval();
 
     if (ride) {
-      _rideTimeoutId = setTimeout(autoNext, interval);
+      _rideIntervalId = setInterval(autoNext, interval);
     }
   }
 
-  function clearRideTimeout() {
-    if (_rideTimeoutId) {
-      clearTimeout(_rideTimeoutId);
+  function clearRideInterval() {
+    if (_rideIntervalId) {
+      clearInterval(_rideIntervalId);
     }
   }
 
@@ -132,8 +132,8 @@
   role="presentation"
   class={classes}
   data-bs-theme={theme}
-  on:mouseenter={() => (pause ? clearRideTimeout() : undefined)}
-  on:mouseleave={() => (pause ? setRideTimeout() : undefined)}
+  on:mouseenter={() => (pause ? clearRideInterval() : undefined)}
+  on:mouseleave={() => (pause ? startRideInterval() : undefined)}
 >
   <slot />
 </div>
