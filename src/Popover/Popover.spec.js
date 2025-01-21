@@ -55,7 +55,7 @@ describe('Popover test', () => {
 
   it('should render text and auto placement', () => {
     const containerPopover = renderPopover({
-      children: 'Hello',
+      content: 'Hello',
       target: 'btn',
       placement: 'auto',
       isOpen: true
