@@ -17,7 +17,8 @@ const POPOVER_POSITION_CLASS = {
   top: 'bs-popover-top',
   bottom: 'bs-popover-bottom',
   left: 'bs-popover-start',
-  right: 'bs-popover-end'
+  right: 'bs-popover-end',
+  auto: 'bs-popover-auto'
 };
 
 beforeEach(() => {
@@ -48,6 +49,20 @@ describe('Popover test', () => {
     const popover = containerPopover.querySelector('.popover');
     const popoverContent = containerPopover.querySelector('.popover .popover-body');
     expect(popover.className.includes(POPOVER_POSITION_CLASS.left)).toBeTruthy();
+    expect(popoverContent.innerHTML).toBe('Hello');
+    expect(popover).toMatchSnapshot();
+  });
+
+  it('should render text and auto placement', () => {
+    const containerPopover = renderPopover({
+      content: 'Hello',
+      target: 'btn',
+      placement: 'auto',
+      isOpen: true
+    });
+    const popover = containerPopover.querySelector('.popover');
+    const popoverContent = containerPopover.querySelector('.popover .popover-body');
+    expect(popover.className.includes(POPOVER_POSITION_CLASS.auto)).toBeTruthy();
     expect(popoverContent.innerHTML).toBe('Hello');
     expect(popover).toMatchSnapshot();
   });
