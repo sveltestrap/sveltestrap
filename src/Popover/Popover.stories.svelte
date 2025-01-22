@@ -126,16 +126,16 @@
   target="btn-top-basic"
   placement="top"
   title="Popover Top">
-  This is a Popover on the top of the trigger.
+  This Popover will be shown above the trigger element.
 </Popover>`;
 </script>
 
 <Story name="Basic" let:args source={basicSource}>
   <Button color="primary" id="btn-top-basic">Show on {args.placement}</Button>
   {#key args}
-    <Popover {...args} target="btn-top-basic" style={args.theme === 'dark' ? 'color: #fff;' : ''}
-      >This is a Popover on the top of the trigger.</Popover
-    >
+    <Popover {...args} target="btn-top-basic" style={args.theme === 'dark' ? 'color: #fff;' : ''}>
+      This Popover is using <b>{args.placement}</b> placement.
+    </Popover>
   {/key}
 </Story>
 
@@ -145,7 +145,7 @@
       <Button color={colors[index]} id="btn-{placement}">Show on {placement}</Button>
 
       <Popover target="btn-{placement}" {placement} title="Popover {placement}">
-        This is a Popover on the {placement} of the trigger.
+        This Popover placement is <b>{placement}</b>.
       </Popover>
     {/each}
   </div>
@@ -156,19 +156,19 @@
     <div>
       <Button color="primary" id="btn-trigger-click">Click me</Button>
       <Popover trigger="click" placement="top" target="btn-trigger-click" title="Popover on click">
-        This is a Popover with click as the trigger.
+        This Popover is shown when clicking on the trigger element.
       </Popover>
     </div>
     <div>
       <Button color="warning" id="btn-trigger-hover">Hover me</Button>
       <Popover trigger="hover" placement="right" target="btn-trigger-hover" title="Popover with hover">
-        This is a Popover with hover as the trigger.
+        This Popover is shown while hovering over the trigger element.
       </Popover>
     </div>
     <div>
       <Button color="danger" id="btn-trigger-focus">Focus me</Button>
       <Popover trigger="focus" placement="bottom" target="btn-trigger-focus" title="Popover with focus">
-        This is a Popover with focus as the trigger.
+        This Popover is shown while focusing on the trigger element.
       </Popover>
     </div>
   </div>
