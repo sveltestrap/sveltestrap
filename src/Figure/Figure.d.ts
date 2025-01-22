@@ -3,6 +3,7 @@ import { HTMLAttributes } from 'svelte/elements';
 
 export interface FigureProps extends HTMLAttributes<HTMLElement> {
   alt?: string;
+  class?: string;
   caption?: string | HTMLSlotElement;
 }
 

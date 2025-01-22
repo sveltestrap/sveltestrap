@@ -13,13 +13,6 @@
   export { className as class };
 
   /**
-   * The alt attribute for the image.
-   * @type {string | undefined}
-   * @default undefined
-   */
-  export let alt = undefined;
-
-  /**
    * The caption for the image.
    * @type {string | HTMLSlotElement | undefined}
    * @default undefined
@@ -28,8 +21,6 @@
 
   $: classes = classnames('figure', className);
 </script>
-
-<img {alt} {...$$restProps} class={classes} />
 
 <figure class={classes} {...$$restProps}>
   <slot />
