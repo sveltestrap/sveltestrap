@@ -7,6 +7,7 @@ declare type Triggers = 'click' | 'hover' | 'focus';
 
 export interface PopoverProps extends HTMLAttributes<HTMLDivElement> {
   animation?: boolean;
+  class?: string;
   container?: ContainerType;
   dismissible?: boolean;
   hideOnOutsideClick?: boolean;
