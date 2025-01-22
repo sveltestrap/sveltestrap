@@ -3,10 +3,6 @@
 exports[`Figure > should render caption 1`] = `
 <body>
   <div>
-    <img
-      class="figure"
-    />
-     
     <figure
       class="figure"
     >
@@ -25,10 +21,6 @@ exports[`Figure > should render caption 1`] = `
 exports[`Figure > should render correctly 1`] = `
 <body>
   <div>
-    <img
-      class="figure"
-    />
-     
     <figure
       class="figure"
     >
@@ -42,10 +34,6 @@ exports[`Figure > should render correctly 1`] = `
 exports[`Figure > should render custom class 1`] = `
 <body>
   <div>
-    <img
-      class="figure boogie"
-    />
-     
     <figure
       class="figure boogie"
     >
