@@ -371,7 +371,61 @@
       {readonly}
       {valid}
     />
-  {:else if type === 'date' || type === 'datetime' || type === 'datetime-local' || type === 'month' || type === 'number' || type === 'time' || type === 'range' || type === 'week'}
+  {:else if type === 'number'}
+    <!-- Explicitly declare `type=` to get correct svelte type binding - https://svelte.dev/tutorial/svelte/numeric-inputs -->
+    <input
+      {...$$restProps}
+      type='number'
+      data-bs-theme={theme}
+      class={classes}
+      bind:value
+      bind:this={inner}
+      on:blur
+      on:change
+      on:click
+      on:dblclick
+      on:focus
+      on:input
+      on:keydown
+      on:keypress
+      on:keyup
+      on:mousedown
+      on:mouseup
+      {disabled}
+      {max}
+      {min}
+      {name}
+      {placeholder}
+      {readonly}
+    />
+  {:else if type === 'range'}
+    <!-- Explicitly declare `type=` to get correct svelte type binding - https://svelte.dev/tutorial/svelte/numeric-inputs -->
+    <input
+      {...$$restProps}
+      type='range'
+      data-bs-theme={theme}
+      class={classes}
+      bind:value
+      bind:this={inner}
+      on:blur
+      on:change
+      on:click
+      on:dblclick
+      on:focus
+      on:input
+      on:keydown
+      on:keypress
+      on:keyup
+      on:mousedown
+      on:mouseup
+      {disabled}
+      {max}
+      {min}
+      {name}
+      {placeholder}
+      {readonly}
+    />
+  {:else if type === 'date' || type === 'datetime' || type === 'datetime-local' || type === 'month' || type === 'time' || type === 'week'}
     <input
       {...$$restProps}
       {...{ type }}
