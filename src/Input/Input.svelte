@@ -372,10 +372,9 @@
       {valid}
     />
   {:else if type === 'number'}
-    <!-- Explicitly declare `type=` to get correct svelte type binding - https://svelte.dev/tutorial/svelte/numeric-inputs -->
     <input
       {...$$restProps}
-      type='number'
+      type="number"
       data-bs-theme={theme}
       class={classes}
       bind:value
@@ -399,10 +398,9 @@
       {readonly}
     />
   {:else if type === 'range'}
-    <!-- Explicitly declare `type=` to get correct svelte type binding - https://svelte.dev/tutorial/svelte/numeric-inputs -->
     <input
       {...$$restProps}
-      type='range'
+      type="range"
       data-bs-theme={theme}
       class={classes}
       bind:value
