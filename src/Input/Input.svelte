@@ -371,7 +371,59 @@
       {readonly}
       {valid}
     />
-  {:else if type === 'date' || type === 'datetime' || type === 'datetime-local' || type === 'month' || type === 'number' || type === 'time' || type === 'range' || type === 'week'}
+  {:else if type === 'number'}
+    <input
+      {...$$restProps}
+      type="number"
+      data-bs-theme={theme}
+      class={classes}
+      bind:value
+      bind:this={inner}
+      on:blur
+      on:change
+      on:click
+      on:dblclick
+      on:focus
+      on:input
+      on:keydown
+      on:keypress
+      on:keyup
+      on:mousedown
+      on:mouseup
+      {disabled}
+      {max}
+      {min}
+      {name}
+      {placeholder}
+      {readonly}
+    />
+  {:else if type === 'range'}
+    <input
+      {...$$restProps}
+      type="range"
+      data-bs-theme={theme}
+      class={classes}
+      bind:value
+      bind:this={inner}
+      on:blur
+      on:change
+      on:click
+      on:dblclick
+      on:focus
+      on:input
+      on:keydown
+      on:keypress
+      on:keyup
+      on:mousedown
+      on:mouseup
+      {disabled}
+      {max}
+      {min}
+      {name}
+      {placeholder}
+      {readonly}
+    />
+  {:else if type === 'date' || type === 'datetime' || type === 'datetime-local' || type === 'month' || type === 'time' || type === 'week'}
     <input
       {...$$restProps}
       {...{ type }}
