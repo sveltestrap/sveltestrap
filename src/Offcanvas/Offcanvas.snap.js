@@ -39,9 +39,7 @@ exports[`Offcanvas > should be open 1`] = `
 `;
 
 exports[`Offcanvas > should render correctly 1`] = `
-<body
-  class="overflow-noscroll"
->
+<body>
   <div>
      
     <!--&lt;Portal&gt;-->
@@ -53,7 +51,7 @@ exports[`Offcanvas > should render correctly 1`] = `
       <div
         aria-hidden="true"
         class="offcanvas offcanvas-start"
-        style="visibility: visible;"
+        style="visibility: hidden;"
         tabindex="-1"
       >
          
@@ -72,9 +70,7 @@ exports[`Offcanvas > should render correctly 1`] = `
 `;
 
 exports[`Offcanvas > should render custom class 1`] = `
-<body
-  class="overflow-noscroll"
->
+<body>
   <div>
      
     <!--&lt;Portal&gt;-->
@@ -86,7 +82,7 @@ exports[`Offcanvas > should render custom class 1`] = `
       <div
         aria-hidden="true"
         class="offcanvas offcanvas-start boogie"
-        style="visibility: visible;"
+        style="visibility: hidden;"
         tabindex="-1"
       >
          
@@ -105,9 +101,7 @@ exports[`Offcanvas > should render custom class 1`] = `
 `;
 
 exports[`Offcanvas > should render placement correctly 1`] = `
-<body
-  class="overflow-noscroll"
->
+<body>
   <div>
      
     <!--&lt;Portal&gt;-->
@@ -119,7 +113,7 @@ exports[`Offcanvas > should render placement correctly 1`] = `
       <div
         aria-hidden="true"
         class="offcanvas offcanvas-end"
-        style="visibility: visible;"
+        style="visibility: hidden;"
         tabindex="-1"
       >
          
@@ -138,9 +132,7 @@ exports[`Offcanvas > should render placement correctly 1`] = `
 `;
 
 exports[`Offcanvas > should render responsive variations 1`] = `
-<body
-  class="overflow-noscroll"
->
+<body>
   <div>
      
     <!--&lt;Portal&gt;-->
@@ -152,7 +144,7 @@ exports[`Offcanvas > should render responsive variations 1`] = `
       <div
         aria-hidden="true"
         class="offcanvas-sm offcanvas-start"
-        style="visibility: visible;"
+        style="visibility: hidden;"
         tabindex="-1"
       >
          

@@ -130,6 +130,7 @@
   let isTransitioning = false;
   let element;
   let removeEscListener;
+  let prevIsOpen = isOpen;
 
   onMount(() => (bodyElement = document.body));
 
@@ -137,8 +138,7 @@
     bodyElement.classList.toggle('overflow-noscroll', isOpen || isTransitioning);
   }
 
-  $: if (element) {
-    isOpen = isOpen;
+  $: if (element && prevIsOpen !== isOpen) {
     isTransitioning = true;
 
     dispatch(isOpen ? 'opening' : 'closing');
@@ -147,6 +147,8 @@
       isTransitioning = false;
       dispatch(isOpen ? 'open' : 'close');
     }, getTransitionDuration(element));
+
+    prevIsOpen = isOpen;
   }
 
   $: if (isOpen && toggle && typeof window !== 'undefined') {
