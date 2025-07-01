@@ -96,7 +96,7 @@ export function modalOut(node) {
   return {
     duration,
     tick: (t) => {
-      if (t === 1) {
+      if (t === 0) {
         node.style.display = 'none';
       }
     }
