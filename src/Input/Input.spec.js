@@ -74,6 +74,23 @@ describe('Input', () => {
     expect(container).toMatchSnapshot();
   });
 
+  test('should render valid customValidity', () => {
+    const { container } = TestHarness({ customValidity: undefined });
+    const input = container.querySelector('input');
+
+    expect(input.reportValidity()).toBe(true);
+    expect(container).toMatchSnapshot();
+  });
+
+  test('should render invalid customValidity', () => {
+    const { container } = TestHarness({ customValidity: 'Value is invalid' });
+    const input = container.querySelector('input');
+
+    expect(input.reportValidity()).toBe(false);
+    expect(input.validationMessage).toBe('Value is invalid');
+    expect(container).toMatchSnapshot();
+  });
+
   test('should render disabled', () => {
     const { container } = TestHarness({ disabled: true });
     const input = container.querySelector('input');

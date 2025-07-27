@@ -35,6 +35,23 @@ exports[`Input > should render disabled 1`] = `
 </body>
 `;
 
+exports[`Input > should render invalid customValidity 1`] = `
+<body>
+  <div>
+    <input
+      class="form-control"
+      name=""
+      placeholder=""
+      type="text"
+    />
+    
+     
+    
+    <!--&lt;Input&gt;-->
+  </div>
+</body>
+`;
+
 exports[`Input > should render invalid feedback 1`] = `
 <body>
   <div>
@@ -99,6 +116,23 @@ exports[`Input > should render sm size 1`] = `
   <div>
     <input
       class="form-control form-control-sm"
+      name=""
+      placeholder=""
+      type="text"
+    />
+    
+     
+    
+    <!--&lt;Input&gt;-->
+  </div>
+</body>
+`;
+
+exports[`Input > should render valid customValidity 1`] = `
+<body>
+  <div>
+    <input
+      class="form-control"
       name=""
       placeholder=""
       type="text"

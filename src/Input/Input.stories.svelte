@@ -22,6 +22,12 @@
         },
         options: ['sm', '', 'lg']
       },
+      customValidity: {
+        control: 'text',
+        table: {
+          disable: true
+        }
+      },
       type: {
         control: {
           type: 'select'
@@ -177,6 +183,7 @@
     },
     args: {
       bsSize: undefined,
+      customValidity: '',
       disabled: false,
       invalid: false,
       placeholder: 'placeholder',

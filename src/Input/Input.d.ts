@@ -5,6 +5,7 @@ import { Color, InputType } from '../shared';
 interface MixedElementProps extends Omit<HTMLInputAttributes & HTMLSelectAttributes & HTMLTextareaAttributes, 'value'> {
   bsSize?: 'lg' | 'sm' | string;
   color?: Color | string;
+  customValidity?: string;
   feedback?: string | string[];
   files?: FileList;
   group?: any;

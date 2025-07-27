@@ -32,7 +32,7 @@ You can provide valuable, actionable feedback to users with `HTML5` form validat
 ## Dynamic Validation
 
 <Canvas withSource="none">
-  <Story of={ValidationStories.Dynanic} />
+  <Story of={ValidationStories.Dynamic} />
 </Canvas>
 
 <Source
@@ -41,6 +41,7 @@ You can provide valuable, actionable feedback to users with `HTML5` form validat
   code={` 
 <script lang="ts">
   import { Button, Form, FormGroup, Input } from '@sveltestrap/sveltestrap';
+  let customValidityValue = "";
   let validated = false;
 </script>
 
@@ -50,6 +51,14 @@ You can provide valuable, actionable feedback to users with `HTML5` form validat
   </FormGroup>
   <FormGroup>
     <Input feedback="This requires an email" placeholder="This requires an email" required type="email" />
+  </FormGroup>
+  <FormGroup>
+    <Input
+      feedback="This requires the word cow somewhere"
+      placeholder="This requires the word cow somewhere"
+      bind:value={customValidityValue}
+      customValidity={customValidityValue.split(' ').includes('cow') ? undefined : 'No cow!'}
+    />
   </FormGroup>
   <Button type="submit" on:click={() => (validated = true)}>Fake Submit</Button>
 </Form>

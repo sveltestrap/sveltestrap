@@ -35,6 +35,14 @@
   export let color = undefined;
 
   /**
+   * Native HTML field validity (based on setCustomValidity)
+   * Set this to a string other than '' to mark the input as invalid.
+   * @type {string | undefined}
+   * @default undefined
+   */
+  export let customValidity = undefined;
+
+  /**
    * Determines whether the input is disabled.
    * @type {boolean | undefined}
    * @default undefined
@@ -182,6 +190,15 @@
   let classes;
   let tag;
 
+  function applyCustomValidity(node, validity) {
+    node.setCustomValidity(validity ?? '');
+    return {
+      update(newValidity) {
+        node.setCustomValidity(newValidity ?? '');
+      }
+    };
+  }
+
   $: {
     const isNotaNumber = new RegExp('\\D', 'g');
 
@@ -264,6 +281,7 @@
       {placeholder}
       {readonly}
       {size}
+      use:applyCustomValidity={customValidity}
     />
   {:else if type === 'color'}
     <input
@@ -288,6 +306,7 @@
       {name}
       {placeholder}
       {readonly}
+      use:applyCustomValidity={customValidity}
     />
   {:else if type === 'email'}
     <input
@@ -314,6 +333,7 @@
       {placeholder}
       {readonly}
       {size}
+      use:applyCustomValidity={customValidity}
     />
   {:else if type === 'file'}
     <input
@@ -341,6 +361,7 @@
       {placeholder}
       {readonly}
       {valid}
+      use:applyCustomValidity={customValidity}
     />
   {:else if type === 'checkbox' || type === 'radio' || type === 'switch'}
     <FormCheck
@@ -396,6 +417,7 @@
       {name}
       {placeholder}
       {readonly}
+      use:applyCustomValidity={customValidity}
     />
   {:else if type === 'range'}
     <input
@@ -422,6 +444,7 @@
       {name}
       {placeholder}
       {readonly}
+      use:applyCustomValidity={customValidity}
     />
   {:else if type === 'date' || type === 'datetime' || type === 'datetime-local' || type === 'month' || type === 'time' || type === 'week'}
     <input
@@ -448,6 +471,7 @@
       {name}
       {placeholder}
       {readonly}
+      use:applyCustomValidity={customValidity}
     />
   {:else}
     <input
@@ -472,6 +496,7 @@
       {disabled}
       {placeholder}
       {readonly}
+      use:applyCustomValidity={customValidity}
     />
   {/if}
 {:else if tag === 'textarea'}
@@ -496,6 +521,7 @@
     {name}
     {placeholder}
     {readonly}
+    use:applyCustomValidity={customValidity}
   />
 {:else if tag === 'select' && !multiple}
   <select
@@ -512,6 +538,7 @@
     {name}
     {disabled}
     {readonly}
+    use:applyCustomValidity={customValidity}
   >
     <slot />
   </select>

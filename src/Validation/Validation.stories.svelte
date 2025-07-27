@@ -12,6 +12,7 @@
   import { Button, Form, FormGroup, Input } from '@sveltestrap/sveltestrap';
 
   let validated = false;
+  let customValidityValue = '';
 </script>
 
 <Template>
@@ -28,7 +29,7 @@
 
 <Story name="Basic" />
 
-<Story name="Dynanic">
+<Story name="Dynamic">
   <Form {validated} on:submit={(e) => e.preventDefault()}>
     <div class="form-width vertical">
       <FormGroup>
@@ -36,6 +37,14 @@
       </FormGroup>
       <FormGroup>
         <Input feedback="This requires an email" placeholder="This requires an email" required type="email" />
+      </FormGroup>
+      <FormGroup>
+        <Input
+          feedback="This requires the word cow somewhere"
+          placeholder="This requires the word cow somewhere"
+          bind:value={customValidityValue}
+          customValidity={customValidityValue.split(' ').includes('cow') ? undefined : 'No cow!'}
+        />
       </FormGroup>
       <Button type="submit" on:click={() => (validated = true)}>Fake Submit</Button>
     </div>
