@@ -5,6 +5,10 @@ export function backdropIn(node) {
 
   const duration = getTransitionDuration(node);
 
+  if (duration === 0) {
+    node.classList.add('show');
+  }
+
   return {
     duration,
     tick: (t) => {
@@ -18,6 +22,10 @@ export function backdropIn(node) {
 export function backdropOut(node) {
   node.classList.remove('show');
   const duration = getTransitionDuration(node);
+
+  if (duration === 0) {
+    node.style.display = 'none';
+  }
 
   return {
     duration,
@@ -35,6 +43,11 @@ export function collapseOut(node, params) {
   node.classList.add('collapsing');
   node.classList.remove('collapse', 'show');
   const duration = getTransitionDuration(node);
+
+  if (duration === 0) {
+    node.classList.remove('collapsing');
+    node.classList.add('collapse');
+  }
 
   return {
     duration,
@@ -56,6 +69,12 @@ export function collapseIn(node, params) {
   node.classList.remove('collapse', 'show');
   node.style[dimension] = 0;
   const duration = getTransitionDuration(node);
+
+  if (duration === 0) {
+    node.classList.remove('collapsing');
+    node.classList.add('collapse', 'show');
+    node.style[dimension] = '';
+  }
 
   return {
     duration,
@@ -79,6 +98,10 @@ export function modalIn(node) {
   node.style.display = 'block';
   const duration = getTransitionDuration(node);
 
+  if (duration === 0) {
+    node.classList.add('show');
+  }
+
   return {
     duration,
     tick: (t) => {
@@ -92,6 +115,10 @@ export function modalIn(node) {
 export function modalOut(node) {
   node.classList.remove('show');
   const duration = getTransitionDuration(node);
+
+  if (duration === 0) {
+    node.style.display = 'none';
+  }
 
   return {
     duration,
