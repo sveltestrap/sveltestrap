@@ -104,7 +104,7 @@
 
   /**
    * Indicates whether the Input allows multiple selections.
-   * Used with type "email" and "file".
+   * Used with type "email", "file", and "select".
    * @type {boolean | undefined}
    * @default undefined
    */
@@ -497,6 +497,25 @@
     {placeholder}
     {readonly}
   />
+{:else if tag === 'select' && multiple}
+  <select
+    {...$$restProps}
+    data-bs-theme={theme}
+    class={classes}
+    bind:value
+    bind:this={inner}
+    on:blur
+    on:click
+    on:change
+    on:focus
+    on:input
+    {name}
+    {disabled}
+    {readonly}
+    {multiple}
+  >
+    <slot />
+  </select>
 {:else if tag === 'select' && !multiple}
   <select
     {...$$restProps}
