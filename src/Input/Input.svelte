@@ -191,11 +191,9 @@
 
   function applyCustomValidity(element, validity) {
     element.setCustomValidity(validity || '');
-    element.reportValidity();
     return {
       update(validity) {
         element.setCustomValidity(validity || '');
-        element.reportValidity();
       }
     };
   }
