@@ -18,6 +18,28 @@
   export let expand = false;
   export let toggler = null;
 
+  let transitioning = false;
+
+  function _onEntering() {
+    transitioning = true;
+    onEntering();
+  }
+
+  function _onEntered() {
+    transitioning = false;
+    onEntered();
+  }
+
+  function _onExiting() {
+    transitioning = true;
+    onExiting();
+  }
+
+  function _onExited() {
+    transitioning = false;
+    onExited();
+  }
+
   onMount(() =>
     toggle(toggler, (e) => {
       isOpen = !isOpen;
@@ -25,9 +47,10 @@
     })
   );
 
-  $: classes = classnames(className, {
+  $: classes = classnames(className, 'collapse', {
     'collapse-horizontal': horizontal,
-    'navbar-collapse': navbar
+    'navbar-collapse': navbar,
+    'd-none': !isOpen && !transitioning
   });
 
   let windowWidth = 0;
@@ -60,7 +83,7 @@
 
 <svelte:window bind:innerWidth={windowWidth} />
 
-{#if isOpen}
+{#key isOpen}
   <div
     style={navbar ? undefined : 'overflow: hidden;'}
     {...$$restProps}
@@ -71,11 +94,11 @@
     on:introend
     on:outrostart
     on:outroend
-    on:introstart={onEntering}
-    on:introend={onEntered}
-    on:outrostart={onExiting}
-    on:outroend={onExited}
+    on:introstart={_onEntering}
+    on:introend={_onEntered}
+    on:outrostart={_onExiting}
+    on:outroend={_onExited}
   >
     <slot />
   </div>
-{/if}
+{/key}
