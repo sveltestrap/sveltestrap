@@ -531,7 +531,7 @@
     {name}
     {disabled}
     {readonly}
-    {multiple}
+    multiple
   >
     <slot />
   </select>
