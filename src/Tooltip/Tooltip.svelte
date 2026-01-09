@@ -89,6 +89,10 @@
    * @type {string}
    */
   let showTimer;
+  /**
+   * @type {boolean}
+   */
+  let hasBeenShown = false;
 
   const checkPopperPlacement = {
     name: 'checkPopperPlacement',
@@ -101,17 +105,17 @@
   };
 
   $: {
-    if (isOpen && tooltipEl) {
+    if (isOpen && tooltipEl && !popperInstance) {
+      // Create popper instance only once on first show
       // @ts-ignore
       popperInstance = createPopper(targetEl, tooltipEl, {
         placement,
         modifiers: [checkPopperPlacement]
       });
-    } else if (popperInstance) {
-      // @ts-ignore
-      popperInstance.destroy();
-      // @ts-ignore
-      popperInstance = undefined;
+    }
+
+    if (isOpen) {
+      hasBeenShown = true;
     }
   }
 
@@ -130,6 +134,11 @@
   onDestroy(() => {
     unregisterEventListeners();
     clearTimeout(showTimer);
+    if (popperInstance) {
+      // @ts-ignore
+      popperInstance.destroy();
+      popperInstance = undefined;
+    }
   });
 
   $: if (target) {
@@ -213,7 +222,7 @@
   $: outer = container === 'inline' ? InlineContainer : Portal;
 </script>
 
-{#if isOpen}
+{#if isOpen || hasBeenShown}
   <svelte:component this={outer}>
     <div
       bind:this={tooltipEl}
@@ -224,6 +233,7 @@
       data-bs-theme={theme}
       data-bs-delay={delay}
       x-placement={popperPlacement}
+      style={isOpen ? '' : 'display: none;'}
     >
       <div class="tooltip-arrow" data-popper-arrow />
       <div class="tooltip-inner">
