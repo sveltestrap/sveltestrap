@@ -5,6 +5,7 @@ export interface AccordionItemProps extends HTMLAttributes<HTMLDivElement> {
   active?: boolean;
   class?: string;
   header?: string;
+  headerText?: string;
 }
 
 export interface AccordionItemEvents {
