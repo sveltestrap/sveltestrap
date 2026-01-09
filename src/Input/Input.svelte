@@ -35,6 +35,13 @@
   export let color = undefined;
 
   /**
+   * Custom validity message for the input
+   * @type {string | undefined}
+   * @default undefined
+   */
+  export let customValidity = undefined;
+
+  /**
    * Determines whether the input is disabled.
    * @type {boolean | undefined}
    * @default undefined
@@ -182,6 +189,17 @@
   let classes;
   let tag;
 
+  function applyCustomValidity(element, validity) {
+    element.setCustomValidity(validity || '');
+    element.reportValidity();
+    return {
+      update(validity) {
+        element.setCustomValidity(validity || '');
+        element.reportValidity();
+      }
+    };
+  }
+
   $: {
     const isNotaNumber = new RegExp('\\D', 'g');
 
@@ -248,6 +266,7 @@
       class={classes}
       bind:value
       bind:this={inner}
+      use:applyCustomValidity={customValidity}
       on:blur
       on:change
       on:click
@@ -297,6 +316,7 @@
       type="email"
       bind:value
       bind:this={inner}
+      use:applyCustomValidity={customValidity}
       on:blur
       on:change
       on:click
@@ -379,6 +399,7 @@
       class={classes}
       bind:value
       bind:this={inner}
+      use:applyCustomValidity={customValidity}
       on:blur
       on:change
       on:click
