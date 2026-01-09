@@ -209,8 +209,21 @@
   });
 
   function setFocus() {
-    if (_dialog && _dialog.parentNode && typeof _dialog.parentNode.focus === 'function') {
-      _dialog.parentNode.focus();
+    if (_dialog) {
+      // First try to focus on the first focusable element inside the modal
+      const focusableElements = _dialog.querySelectorAll(
+        'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+      );
+
+      if (focusableElements.length > 0) {
+        focusableElements[0].focus();
+      } else {
+        // Fallback to the modal dialog itself for keyboard accessibility
+        const modalElement = _dialog.parentNode;
+        if (modalElement && typeof modalElement.focus === 'function') {
+          modalElement.focus();
+        }
+      }
     }
   }
 
@@ -336,6 +349,7 @@
             'position-static': staticModal
           })}
           role="dialog"
+          tabindex="-1"
           on:introstart={() => dispatch('opening')}
           on:introend={onModalOpened}
           on:outrostart={onModalClosing}
