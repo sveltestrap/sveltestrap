@@ -17,7 +17,7 @@
 
   $: classes = classnames(className, 'modal-backdrop', {
     fade,
-    show: !fade && isOpen
+    show: isOpen
   });
 </script>
 

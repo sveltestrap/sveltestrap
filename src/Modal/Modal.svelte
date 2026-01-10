@@ -210,19 +210,29 @@
 
   function setFocus() {
     if (_dialog) {
-      // First try to focus on the first focusable element inside the modal
+      // First try to focus on the first visible and enabled focusable element inside the modal
       const focusableElements = _dialog.querySelectorAll(
         'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
       );
 
-      if (focusableElements.length > 0) {
-        focusableElements[0].focus();
-      } else {
-        // Fallback to the modal dialog itself for keyboard accessibility
-        const modalElement = _dialog.parentNode;
-        if (modalElement && typeof modalElement.focus === 'function') {
-          modalElement.focus();
+      for (let i = 0; i < focusableElements.length; i++) {
+        const element = focusableElements[i];
+        // Check if element is visible and enabled
+        if (
+          !element.disabled &&
+          element.offsetWidth > 0 &&
+          element.offsetHeight > 0 &&
+          window.getComputedStyle(element).visibility !== 'hidden'
+        ) {
+          element.focus();
+          return;
         }
+      }
+
+      // Fallback to the modal dialog itself for keyboard accessibility
+      const modalElement = _dialog.parentNode;
+      if (modalElement && typeof modalElement.focus === 'function') {
+        modalElement.focus();
       }
     }
   }

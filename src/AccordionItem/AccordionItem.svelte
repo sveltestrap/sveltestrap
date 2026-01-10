@@ -22,13 +22,6 @@
   export let header = '';
 
   /**
-   * The header text content (alternative name for compatibility).
-   * @type {string}
-   * @default ''
-   */
-  export let headerText = '';
-
-  /**
    * Indicates whether the accordion item is initially active (open).
    * @type {boolean}
    * @default false
@@ -63,13 +56,12 @@
 
   $: classes = classnames(className, 'accordion-item');
   $: isOpen = stayOpen ? active : $open === accordionRef;
-  $: resolvedHeaderText = headerText || header;
 </script>
 
 <div class={classes} bind:this={accordionRef}>
   <AccordionHeader on:click={onToggle} class={!isOpen && 'collapsed'}>
     <slot name="header" />
-    {resolvedHeaderText}
+    {header}
   </AccordionHeader>
   <Collapse {isOpen} class="accordion-collapse" on:introstart on:introend on:outrostart on:outroend>
     <div class="accordion-body">

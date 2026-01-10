@@ -192,8 +192,8 @@
   function applyCustomValidity(element, validity) {
     element.setCustomValidity(validity || '');
     return {
-      update(validity) {
-        element.setCustomValidity(validity || '');
+      update(newValidity) {
+        element.setCustomValidity(newValidity || '');
       }
     };
   }

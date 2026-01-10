@@ -47,11 +47,15 @@
     })
   );
 
-  $: classes = classnames(className, 'collapse', {
-    'collapse-horizontal': horizontal,
-    'navbar-collapse': navbar,
-    'd-none': !isOpen && !transitioning
-  });
+  $: classes = classnames(
+    className,
+    // Only add 'collapse' class if not already present
+    className && className.includes('collapse') ? null : 'collapse',
+    {
+      'collapse-horizontal': horizontal,
+      'navbar-collapse': navbar
+    }
+  );
 
   let windowWidth = 0;
   let _wasMaximized = false;
@@ -83,7 +87,7 @@
 
 <svelte:window bind:innerWidth={windowWidth} />
 
-{#key isOpen}
+{#if isOpen}
   <div
     style={navbar ? undefined : 'overflow: hidden;'}
     {...$$restProps}
@@ -101,4 +105,4 @@
   >
     <slot />
   </div>
-{/key}
+{/if}

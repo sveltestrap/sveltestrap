@@ -23,14 +23,6 @@ exports[`AccordionHeader > should render correctly 1`] = `
         <!--&lt;AccordionHeader&gt;-->
          
         <div
-          class="accordion-collapse d-none collapse"
-          style="overflow: hidden; height: 0px;"
-        >
-          <div
-            class="accordion-body"
-          />
-        </div>
-        <div
           class="accordion-collapse collapse show"
           style="overflow: hidden; height: 0px;"
         >
