@@ -1,7 +1,7 @@
 <script>
   import { onDestroy, onMount } from 'svelte';
   import { createPopper } from '@popperjs/core';
-  import { classnames, uuid, getTransitionDuration } from '../utils';
+  import { classnames, uuid } from '../utils';
   import { InlineContainer } from '../InlineContainer';
   import { Portal } from '../Portal';
 
@@ -89,16 +89,6 @@
    * @type {string}
    */
   let showTimer;
-  /**
-   * @type {boolean}
-   */
-  let hasBeenShown = false;
-  /**
-   * @type {number}
-   */
-  let cleanupTimer;
-
-  const DEFAULT_TRANSITION_DURATION = 500;
 
   const checkPopperPlacement = {
     name: 'checkPopperPlacement',
@@ -111,38 +101,31 @@
   };
 
   $: {
-    if (isOpen && tooltipEl && !popperInstance) {
-      // Create popper instance only once on first show
+    if (isOpen && tooltipEl) {
+      if (!popperInstance) {
+        // Create popper instance
+        // @ts-ignore
+        popperInstance = createPopper(targetEl, tooltipEl, {
+          placement,
+          modifiers: [checkPopperPlacement]
+        });
+      }
+    } else if (!isOpen && popperInstance) {
+      // Destroy popper instance when tooltip closes
       // @ts-ignore
-      popperInstance = createPopper(targetEl, tooltipEl, {
-        placement,
-        modifiers: [checkPopperPlacement]
-      });
-    }
-
-    if (isOpen) {
-      hasBeenShown = true;
+      popperInstance.destroy();
+      popperInstance = undefined;
     }
   }
 
   const open = () => {
     clearTimeout(showTimer);
-    clearTimeout(cleanupTimer);
     showTimer = setTimeout(() => (isOpen = true), delay);
   };
 
   const close = () => {
     clearTimeout(showTimer);
     isOpen = false;
-
-    // Clean up DOM after a delay to allow for smooth transitions
-    clearTimeout(cleanupTimer);
-    cleanupTimer = setTimeout(
-      () => {
-        hasBeenShown = false;
-      },
-      getTransitionDuration(tooltipEl) || DEFAULT_TRANSITION_DURATION
-    ); // Fallback to 500ms if no transition
   };
 
   onMount(registerEventListeners);
@@ -150,7 +133,6 @@
   onDestroy(() => {
     unregisterEventListeners();
     clearTimeout(showTimer);
-    clearTimeout(cleanupTimer);
     if (popperInstance) {
       // @ts-ignore
       popperInstance.destroy();
@@ -239,7 +221,7 @@
   $: outer = container === 'inline' ? InlineContainer : Portal;
 </script>
 
-{#if isOpen || hasBeenShown}
+{#if isOpen}
   <svelte:component this={outer}>
     <div
       bind:this={tooltipEl}
