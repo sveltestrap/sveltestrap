@@ -18,6 +18,28 @@
   export let expand = false;
   export let toggler = null;
 
+  let transitioning = false;
+
+  function _onEntering() {
+    transitioning = true;
+    onEntering();
+  }
+
+  function _onEntered() {
+    transitioning = false;
+    onEntered();
+  }
+
+  function _onExiting() {
+    transitioning = true;
+    onExiting();
+  }
+
+  function _onExited() {
+    transitioning = false;
+    onExited();
+  }
+
   onMount(() =>
     toggle(toggler, (e) => {
       isOpen = !isOpen;
@@ -25,10 +47,15 @@
     })
   );
 
-  $: classes = classnames(className, {
-    'collapse-horizontal': horizontal,
-    'navbar-collapse': navbar
-  });
+  $: classes = classnames(
+    className,
+    // Only add 'collapse' class if not already present
+    className && className.includes('collapse') ? null : 'collapse',
+    {
+      'collapse-horizontal': horizontal,
+      'navbar-collapse': navbar
+    }
+  );
 
   let windowWidth = 0;
   let _wasMaximized = false;
@@ -71,10 +98,10 @@
     on:introend
     on:outrostart
     on:outroend
-    on:introstart={onEntering}
-    on:introend={onEntered}
-    on:outrostart={onExiting}
-    on:outroend={onExited}
+    on:introstart={_onEntering}
+    on:introend={_onEntered}
+    on:outrostart={_onExiting}
+    on:outroend={_onExited}
   >
     <slot />
   </div>

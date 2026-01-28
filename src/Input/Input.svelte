@@ -35,6 +35,13 @@
   export let color = undefined;
 
   /**
+   * Custom validity message for the input
+   * @type {string | undefined}
+   * @default undefined
+   */
+  export let customValidity = undefined;
+
+  /**
    * Determines whether the input is disabled.
    * @type {boolean | undefined}
    * @default undefined
@@ -104,7 +111,7 @@
 
   /**
    * Indicates whether the Input allows multiple selections.
-   * Used with type "email" and "file".
+   * Used with type "email", "file", and "select".
    * @type {boolean | undefined}
    * @default undefined
    */
@@ -182,6 +189,15 @@
   let classes;
   let tag;
 
+  function applyCustomValidity(element, validity) {
+    element.setCustomValidity(validity || '');
+    return {
+      update(newValidity) {
+        element.setCustomValidity(newValidity || '');
+      }
+    };
+  }
+
   $: {
     const isNotaNumber = new RegExp('\\D', 'g');
 
@@ -248,6 +264,7 @@
       class={classes}
       bind:value
       bind:this={inner}
+      use:applyCustomValidity={customValidity}
       on:blur
       on:change
       on:click
@@ -297,6 +314,7 @@
       type="email"
       bind:value
       bind:this={inner}
+      use:applyCustomValidity={customValidity}
       on:blur
       on:change
       on:click
@@ -379,6 +397,7 @@
       class={classes}
       bind:value
       bind:this={inner}
+      use:applyCustomValidity={customValidity}
       on:blur
       on:change
       on:click
@@ -497,6 +516,25 @@
     {placeholder}
     {readonly}
   />
+{:else if tag === 'select' && multiple}
+  <select
+    {...$$restProps}
+    data-bs-theme={theme}
+    class={classes}
+    bind:value
+    bind:this={inner}
+    on:blur
+    on:click
+    on:change
+    on:focus
+    on:input
+    {name}
+    {disabled}
+    {readonly}
+    multiple
+  >
+    <slot />
+  </select>
 {:else if tag === 'select' && !multiple}
   <select
     {...$$restProps}

@@ -102,15 +102,18 @@
 
   $: {
     if (isOpen && tooltipEl) {
-      // @ts-ignore
-      popperInstance = createPopper(targetEl, tooltipEl, {
-        placement,
-        modifiers: [checkPopperPlacement]
-      });
-    } else if (popperInstance) {
+      if (!popperInstance) {
+        // Create popper instance
+        // @ts-ignore
+        popperInstance = createPopper(targetEl, tooltipEl, {
+          placement,
+          modifiers: [checkPopperPlacement]
+        });
+      }
+    } else if (!isOpen && popperInstance) {
+      // Destroy popper instance when tooltip closes
       // @ts-ignore
       popperInstance.destroy();
-      // @ts-ignore
       popperInstance = undefined;
     }
   }
@@ -130,6 +133,11 @@
   onDestroy(() => {
     unregisterEventListeners();
     clearTimeout(showTimer);
+    if (popperInstance) {
+      // @ts-ignore
+      popperInstance.destroy();
+      popperInstance = undefined;
+    }
   });
 
   $: if (target) {
@@ -224,6 +232,7 @@
       data-bs-theme={theme}
       data-bs-delay={delay}
       x-placement={popperPlacement}
+      style={isOpen ? '' : 'display: none;'}
     >
       <div class="tooltip-arrow" data-popper-arrow />
       <div class="tooltip-inner">

@@ -77,7 +77,7 @@
           <h3 class="container">sm</h3>
         </Container>
 
-        <Container sm>
+        <Container md>
           <h3 class="container">md</h3>
         </Container>
 

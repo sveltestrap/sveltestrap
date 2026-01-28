@@ -209,8 +209,31 @@
   });
 
   function setFocus() {
-    if (_dialog && _dialog.parentNode && typeof _dialog.parentNode.focus === 'function') {
-      _dialog.parentNode.focus();
+    if (_dialog) {
+      // First try to focus on the first visible and enabled focusable element inside the modal
+      const focusableElements = _dialog.querySelectorAll(
+        'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+      );
+
+      for (let i = 0; i < focusableElements.length; i++) {
+        const element = focusableElements[i];
+        // Check if element is visible and enabled
+        if (
+          !element.disabled &&
+          element.offsetWidth > 0 &&
+          element.offsetHeight > 0 &&
+          window.getComputedStyle(element).visibility !== 'hidden'
+        ) {
+          element.focus();
+          return;
+        }
+      }
+
+      // Fallback to the modal dialog itself for keyboard accessibility
+      const modalElement = _dialog.parentNode;
+      if (modalElement && typeof modalElement.focus === 'function') {
+        modalElement.focus();
+      }
     }
   }
 
@@ -336,6 +359,7 @@
             'position-static': staticModal
           })}
           role="dialog"
+          tabindex="-1"
           on:introstart={() => dispatch('opening')}
           on:introend={onModalOpened}
           on:outrostart={onModalClosing}

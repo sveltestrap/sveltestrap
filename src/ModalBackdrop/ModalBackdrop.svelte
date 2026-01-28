@@ -15,9 +15,16 @@
     loaded = true;
   });
 
-  $: classes = classnames(className, 'modal-backdrop');
+  $: classes = classnames(className, 'modal-backdrop', {
+    fade,
+    show: isOpen
+  });
 </script>
 
 {#if isOpen && loaded}
-  <div role="presentation" {...$$restProps} class={classes} class:fade in:backdropIn out:backdropOut on:click />
+  {#if fade}
+    <div role="presentation" {...$$restProps} class={classes} in:backdropIn out:backdropOut on:click />
+  {:else}
+    <div role="presentation" {...$$restProps} class={classes} style="display: block;" on:click />
+  {/if}
 {/if}
