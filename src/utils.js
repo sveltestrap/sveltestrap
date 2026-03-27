@@ -19,7 +19,11 @@ export function getScrollbarWidth() {
 }
 
 export function setScrollbarWidth(padding) {
-  document.body.style.paddingRight = padding > 0 ? `${padding}px` : null;
+    const gutters = [getComputedStyle(document.body).scrollbarGutter, getComputedStyle(document.body.parentElement).scrollbarGutter]
+    
+    if (!gutters.includes("stable")) {
+        document.body.style.paddingRight = padding > 0 ? `${padding}px` : null;
+    }
 }
 
 export function isBodyOverflowing() {
