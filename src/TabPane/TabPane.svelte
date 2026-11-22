@@ -1,5 +1,6 @@
 <script>
   import { getContext, onMount } from 'svelte';
+  import { get } from 'svelte/store';
   import { NavItem } from '../NavItem';
   import { NavLink } from '../NavLink';
   import { classnames, textProp } from '../utils';
@@ -18,6 +19,17 @@
   onMount(() => {
     if (active) setActiveTab(tabId);
   });
+
+  // Follow later changes to `active`. Only the change itself is acted on, so
+  // a pane whose `active` stays true does not take the selection back when
+  // another tab is clicked.
+  let wasActive = active;
+  function syncActive(isActive) {
+    if (isActive === wasActive) return;
+    wasActive = isActive;
+    if (isActive && get(activeTabId) !== tabId) setActiveTab(tabId);
+  }
+  $: syncActive(active);
 
   let tabOpen = active;
   $: if ($activeTabId !== undefined) tabOpen = $activeTabId === tabId;
