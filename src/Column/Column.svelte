@@ -1,10 +1,13 @@
 <script>
   import { getContext } from 'svelte';
+  import { textProp } from '../utils';
 
   let className = '';
   export { className as class };
   export let footer = undefined;
+  $: footerText = textProp(footer);
   export let header = undefined;
+  $: headerText = textProp(header);
   export let width = undefined;
 
   const colgroup = getContext('colgroup');
@@ -16,12 +19,12 @@
   <col style="width: {width};" />
 {:else if foot}
   <th {...$$restProps}>
-    {#if footer}{footer}{/if}
+    {#if footerText}{footerText}{/if}
     <slot name="footer" />
   </th>
 {:else if head}
   <th {...$$restProps}>
-    {#if header}{header}{/if}
+    {#if headerText}{headerText}{/if}
     <slot name="header" />
   </th>
 {:else}

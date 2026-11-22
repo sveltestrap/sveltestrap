@@ -1,13 +1,13 @@
 import { SvelteComponent } from 'svelte';
 import { HTMLAttributes } from 'svelte/elements';
-import { ContainerType, Placement } from '../shared';
+import { ContainerType, Placement, TextOrSnippet } from '../shared';
 
 export interface OffcanvasProps extends HTMLAttributes<HTMLDivElement> {
   backdrop?: boolean;
   body?: boolean;
   container?: ContainerType;
   fade?: boolean;
-  header?: string;
+  header?: TextOrSnippet;
   isOpen: boolean;
   keyboard?: boolean;
   placement?: Placement;

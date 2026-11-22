@@ -1,6 +1,6 @@
 import { SvelteComponent } from 'svelte';
 import { HTMLAttributes } from 'svelte/elements';
-import { ContainerType } from '../shared';
+import { ContainerType, TextOrSnippet } from '../shared';
 
 declare type PopoverPlacement = 'left' | 'top' | 'bottom' | 'right' | 'auto';
 declare type Triggers = 'click' | 'hover' | 'focus';
@@ -15,7 +15,7 @@ export interface PopoverProps extends HTMLAttributes<HTMLDivElement> {
   placement?: PopoverPlacement;
   target: string;
   theme?: string;
-  title?: string;
+  title?: TextOrSnippet;
   trigger?: Triggers;
 }
 

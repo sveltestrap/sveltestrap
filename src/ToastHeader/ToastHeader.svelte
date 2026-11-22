@@ -1,22 +1,23 @@
 <script>
-  import { classnames } from '../utils';
+  import { classnames, textProp } from '../utils';
   import { Button } from '../Button';
 
   let className = '';
   export { className as class };
   export let icon = null;
+  $: iconColor = textProp(icon) ?? null;
   export let toggle = null;
   export let closeAriaLabel = 'Close';
 
   $: classes = classnames(className, 'toast-header');
 
-  $: tagClassName = classnames('me-auto', { 'ms-2': icon !== null });
+  $: tagClassName = classnames('me-auto', { 'ms-2': iconColor !== null });
 </script>
 
 <div {...$$restProps} class={classes}>
-  {#if icon}
+  {#if iconColor}
     <svg
-      class={`rounded text-${icon}`}
+      class={`rounded text-${iconColor}`}
       width="20"
       height="20"
       xmlns="http://www.w3.org/2000/svg"

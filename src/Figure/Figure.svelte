@@ -1,6 +1,6 @@
 <script>
   import { setContext } from 'svelte';
-  import { classnames } from '../utils';
+  import { classnames, textProp } from '../utils';
 
   setContext('figure', true);
 
@@ -18,15 +18,16 @@
    * @default undefined
    */
   export let caption = undefined;
+  $: captionText = textProp(caption);
 
   $: classes = classnames('figure', className);
 </script>
 
 <figure class={classes} {...$$restProps}>
   <slot />
-  {#if caption || $$slots.caption}
+  {#if captionText || $$slots.caption}
     <figcaption class="figure-caption">
-      {caption}<slot name="caption" />
+      {captionText}<slot name="caption" />
     </figcaption>
   {/if}
 </figure>

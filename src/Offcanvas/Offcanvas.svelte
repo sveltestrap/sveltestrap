@@ -7,7 +7,7 @@
   import { OffcanvasHeader } from '../OffcanvasHeader';
   import { Portal } from '../Portal';
 
-  import { classnames, browserEvent, getTransitionDuration } from '../utils';
+  import { classnames, browserEvent, getTransitionDuration, textProp } from '../utils';
 
   const dispatch = createEventDispatcher();
 
@@ -47,6 +47,7 @@
    * @type {string}
    */
   export let header = '';
+  $: headerText = textProp(header);
 
   /**
    * Indicates whether the offcanvas is currently open.
@@ -203,10 +204,10 @@
     style={`visibility: ${isOpen || isTransitioning ? 'visible' : 'hidden'};${style}`}
     tabindex="-1"
   >
-    {#if toggle || header || $$slots.header}
+    {#if toggle || headerText || $$slots.header}
       <OffcanvasHeader {toggle}>
-        {#if header}
-          {header}
+        {#if headerText}
+          {headerText}
         {/if}
         <slot name="header" />
       </OffcanvasHeader>

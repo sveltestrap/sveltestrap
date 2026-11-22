@@ -1,7 +1,7 @@
 import { SvelteComponent } from 'svelte';
 import { HTMLAttributes } from 'svelte/elements';
 import { FadeProps } from '../Fade';
-import { Color } from '../shared';
+import { Color, TextOrSnippet } from '../shared';
 
 export interface AlertProps extends HTMLAttributes<HTMLDivElement> {
   closeAriaLabel?: string;
@@ -9,7 +9,7 @@ export interface AlertProps extends HTMLAttributes<HTMLDivElement> {
   color?: Color | string;
   dismissible?: boolean;
   fade?: boolean;
-  heading?: string;
+  heading?: TextOrSnippet;
   isOpen?: boolean;
   theme?: string;
   toggle?: () => void;

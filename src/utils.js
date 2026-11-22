@@ -119,3 +119,12 @@ export function uuid() {
     return v.toString(16);
   });
 }
+
+/**
+ * Returns the value of a text prop that shares its name with a slot.
+ * In Svelte 5 a snippet passed to a Svelte 4 component fills the slot of the
+ * same name and is also received as the prop, so functions are ignored here.
+ */
+export function textProp(value) {
+  return typeof value === 'function' ? undefined : value;
+}

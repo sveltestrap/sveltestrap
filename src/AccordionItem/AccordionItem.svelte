@@ -4,7 +4,7 @@
   import { AccordionHeader } from '../AccordionHeader';
   import { Collapse } from '../Collapse';
 
-  import { classnames } from '../utils';
+  import { classnames, textProp } from '../utils';
 
   /**
    * Additional CSS classes for container element.
@@ -20,6 +20,7 @@
    * @default ''
    */
   export let header = '';
+  $: headerText = textProp(header);
 
   /**
    * Indicates whether the accordion item is initially active (open).
@@ -61,7 +62,7 @@
 <div class={classes} bind:this={accordionRef}>
   <AccordionHeader on:click={onToggle} class={!isOpen && 'collapsed'}>
     <slot name="header" />
-    {header}
+    {headerText}
   </AccordionHeader>
   <Collapse {isOpen} class="accordion-collapse" on:introstart on:introend on:outrostart on:outroend>
     <div class="accordion-body">

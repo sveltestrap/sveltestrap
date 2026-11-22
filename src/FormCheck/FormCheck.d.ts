@@ -1,3 +1,4 @@
+import { TextOrSnippet } from '../shared';
 import { SvelteComponent } from 'svelte';
 import { HTMLInputAttributes } from 'svelte/elements';
 
@@ -6,7 +7,7 @@ export interface FormCheckProps extends HTMLInputAttributes {
   inline?: boolean;
   inner?: HTMLElement;
   invalid?: boolean;
-  label?: string;
+  label?: TextOrSnippet;
   reverse?: boolean;
   size?: 'lg' | 'sm';
   valid?: boolean;

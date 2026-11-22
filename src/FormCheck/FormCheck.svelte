@@ -1,5 +1,5 @@
 <script>
-  import { classnames } from '../utils';
+  import { classnames, textProp } from '../utils';
 
   let className = '';
   export { className as class };
@@ -11,6 +11,7 @@
   export let inner = undefined;
   export let invalid = false;
   export let label = '';
+  $: labelText = textProp(label);
   export let name = '';
   export let reverse = false;
   export let size = '';
@@ -29,7 +30,7 @@
     'is-invalid': invalid,
     'is-valid': valid
   });
-  $: idFor = id || label;
+  $: idFor = id || labelText;
 </script>
 
 <div class={classes}>
@@ -84,7 +85,7 @@
   {/if}
   {#if label}
     <label class="form-check-label" for={idFor}>
-      <slot name="label">{label}</slot>
+      <slot name="label">{labelText}</slot>
     </label>
   {/if}
 </div>

@@ -1,7 +1,7 @@
 <script>
   import { onMount } from 'svelte';
   import { createPopper } from '@popperjs/core';
-  import { classnames } from '../utils';
+  import { classnames, textProp } from '../utils';
   import { InlineContainer } from '../InlineContainer';
   import { Portal } from '../Portal';
 
@@ -71,6 +71,7 @@
    * @type {string}
    */
   export let title = '';
+  $: titleText = textProp(title);
 
   /**
    * The trigger action to open/close the popover.
@@ -207,7 +208,7 @@
     >
       <div class="popover-arrow" data-popper-arrow />
       <h3 class="popover-header">
-        <slot name="title">{title}</slot>
+        <slot name="title">{titleText}</slot>
       </h3>
       <div class="popover-body">
         {#if content}

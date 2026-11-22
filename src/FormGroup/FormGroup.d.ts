@@ -1,3 +1,4 @@
+import { TextOrSnippet } from '../shared';
 import { SvelteComponent } from 'svelte';
 import { HTMLAttributes } from 'svelte/elements';
 
@@ -6,7 +7,7 @@ export interface FormGroupProps extends HTMLAttributes<HTMLDivElement> {
   disabled?: boolean;
   floating?: boolean;
   inline?: boolean;
-  label?: string;
+  label?: TextOrSnippet;
   row?: boolean;
   spacing?: string;
   tag?: 'div' | 'fieldset';

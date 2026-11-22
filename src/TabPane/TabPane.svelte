@@ -2,13 +2,14 @@
   import { getContext, onMount } from 'svelte';
   import { NavItem } from '../NavItem';
   import { NavLink } from '../NavLink';
-  import { classnames } from '../utils';
+  import { classnames, textProp } from '../utils';
 
   let className = '';
   export { className as class };
   export let active = false;
   export let disabled = false;
   export let tab = undefined;
+  $: tabText = textProp(tab);
   export let tabId = undefined;
 
   const tabs = getContext('tabs');
@@ -29,7 +30,7 @@
 {#if tabs}
   <NavItem>
     <NavLink active={tabOpen} {disabled} on:click={() => setActiveTab(tabId)}>
-      {#if tab}{tab}{/if}
+      {#if tabText}{tabText}{/if}
       <slot name="tab" />
     </NavLink>
   </NavItem>
