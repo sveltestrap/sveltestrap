@@ -68,7 +68,7 @@
     "test:integration:report": "pnpm test:integration && npx playwright show-report"
   },
   "devDependencies": {
-    "@playwright/test": "^1.40.1",
+    "@playwright/test": "^1.65.1",
     "@storybook/addon-docs": "^7.6.16",
     "@storybook/addon-essentials": "^7.6.16",
     "@storybook/addon-interactions": "^7.6.16",
