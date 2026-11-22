@@ -31,13 +31,22 @@ export function isObject(value) {
   return value !== null && (type === 'object' || type === 'function');
 }
 
+// With `scrollbar-gutter: stable` on the root element the space for the
+// scrollbar stays reserved while the body is not scrollable, so nothing shifts
+// and no compensating padding is needed.
+export function hasStableScrollbarGutter() {
+  const { scrollbarGutter } = window.getComputedStyle(document.documentElement);
+
+  return typeof scrollbarGutter === 'string' && scrollbarGutter.includes('stable');
+}
+
 export function conditionallyUpdateScrollbar() {
   const scrollbarWidth = getScrollbarWidth();
   // https://github.com/twbs/bootstrap/blob/v4.0.0-alpha.6/js/src/modal.js#L433
   const fixedContent = document.querySelectorAll('.fixed-top, .fixed-bottom, .is-fixed, .sticky-top')[0];
   const bodyPadding = fixedContent ? parseInt(fixedContent.style.paddingRight || 0, 10) : 0;
 
-  if (isBodyOverflowing()) {
+  if (isBodyOverflowing() && !hasStableScrollbarGutter()) {
     setScrollbarWidth(bodyPadding + scrollbarWidth);
   }
 }
