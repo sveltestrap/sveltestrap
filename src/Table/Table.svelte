@@ -1,11 +1,11 @@
 <script>
   import { setContext } from 'svelte';
   import { writable } from 'svelte/store';
-  import { classnames } from '../utils';
-  import { Colgroup } from '../Colgroup';
-  import { ResponsiveContainer } from '../ResponsiveContainer';
-  import { TableFooter } from '../TableFooter';
-  import { TableHeader } from '../TableHeader';
+  import { classnames } from '../utils.js';
+  import { Colgroup } from '../Colgroup/index.js';
+  import { ResponsiveContainer } from '../ResponsiveContainer/index.js';
+  import { TableFooter } from '../TableFooter/index.js';
+  import { TableHeader } from '../TableHeader/index.js';
 
   let className = '';
   /**

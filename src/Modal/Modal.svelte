@@ -6,12 +6,12 @@
 <script>
   import { createEventDispatcher, onDestroy, onMount, afterUpdate } from 'svelte';
 
-  import { modalIn, modalOut } from '../transitions';
-  import { InlineContainer } from '../InlineContainer';
-  import { ModalBackdrop } from '../ModalBackdrop';
-  import { ModalBody } from '../ModalBody';
-  import { ModalHeader } from '../ModalHeader';
-  import { Portal } from '../Portal';
+  import { modalIn, modalOut } from '../transitions.js';
+  import { InlineContainer } from '../InlineContainer/index.js';
+  import { ModalBackdrop } from '../ModalBackdrop/index.js';
+  import { ModalBody } from '../ModalBody/index.js';
+  import { ModalHeader } from '../ModalHeader/index.js';
+  import { Portal } from '../Portal/index.js';
 
   import {
     browserEvent,
@@ -20,7 +20,7 @@
     getOriginalBodyPadding,
     setScrollbarWidth,
     uuid
-  } from '../utils';
+  } from '../utils.js';
 
   const dispatch = createEventDispatcher();
 

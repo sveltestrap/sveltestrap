@@ -1,9 +1,9 @@
 <script>
   import { createEventDispatcher, onDestroy } from 'svelte';
   import { fade as fadeTrans } from 'svelte/transition';
-  import { ToastBody } from '../ToastBody';
-  import { ToastHeader } from '../ToastHeader';
-  import { classnames } from '../utils';
+  import { ToastBody } from '../ToastBody/index.js';
+  import { ToastHeader } from '../ToastHeader/index.js';
+  import { classnames } from '../utils.js';
 
   const dispatch = createEventDispatcher();
 

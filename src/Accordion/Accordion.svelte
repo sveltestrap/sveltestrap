@@ -2,7 +2,7 @@
   import { createEventDispatcher, setContext } from 'svelte';
   import { writable } from 'svelte/store';
 
-  import { classnames } from '../utils';
+  import { classnames } from '../utils.js';
 
   const dispatch = createEventDispatcher();
 

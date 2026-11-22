@@ -1,6 +1,6 @@
 <script>
   // Importing a utility function for handling class names.
-  import { classnames } from '../utils';
+  import { classnames } from '../utils.js';
 
   /**
    * Additional CSS class names for the <nav> element.

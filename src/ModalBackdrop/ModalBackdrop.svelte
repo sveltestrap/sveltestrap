@@ -1,6 +1,6 @@
 <script>
   import { onMount } from 'svelte';
-  import { classnames } from '../utils';
+  import { classnames } from '../utils.js';
   import { backdropIn, backdropOut } from '../transitions.js';
 
   let className = '';

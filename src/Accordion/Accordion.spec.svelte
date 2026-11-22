@@ -1,6 +1,6 @@
 <script>
   import Accordion from './Accordion.svelte';
-  import { AccordionItem } from '../AccordionItem';
+  import { AccordionItem } from '../AccordionItem/index.js';
 </script>
 
 <Accordion>

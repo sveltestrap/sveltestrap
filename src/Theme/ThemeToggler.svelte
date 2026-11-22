@@ -1,5 +1,5 @@
 <script>
-  import { colorMode, toggleColorMode } from './helpers';
+  import { colorMode, toggleColorMode } from './helpers.js';
 
   let currentColorMode = $colorMode;
 

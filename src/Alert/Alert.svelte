@@ -1,6 +1,6 @@
 <script>
   import { fade as fadeTransition } from 'svelte/transition';
-  import { classnames, textProp } from '../utils';
+  import { classnames, textProp } from '../utils.js';
 
   /**
    * Additional CSS classes for container element.

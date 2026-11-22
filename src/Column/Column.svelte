@@ -1,6 +1,6 @@
 <script>
   import { getContext, onDestroy } from 'svelte';
-  import { textProp } from '../utils';
+  import { textProp } from '../utils.js';
 
   let className = '';
   export { className as class };

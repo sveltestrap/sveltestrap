@@ -1,7 +1,7 @@
 <script>
-  import { FormCheck } from '../FormCheck';
-  import { FormFeedback } from '../FormFeedback';
-  import { classnames } from '../utils';
+  import { FormCheck } from '../FormCheck/index.js';
+  import { FormFeedback } from '../FormFeedback/index.js';
+  import { classnames } from '../utils.js';
 
   /**
    * Additional CSS classes for the input.

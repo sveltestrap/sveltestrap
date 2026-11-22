@@ -1,10 +1,10 @@
 <script>
   import { createEventDispatcher, getContext, onMount } from 'svelte';
 
-  import { AccordionHeader } from '../AccordionHeader';
-  import { Collapse } from '../Collapse';
+  import { AccordionHeader } from '../AccordionHeader/index.js';
+  import { Collapse } from '../Collapse/index.js';
 
-  import { classnames, textProp } from '../utils';
+  import { classnames, textProp } from '../utils.js';
 
   /**
    * Additional CSS classes for container element.

@@ -1,4 +1,4 @@
-import { getTransitionDuration } from './utils';
+import { getTransitionDuration } from './utils.js';
 
 export function backdropIn(node) {
   node.style.display = 'block';

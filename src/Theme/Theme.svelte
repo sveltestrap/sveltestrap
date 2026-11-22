@@ -1,5 +1,5 @@
 <script>
-  import { useColorMode } from './helpers';
+  import { useColorMode } from './helpers.js';
 
   export let theme = 'dark';
 

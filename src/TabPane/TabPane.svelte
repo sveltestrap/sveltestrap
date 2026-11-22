@@ -1,9 +1,9 @@
 <script>
   import { getContext, onMount } from 'svelte';
   import { get } from 'svelte/store';
-  import { NavItem } from '../NavItem';
-  import { NavLink } from '../NavLink';
-  import { classnames, textProp } from '../utils';
+  import { NavItem } from '../NavItem/index.js';
+  import { NavLink } from '../NavLink/index.js';
+  import { classnames, textProp } from '../utils.js';
 
   let className = '';
   export { className as class };

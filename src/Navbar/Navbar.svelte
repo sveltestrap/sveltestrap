@@ -1,7 +1,7 @@
 <script>
   import { setContext } from 'svelte';
-  import { classnames } from '../utils';
-  import { Container } from '../Container';
+  import { classnames } from '../utils.js';
+  import { Container } from '../Container/index.js';
 
   setContext('navbar', {
     inNavbar: true

@@ -1,9 +1,9 @@
 <script>
   import { onMount } from 'svelte';
   import { createPopper } from '@popperjs/core';
-  import { classnames, textProp } from '../utils';
-  import { InlineContainer } from '../InlineContainer';
-  import { Portal } from '../Portal';
+  import { classnames, textProp } from '../utils.js';
+  import { InlineContainer } from '../InlineContainer/index.js';
+  import { Portal } from '../Portal/index.js';
 
   /**
    * Additional CSS class names for the popover.

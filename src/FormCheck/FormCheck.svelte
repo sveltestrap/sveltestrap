@@ -1,5 +1,5 @@
 <script>
-  import { classnames, textProp } from '../utils';
+  import { classnames, textProp } from '../utils.js';
 
   let className = '';
   export { className as class };

@@ -1,6 +1,6 @@
 <script>
-  import { classnames, textProp } from '../utils';
-  import { Button } from '../Button';
+  import { classnames, textProp } from '../utils.js';
+  import { Button } from '../Button/index.js';
 
   let className = '';
   export { className as class };

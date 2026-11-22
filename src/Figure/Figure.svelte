@@ -1,6 +1,6 @@
 <script>
   import { setContext } from 'svelte';
-  import { classnames, textProp } from '../utils';
+  import { classnames, textProp } from '../utils.js';
 
   setContext('figure', true);
 

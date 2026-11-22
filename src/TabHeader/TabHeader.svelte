@@ -1,6 +1,6 @@
 <script>
   import { setContext } from 'svelte';
-  import { Nav } from '../Nav';
+  import { Nav } from '../Nav/index.js';
 
   setContext('tabs', true);
 </script>
