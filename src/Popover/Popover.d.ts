@@ -5,7 +5,7 @@ import { ContainerType, TextOrSnippet } from '../shared';
 declare type PopoverPlacement = 'left' | 'top' | 'bottom' | 'right' | 'auto';
 declare type Triggers = 'click' | 'hover' | 'focus';
 
-export interface PopoverProps extends HTMLAttributes<HTMLDivElement> {
+export interface PopoverProps extends Omit<HTMLAttributes<HTMLDivElement>, 'title'> {
   animation?: boolean;
   class?: string;
   container?: ContainerType;

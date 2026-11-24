@@ -1,5 +1,5 @@
 <script>
-  import { classnames, textProp } from '../utils.js';
+  import { classnames, textProp, uuid } from '../utils.js';
 
   let className = '';
   export { className as class };
@@ -19,6 +19,8 @@
   export let valid = false;
   export let value = undefined;
 
+  const fallbackId = `form-check-${uuid()}`;
+
   $: classes = classnames(className, 'form-check', {
     'form-check-reverse': reverse,
     'form-switch': type === 'switch',
@@ -30,7 +32,7 @@
     'is-invalid': invalid,
     'is-valid': valid
   });
-  $: idFor = id || labelText;
+  $: idFor = id || labelText || (label && fallbackId);
 </script>
 
 <div class={classes}>
