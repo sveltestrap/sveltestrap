@@ -1,5 +1,5 @@
 <script>
-  import { classnames } from '../utils';
+  import { classnames } from '../utils.js';
 
   // Additional CSS class names to add to the container.
   let className = '';

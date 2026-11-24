@@ -1,5 +1,5 @@
 <script>
-  import { classnames } from '../utils';
+  import { classnames, textProp } from '../utils.js';
 
   /**
    * Additional CSS class name for the component
@@ -37,6 +37,7 @@
    * @type {string}
    */
   export let label = '';
+  $: labelText = textProp(label);
 
   /**
    * Indicates whether the FormGroup is part of a row layout.
@@ -68,10 +69,10 @@
 {#if tag === 'fieldset'}
   <fieldset {...$$restProps} class={classes}>
     <slot />
-    {#if label || $$slots.label}
+    {#if labelText || $$slots.label}
       <!-- svelte-ignore a11y-label-has-associated-control -->
       <label>
-        {label}
+        {labelText}
         <slot name="label" />
       </label>
     {/if}
@@ -79,10 +80,10 @@
 {:else}
   <div {...$$restProps} class={classes}>
     <slot />
-    {#if label || $$slots.label}
+    {#if labelText || $$slots.label}
       <!-- svelte-ignore a11y-label-has-associated-control -->
       <label>
-        {label}
+        {labelText}
         <slot name="label" />
       </label>
     {/if}

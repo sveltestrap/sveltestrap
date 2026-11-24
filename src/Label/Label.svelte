@@ -1,5 +1,5 @@
 <script>
-  import { classnames, getColumnSizeClass, isObject } from '../utils';
+  import { classnames, getColumnSizeClass, isObject } from '../utils.js';
 
   let className = '';
 

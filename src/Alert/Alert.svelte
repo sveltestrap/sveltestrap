@@ -1,6 +1,6 @@
 <script>
   import { fade as fadeTransition } from 'svelte/transition';
-  import { classnames } from '../utils';
+  import { classnames, textProp } from '../utils.js';
 
   /**
    * Additional CSS classes for container element.
@@ -57,6 +57,7 @@
    * @default ''
    */
   export let heading = '';
+  $: headingText = textProp(heading);
 
   /**
    * Controls the visibility of the alert.
@@ -95,9 +96,9 @@
 
 {#if isOpen}
   <div {...$$restProps} data-bs-theme={theme} transition:fadeTransition={transition} class={classes} role="alert">
-    {#if heading || $$slots.heading}
+    {#if headingText || $$slots.heading}
       <h4 class="alert-heading">
-        {heading}<slot name="heading" />
+        {headingText}<slot name="heading" />
       </h4>
     {/if}
     {#if showClose}

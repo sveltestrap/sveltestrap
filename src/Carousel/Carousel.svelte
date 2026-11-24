@@ -1,7 +1,7 @@
 <script>
   import { onDestroy, onMount } from 'svelte';
 
-  import { browserEvent, classnames, getNewCarouselActiveIndex } from '../utils';
+  import { browserEvent, classnames, getNewCarouselActiveIndex } from '../utils.js';
 
   /**
    * Additional CSS classes for container element.

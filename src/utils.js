@@ -31,13 +31,22 @@ export function isObject(value) {
   return value !== null && (type === 'object' || type === 'function');
 }
 
+// With `scrollbar-gutter: stable` on the root element the space for the
+// scrollbar stays reserved while the body is not scrollable, so nothing shifts
+// and no compensating padding is needed.
+export function hasStableScrollbarGutter() {
+  const { scrollbarGutter } = window.getComputedStyle(document.documentElement);
+
+  return typeof scrollbarGutter === 'string' && scrollbarGutter.includes('stable');
+}
+
 export function conditionallyUpdateScrollbar() {
   const scrollbarWidth = getScrollbarWidth();
   // https://github.com/twbs/bootstrap/blob/v4.0.0-alpha.6/js/src/modal.js#L433
   const fixedContent = document.querySelectorAll('.fixed-top, .fixed-bottom, .is-fixed, .sticky-top')[0];
   const bodyPadding = fixedContent ? parseInt(fixedContent.style.paddingRight || 0, 10) : 0;
 
-  if (isBodyOverflowing()) {
+  if (isBodyOverflowing() && !hasStableScrollbarGutter()) {
     setScrollbarWidth(bodyPadding + scrollbarWidth);
   }
 }
@@ -118,4 +127,13 @@ export function uuid() {
     const v = c === 'x' ? r : (r & 0x3) | 0x8;
     return v.toString(16);
   });
+}
+
+/**
+ * Returns the value of a text prop that shares its name with a slot.
+ * In Svelte 5 a snippet passed to a Svelte 4 component fills the slot of the
+ * same name and is also received as the prop, so functions are ignored here.
+ */
+export function textProp(value) {
+  return typeof value === 'function' ? undefined : value;
 }

@@ -1,8 +1,8 @@
 <script>
   import { createEventDispatcher, setContext } from 'svelte';
   import { writable } from 'svelte/store';
-  import { classnames } from '../utils';
-  import { TabHeader } from '../TabHeader';
+  import { classnames } from '../utils.js';
+  import { TabHeader } from '../TabHeader/index.js';
 
   const dispatch = createEventDispatcher();
 

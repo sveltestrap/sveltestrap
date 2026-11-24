@@ -1,5 +1,5 @@
 <script>
-  import { classnames, getNewCarouselActiveIndex } from '../utils';
+  import { classnames, getNewCarouselActiveIndex } from '../utils.js';
 
   /**
    * Additional CSS classes for container element.

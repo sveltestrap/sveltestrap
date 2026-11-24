@@ -1,9 +1,10 @@
+import { TextOrSnippet } from '../shared';
 import { SvelteComponent } from 'svelte';
 import { HTMLAttributes } from 'svelte/elements';
 
 export interface TabPaneProps extends HTMLAttributes<HTMLDivElement> {
   active?: boolean;
-  tab?: string;
+  tab?: TextOrSnippet;
   disabled?: boolean;
   tabId?: number | string;
 }

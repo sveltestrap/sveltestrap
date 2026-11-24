@@ -35,6 +35,10 @@ jobs:
       - name: Install dependencies
         run: pnpm install
       - name: Build Storybook
+        # Storybook 7's Svelte CSF addon fails to load when Node resolves
+        # require() of ES modules, which newer Node 20 releases do by default.
+        env:
+          NODE_OPTIONS: --no-experimental-require-module
         run: |
           pnpm run docs:build
       - name: Deploy Storybook 🚀

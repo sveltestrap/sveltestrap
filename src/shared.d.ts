@@ -97,3 +97,9 @@ export declare type TextColor =
   | 'white'
   | 'black-50'
   | 'white-50';
+
+/**
+ * Text for a prop that shares its name with a slot. In Svelte 5 a snippet of
+ * that name is accepted too and renders in place of the slot.
+ */
+export declare type TextOrSnippet = string | ((...args: any[]) => any);

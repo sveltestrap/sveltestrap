@@ -1,8 +1,8 @@
 <script>
   import Dropdown from './Dropdown.svelte';
-  import { DropdownMenu } from '../DropdownMenu';
-  import { DropdownItem } from '../DropdownItem';
-  import { DropdownToggle } from '../DropdownToggle';
+  import { DropdownMenu } from '../DropdownMenu/index.js';
+  import { DropdownItem } from '../DropdownItem/index.js';
+  import { DropdownToggle } from '../DropdownToggle/index.js';
 </script>
 
 <Dropdown>

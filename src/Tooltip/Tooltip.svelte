@@ -1,9 +1,9 @@
 <script>
   import { onDestroy, onMount } from 'svelte';
   import { createPopper } from '@popperjs/core';
-  import { classnames, uuid } from '../utils';
-  import { InlineContainer } from '../InlineContainer';
-  import { Portal } from '../Portal';
+  import { classnames, uuid } from '../utils.js';
+  import { InlineContainer } from '../InlineContainer/index.js';
+  import { Portal } from '../Portal/index.js';
 
   /**
    * Additional CSS class names for the tooltip.

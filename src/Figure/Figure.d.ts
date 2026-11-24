@@ -1,10 +1,11 @@
+import { TextOrSnippet } from '../shared';
 import { SvelteComponent } from 'svelte';
 import { HTMLAttributes } from 'svelte/elements';
 
 export interface FigureProps extends HTMLAttributes<HTMLElement> {
   alt?: string;
   class?: string;
-  caption?: string | HTMLSlotElement;
+  caption?: TextOrSnippet;
 }
 
 export interface FigureEvents {}

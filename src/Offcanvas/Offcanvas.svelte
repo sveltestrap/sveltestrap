@@ -1,13 +1,13 @@
 <script>
   import { createEventDispatcher, onMount } from 'svelte';
 
-  import { InlineContainer } from '../InlineContainer';
-  import { OffcanvasBackdrop } from '../OffcanvasBackdrop';
-  import { OffcanvasBody } from '../OffcanvasBody';
-  import { OffcanvasHeader } from '../OffcanvasHeader';
-  import { Portal } from '../Portal';
+  import { InlineContainer } from '../InlineContainer/index.js';
+  import { OffcanvasBackdrop } from '../OffcanvasBackdrop/index.js';
+  import { OffcanvasBody } from '../OffcanvasBody/index.js';
+  import { OffcanvasHeader } from '../OffcanvasHeader/index.js';
+  import { Portal } from '../Portal/index.js';
 
-  import { classnames, browserEvent, getTransitionDuration } from '../utils';
+  import { classnames, browserEvent, getTransitionDuration, textProp } from '../utils.js';
 
   const dispatch = createEventDispatcher();
 
@@ -47,6 +47,7 @@
    * @type {string}
    */
   export let header = '';
+  $: headerText = textProp(header);
 
   /**
    * Indicates whether the offcanvas is currently open.
@@ -203,10 +204,10 @@
     style={`visibility: ${isOpen || isTransitioning ? 'visible' : 'hidden'};${style}`}
     tabindex="-1"
   >
-    {#if toggle || header || $$slots.header}
+    {#if toggle || headerText || $$slots.header}
       <OffcanvasHeader {toggle}>
-        {#if header}
-          {header}
+        {#if headerText}
+          {headerText}
         {/if}
         <slot name="header" />
       </OffcanvasHeader>

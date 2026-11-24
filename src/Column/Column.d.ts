@@ -1,9 +1,10 @@
+import { TextOrSnippet } from '../shared';
 import { SvelteComponent } from 'svelte';
 import { HTMLTdAttributes } from 'svelte/elements';
 
 export interface ContainerProps extends HTMLTdAttributes {
-  footer?: string;
-  header?: string;
+  footer?: TextOrSnippet;
+  header?: TextOrSnippet;
 }
 
 export interface ContainerEvents {}

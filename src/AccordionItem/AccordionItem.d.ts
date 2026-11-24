@@ -1,11 +1,11 @@
+import { TextOrSnippet } from '../shared';
 import { SvelteComponent } from 'svelte';
 import { HTMLAttributes } from 'svelte/elements';
 
 export interface AccordionItemProps extends HTMLAttributes<HTMLDivElement> {
   active?: boolean;
   class?: string;
-  header?: string;
-  headerText?: string;
+  header?: TextOrSnippet;
 }
 
 export interface AccordionItemEvents {

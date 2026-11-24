@@ -1,9 +1,11 @@
 <script>
-  import { classnames } from '../utils';
-  import { Colgroup } from '../Colgroup';
-  import { ResponsiveContainer } from '../ResponsiveContainer';
-  import { TableFooter } from '../TableFooter';
-  import { TableHeader } from '../TableHeader';
+  import { setContext } from 'svelte';
+  import { writable } from 'svelte/store';
+  import { classnames } from '../utils.js';
+  import { Colgroup } from '../Colgroup/index.js';
+  import { ResponsiveContainer } from '../ResponsiveContainer/index.js';
+  import { TableFooter } from '../TableFooter/index.js';
+  import { TableHeader } from '../TableHeader/index.js';
 
   let className = '';
   /**
@@ -55,6 +57,11 @@
    */
   export let rows = undefined;
 
+  // Columns report whether they have footer content, so that an empty
+  // <tfoot> is not rendered when none of them do.
+  const footerCount = writable(0);
+  setContext('table', { footerCount });
+
   $: classes = classnames(
     className,
     'table',
@@ -82,9 +89,11 @@
           </tr>
         {/each}
       </tbody>
-      <TableFooter>
-        <slot />
-      </TableFooter>
+      {#if $footerCount > 0}
+        <TableFooter>
+          <slot />
+        </TableFooter>
+      {/if}
     {:else}
       <slot />
     {/if}
